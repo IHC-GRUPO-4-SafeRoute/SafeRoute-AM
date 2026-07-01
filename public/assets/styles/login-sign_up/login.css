@@ -1,0 +1,443 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #DFF2FF;
+    color: #0B3333;
+}
+
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+========================================== */
+
+.login-page {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-color: #DFF2FF;
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.login-header {
+    width: 100%;
+    height: 120px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px 18px 20px;
+
+    text-align: center;
+
+    background-color: #DFF2FF;
+}
+
+.login-header h1 {
+    margin-bottom: 7px;
+
+    font-size: clamp(25px, 4vw, 32px);
+    font-weight: bold;
+    line-height: 1.2;
+
+    color: #000000;
+}
+
+.login-header p {
+    font-size: clamp(13px, 2vw, 15px);
+    line-height: 1.3;
+
+    color: #606060;
+}
+
+
+/* ==========================================
+   BLOQUE BLANCO REDONDEADO
+========================================== */
+
+.login-content {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+
+    margin-top: 10px;
+
+    padding-top: 42px;
+    padding-right: clamp(25px, 6vw, 80px);
+    padding-bottom: 15px;
+    padding-left: clamp(25px, 6vw, 80px);
+
+    overflow: hidden;
+
+    background-color: #FFFFFF;
+
+    border-radius: 60px 60px 0 0;
+}
+
+
+/* ==========================================
+   FORMULARIO
+========================================== */
+
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-left: 13px;
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    color: #0B3333;
+}
+
+.form-group input {
+    width: 100%;
+    height: 47px;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 15px;
+    outline: none;
+
+    background-color: #F4F7F9;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+
+    color: #333333;
+}
+
+.form-group input::placeholder {
+    color: #999999;
+}
+
+.form-group input:focus {
+    outline: 2px solid #06469F;
+
+    background-color: #FFFFFF;
+}
+
+
+/* ==========================================
+   CAMPO DE CONTRASEÑA
+========================================== */
+
+.password-container {
+    position: relative;
+
+    width: 100%;
+}
+
+.password-container input {
+    padding-right: 55px;
+}
+
+.show-password-button {
+    position: absolute;
+
+    top: 50%;
+    right: 12px;
+
+    transform: translateY(-50%);
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+.show-password-button:hover {
+    background-color: #E8EFF3;
+}
+
+.show-password-button:focus {
+    outline: 2px solid #06469F;
+}
+
+.show-password-button img {
+    display: block;
+    width: 21px;
+    height: 21px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   MENSAJE DE VALIDACIÓN
+========================================== */
+
+.login-message {
+    min-height: 12px;
+
+    margin-bottom: 4px;
+
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #C62828;
+}
+
+
+/* ==========================================
+   BOTÓN INICIAR SESIÓN
+========================================== */
+
+.login-button {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 11px;
+
+    background-color: #06469F;
+    color: #FFFFFF;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #03377E;
+}
+
+.login-button:active {
+    transform: scale(0.99);
+}
+
+.login-button:focus {
+    outline: 3px solid rgba(6, 70, 159, 0.25);
+}
+
+
+/* ==========================================
+   OLVIDASTE TU CONTRASEÑA
+========================================== */
+
+.forgot-password-link {
+    display: block;
+
+    margin: 7px 0;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #000000;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   BOTÓN REGISTRARSE
+========================================== */
+
+.register-button {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 20px;
+
+    border-radius: 11px;
+
+    background-color: #F2F2F2;
+    color: #174F4F;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.register-button:hover {
+    background-color: #E5E5E5;
+}
+
+
+/* ==========================================
+   ACCESO CON HUELLA
+========================================== */
+
+.fingerprint-section {
+    margin-top: 17px;
+
+    text-align: center;
+}
+
+.fingerprint-section p {
+    font-size: 13px;
+    font-weight: bold;
+
+    color: #000000;
+}
+
+.fingerprint-link {
+    color: #06469F;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.fingerprint-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   REDES SOCIALES
+========================================== */
+
+.social-login {
+    margin-top: 17px;
+
+    text-align: center;
+}
+
+.social-login-text {
+    margin-bottom: 12px;
+
+    font-size: 14px;
+
+    color: #999999;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(20px, 6vw, 30px);
+}
+
+.social-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.social-button:hover {
+    background-color: #F0F3F5;
+}
+
+.social-button img {
+    display: block;
+
+    width: 35px;
+    height: 35px;
+
+    object-fit: contain;
+}
+
+
+/* ==========================================
+   PIE DEL LOGIN
+========================================== */
+
+.login-footer {
+    margin-top: 16px;
+
+    text-align: center;
+}
+
+.login-footer p {
+    font-size: 13px;
+
+    color: #999999;
+}
+
+.login-footer a {
+    text-decoration: none;
+
+    color: #0075E8;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}

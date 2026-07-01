@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Iniciar sesión | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/login-sign_up/login.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+        <header class="login-header">
+            <h1>Iniciar sesión</h1>
+            <p>Bienvenido de vuelta. ¿Cómo has estado?</p>
+        </header>
+
+        <section class="login-content">
+
+            <form
+                id="login-form"
+                class="login-form"
+            >
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Usuario o Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Contraseña
+                    </label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Ingrese su contraseña"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="show-password"
+                            class="show-password-button"
+                            aria-label="Mostrar contraseña"
+                        >
+                            <img
+                                id="password-eye-icon"
+                                src="../../assets/images/login-sign_up/close_eye.png"
+                                alt=""
+                            >
+                        </button>
+
+                    </div>
+                </div>
+
+                <p
+                    id="login-message"
+                    class="login-message"
+                ></p>
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Iniciar sesión
+                </button>
+
+                <!-- enlace -->
+                <a
+                    href=""
+                    class="forgot-password-link"
+                >
+                    ¿Olvidaste tu contraseña?
+                </a>
+
+                <!-- enlace -->
+                <a
+                    href=""
+                    class="register-button"
+                >
+                    Registrarse
+                </a>
+            </form>
+
+
+            <!-- enlace -->
+            <div class="fingerprint-section">
+                <p>
+                    Usar
+                    <a
+                        href=""
+                        class="fingerprint-link"
+                    >
+                        huella dactilar
+                    </a>
+                    para ingresar
+                </p>
+            </div>
+
+            <div class="social-login">
+
+                <p class="social-login-text">
+                    O ingresar con
+                </p>
+
+                <div class="social-buttons">
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        aria-label="Ingresar con Google"
+                    >
+                        <img
+                            src="../../assets/images/login-sign_up/icon-google.png"
+                            alt="Google"
+                        >
+                    </button>
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        aria-label="Ingresar con Facebook"
+                    >
+                        <img
+                            src="../../assets/images/login-sign_up/icon-facebook.png"
+                            alt="Facebook"
+                        >
+                    </button>
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        aria-label="Ingresar con X"
+                    >
+                        <img
+                            src="../../assets/images/login-sign_up/icon-X.png"
+                            alt="X"
+                        >
+                    </button>
+                </div>
+            </div>
+        
+            <!-- enlace -->
+            <footer class="login-footer">
+                <p>
+                    ¿No tienes una cuenta?
+                    <a href="">
+                        Regístrate
+                    </a>
+                </p>
+            </footer>
+        </section>
+    </main>
+    <script src="../../assets/scripts/login-sign_up/login.js"></script>
+</body>
+</html>

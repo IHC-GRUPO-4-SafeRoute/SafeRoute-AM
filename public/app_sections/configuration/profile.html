@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/profile.css">
+</head>
+<body>
+    <main class="profile-page">
+        <header class="profile-header">
+            <h1>Perfil</h1>
+
+            <button class="notification-button" type="button" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </button>
+        </header>
+
+        <section class="profile-content">
+            <article class="user-card">
+                <div class="avatar-wrapper">
+                    <img class="avatar" src="../../assets/images/configuration/profile1.png" alt="Foto de perfil">
+                    <button class="avatar-edit-button" type="button" aria-label="Cambiar foto">
+                        <img src="../../assets/images/configuration/edit_icon.png" alt="">
+                    </button>
+                </div>
+
+                <div class="user-info">
+                    <h2>Lucía Martínez</h2>
+                    <p>lucia@gmail.com</p>
+                    <strong>ID: 3503245</strong>
+                </div>
+            </article>
+
+            <section class="achievements">
+                <h2>Logros</h2>
+
+                <div class="achievement-list">
+                    <div class="achievement active">
+                        <img src="../../assets/images/configuration/shield.png" alt="">
+                        <span>Protector</span>
+                    </div>
+
+                    <div class="achievement active">
+                        <img src="../../assets/images/configuration/ray.png" alt="">
+                        <span>Veloz</span>
+                    </div>
+
+                    <div class="achievement active">
+                        <img src="../../assets/images/configuration/eye.png" alt="">
+                        <span>Observador</span>
+                    </div>
+
+                    <div class="achievement">
+                        <img src="../../assets/images/configuration/trophy.png" alt="">
+                        <span>Protector</span>
+                    </div>
+
+                    <div class="achievement">
+                        <img src="../../assets/images/configuration/star.png" alt="">
+                        <span>Maestro</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile-stats">
+                <article class="stat-card">
+                    <strong>24</strong>
+                    <span>Rutas</span>
+                </article>
+
+                <article class="stat-card">
+                    <strong>24</strong>
+                    <span>Reportes</span>
+                </article>
+
+                <article class="stat-card">
+                    <strong>2/6</strong>
+                    <span>Logros</span>
+                </article>
+            </section>
+
+            <section class="settings-list">
+                <a class="settings-item" href="#">
+                    <img class="settings-icon" src="../../assets/images/configuration/edit_icon_2.png" alt="">
+                    <span>Editar Perfil</span>
+                    <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+                </a>
+
+                <a class="settings-item" href="#">
+                    <img class="settings-icon" src="../../assets/images/configuration/call.png" alt="">
+                    <span>Contactos de emergencia</span>
+                    <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+                </a>
+
+                <a class="settings-item" href="#">
+                    <img class="settings-icon" src="../../assets/images/configuration/settings.png" alt="">
+                    <span>Configuración de Seguridad</span>
+                    <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+                </a>
+
+                <a class="settings-item" href="#">
+                    <img class="settings-icon" src="../../assets/images/configuration/notification.png" alt="">
+                    <span>Preferencias</span>
+                    <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+                </a>
+
+                <a class="settings-item" href="#">
+                    <img class="settings-icon" src="../../assets/images/configuration/configuration.png" alt="">
+                    <span>Ajustes</span>
+                    <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+                </a>
+
+                <a class="settings-item" href="#">
+                    <img class="settings-icon" src="../../assets/images/configuration/help.png" alt="">
+                    <span>Ayuda</span>
+                    <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+                </a>
+            </section>
+
+            <button class="logout-button" type="button" id="open-logout-modal">
+                <img src="../../assets/images/configuration/go_out.png" alt="">
+                <span>Cerrar Sesión</span>
+            </button>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="#">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="#">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="#">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="#">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="#">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <div class="modal-overlay" id="logout-modal">
+        <section class="logout-modal">
+            <h2>Cerrar Sesión</h2>
+            <p>¿Estás seguro de cerrar sesión?</p>
+
+            <button class="modal-primary-button" type="button" id="confirm-logout">
+                Sí, cerrar sesión
+            </button>
+
+            <button class="modal-secondary-button" type="button" id="cancel-logout">
+                Cancelar
+            </button>
+        </section>
+    </div>
+
+    <script src="../../assets/scripts/configuration/profile.js"></script>
+</body>
+</html>

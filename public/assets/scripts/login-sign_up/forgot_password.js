@@ -84,6 +84,6 @@ forgotPasswordForm.addEventListener("submit", function (event) {
     );
 
 
-    window.location.href = "security-pin.html";
+    window.location.href = "security_pin.html";
 
 });

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>PIN de seguridad | SafeRoute</title>
+
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet"href="../../assets/styles/login-sign_up/security_pin.css">
+</head>
+
+<body>
+    <main class="pin-page">
+        <header class="pin-header">
+            <h1>PIN de seguridad</h1>
+        </header>
+
+        <section class="pin-content">
+
+            <div class="pin-information">
+
+                <h2>Ingresa el PIN de seguridad</h2>
+
+                <p>
+                    Selecciona los números del código de seguridad
+                    para continuar con la recuperación de tu contraseña.
+                </p>
+
+            </div>
+
+
+            <div
+                id="pin-display"
+                class="pin-display"
+                aria-label="PIN seleccionado"
+                aria-live="polite"
+            >
+                <span class="pin-position"></span>
+                <span class="pin-position"></span>
+                <span class="pin-position"></span>
+                <span class="pin-position"></span>
+                <span class="pin-position"></span>
+                <span class="pin-position"></span>
+            </div>
+
+
+            <div
+                id="pin-numbers"
+                class="pin-numbers"
+                role="group"
+                aria-label="Números del PIN de seguridad"
+            >
+
+                <button
+                    type="button"
+                    class="pin-number"
+                    data-number="2"
+                    aria-label="Seleccionar número 2"
+                >
+                    2
+                </button>
+
+                <button
+                    type="button"
+                    class="pin-number"
+                    data-number="7"
+                    aria-label="Seleccionar número 7"
+                >
+                    7
+                </button>
+
+                <button
+                    type="button"
+                    class="pin-number"
+                    data-number="3"
+                    aria-label="Seleccionar número 3"
+                >
+                    3
+                </button>
+
+                <button
+                    type="button"
+                    class="pin-number"
+                    data-number="9"
+                    aria-label="Seleccionar número 9"
+                >
+                    9
+                </button>
+
+                <button
+                    type="button"
+                    class="pin-number"
+                    data-number="1"
+                    aria-label="Seleccionar número 1"
+                >
+                    1
+                </button>
+
+                <button
+                    type="button"
+                    class="pin-number"
+                    data-number="6"
+                    aria-label="Seleccionar número 6"
+                >
+                    6
+                </button>
+
+            </div>
+
+
+            <p
+                id="pin-message"
+                class="pin-message"
+                aria-live="polite"
+            ></p>
+
+
+            <div class="pin-actions">
+
+                <button
+                    type="button"
+                    id="accept-pin"
+                    class="accept-button"
+                >
+                    Aceptar
+                </button>
+
+                <button
+                    type="button"
+                    id="resend-pin"
+                    class="resend-button"
+                >
+                    Enviar nuevamente
+                </button>
+
+            </div>
+
+            <div class="pin-social">
+
+                <p class="pin-social-text">
+                    O regístrate con
+                </p>
+
+                <div class="social-buttons">
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        aria-label="Continuar con Google"
+                    >
+                        <img
+                            src="../../assets/images/login-sign_up/icon-google.png"
+                            alt=""
+                        >
+                    </button>
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        aria-label="Continuar con Facebook"
+                    >
+                        <img
+                            src="../../assets/images/login-sign_up/icon-facebook.png"
+                            alt=""
+                        >
+                    </button>
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        aria-label="Continuar con X"
+                    >
+                        <img
+                            src="../../assets/images/login-sign_up/icon-X.png"
+                            alt=""
+                        >
+                    </button>
+                </div>
+            </div>
+
+            <footer class="pin-footer">
+                <p>
+                    ¿No tienes una cuenta?
+
+                    <a href="register.html">
+                        Regístrate
+                    </a>
+                </p>
+            </footer>
+        </section>
+    </main>
+    <script src="../../assets/scripts/login-sign_up/security_pin.js"></script>
+</body>
+</html>

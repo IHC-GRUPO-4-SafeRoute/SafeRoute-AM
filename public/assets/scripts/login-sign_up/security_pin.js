@@ -1,9 +1,6 @@
 const pinNumbers =
     document.querySelectorAll(".pin-number");
 
-const pinPositions =
-    document.querySelectorAll(".pin-position");
-
 const acceptPinButton =
     document.getElementById("accept-pin");
 
@@ -17,24 +14,6 @@ const pinMessage =
 let selectedPinNumbers = [];
 
 
-
-function updatePinDisplay() {
-
-    pinPositions.forEach(function (position, index) {
-
-        if (index < selectedPinNumbers.length) {
-
-            position.classList.add("active");
-
-        } else {
-
-            position.classList.remove("active");
-
-        }
-
-    });
-
-}
 
 
 pinNumbers.forEach(function (pinNumber) {
@@ -74,8 +53,6 @@ pinNumbers.forEach(function (pinNumber) {
 
         pinMessage.textContent = "";
 
-        updatePinDisplay();
-
     });
 
 });
@@ -113,8 +90,6 @@ resendPinButton.addEventListener("click", function () {
         pinNumber.classList.remove("selected");
 
     });
-
-    updatePinDisplay();
 
     pinMessage.textContent =
         "Se envió nuevamente el PIN de demostración.";

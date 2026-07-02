@@ -92,35 +92,6 @@ body {
 }
 
 
-.pin-display {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    margin-bottom: 26px;
-}
-
-.pin-position {
-    width: 15px;
-    height: 15px;
-
-    display: block;
-
-    border: 2px solid var(--color-navy);
-    border-radius: 50%;
-
-    background-color: var(--color-white);
-}
-
-.pin-position.active {
-    background-color: var(--color-navy);
-}
-
-
 .pin-numbers {
     width: 100%;
 
@@ -128,9 +99,9 @@ body {
     justify-content: center;
     align-items: center;
 
-    gap: clamp(8px, 2.5vw, 14px);
+    gap: 16px;
 
-    margin: 0 auto;
+    margin: 60px auto 38px;
 }
 
 .pin-number {
@@ -267,15 +238,15 @@ body {
 
 
 .pin-social {
-    margin-top: 42px;
+    margin-top: 100px;
 
     text-align: center;
 }
 
 .pin-social-text {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 
-    font-size: 13px;
+    font-size: 14px;
 
     color: var(--color-disabled);
 }
@@ -325,7 +296,7 @@ body {
 
 
 .pin-footer {
-    margin-top: 18px;
+    margin-top: 16px;
 
     text-align: center;
 }
@@ -377,17 +348,6 @@ body {
         font-size: 13px;
     }
 
-    .pin-display {
-        gap: 10px;
-
-        margin-bottom: 22px;
-    }
-
-    .pin-position {
-        width: 13px;
-        height: 13px;
-    }
-
     .pin-numbers {
         gap: 12px;
     }
@@ -405,6 +365,10 @@ body {
     }
 
     .pin-social {
-        margin-top: 34px;
+        margin-top: 14px;
     }
+
+    .pin-footer {
+    margin-top: 13px;
+}
 }

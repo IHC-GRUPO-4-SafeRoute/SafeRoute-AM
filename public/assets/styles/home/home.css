@@ -296,10 +296,6 @@ a {
     background: var(--activity-light-orange);
 }
 
-/* ===================================== */
-/* MARCADORES DEL MAPA                   */
-/* ===================================== */
-
 .map-marker {
     position: absolute;
     z-index: 3;
@@ -324,43 +320,36 @@ a {
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
 }
 
-/* Icono Ayuda Top Left */
 .marker-help-top {
     top: 210px;
     left: 25px;
 }
 
-/* Nodo Activo (Escudo Verde) */
 .marker-active-node {
     top: 205px;
     right: 125px;
 }
 
-/* Alerta Roja */
 .marker-red-alert {
     top: 300px;
     left: 75px;
 }
 
-/* Alerta Naranja */
 .marker-orange-alert {
     top: 250px;
     right: 115px;
 }
 
-/* Nodo Inactivo (Escudo Gris) */
 .marker-inactive-node {
     top: 310px;
     right: 105px;
 }
 
-/* Icono Ayuda Bottom Left */
 .marker-help-bottom {
     top: 490px;
     left: 25px;
 }
 
-/* Botones flotantes lado derecho */
 .marker-position {
     top: 220px;
     right: 15px; 
@@ -379,7 +368,6 @@ a {
     display: block;
 }
 
-/* Botón chat */
 .marker-chat {
     right: 27px;
     bottom: 40px;
@@ -417,10 +405,6 @@ a {
     border: 2px solid rgba(255, 255, 255, 0.35);
     border-radius: 50%;
 }
-
-/* ===================================== */
-/* PANELES INFERIORES Y MODALES          */
-/* ===================================== */
 
 .quick-actions-panel {
     position: fixed;
@@ -622,7 +606,6 @@ a {
     transform: scale(0.97);
 }
 
-/* Modales adicionales (Navegación) */
 .navigation-modal {
     min-height: 430px;
 }
@@ -659,7 +642,6 @@ a {
     background: var(--home-primary);
 }
 
-/* Modales adicionales (Compartir) */
 .share-modal {
     min-height: 480px;
 }
@@ -758,7 +740,6 @@ a {
     background: var(--share-green);
 }
 
-/* Modales adicionales (Temporizador) */
 .timer-modal {
     min-height: 480px;
 }
@@ -806,10 +787,6 @@ a {
     margin-top: 14px;
     background: var(--timer-purple);
 }
-
-/* ===================================== */
-/* ESTILOS DE LOS MODALES DE RIESGO      */
-/* ===================================== */
 
 .risk-detail-modal {
     padding: 39px 30px 25px;
@@ -991,10 +968,6 @@ a {
 .risk-recommendations li {
     margin-bottom: 4px;
 }
-
-/* ===================================== */
-/* ESTILOS DE LOS NODOS Y LISTAS         */
-/* ===================================== */
 
 .small-modal {
     min-height: 220px;
@@ -1257,10 +1230,6 @@ a {
     background: #fff0f1;
 }
 
-/* ===================================== */
-/* TOASTS (PANEL CENTRAL FLOTANTE)       */
-/* ===================================== */
-
 .center-overlay-container {
     position: fixed;
     inset: 0;
@@ -1330,10 +1299,6 @@ a {
     place-items: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
-
-/* ===================================== */
-/* PANEL SOS                             */
-/* ===================================== */
 
 .hidden {
     display: none !important;
@@ -1484,10 +1449,6 @@ a {
     margin: 24px auto 0;
     background: var(--risk-red);
 }
-
-/* ===================================== */
-/* MEDIA QUERIES                         */
-/* ===================================== */
 
 @media (min-width: 431px) {
     body {

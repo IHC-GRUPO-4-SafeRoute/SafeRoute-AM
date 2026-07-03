@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    // Cerrar modales al hacer clic afuera
     document.querySelectorAll('.modal-overlay').forEach((overlay) => {
         overlay.addEventListener('click', (event) => {
             if (event.target === overlay) {
@@ -27,22 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // -----------------------------------------
-    // MAPEO DE BOTONES DEL MAPA A MODALES
-    // -----------------------------------------
-    const riskDetailModal = document.getElementById('risk-detail-modal'); // Riesgo Alto
-    const mediumRiskModal = document.getElementById('medium-risk-modal'); // Riesgo Medio
-    const activeNodeModal = document.getElementById('active-node-modal'); // Farmacia Central
-    const inactiveNodeModal = document.getElementById('inactive-node-modal'); // Bazar Coquito
-    const zoneInfoModalTop = document.getElementById('zone-info-modal-top'); // Info Zona (? de arriba)
-    const zoneInfoModal = document.getElementById('zone-info-modal'); // Info Zona (? de abajo)
-    const zoneListModal = document.getElementById('zone-list-modal'); // Lista horizontal
-    const filterModal = document.getElementById('filter-modal'); // Filtrar nodos
-    const navigationModal = document.getElementById('navigation-modal'); // Iniciar Navegacion
-    const shareModal = document.getElementById('share-modal'); // Compartir
-    const timerModal = document.getElementById('timer-modal'); // Temporizador
+    const riskDetailModal = document.getElementById('risk-detail-modal'); 
+    const mediumRiskModal = document.getElementById('medium-risk-modal'); 
+    const activeNodeModal = document.getElementById('active-node-modal');
+    const inactiveNodeModal = document.getElementById('inactive-node-modal'); 
+    const zoneInfoModalTop = document.getElementById('zone-info-modal-top'); 
+    const zoneInfoModal = document.getElementById('zone-info-modal'); 
+    const zoneListModal = document.getElementById('zone-list-modal'); 
+    const filterModal = document.getElementById('filter-modal'); 
+    const navigationModal = document.getElementById('navigation-modal'); 
+    const shareModal = document.getElementById('share-modal');
+    const timerModal = document.getElementById('timer-modal');
 
-    // Botones del mapa
     const btnOpenRiskDetail = document.getElementById('open-risk-detail');
     const btnOpenMediumRisk = document.getElementById('open-medium-risk');
     const btnOpenActiveNode = document.getElementById('open-active-node');
@@ -52,12 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnOpenZoneList = document.getElementById('open-zone-list'); 
     const btnOpenFilter = document.getElementById('open-filter');
 
-    // Botones de la barra Quick Actions
     const openNavigationBtn = document.getElementById('open-navigation-modal');
     const openShareBtn = document.getElementById('open-share-modal');
     const openTimerBtn = document.getElementById('open-timer-modal');
 
-    // Asignar eventos de apertura mapa
     btnOpenRiskDetail?.addEventListener('click', () => openModal(riskDetailModal));
     btnOpenMediumRisk?.addEventListener('click', () => openModal(mediumRiskModal));
     btnOpenActiveNode?.addEventListener('click', () => openModal(activeNodeModal));
@@ -68,13 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnOpenZoneInfoTop?.addEventListener('click', () => openModal(zoneInfoModalTop));
     btnOpenZoneInfoBottom?.addEventListener('click', () => openModal(zoneInfoModal));
 
-    // Asignar eventos de apertura de Quick Actions
-    openNavigationBtn?.addEventListener('click', () => openModal(riskDetailModal)); // <--- Abre Detalle Riesgo
-    // Compartir y Timer quedan deshabilitados temporalmente: son clickeables pero no hacen nada.
-    // openShareBtn?.addEventListener('click', () => openModal(shareModal));
-    // openTimerBtn?.addEventListener('click', () => openModal(timerModal));
-
-    // Botones de cierre (X y Cancelar de varios modales)
+    openNavigationBtn?.addEventListener('click', () => openModal(riskDetailModal));
     document.getElementById('close-risk-detail')?.addEventListener('click', () => closeModal(riskDetailModal));
     document.getElementById('close-medium-risk')?.addEventListener('click', () => closeModal(mediumRiskModal));
     document.getElementById('close-active-node')?.addEventListener('click', () => closeModal(activeNodeModal));
@@ -89,9 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('close-timer-modal')?.addEventListener('click', () => closeModal(timerModal));
     document.getElementById('cancel-timer')?.addEventListener('click', () => closeModal(timerModal));
 
-    // -----------------------------------------
-    // FILTRO DE NODOS (multi-selección, como en el video)
-    // -----------------------------------------
     const filterOptions = document.querySelectorAll('.filter-option');
     filterOptions.forEach(option => {
         option.addEventListener('click', () => {
@@ -99,12 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-
-
-    // -----------------------------------------
-    // NAVEGACIÓN DESDE LA LISTA DE ZONAS
-    // -----------------------------------------
     document.getElementById('card-farmacia')?.addEventListener('click', () => {
         closeModal(zoneListModal);
         openModal(activeNodeModal);
@@ -120,10 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         openModal(riskDetailModal);
     });
 
-
-    // -----------------------------------------
-    // LÓGICA GENÉRICA DE BOTONES "VER MÁS/OCULTAR"
-    // -----------------------------------------
     const toggleButtons = document.querySelectorAll('.toggle-btn');
 
     toggleButtons.forEach(btn => {
@@ -151,10 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-    // -----------------------------------------
-    // OVERLAYS DE NODOS (TOASTS)
-    // -----------------------------------------
     const inactiveToastOverlay = document.getElementById('inactive-toast-overlay');
     const activeToastOverlay = document.getElementById('active-toast-overlay');
 
@@ -174,9 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         activeToastOverlay.classList.add('hidden');
     });
 
-    // -----------------------------------------
-    // LÓGICA MODAL SOS
-    // -----------------------------------------
     const sosModal = document.getElementById('sos-modal');
     const openSosButton = document.getElementById('open-sos-modal');
     const closeSosButton = document.getElementById('close-sos-modal');

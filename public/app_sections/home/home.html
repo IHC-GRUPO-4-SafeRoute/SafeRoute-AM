@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Inicio | SafeRoute</title>
+
+    <!-- Estilos generales -->
+    <link
+        rel="stylesheet"
+        href="../../assets/styles/global.css">
+
+    <!-- Estilos de la pantalla Home -->
+    <link
+        rel="stylesheet"
+        href="../../assets/styles/home/home.css"
+    >
+
+</head>
+
+<body>
+
+    <main class="home-page">
+
+        <!-- ===================================== -->
+        <!-- ENCABEZADO -->
+        <!-- ===================================== -->
+
+        <header class="home-header">
+
+            <div class="welcome-message">
+
+                <h1>Hola, Bienvenido De Vuelta</h1>
+
+                <p>Buenos días Lucía</p>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    class="header-button"
+                    type="button"
+                    id="open-filter"
+                    aria-label="Filtrar puntos del mapa">
+
+                    <img
+                        src="../../assets/images/home/filter_nods.png"
+                        alt="Filtrar">
+
+                </button>
+
+                <button
+                    class="header-button"
+                    type="button"
+                    id="open-notifications"
+                    aria-label="Ver notificaciones">
+
+                    <img
+                        src="../../assets/images/home/notifications.png"
+                        alt="Notificaciones">
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ===================================== -->
+        <!-- MAPA -->
+        <!-- ===================================== -->
+
+        <section class="map-section">
+
+            <img
+                class="map-background"
+                src="../../assets/images/home/Captura de pantalla 2026-05-23 040443 2.png"
+                alt="Mapa de SafeRoute">
+
+
+            <!-- Buscador de ruta -->
+
+            <section class="route-search-card">
+
+                <div class="route-points">
+
+                    <span class="route-point origin-point"></span>
+
+                    <span class="route-line"></span>
+
+                    <span class="route-point destination-point"></span>
+
+                </div>
+
+                <div class="route-fields">
+
+                    <div class="route-field current-location">
+
+                        <span class="location-icon">●</span>
+
+                        <span>Tu ubicación</span>
+
+                    </div>
+
+                    <div class="route-divider"></div>
+
+                    <button
+                        class="route-field destination-field"
+                        type="button"
+                        id="open-navigation">
+
+                        <small>Destino</small>
+
+                        <span>A donde vas?</span>
+
+                    </button>
+
+                </div>
+
+                <button
+                    class="search-route-button"
+                    type="button"
+                    aria-label="Buscar ruta">
+
+                    <img src="../../assets/images/home/search.png" alt="Buscar ruta">
+
+                </button>
+
+            </section>
+
+
+            <!-- Indicadores -->
+
+            <section class="security-indicators">
+
+                <article class="security-card security-card-safe">
+
+                    <span>Seguridad</span>
+
+                    <strong>85%</strong>
+
+                </article>
+
+                <article class="security-card security-card-light">
+
+                    <span>Iluminación</span>
+
+                    <strong>Alta</strong>
+
+                </article>
+
+                <article class="security-card security-card-activity">
+
+                    <span>Actividad</span>
+
+                    <strong>Media</strong>
+
+                </article>
+
+            </section>
+
+
+            <!-- Marcadores del mapa -->
+
+            <button
+                class="map-marker marker-help marker-help-top"
+                type="button"
+                aria-label="Punto de ayuda">
+
+                <span>?</span>
+
+            </button>
+
+            <button
+                class="map-marker marker-help marker-help-bottom"
+                type="button"
+                aria-label="Punto de ayuda">
+
+                <span>?</span>
+
+            </button>
+
+            <button
+                class="map-marker marker-safe"
+                type="button"
+                aria-label="Zona segura">
+
+                <span>♢</span>
+
+            </button>
+
+            <button
+                class="map-marker marker-position"
+                type="button"
+                aria-label="Centrar ubicación">
+
+                <img src="../../assets/images/home/center_position.png" alt="Centrar ubicación">
+
+            </button>
+
+            <button
+                class="map-marker marker-route"
+                type="button"
+                aria-label="Mostrar ruta">
+
+                <img src="../../assets/images/home/filter_nods.png" alt="Mostrar ruta">
+            </button>
+
+            <button
+                class="map-marker marker-red-alert"
+                type="button"
+                id="open-risk-detail"
+                aria-label="Ver riesgo alto">
+
+                <img src="../../assets/images/home/alert_red.png" alt="Riesgo alto">
+
+            </button>
+
+            <button
+                class="map-marker marker-orange-alert"
+                type="button"
+                aria-label="Ver riesgo medio">
+
+                <img src="../../assets/images/home/alert_orange.png" alt="Riesgo medio">
+
+            </button>
+
+            <button
+                class="map-marker marker-chat"
+                type="button"
+                aria-label="Abrir asistente">
+
+                <span>☵</span>
+
+            </button>
+
+
+            <!-- Ubicación del usuario -->
+
+            <div
+                class="current-user-position"
+                aria-label="Ubicación actual">
+
+                <span></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- BOTONES DE ACCIONES RÁPIDAS -->
+        <!-- ===================================== -->
+
+        <section class="quick-actions-panel">
+
+            <div class="panel-handle"></div>
+
+            <div class="quick-actions-list">
+
+                <button
+                    class="quick-action-button"
+                    type="button"
+                    id="open-navigation-modal">
+
+                    <img src="../../assets/images/home/navegation_button.png" alt="Navegar">
+
+                </button>
+
+                <button
+                    class="quick-action-button"
+                    type="button"
+                    id="open-sos-modal">
+
+                    <img
+                        src="../../assets/images/home/sos_button.png"
+                        alt="SOS">
+
+                </button>
+
+                <button
+                    class="quick-action-button"
+                    type="button"
+                    id="open-share-modal">
+
+                    <img
+                        src="../../assets/images/home/share_button.png"
+                        alt="Compartir ubicación">
+
+                </button>
+
+                <button
+                    class="quick-action-button"
+                    type="button"
+                    id="open-timer-modal">
+
+                    <img
+                        src="../../assets/images/home/timer_button.png"
+                        alt="Temporizador">
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- ESTADO SOS ACTIVO -->
+        <!-- ===================================== -->
+
+        <div
+            class="sos-active-panel hidden"
+            id="sos-active-panel">
+
+            <span class="sos-active-label">SOS</span>
+
+            <span class="sos-active-sublabel">
+                en curso
+            </span>
+
+            <button
+                class="sos-cancel-button"
+                type="button"
+                id="cancel-active-sos"
+                aria-label="Cancelar alerta SOS">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <!-- ===================================== -->
+        <!-- BARRA DE NAVEGACIÓN INFERIOR -->
+        <!-- ===================================== -->
+
+        <nav class="bottom-navigation">
+
+            <a
+                class="nav-item active"
+                href="home.html">
+
+                <img
+                    src="../../assets/images/home/home_icon.png"
+                    alt="Inicio">
+
+                <span>Inicio</span>
+
+            </a>
+
+            <a
+                class="nav-item"
+                href="#">
+
+                <img
+                    src="../../assets/images/home/route_icon.png"
+                    alt="Rutas">
+
+                <span>Rutas</span>
+
+            </a>
+
+            <a
+                class="nav-item"
+                href="#">
+
+                <img
+                    src="../../assets/images/home/alert_icon.png"
+                    alt="Alertas">
+
+                <span>Alertas</span>
+
+            </a>
+
+            <a
+                class="nav-item"
+                href="#">
+
+                <img
+                    src="../../assets/images/home/report_icon.png"
+                    alt="Reportes">
+
+                <span>Reportes</span>
+
+            </a>
+
+            <a
+                class="nav-item"
+                href="#">
+
+                <img
+                    src="../../assets/images/home/configuration_icon.png"
+                    alt="Perfil">
+
+                <span>Perfil</span>
+
+            </a>
+
+        </nav>
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- MODAL DE NAVEGACIÓN -->
+    <!-- ========================================= -->
+
+    <div
+        class="modal-overlay"
+        id="navigation-modal">
+
+        <section class="bottom-modal navigation-modal">
+
+            <div class="modal-handle"></div>
+
+            <button
+                class="close-modal-button"
+                type="button"
+                id="close-navigation-modal"
+                aria-label="Cerrar">
+
+                ×
+
+            </button>
+
+            <header class="modal-header">
+
+                <img
+                    src="../../assets/images/home/navegation_button.png"
+                    alt="Navegación">
+
+                <div>
+
+                    <h2>Iniciar navegación</h2>
+
+                    <p>Selecciona tu destino</p>
+
+                </div>
+
+            </header>
+
+            <form class="navigation-form">
+
+                <label for="navigation-origin">
+                    Ubicación de origen
+                </label>
+
+                <input
+                    type="text"
+                    id="navigation-origin"
+                    name="navigation-origin"
+                    value="Tu ubicación"
+                    readonly>
+
+                <label for="navigation-destination">
+                    Destino
+                </label>
+
+                <input
+                    type="text"
+                    id="navigation-destination"
+                    name="navigation-destination"
+                    placeholder="A donde vas?">
+
+                <button
+                    class="modal-main-button navigation-main-button"
+                    type="submit">
+
+                    Buscar ruta segura
+
+                </button>
+
+            </form>
+
+            <button
+                class="modal-cancel-button"
+                type="button"
+                id="cancel-navigation">
+
+                Cancelar
+
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- MODAL DE DETALLE DE RIESGO -->
+    <!-- ========================================= -->
+
+    <div
+        class="modal-overlay"
+        id="risk-detail-modal">
+
+        <section class="bottom-modal risk-detail-modal">
+
+            <div class="modal-handle"></div>
+
+            <button
+                class="close-modal-button"
+                type="button"
+                id="close-risk-detail"
+                aria-label="Cerrar">
+
+                ×
+
+            </button>
+
+            <header class="risk-header">
+
+                <p class="risk-level">
+
+                    <span class="risk-dot"></span>
+
+                    Riesgo Alto
+
+                </p>
+
+                <h2>Calle Principal 234</h2>
+
+                <div class="risk-labels">
+
+                    <span class="risk-label">
+                        ⚠ Riesgo Alto
+                    </span>
+
+                    <span class="risk-growing">
+                        Riesgo en aumento
+                    </span>
+
+                </div>
+
+            </header>
+
+            <article class="distance-card">
+
+                <span class="distance-icon">➤</span>
+
+                <div>
+
+                    <p>Distancia estimada</p>
+
+                    <strong>320 m · 4 min</strong>
+
+                </div>
+
+            </article>
+
+            <section class="risk-statistics">
+
+                <article>
+
+                    <span>◷</span>
+
+                    <small>Último reporte</small>
+
+                    <strong>Hace 5 min</strong>
+
+                </article>
+
+                <article>
+
+                    <span>♙</span>
+
+                    <small>Incidentes</small>
+
+                    <strong>12</strong>
+
+                </article>
+
+                <article>
+
+                    <span>↗</span>
+
+                    <small>Tendencia</small>
+
+                    <strong>↑</strong>
+
+                </article>
+
+            </section>
+
+            <p class="risk-description">
+                Zona con alta incidencia de robos reportados.
+            </p>
+
+            <button
+                class="more-information-button"
+                type="button">
+
+                Ver más información
+
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- MODAL SOS -->
+    <!-- ========================================= -->
+
+    <div
+        class="modal-overlay"
+        id="sos-modal">
+
+        <section class="bottom-modal sos-modal">
+
+            <div class="modal-handle"></div>
+
+            <button
+                class="close-modal-button"
+                type="button"
+                id="close-sos-modal"
+                aria-label="Cerrar">
+
+                ×
+
+            </button>
+
+            <header class="modal-header">
+
+                <img
+                    src="../../assets/images/home/sos_icon.png"
+                    alt="SOS">
+
+                <h2>Activar SOS</h2>
+
+            </header>
+
+            <p class="modal-description">
+                Se notificará a tus contactos de emergencia con tu ubicación
+                exacta en tiempo real.
+            </p>
+
+            <section class="emergency-contact-list">
+
+                <label class="emergency-contact">
+
+                    <span class="contact-avatar">☎</span>
+
+                    <span class="contact-information">
+                        Maria Perez (Mamá)
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        name="sos-contact"
+                        value="maria"
+                        checked>
+
+                </label>
+
+                <label class="emergency-contact">
+
+                    <span class="contact-avatar">☎</span>
+
+                    <span class="contact-information">
+                        Carlos González (Amigo)
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        name="sos-contact"
+                        value="carlos">
+
+                </label>
+
+            </section>
+
+            <button
+                class="modal-main-button sos-main-button"
+                type="button"
+                id="confirm-sos">
+
+                Confirmar SOS
+
+            </button>
+
+            <button
+                class="modal-cancel-button"
+                type="button"
+                id="cancel-sos">
+
+                Cancelar
+
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- MODAL TEMPORIZADOR -->
+    <!-- ========================================= -->
+
+    <div
+        class="modal-overlay"
+        id="timer-modal">
+
+        <section class="bottom-modal timer-modal">
+
+            <div class="modal-handle"></div>
+
+            <button
+                class="close-modal-button"
+                type="button"
+                id="close-timer-modal"
+                aria-label="Cerrar">
+
+                ×
+
+            </button>
+
+            <header class="modal-header">
+
+                <img
+                    src="../../assets/images/home/timer_button.png"
+                    alt="Temporizador">
+
+                <div>
+
+                    <h2>Temporizador de Seguridad</h2>
+
+                    <p>Alerta automática si no confirmas</p>
+
+                </div>
+
+            </header>
+
+            <p class="modal-description timer-description">
+                Si no confirmas que estás bien en el tiempo elegido,
+                se alertará automáticamente a tus contactos de emergencia.
+            </p>
+
+            <p class="timer-selected-time">
+
+                Tiempo límite:
+
+                <strong id="selected-time">
+                    15 min
+                </strong>
+
+            </p>
+
+            <div class="timer-range-container">
+
+                <input
+                    type="range"
+                    id="security-time"
+                    name="security-time"
+                    min="5"
+                    max="60"
+                    value="15"
+                    step="5">
+
+                <div class="timer-range-labels">
+
+                    <span>5 min</span>
+
+                    <strong>SOS</strong>
+
+                    <span>60 min</span>
+
+                </div>
+
+            </div>
+
+            <button
+                class="modal-main-button timer-main-button"
+                type="button"
+                id="start-timer">
+
+                Iniciar Temporizador
+
+            </button>
+
+            <button
+                class="modal-cancel-button"
+                type="button"
+                id="cancel-timer">
+
+                Cancelar
+
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- MODAL COMPARTIR UBICACIÓN -->
+    <!-- ========================================= -->
+
+    <div
+        class="modal-overlay"
+        id="share-modal">
+
+        <section class="bottom-modal share-modal">
+
+            <div class="modal-handle"></div>
+
+            <button
+                class="close-modal-button"
+                type="button"
+                id="close-share-modal"
+                aria-label="Cerrar">
+
+                ×
+
+            </button>
+
+            <header class="modal-header">
+
+                <img
+                    src="../../assets/images/home/share_button.png"
+                    alt="Compartir ubicación">
+
+                <div>
+
+                    <h2>Compartir Ubicación</h2>
+
+                    <p>Selecciona con quién compartir</p>
+
+                </div>
+
+            </header>
+
+            <section class="share-contact-list">
+
+                <label class="share-contact">
+
+                    <span class="share-avatar">M</span>
+
+                    <span class="share-contact-information">
+
+                        <strong>Maria Perez</strong>
+
+                        <small>Mamá</small>
+
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        name="share-contact"
+                        value="maria">
+
+                </label>
+
+                <label class="share-contact">
+
+                    <span class="share-avatar">C</span>
+
+                    <span class="share-contact-information">
+
+                        <strong>Carlos González</strong>
+
+                        <small>Amigo</small>
+
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        name="share-contact"
+                        value="carlos">
+
+                </label>
+
+                <label class="share-contact">
+
+                    <span class="share-avatar">A</span>
+
+                    <span class="share-contact-information">
+
+                        <strong>Ana Torres</strong>
+
+                        <small>Hermana</small>
+
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        name="share-contact"
+                        value="ana">
+
+                </label>
+
+            </section>
+
+            <fieldset class="share-duration">
+
+                <legend>Duración</legend>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="share-duration"
+                        value="30">
+
+                    <span>30 min</span>
+
+                </label>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="share-duration"
+                        value="60">
+
+                    <span>1 hora</span>
+
+                </label>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="share-duration"
+                        value="arrival"
+                        checked>
+
+                    <span>Hasta llegar</span>
+
+                </label>
+
+            </fieldset>
+
+            <button
+                class="modal-main-button share-main-button"
+                type="button"
+                id="share-location">
+
+                Compartir ahora
+
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- JavaScript de Home -->
+
+    <script src="../../assets/scripts/home/home.js"></script>
+
+</body>
+
+</html>

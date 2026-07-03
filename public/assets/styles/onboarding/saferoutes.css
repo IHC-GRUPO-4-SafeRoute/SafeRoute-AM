@@ -137,3 +137,6 @@ body {
         width: calc(100% - 60px);
     }
 }
+.sharetrip-image{
+    margin-top: 28px;
+}

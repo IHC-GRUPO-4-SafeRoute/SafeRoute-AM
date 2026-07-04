@@ -141,6 +141,50 @@ registerForm.addEventListener("submit", function (event) {
         return;
     }
 
+    if (!/[A-Z]/.test(password)) {
+
+        registerMessage.textContent =
+            "La contraseña debe incluir al menos una letra mayúscula.";
+
+        return;
+    }
+
+
+    if (!/[a-z]/.test(password)) {
+
+        registerMessage.textContent =
+            "La contraseña debe incluir al menos una letra minúscula.";
+
+        return;
+    }
+
+
+    if (!/[0-9]/.test(password)) {
+
+        registerMessage.textContent =
+            "La contraseña debe incluir al menos un número.";
+
+        return;
+    }
+
+
+    if (!/[!@#$%^&*(),.?":{}|<>_\-+=]/.test(password)) {
+
+        registerMessage.textContent =
+            "La contraseña debe incluir al menos un carácter especial.";
+
+        return;
+    }
+
+
+    if (password !== passwordConfirmation) {
+
+        registerMessage.textContent =
+            "Las contraseñas no coinciden.";
+
+        return;
+    }
+
 
     if (password !== passwordConfirmation) {
 

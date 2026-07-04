@@ -58,16 +58,33 @@ loginForm.addEventListener("submit", function (event) {
 
     if (validUser) {
 
+        /*
+            Se guarda temporalmente al usuario mientras
+            completa la verificación del PIN.
+        */
+
         localStorage.setItem(
-            "saferouteCurrentUser",
+            "saferoutePendingUser",
             JSON.stringify(validUser)
         );
+
+
+        /*
+            Indica que el usuario llegó al PIN
+            desde el inicio de sesión.
+        */
+
+        localStorage.setItem(
+            "saferoutePinOrigin",
+            "login"
+        );
+
 
         loginMessage.textContent = "";
 
 
-        // -- enclace al home
-        window.location.href = "";
+        window.location.href =
+            "security_pin.html";
 
     } else {
 

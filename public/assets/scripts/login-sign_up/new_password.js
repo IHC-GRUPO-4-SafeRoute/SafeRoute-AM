@@ -113,6 +113,49 @@ newPasswordForm.addEventListener("submit", function (event) {
         return;
     }
 
+        if (!/[A-Z]/.test(newPassword)) {
+
+        newPasswordMessage.textContent =
+            "La contraseña debe incluir al menos una letra mayúscula.";
+
+        newPasswordInput.focus();
+
+        return;
+    }
+
+
+    if (!/[a-z]/.test(newPassword)) {
+
+        newPasswordMessage.textContent =
+            "La contraseña debe incluir al menos una letra minúscula.";
+
+        newPasswordInput.focus();
+
+        return;
+    }
+
+
+    if (!/[0-9]/.test(newPassword)) {
+
+        newPasswordMessage.textContent =
+            "La contraseña debe incluir al menos un número.";
+
+        newPasswordInput.focus();
+
+        return;
+    }
+
+
+    if (!/[!@#$%^&*(),.?":{}|<>_\-+=]/.test(newPassword)) {
+
+        newPasswordMessage.textContent =
+            "La contraseña debe incluir al menos un carácter especial.";
+
+        newPasswordInput.focus();
+
+        return;
+    }
+
 
     if (newPassword !== confirmNewPassword) {
 

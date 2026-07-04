@@ -84,6 +84,18 @@ forgotPasswordForm.addEventListener("submit", function (event) {
     );
 
 
-    window.location.href = "security_pin.html";
+    /*
+        Indica que el usuario llegó al PIN
+        desde recuperar contraseña.
+    */
+
+    localStorage.setItem(
+        "saferoutePinOrigin",
+        "forgot-password"
+    );
+
+
+    window.location.href =
+        "security_pin.html";
 
 });

@@ -4,9 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const routeOptions = document.querySelectorAll(".route-option");
   const favoriteButtons = document.querySelectorAll(".favorite-button");
   const backButton = document.querySelector(".back-button");
+  const seeAllRoutesButton = document.querySelector(".see-all-routes-button");
 
   const favoriteIcon = "../../assets/images/routes/Favorite.png";
   const noFavoriteIcon = "../../assets/images/routes/No_Favorite.png";
+
+  backButton.addEventListener("click", () => {
+    window.history.back();
+  });
 
   searchButton.addEventListener("click", () => {
     const destination = searchInput.value.trim();
@@ -27,13 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   routeOptions.forEach((option) => {
-    const optionButton = option.querySelector(".route-option-button");
-    const optionTitle = option.querySelector("h3").textContent;
+    const button = option.querySelector(".route-option-button");
 
-    optionButton.addEventListener("click", () => {
+    button.addEventListener("click", () => {
       routeOptions.forEach((item) => item.classList.remove("selected"));
       option.classList.add("selected");
-      alert(`Seleccionaste: ${optionTitle}`);
     });
   });
 
@@ -50,7 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  backButton.addEventListener("click", () => {
-    window.history.back();
-  });
+  if (seeAllRoutesButton) {
+    seeAllRoutesButton.addEventListener("click", () => {
+      window.location.href = "./routes_frequent_routes.html";
+    });
+  }
 });

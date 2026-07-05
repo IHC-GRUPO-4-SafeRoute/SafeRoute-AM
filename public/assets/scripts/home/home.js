@@ -76,6 +76,64 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('close-timer-modal')?.addEventListener('click', () => closeModal(timerModal));
     document.getElementById('cancel-timer')?.addEventListener('click', () => closeModal(timerModal));
 
+    // ====== Compartir Ubicación ======
+    const shareContactCheckboxes = document.querySelectorAll('input[name="share-contact"]');
+    const shareDurationRadios = document.querySelectorAll('input[name="share-duration"]');
+    const shareContactListEl = document.querySelector('.share-contact-list');
+    const shareToastOverlay = document.getElementById('share-toast-overlay');
+    const shareToastMessage = document.getElementById('share-toast-message');
+    let shareToastTimeout = null;
+
+    function resetShareModal() {
+        shareContactCheckboxes.forEach(cb => cb.checked = false);
+        shareDurationRadios.forEach(radio => {
+            radio.checked = radio.value === 'arrival';
+        });
+    }
+
+    openShareBtn?.addEventListener('click', () => {
+        resetShareModal();
+        openModal(shareModal);
+    });
+
+    document.getElementById('share-location')?.addEventListener('click', () => {
+        const selectedContacts = Array.from(shareContactCheckboxes).filter(cb => cb.checked);
+
+        if (selectedContacts.length === 0) {
+            shareContactListEl.classList.remove('shake');
+            void shareContactListEl.offsetWidth; // reinicia la animación
+            shareContactListEl.classList.add('shake');
+            return;
+        }
+
+        const selectedDuration = document.querySelector('input[name="share-duration"]:checked')?.value || 'arrival';
+        const durationLabels = { '30': '30 minutos', '60': '1 hora', 'arrival': 'hasta llegar a tu destino' };
+
+        const names = selectedContacts.map(cb =>
+            cb.closest('.share-contact').querySelector('strong').textContent
+        );
+        const namesText = names.length === 1
+            ? names[0]
+            : names.slice(0, -1).join(', ') + ' y ' + names[names.length - 1];
+
+        if (shareToastMessage) {
+            shareToastMessage.textContent = `Compartiendo con ${namesText} · ${durationLabels[selectedDuration]}`;
+        }
+
+        closeModal(shareModal);
+
+        shareToastOverlay?.classList.remove('hidden');
+        clearTimeout(shareToastTimeout);
+        shareToastTimeout = setTimeout(() => {
+            shareToastOverlay?.classList.add('hidden');
+        }, 2500);
+    });
+
+    document.getElementById('close-share-toast')?.addEventListener('click', () => {
+        shareToastOverlay?.classList.add('hidden');
+        clearTimeout(shareToastTimeout);
+    });
+
     const filterOptions = document.querySelectorAll('.filter-option');
     filterOptions.forEach(option => {
         option.addEventListener('click', () => {

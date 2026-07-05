@@ -14,8 +14,6 @@
 
 <main class="alerts-page">
 
-    <!--==================== HEADER ====================-->
-
     <header class="alerts-header">
 
         <h1>Alertas</h1>
@@ -52,7 +50,7 @@
             <div class="sos-header">
 
                 <img
-                    src="../../assets/images/alerts/sos.png"
+                    src="../../assets/images/alerts/alert white.png"
                     alt="SOS">
 
                 <div class="sos-text">
@@ -351,12 +349,12 @@
             <div class="nav-active-icon">
 
                 <img
-                    src="../../assets/images/alerts/alert white.png"
+                    src="../../assets/images/alerts/alerts.png"
                     alt="Alertas">
 
-            </div>
+                <span>Alertas</span>
 
-            <span>Alertas</span>
+            </div>
 
         </a>
 
@@ -384,13 +382,13 @@
 
 </main>
 
-<div
-    class="modal-overlay"
-    id="sos-modal">
+<div class="modal-overlay" id="sos-modal">
 
-    <section class="sos-modal">
+    <section class="bottom-modal sos-modal">
 
-        <div class="modal-header">
+        <div class="modal-handle"></div>
+
+        <header class="modal-header">
 
             <img
                 src="../../assets/images/alerts/sos.png"
@@ -398,56 +396,60 @@
 
             <h2>Activar SOS</h2>
 
-        </div>
+        </header>
 
-        <p class="modal-text">
-
-            Se notificará a tus contactos de emergencia
-            con tu ubicación exacta en tiempo real.
-
+        <p class="modal-description">
+            Se notificará a tus contactos de emergencia con tu ubicación exacta en tiempo real.
         </p>
 
-        <article class="contact-card">
+        <section class="emergency-contact-list">
 
-            <div class="contact-info">
+            <label class="emergency-contact">
 
-                <img
-                    src="../../assets/images/alerts/contact call.png"
-                    alt="Contacto">
+                <span class="contact-avatar">☎</span>
 
-                <span>María Pérez (Mamá)</span>
+                <span class="contact-information">
+                    María Pérez (Mamá)
+                </span>
 
-            </div>
+                <input
+                    type="checkbox"
+                    name="sos-contact"
+                    value="maria"
+                    checked>
 
-        </article>
+            </label>
 
-        <article class="contact-card">
+            <label class="emergency-contact">
 
-            <div class="contact-info">
+                <span class="contact-avatar">☎</span>
 
-                <img
-                    src="../../assets/images/alerts/contact call.png"
-                    alt="Contacto">
+                <span class="contact-information">
+                    Carlos González (Amigo)
+                </span>
 
-                <span>Carlos González (Amigo)</span>
+                <input
+                    type="checkbox"
+                    name="sos-contact"
+                    value="carlos">
 
-            </div>
+            </label>
 
-        </article>
+        </section>
 
         <button
-            id="confirm-sos"
-            class="confirm-button"
-            type="button">
+            class="modal-main-button sos-main-button"
+            type="button"
+            id="confirm-sos">
 
             Confirmar SOS
 
         </button>
 
         <button
-            id="cancel-sos"
-            class="cancel-button"
-            type="button">
+            class="modal-cancel-button"
+            type="button"
+            id="cancel-sos">
 
             Cancelar
 
@@ -457,8 +459,6 @@
 
 </div>
 
-
 <script src="../../assets/scripts/alerts/alerts.js"></script>
-
 </body>
 </html>

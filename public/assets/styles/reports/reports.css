@@ -19,17 +19,15 @@
 
 .reports-header{
 
-    background:#0A4DA2;
-
     height:82px;
+
+    background:#0A4DA2;
 
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
 
     padding:18px 18px 14px;
-
-    box-sizing:border-box;
 
 }
 
@@ -52,21 +50,19 @@
 
     border:none;
 
-    background:#FFFFFF;
-
     border-radius:50%;
+
+    background:#FFFFFF;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    cursor:pointer;
-
 }
 
 .notification-button img{
 
-    width:17px;
+    width:14px;
     height:17px;
 
 }
@@ -77,24 +73,25 @@
 
     overflow-y:auto;
 
-    padding:16px;
+    padding:18px;
 
-    padding-bottom:95px;
+    padding-bottom:100px;
 
 }
 
 .new-report-button{
 
     width:100%;
+
     height:52px;
-
-    background:#E53935;
-
-    color:#FFFFFF;
 
     border:none;
 
-    border-radius:16px;
+    border-radius:18px;
+
+    background:#0A4DA2;
+
+    color:#FFFFFF;
 
     display:flex;
     justify-content:center;
@@ -106,16 +103,14 @@
 
     font-weight:700;
 
-    cursor:pointer;
-
     margin-bottom:18px;
 
 }
 
 .new-report-button img{
 
-    width:22px;
-    height:22px;
+    width: 20px;
+    height:20px;
 
 }
 
@@ -125,7 +120,7 @@
 
     background:#FFFFFF;
 
-    border-radius:18px;
+    border-radius:16px;
 
     padding:5px;
 
@@ -137,21 +132,19 @@
 
     flex:1;
 
+    height:40px;
+
     border:none;
 
     background:transparent;
 
-    height:40px;
+    border-radius:12px;
 
-    border-radius:14px;
+    color:#64748B;
 
     font-size:13px;
 
     font-weight:600;
-
-    color:#5E6A7D;
-
-    cursor:pointer;
 
     transition:.2s;
 
@@ -168,6 +161,7 @@
 .reports-section{
 
     display:flex;
+
     flex-direction:column;
 
     gap:14px;
@@ -183,11 +177,20 @@
     padding:14px 16px;
 
     display:flex;
+    justify-content:space-between;
     align-items:center;
 
-    gap:14px;
-
     box-shadow:0 2px 8px rgba(0,0,0,.05);
+
+}
+
+.report-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
 
 }
 
@@ -198,7 +201,7 @@
 
     border-radius:14px;
 
-    background:#EEF5FF;
+    background:#F4F6FB;
 
     display:flex;
     justify-content:center;
@@ -217,17 +220,19 @@
 
 }
 
-.report-info{
+.report-information{
 
-    flex:1;
+    display:flex;
+
+    flex-direction:column;
 
 }
 
-.report-info h3{
+.report-information h3{
 
     margin:0;
 
-    color:#1E293B;
+    color:#1F2937;
 
     font-size:15px;
 
@@ -235,20 +240,38 @@
 
 }
 
-.report-info p{
+.report-information p{
 
     margin-top:4px;
 
-    color:#64748B;
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#6B7280;
 
     font-size:12px;
 
 }
 
-.report-details{
+.report-points{
+
+    color:#22C55E;
+
+    font-weight:700;
+
+    font-size:11px;
+
+}
+
+.report-right{
 
     display:flex;
+
     flex-direction:column;
+
     align-items:flex-end;
 
     gap:8px;
@@ -263,7 +286,7 @@
 
 }
 
-.risk-tag{
+.risk{
 
     padding:5px 10px;
 
@@ -275,7 +298,7 @@
 
 }
 
-.risk-tag.high{
+.risk.high{
 
     background:#FFE5E5;
 
@@ -283,17 +306,17 @@
 
 }
 
-.risk-tag.medium{
+.risk.medium{
 
-    background:#FFF4D6;
+    background:#FFF2D8;
 
     color:#D97706;
 
 }
 
-.risk-tag.low{
+.risk.low{
 
-    background:#E8F7EC;
+    background:#E9F9EE;
 
     color:#16A34A;
 
@@ -301,19 +324,141 @@
 
 .achievement-card{
 
-    margin-top:10px;
+    margin-top:4px;
 
-    border-radius:18px;
+    background:linear-gradient(135deg,#6B5CFF,#4A6EF5);
+
+    border-radius:20px;
+
+    padding:18px;
+
+    color:#FFFFFF;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.achievement-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.achievement-icon{
+
+    width:52px;
+    height:52px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.12);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.achievement-icon img{
+
+    width:30px;
+    height:30px;
+
+    object-fit:contain;
+
+}
+
+.achievement-information{
+
+    flex:1;
+
+}
+
+.achievement-information h3{
+
+    margin:0;
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+
+.achievement-information span{
+
+    display:block;
+
+    margin-top:3px;
+
+    font-size:12px;
+
+    color:#E4E8FF;
+
+}
+
+.achievement-description{
+
+    margin:0;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    color:#FFFFFF;
+
+}
+
+.achievement-progress{
+
+    width:100%;
+
+    height:8px;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:20px;
 
     overflow:hidden;
 
 }
 
-.achievement-card img{
+.achievement-progress-fill{
 
-    width:100%;
+    width:55%;
 
-    display:block;
+    height:100%;
+
+    background:#FFD54F;
+
+    border-radius:20px;
+
+}
+
+.achievement-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:11px;
+
+}
+
+.achievement-footer strong{
+
+    font-size:13px;
+
+    color:#FFD54F;
 
 }
 
@@ -321,9 +466,8 @@
 
     position:fixed;
 
-    bottom:0;
-
     left:50%;
+    bottom:0;
 
     transform:translateX(-50%);
 
@@ -344,7 +488,7 @@
 
     box-sizing:border-box;
 
-    z-index:999;
+    z-index:9999;
 
 }
 
@@ -413,15 +557,16 @@
 
 .nav-active-icon span{
 
+    margin:0;
+
     color:#0A4DA2;
 
     font-size:10px;
 
     font-weight:700;
 
-    margin:0;
-
 }
+
 
 .reports-content::-webkit-scrollbar{
 

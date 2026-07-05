@@ -1,34 +1,25 @@
-const allReportsButton = document.getElementById("allReports");
-const myReportsButton = document.getElementById("myReports");
+const allReportsButton = document.getElementById("allReportsButton");
+const myReportsButton = document.getElementById("myReportsButton");
 
 const allReportsSection = document.getElementById("allReportsSection");
 const myReportsSection = document.getElementById("myReportsSection");
 
-if (
-    allReportsButton &&
-    myReportsButton &&
-    allReportsSection &&
-    myReportsSection
-) {
+allReportsButton.addEventListener("click", () => {
 
-    allReportsButton.addEventListener("click", () => {
+    allReportsButton.classList.add("active");
+    myReportsButton.classList.remove("active");
 
-        allReportsButton.classList.add("active");
-        myReportsButton.classList.remove("active");
+    allReportsSection.style.display = "flex";
+    myReportsSection.style.display = "none";
 
-        allReportsSection.hidden = false;
-        myReportsSection.hidden = true;
+});
 
-    });
+myReportsButton.addEventListener("click", () => {
 
-    myReportsButton.addEventListener("click", () => {
+    myReportsButton.classList.add("active");
+    allReportsButton.classList.remove("active");
 
-        myReportsButton.classList.add("active");
-        allReportsButton.classList.remove("active");
+    allReportsSection.style.display = "none";
+    myReportsSection.style.display = "flex";
 
-        myReportsSection.hidden = false;
-        allReportsSection.hidden = true;
-
-    });
-
-}
+});

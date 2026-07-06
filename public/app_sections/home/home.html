@@ -96,7 +96,10 @@
             </button>
 
             <button class="map-marker marker-chat" type="button" aria-label="Abrir asistente">
-                <span>☵</span>
+                <section class="map-section">
+    <button class="marker-chat" type="button" aria-label="Abrir asistente">
+        <span> <img src="../../assets/images/home/chatbot-icon.png" alt="Chatbot"> </span> </button>
+                </section>
             </button>
 
             <div class="current-user-position" aria-label="Ubicación actual">
@@ -126,6 +129,20 @@
             <span class="sos-active-label">SOS</span>
             <span class="sos-active-sublabel">en curso</span>
             <button class="sos-cancel-button" type="button" id="cancel-active-sos" aria-label="Cancelar alerta SOS">×</button>
+        </div>
+
+        <div class="top-notification-banner hidden" id="timer-notification-banner">
+            <div class="notification-icon">
+                <img src="../../assets/images/home/timer-icon.png" alt="Temporizador">
+            </div>
+            <div class="notification-content">
+                <strong class="notification-title">Temporizador de Seguridad</strong>
+                <span class="notification-subtitle" id="timer-notification-time">15:00</span>
+            </div>
+            <button class="notification-close-btn" type="button" id="close-timer-notification" aria-label="Eliminar notificación">×</button>
+            <div class="notification-progress-track">
+                <div class="notification-progress-bar" id="timer-progress-bar"></div>
+            </div>
         </div>
 
         <nav class="bottom-navigation">
@@ -594,7 +611,7 @@
             <div class="modal-handle"></div>
             <button class="close-modal-button" type="button" id="close-timer-modal" aria-label="Cerrar">×</button>
             <header class="modal-header">
-                <img src="../../assets/images/home/timer_button.png" alt="Temporizador">
+                <img src="../../assets/images/home/timer-icon.png" alt="Temporizador">
                 <div>
                     <h2>Temporizador de Seguridad</h2>
                     <p>Alerta automática si no confirmas</p>
@@ -605,9 +622,12 @@
             </p>
             <p class="timer-selected-time">Tiempo límite: <strong id="selected-time">15 min</strong></p>
             <div class="timer-range-container">
-                <input type="range" id="security-time" name="security-time" min="5" max="60" value="15" step="5">
+                <input type="range" id="security-time" name="security-time" min="0" max="3" value="1" step="1">
                 <div class="timer-range-labels">
-                    <span>5 min</span><strong>SOS</strong><span>60 min</span>
+                    <span class="range-tick" data-value="0">5 min</span>
+                    <span class="range-tick" data-value="1">15 min</span>
+                    <span class="range-tick" data-value="2">30 min</span>
+                    <span class="range-tick" data-value="3">60 min</span>
                 </div>
             </div>
             <button class="modal-main-button timer-main-button" type="button" id="start-timer">Iniciar Temporizador</button>

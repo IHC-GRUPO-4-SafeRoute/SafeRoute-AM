@@ -75,6 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('close-share-modal')?.addEventListener('click', () => closeModal(shareModal));
     document.getElementById('close-timer-modal')?.addEventListener('click', () => closeModal(timerModal));
     document.getElementById('cancel-timer')?.addEventListener('click', () => closeModal(timerModal));
+    openTimerBtn?.addEventListener('click', () => {
+        resetTimerModal();
+        openModal(timerModal);
+    });
 
     // ====== Compartir Ubicación ======
     const shareContactCheckboxes = document.querySelectorAll('input[name="share-contact"]');
@@ -133,6 +137,95 @@ document.addEventListener('DOMContentLoaded', () => {
         shareToastOverlay?.classList.add('hidden');
         clearTimeout(shareToastTimeout);
     });
+
+    // ====== Temporizador de Seguridad ======
+    const timerPresets = [5, 15, 30, 60]; // minutos permitidos
+    const securityTimeInput = document.getElementById('security-time');
+    const selectedTimeLabel = document.getElementById('selected-time');
+    const rangeTicks = document.querySelectorAll('.range-tick');
+
+    const timerNotificationBanner = document.getElementById('timer-notification-banner');
+    const timerNotificationTime = document.getElementById('timer-notification-time');
+    const timerProgressBar = document.getElementById('timer-progress-bar');
+    const closeTimerNotificationBtn = document.getElementById('close-timer-notification');
+
+    let timerCountdownInterval = null;
+    let timerRemainingSeconds = 0;
+
+    function formatTimerClock(totalSeconds) {
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    function updateActiveTick(index) {
+        rangeTicks.forEach((tick) => {
+            tick.classList.toggle('active', Number(tick.dataset.value) === index);
+        });
+    }
+
+    function resetTimerModal() {
+        securityTimeInput.value = 1; // 15 min por defecto
+        selectedTimeLabel.textContent = `${timerPresets[1]} min`;
+        updateActiveTick(1);
+    }
+
+    securityTimeInput?.addEventListener('input', () => {
+        const index = Number(securityTimeInput.value);
+        selectedTimeLabel.textContent = `${timerPresets[index]} min`;
+        updateActiveTick(index);
+    });
+
+    function stopTimerCountdown() {
+        clearInterval(timerCountdownInterval);
+        timerCountdownInterval = null;
+    }
+
+    function hideTimerNotification() {
+        stopTimerCountdown();
+        timerNotificationBanner.classList.remove('show');
+        setTimeout(() => timerNotificationBanner.classList.add('hidden'), 400);
+    }
+
+    function showTimerNotification(minutes) {
+        timerRemainingSeconds = minutes * 60;
+        timerNotificationTime.textContent = formatTimerClock(timerRemainingSeconds);
+
+        // Mostrar la notificación con animación de deslizamiento desde arriba
+        timerNotificationBanner.classList.remove('hidden');
+        void timerNotificationBanner.offsetWidth; // fuerza reflow para que la transición se aplique
+        timerNotificationBanner.classList.add('show');
+
+        // Animación de la barra de progreso reduciéndose durante todo el tiempo elegido
+        timerProgressBar.style.transition = 'none';
+        timerProgressBar.style.width = '100%';
+        void timerProgressBar.offsetWidth;
+        timerProgressBar.style.transition = `width ${timerRemainingSeconds}s linear`;
+        timerProgressBar.style.width = '0%';
+
+        stopTimerCountdown();
+        timerCountdownInterval = setInterval(() => {
+            timerRemainingSeconds -= 1;
+
+            if (timerRemainingSeconds <= 0) {
+                timerNotificationTime.textContent = '00:00';
+                stopTimerCountdown();
+                setTimeout(hideTimerNotification, 1500);
+                return;
+            }
+
+            timerNotificationTime.textContent = formatTimerClock(timerRemainingSeconds);
+        }, 1000);
+    }
+
+    document.getElementById('start-timer')?.addEventListener('click', () => {
+        const index = Number(securityTimeInput.value);
+        const minutes = timerPresets[index];
+        closeModal(timerModal);
+        showTimerNotification(minutes);
+    });
+
+    closeTimerNotificationBtn?.addEventListener('click', hideTimerNotification);
 
     const filterOptions = document.querySelectorAll('.filter-option');
     filterOptions.forEach(option => {

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Reporte | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/reports/reports-form.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- HEADER -->
+    <header class="form-header">
+
+        <button class="back-button">
+            <img src="../../assets/images/reports/back button.png" alt="Back">
+        </button>
+
+        <div class="header-title">
+            <h2>Nuevo reporte</h2>
+            <span>Ayuda a la comunidad</span>
+        </div>
+
+        <button class="notif-button">
+            <img src="../../assets/images/reports/notification icon.png" alt="Notificaciones">
+        </button>
+
+    </header>
+
+    <main class="report-form-page">
+
+        <!-- TIPO DE INCIDENTE -->
+        <section class="form-section">
+
+            <h3>Tipo de incidente *</h3>
+
+            <div class="incident-grid">
+
+                <div class="incident-option asalto" data-type="asalto">
+                    <img src="../../assets/images/reports/report-assault-default.png"
+                        data-default="../../assets/images/reports/report-assault-default.png"
+                        data-selected="../../assets/images/reports/report-assault-selected.png">
+                    <span>Asalto</span>
+                </div>
+
+                <div class="incident-option violencia" data-type="violencia">
+                    <img src="../../assets/images/reports/report-violence-default.png"
+                        data-default="../../assets/images/reports/report-violence-default.png"
+                        data-selected="../../assets/images/reports/report-violence-selected.png">
+                    <span>Violencia</span>
+                </div>
+
+                <div class="incident-option iluminacion" data-type="iluminacion">
+                    <img src="../../assets/images/reports/report-lighting-default.png"
+                        data-default="../../assets/images/reports/report-lighting-default.png"
+                        data-selected="../../assets/images/reports/report-lighting-selected.png">
+                    <span>Iluminación</span>
+                </div>
+
+                <div class="incident-option sospechoso" data-type="sospechoso">
+                    <img src="../../assets/images/reports/report-suspicious-default.png"
+                        data-default="../../assets/images/reports/report-suspicious-default.png"
+                        data-selected="../../assets/images/reports/report-suspicious-selected.png">
+                    <span>Sospechoso</span>
+                </div>
+
+                <div class="incident-option accidente" data-type="accidente">
+                    <img src="../../assets/images/reports/report-accident-default.png"
+                        data-default="../../assets/images/reports/report-accident-default.png"
+                        data-selected="../../assets/images/reports/report-accident-selected.png">
+                    <span>Accidente</span>
+                </div>
+
+                <div class="incident-option otro" data-type="otro">
+                    <img src="../../assets/images/reports/report-other-default.png"
+                        data-default="../../assets/images/reports/report-other-default.png"
+                        data-selected="../../assets/images/reports/report-other-selected.png">
+                    <span>Otro</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NIVEL DE RIESGO -->
+        <section class="form-section">
+
+            <h3>Nivel de riesgo</h3>
+
+            <div class="risk-grid">
+
+                <div class="risk-option low" data-level="bajo">Bajo</div>
+                <div class="risk-option medium" data-level="medio">Medio</div>
+                <div class="risk-option high" data-level="alto">Alto</div>
+
+            </div>
+
+        </section>
+
+        <!-- UBICACIÓN (FIX FIGMA STRUCTURE) -->
+        <section class="form-section">
+
+            <h3>Ubicación</h3>
+
+            <div class="location-card">
+
+                <div class="location-left">
+
+                    <img class="location-icon"
+                         src="../../assets/images/reports/ubication icon.png"
+                         alt="Ubicación">
+
+                    <div class="location-text">
+
+                        <p class="location-status">Ubicación: Activa</p>
+                        <p class="location-address">Av. Caminos del Inca 1250, Surco</p>
+
+                    </div>
+
+                </div>
+
+                <button type="button" class="location-button">
+                    Cambiar
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- DESCRIPCIÓN -->
+        <section class="form-section">
+
+            <div class="desc-header">
+
+                <h3>Descripción</h3>
+
+                <button type="button" id="micButton" class="mic-button-outside">
+                    <img src="../../assets/images/reports/mic button.png">
+                </button>
+
+            </div>
+
+            <div class="description-card">
+
+                <textarea
+                    id="description"
+                    class="description-input"
+                    placeholder="Describe lo que sucedió con el mayor detalle posible..">
+                </textarea>
+
+            </div>
+
+        </section>
+
+        <!-- EVIDENCIA -->
+        <section class="form-section">
+
+            <h3>Evidencia</h3>
+
+            <div class="upload-box" id="uploadBox">
+
+                <div class="upload-content">
+
+                    <img src="../../assets/images/reports/upload-image.png" class="upload-icon">
+
+                    <p class="upload-text">Subir imagen</p>
+
+                </div>
+
+                <input type="file" id="evidenceInput" accept="image/*" hidden>
+
+            </div>
+
+     </section>
+            <div class="anonymous-card">
+            <label class="anonymous-content">
+
+                <input type="checkbox" id="anonymousCheck">
+
+                <div class="anonymous-text">
+                    <strong>Reporte anónimo</strong>
+                    <span>Tu identidad no será revelada en el reporte público</span>
+                </div>
+
+            </label>
+        </div>
+
+        <!-- BOTÓN -->
+        <section class="form-section">
+
+            <button type="button" id="submitReport" class="submit-button">
+                Enviar Reporte
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<nav class="bottom-navigation">
+
+    <!-- INICIO -->
+    <a href="../home/home.html" class="nav-item">
+        <img src="../../assets/images/reports/home icon nav.png" alt="Inicio">
+        <span>Inicio</span>
+    </a>
+
+    <!-- RUTAS -->
+    <a href="../routes/routes.html" class="nav-item">
+        <img src="../../assets/images/reports/routes icon nav.png" alt="Rutas">
+        <span>Rutas</span>
+    </a>
+
+    <!-- ALERTAS -->
+    <a href="../alerts/alerts.html" class="nav-item">
+        <img src="../../assets/images/reports/alerts icon nav.png" alt="Alertas">
+        <span>Alertas</span>
+    </a>
+
+    <!-- REPORTES (ACTIVO) -->
+    <a href="#" class="nav-item active">
+
+        <div class="nav-active-icon">
+
+            <img src="../../assets/images/reports/reports icon nav.png" alt="Reportes">
+            <span>Reportes</span>
+
+        </div>
+
+    </a>
+
+    <!-- PERFIL -->
+    <a href="../profile/profile.html" class="nav-item">
+        <img src="../../assets/images/reports/profile icon nav.png" alt="Perfil">
+        <span>Perfil</span>
+    </a>
+
+</nav>
+
+
+<div class="modal-overlay" id="micModal">
+
+    <section class="bottom-modal mic-modal">
+
+        <div class="modal-handle"></div>
+
+        <header class="modal-header">
+            <h2>Permisos de micrófono</h2>
+        </header>
+
+        <p class="modal-description">
+            Acceso a micrófono para esta app
+        </p>
+
+        <button class="modal-main-button" id="allowMic">
+            Permitir
+        </button>
+
+        <button class="modal-cancel-button" id="cancelMic">
+            Cancelar
+        </button>
+
+    </section>
+
+</div>
+
+<script src="../../assets/scripts/reports/reports-form.js"></script>
+
+</body>
+</html>

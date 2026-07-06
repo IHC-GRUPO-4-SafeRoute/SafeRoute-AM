@@ -1,7 +1,3 @@
-/* =========================
-   APP CONTAINER (430px FRAME)
-========================= */
-
 .app-container {
     max-width: 430px;
     width: 100%;
@@ -21,10 +17,6 @@
 .report-form-page > section {
     margin-bottom: 12px;
 }
-
-/* =========================
-   HEADER (TOP BAR)
-========================= */
 
 .form-header {
     display: flex;
@@ -85,19 +77,11 @@
     object-fit: contain;
 }
 
-/* =========================
-   CARDS BASE
-========================= */
-
 .form-card {
     background: white;
     border-radius: 16px;
     padding: 14px;
 }
-
-/* =========================
-   TITULOS
-========================= */
 
 h3 {
     margin: 0 0 10px 0;
@@ -106,21 +90,16 @@ h3 {
     color: #111;
 }
 
-/* =========================
-   INCIDENTES
-========================= */
-
 .incident-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
 }
 
-/* cada card */
 .incident-option {
     background: #f4f7fb;
 
-    border: 1px solid #b5b5b5; /* gris más oscuro como quieres */
+    border: 1px solid #b5b5b5; 
 
     border-radius: 16px;
     padding: 14px 10px;
@@ -140,79 +119,54 @@ h3 {
     transition: 0.2s ease;
 }
 
-/* icono */
 .incident-option img {
     width: 20px;
     height: 20px;
 }
 
-/* texto */
 .incident-option span {
     font-size: 12px;
 }
 
-/* estado seleccionado base (si lo usas) */
 .incident-option.selected {
     transform: scale(1.02);
 }
 
-/* =========================
-   ASALTO (ROJO)
-========================= */
 .incident-option.asalto.selected {
     background: #ffe5e5;
     border-color: #e53935;
     color: #e53935;
 }
 
-/* =========================
-   VIOLENCIA (MORADO)
-========================= */
 .incident-option.violencia.selected {
     background: #efe6ff;
     border-color: #7e57c2;
     color: #7e57c2;
 }
 
-/* =========================
-   ILUMINACIÓN (AZUL)
-========================= */
 .incident-option.iluminacion.selected {
     background: #e3f0ff;
     border-color: #2b6cff;
     color: #2b6cff;
 }
 
-/* =========================
-   SOSPECHOSO (NARANJA)
-========================= */
 .incident-option.sospechoso.selected {
     background: #fff3e0;
     border-color: #fb8c00;
     color: #fb8c00;
 }
 
-/* =========================
-   ACCIDENTE (VERDE)
-========================= */
 .incident-option.accidente.selected {
     background: #e6f7ea;
     border-color: #2e7d32;
     color: #2e7d32;
 }
 
-/* =========================
-   OTRO (NEGRO/GRIS)
-========================= */
 .incident-option.otro.selected {
     background: #eeeeee;
     border-color: #424242;
     color: #424242;
 }
-
-/* =========================
-   RIESGO
-========================= */
 
 .risk-grid {
     display: flex;
@@ -253,11 +207,6 @@ h3 {
     border: 2px solid #b00020;
 }
 
-/* =========================
-   UBICACIÓN
-========================= */
-
-/* CARD PRINCIPAL */
 .location-card {
     display: flex;
     justify-content: space-between;
@@ -270,26 +219,22 @@ h3 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-/* LADO IZQUIERDO (ICONO + TEXTO) */
 .location-left {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* ICONO */
 .location-icon {
     width: 14px;
     height: 16px;
 }
 
-/* TEXTO PRINCIPAL */
 .location-text {
     display: flex;
     flex-direction: column;
 }
 
-/* ESTADO (AZUL) */
 .location-status {
     font-size: 13px;
     color: #2b6cff;
@@ -297,14 +242,12 @@ h3 {
     margin: 0;
 }
 
-/* DIRECCIÓN */
 .location-address {
     font-size: 12px;
     color: #666;
     margin: 0;
 }
 
-/* BOTÓN CAMBIAR */
 .location-button {
     background: none;
     border: none;
@@ -315,11 +258,6 @@ h3 {
     padding: 4px 8px;
 }
 
-/* =========================
-   DESCRIPCIÓN
-========================= */
-
-/* HEADER DESCRIPCIÓN (TITULO + MIC FUERA) */
 .desc-header {
     display: flex;
     justify-content: space-between;
@@ -327,7 +265,6 @@ h3 {
     margin-bottom: 8px;
 }
 
-/* MIC FUERA DEL CARD */
 .mic-button-outside {
     width: 24px;
     height: 24px;
@@ -348,7 +285,6 @@ h3 {
     height: 16px;
 }
 
-/* CARD BLANCO */
 .description-card {
     background: #ffffff;
     border-radius: 14px;
@@ -357,7 +293,6 @@ h3 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-/* TEXTAREA LIMPIO */
 .description-input {
     width: 100%;
     height: 110px;
@@ -373,11 +308,6 @@ h3 {
     color: #111;
 }
 
-
-/* =========================
-   UPLOAD
-========================= */
-
 .upload-box {
     background: #f6f8fc;
     border: 2px dashed #cfd8e3;
@@ -392,7 +322,6 @@ h3 {
     cursor: pointer;
 }
 
-/* CONTENIDO CENTRADO */
 .upload-content {
     display: flex;
     flex-direction: column;
@@ -400,23 +329,17 @@ h3 {
     gap: 10px;
 }
 
-/* ICONO */
 .upload-icon {
     width: 16px;
     height: 16px;
     opacity: 0.8;
 }
 
-/* TEXTO */
 .upload-text {
     font-size: 13px;
     color: #666;
     text-align: center;
 }
-
-/* =========================
-   CHECKBOX
-========================= */
 
 .anonymous-card {
     background: #cfe9ff;
@@ -453,10 +376,6 @@ h3 {
     color: #555;
 }
 
-/* =========================
-   BUTTON
-========================= */
-
 .submit-button {
     width: 100%;
     padding: 15px;
@@ -467,12 +386,6 @@ h3 {
     font-weight: 600;
     font-size: 14px;
 }
-
-
-
-/* =========================
-   OVERLAY (FIX REAL)
-========================= */
 
 .modal-overlay {
     position: fixed;
@@ -496,10 +409,6 @@ h3 {
     display: flex;
 }
 
-/* =========================
-   BOTTOM SHEET
-========================= */
-
 .bottom-modal {
     width: 100%;
     max-width: 430px;
@@ -512,19 +421,14 @@ h3 {
 
     box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
 
-    transform: translateY(100%); /* 🔥 importante */
+    transform: translateY(100%); 
     animation: slideUp 0.28s ease-out forwards;
 }
 
-/* altura controlada */
 .mic-modal {
     max-height: 45vh;
     overflow: hidden;
 }
-
-/* =========================
-   HANDLE
-========================= */
 
 .modal-handle {
     width: 40px;
@@ -535,10 +439,6 @@ h3 {
 
     margin: 0 auto 14px;
 }
-
-/* =========================
-   HEADER
-========================= */
 
 .modal-header {
     display: flex;
@@ -559,10 +459,6 @@ h3 {
     margin: 0;
 }
 
-/* =========================
-   TEXTO
-========================= */
-
 .modal-description {
     text-align: center;
 
@@ -571,10 +467,6 @@ h3 {
 
     margin: 12px 0 18px;
 }
-
-/* =========================
-   BOTONES
-========================= */
 
 .modal-main-button {
     width: 100%;
@@ -606,10 +498,6 @@ h3 {
     cursor: pointer;
 }
 
-/* =========================
-   ANIMACIÓN CORRECTA
-========================= */
-
 @keyframes slideUp {
     from {
         transform: translateY(100%);
@@ -618,10 +506,6 @@ h3 {
         transform: translateY(0);
     }
 }
-
-/* =========================
-   NAVBAR
-========================= */
 
 .bottom-navigation{
 

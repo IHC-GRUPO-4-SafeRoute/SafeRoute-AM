@@ -14,22 +14,21 @@ const allowButton = document.getElementById("allowMic");
 const uploadBox = document.getElementById("uploadBox");
 const evidenceInput = document.getElementById("evidenceInput");
 
-/* =========================
-   ESTADO GLOBAL
-========================= */
+const anonymousCheck = document.getElementById("anonymousCheck");
+
+const submitBtn = document.getElementById("submitReport");
 
 const reportState = {
     incidentType: null,
     riskLevel: null,
+    location: "Av. Caminos del Inca 1250, Surco",
     description: "",
-    evidence: null
+    evidence: null,
+    anonymous: false
 };
 
-/* =========================
-   INCIDENTES
-========================= */
-
 incidentOptions.forEach(option => {
+
     option.addEventListener("click", () => {
 
         incidentOptions.forEach(o => {
@@ -48,11 +47,8 @@ incidentOptions.forEach(option => {
     });
 });
 
-/* =========================
-   RIESGO
-========================= */
-
 riskOptions.forEach(option => {
+
     option.addEventListener("click", () => {
 
         riskOptions.forEach(o => o.classList.remove("selected"));
@@ -63,30 +59,17 @@ riskOptions.forEach(option => {
     });
 });
 
-/* =========================
-   UBICACIÓN
-========================= */
-
 if (locationButton) {
     locationButton.addEventListener("click", () => {
-        console.log("Cambiar ubicación (GPS futuro)");
+        console.log("Ubicación fija:", reportState.location);
     });
 }
-
-/* =========================
-   DESCRIPCIÓN
-========================= */
 
 if (descriptionInput) {
     descriptionInput.addEventListener("input", (e) => {
         reportState.description = e.target.value;
     });
 }
-
-
-/* =========================
-   EVIDENCIA
-========================= */
 
 if (uploadBox && evidenceInput) {
 
@@ -95,22 +78,25 @@ if (uploadBox && evidenceInput) {
     });
 
     evidenceInput.addEventListener("change", (e) => {
+
         const file = e.target.files[0];
 
         if (file) {
             reportState.evidence = file;
-            console.log("Imagen cargada:", file.name);
         }
     });
 }
 
-/* =========================
-   MIC MODAL
-========================= */
-
 if (micButton && micModal) {
+
     micButton.addEventListener("click", () => {
         micModal.classList.add("show");
+    });
+
+    micModal.addEventListener("click", (e) => {
+        if (e.target === micModal) {
+            micModal.classList.remove("show");
+        }
     });
 }
 
@@ -122,16 +108,64 @@ if (cancelButton) {
 
 if (allowButton) {
     allowButton.addEventListener("click", () => {
-        console.log("Micrófono permitido");
         micModal.classList.remove("show");
     });
 }
 
-/* cerrar al click fuera */
-if (micModal) {
-    micModal.addEventListener("click", (e) => {
-        if (e.target === micModal) {
-            micModal.classList.remove("show");
-        }
+if (anonymousCheck) {
+    anonymousCheck.addEventListener("change", (e) => {
+        reportState.anonymous = e.target.checked;
     });
+}
+
+if (submitBtn) {
+    submitBtn.addEventListener("click", handleSubmit);
+}
+
+function handleSubmit() {
+
+    if (!isFormValid()) {
+        window.location.href = "report-failed.html";
+        return;
+    }
+
+    const fakeServerError = Math.random() < 0.2;
+
+    if (fakeServerError) {
+        window.location.href = "report-error.html";
+        return;
+    }
+
+    saveReport();
+
+    window.location.href = "report-success.html";
+}
+
+function isFormValid() {
+    return (
+        reportState.incidentType &&
+        reportState.riskLevel &&
+        reportState.description &&
+        reportState.description.trim().length > 0
+    );
+}
+
+function saveReport() {
+
+    const newReport = {
+        id: Date.now(),
+        type: reportState.incidentType,
+        risk: reportState.riskLevel,
+        location: reportState.location,
+        description: reportState.description,
+        evidence: reportState.evidence ? reportState.evidence.name : null,
+        anonymous: reportState.anonymous,
+        date: new Date().toISOString()
+    };
+
+    const reports = JSON.parse(localStorage.getItem("reports")) || [];
+
+    reports.push(newReport);
+
+    localStorage.setItem("reports", JSON.stringify(reports));
 }

@@ -158,14 +158,10 @@
 
 }
 
-.reports-section{
-
+#allReportsSection{
     display:flex;
-
     flex-direction:column;
-
-    gap:14px;
-
+    gap:12px;
 }
 
 .report-card{
@@ -287,39 +283,27 @@
 }
 
 .risk{
-
     padding:5px 10px;
-
     border-radius:20px;
-
     font-size:10px;
-
     font-weight:700;
-
+    display:inline-flex;
+    align-items:center;
 }
 
 .risk.high{
-
     background:#FFE5E5;
-
     color:#D92D20;
-
 }
 
 .risk.medium{
-
     background:#FFF2D8;
-
     color:#D97706;
-
 }
 
 .risk.low{
-
     background:#E9F9EE;
-
     color:#16A34A;
-
 }
 
 .achievement-card{
@@ -590,4 +574,34 @@
 
     }
 
+}
+
+#myReportsSection{
+    display:flex;
+    flex-direction:column;
+    margin-top:14px;
+}
+
+#myReportsList{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:12px;
+    margin-top:14px;
+}
+
+.report-card{
+    width:100%;
+}
+
+.reports-content{
+    overflow-y:auto;
+}
+
+.report-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:6px;
+    min-width:90px;
 }

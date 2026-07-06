@@ -1,4 +1,3 @@
-
 const incidentOptions = document.querySelectorAll(".incident-option");
 const riskOptions = document.querySelectorAll(".risk-option");
 
@@ -28,7 +27,6 @@ const reportState = {
 };
 
 incidentOptions.forEach(option => {
-
     option.addEventListener("click", () => {
 
         incidentOptions.forEach(o => {
@@ -48,7 +46,6 @@ incidentOptions.forEach(option => {
 });
 
 riskOptions.forEach(option => {
-
     option.addEventListener("click", () => {
 
         riskOptions.forEach(o => o.classList.remove("selected"));
@@ -72,23 +69,17 @@ if (descriptionInput) {
 }
 
 if (uploadBox && evidenceInput) {
-
     uploadBox.addEventListener("click", () => {
         evidenceInput.click();
     });
 
     evidenceInput.addEventListener("change", (e) => {
-
         const file = e.target.files[0];
-
-        if (file) {
-            reportState.evidence = file;
-        }
+        if (file) reportState.evidence = file;
     });
 }
 
 if (micButton && micModal) {
-
     micButton.addEventListener("click", () => {
         micModal.classList.add("show");
     });
@@ -136,7 +127,7 @@ function handleSubmit() {
         return;
     }
 
-    saveReport();
+    sessionStorage.setItem("pendingReport", JSON.stringify(reportState));
 
     window.location.href = "report-success.html";
 }
@@ -148,24 +139,4 @@ function isFormValid() {
         reportState.description &&
         reportState.description.trim().length > 0
     );
-}
-
-function saveReport() {
-
-    const newReport = {
-        id: Date.now(),
-        type: reportState.incidentType,
-        risk: reportState.riskLevel,
-        location: reportState.location,
-        description: reportState.description,
-        evidence: reportState.evidence ? reportState.evidence.name : null,
-        anonymous: reportState.anonymous,
-        date: new Date().toISOString()
-    };
-
-    const reports = JSON.parse(localStorage.getItem("reports")) || [];
-
-    reports.push(newReport);
-
-    localStorage.setItem("reports", JSON.stringify(reports));
 }

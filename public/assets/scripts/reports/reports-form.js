@@ -2,7 +2,6 @@ const incidentOptions = document.querySelectorAll(".incident-option");
 const riskOptions = document.querySelectorAll(".risk-option");
 
 const locationButton = document.querySelector(".location-button");
-
 const descriptionInput = document.getElementById("description");
 
 const micButton = document.getElementById("micButton");
@@ -14,7 +13,6 @@ const uploadBox = document.getElementById("uploadBox");
 const evidenceInput = document.getElementById("evidenceInput");
 
 const anonymousCheck = document.getElementById("anonymousCheck");
-
 const submitBtn = document.getElementById("submitReport");
 
 const reportState = {
@@ -31,7 +29,6 @@ incidentOptions.forEach(option => {
 
         incidentOptions.forEach(o => {
             o.classList.remove("selected");
-
             const img = o.querySelector("img");
             if (img) img.src = img.dataset.default;
         });
@@ -58,7 +55,7 @@ riskOptions.forEach(option => {
 
 if (locationButton) {
     locationButton.addEventListener("click", () => {
-        console.log("Ubicación fija:", reportState.location);
+        console.log("Ubicación:", reportState.location);
     });
 }
 
@@ -120,14 +117,27 @@ function handleSubmit() {
         return;
     }
 
-    const fakeServerError = Math.random() < 0.2;
+    const fakeError = Math.random() < 0.2;
 
-    if (fakeServerError) {
+    if (fakeError) {
         window.location.href = "report-error.html";
         return;
     }
 
-    sessionStorage.setItem("pendingReport", JSON.stringify(reportState));
+    const newReport = {
+        id: Date.now(),
+        type: reportState.incidentType,
+        risk: reportState.riskLevel,
+        location: reportState.location,
+        description: reportState.description,
+        evidence: reportState.evidence ? reportState.evidence.name : null,
+        anonymous: reportState.anonymous,
+        date: new Date().toISOString()
+    };
+
+    const reports = JSON.parse(localStorage.getItem("reports")) || [];
+    reports.push(newReport);
+    localStorage.setItem("reports", JSON.stringify(reports));
 
     window.location.href = "report-success.html";
 }

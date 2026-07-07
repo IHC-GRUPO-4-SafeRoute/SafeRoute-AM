@@ -69,13 +69,82 @@ acceptPinButton.addEventListener("click", function () {
     }
 
 
-    localStorage.setItem(
-        "saferouteRecoveryPin",
-        selectedPinNumbers.join("")
-    );
+    const pinOrigin =
+        localStorage.getItem("saferoutePinOrigin");
 
 
-    window.location.href = "new_password.html";
+    /*
+        Flujo de inicio de sesión
+    */
+
+    if (pinOrigin === "login") {
+
+        const pendingUser =
+            localStorage.getItem("saferoutePendingUser");
+
+
+        if (!pendingUser) {
+
+            pinMessage.textContent =
+                "No se encontró un inicio de sesión pendiente.";
+
+            return;
+        }
+
+
+        /*
+            Después de aceptar el PIN, el usuario
+            ya queda registrado como usuario actual.
+        */
+
+        localStorage.setItem(
+            "saferouteCurrentUser",
+            pendingUser
+        );
+
+
+        localStorage.removeItem(
+            "saferoutePendingUser"
+        );
+
+        localStorage.removeItem(
+            "saferoutePinOrigin"
+        );
+
+
+        window.location.href =
+            "../home/home.html";
+
+        return;
+    }
+
+
+    /*
+        Flujo de recuperación de contraseña
+    */
+
+    if (pinOrigin === "forgot-password") {
+
+        localStorage.setItem(
+            "saferouteRecoveryPin",
+            selectedPinNumbers.join("")
+        );
+
+
+        localStorage.removeItem(
+            "saferoutePinOrigin"
+        );
+
+
+        window.location.href =
+            "new_password.html";
+
+        return;
+    }
+
+
+    pinMessage.textContent =
+        "No se pudo identificar el proceso.";
 
 });
 

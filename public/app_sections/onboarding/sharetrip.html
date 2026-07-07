@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Share Trip | SafeRoute</title>
 
     <link rel="stylesheet" href="../../assets/styles/global.css">
     <link rel="stylesheet" href="../../assets/styles/onboarding/saferoutes.css">
+
 </head>
 
 <body>
 
     <main class="onboarding-page">
 
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe permitir avanzar o saltar el onboarding.
+        -->
+        
         <a href="#" class="skip-button" id="skip-button">Omitir</a>
 
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe mostrar pantallas introductorias
+          sobre las funciones principales.-->
+        
         <section class="onboarding-content">
 
             <img
@@ -34,6 +54,18 @@
 
         </section>
 
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El usuario debe visualizar las pantallas introductorias
+          del onboarding.
+
+        Implementación:
+        - Los indicadores muestran la posición actual del usuario
+          dentro del recorrido de introducción.
+        -->
         <section class="progress-indicator">
 
             <span class="dot"></span>
@@ -43,6 +75,16 @@
 
         </section>
 
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - Al seleccionar la opción "Comenzar", el sistema debe
+          redirigir al usuario a la pantalla principal de la aplicación.
+        -->
+
+        
         <button
             class="primary-button"
             id="next-button"
@@ -50,9 +92,13 @@
             Comenzar
         </button>
 
+
     </main>
+
 
     <script src="../../assets/scripts/onboarding/sharetrip.js"></script>
 
+
 </body>
+
 </html>

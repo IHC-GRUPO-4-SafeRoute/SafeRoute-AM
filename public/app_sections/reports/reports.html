@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reportes | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/reports/reports.css">
+
+</head>
+
+<body>
+
+<main class="reports-page">
+
+    <header class="reports-header">
+
+        <h1>Reportes</h1>
+
+        <button class="notification-button" type="button">
+            <img src="../../assets/images/reports/notification icon.png" alt="Notificaciones">
+        </button>
+
+    </header>
+
+    <section class="reports-content">
+
+        <button id="newReportButton" class="new-report-button">
+            <img src="../../assets/images/reports/add report.png" alt="Nuevo reporte">
+            <span>Nuevo Reporte</span>
+        </button>
+
+
+        <!-- TABS -->
+        <section class="reports-tabs">
+
+            <button id="allReportsButton" class="tab-button active">
+                Todos los reportes
+            </button>
+
+            <button id="myReportsButton" class="tab-button">
+                Mis reportes
+            </button>
+
+        </section>
+
+
+        <section id="allReportsSection" class="reports-section">
+
+            <article class="report-card">
+                <div class="report-left">
+                    <div class="report-icon">
+                        <img src="../../assets/images/reports/violence-card.png">
+                    </div>
+                    <div class="report-information">
+                        <h3>Violencia</h3>
+                        <p>Av. Primavera, Surco</p>
+                    </div>
+                </div>
+
+                <div class="report-right">
+                    <span class="report-time">Hace 10 min</span>
+                    <span class="risk high">Riesgo alto</span>
+                </div>
+            </article>
+
+
+            <article class="report-card">
+                <div class="report-left">
+                    <div class="report-icon">
+                        <img src="../../assets/images/reports/accident-card.png">
+                    </div>
+                    <div class="report-information">
+                        <h3>Accidente</h3>
+                        <p>Av. Velasco, Surco</p>
+                    </div>
+                </div>
+
+                <div class="report-right">
+                    <span class="report-time">Hace 2 horas</span>
+                    <span class="risk low">Riesgo bajo</span>
+                </div>
+            </article>
+
+
+            <article class="report-card">
+                <div class="report-left">
+                    <div class="report-icon">
+                        <img src="../../assets/images/reports/suspicious-card.png">
+                    </div>
+                    <div class="report-information">
+                        <h3>Sospechoso</h3>
+                        <p>Av. Caminos del Inca, Surco</p>
+                    </div>
+                </div>
+
+                <div class="report-right">
+                    <span class="report-time">Hace 2 horas</span>
+                    <span class="risk low">Riesgo bajo</span>
+                </div>
+            </article>
+
+
+            <section class="achievement-card">
+
+                <div class="achievement-header">
+
+                    <div class="achievement-icon">
+                        <img src="../../assets/images/reports/achieves.png">
+                    </div>
+
+                    <div class="achievement-information">
+                        <h3>Impacto Comunitario</h3>
+                        <span>Colaborador Activo</span>
+                    </div>
+
+                </div>
+
+                <p class="achievement-description">
+                    Tus reportes ayudaron a 234 usuarios a evitar zonas peligrosas.
+                </p>
+
+                <div class="achievement-progress">
+                    <div class="achievement-progress-fill"></div>
+                </div>
+
+                <div class="achievement-footer">
+                    <span>Próximo nivel: Guardián</span>
+                    <strong>55%</strong>
+                </div>
+
+            </section>
+
+        </section>
+
+
+            <section
+            id="myReportsSection"
+            class="reports-section"
+            style="display:none;">
+
+            <article class="report-card">
+
+                <div class="report-left">
+
+                    <div class="report-icon">
+                        <img src="../../assets/images/reports/violence-card.png" alt="Violencia">
+                    </div>
+
+                    <div class="report-information">
+                        <h3>Violencia</h3>
+
+                        <p>
+                            Av. Primavera, Surco
+                            <span class="report-points">+5 pts</span>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="report-right">
+                    <span class="report-time">Hace 10 min</span>
+                    <span class="risk high">Riesgo alto</span>
+                </div>
+
+            </article>
+
+            <div id="myReportsList"></div>
+
+            <section class="achievement-card">
+
+                <div class="achievement-header">
+
+                    <div class="achievement-icon">
+                        <img src="../../assets/images/reports/achieves.png" alt="Trofeo">
+                    </div>
+
+                    <div class="achievement-information">
+                        <h3>Impacto Comunitario</h3>
+                        <span>Colaborador Activo</span>
+                    </div>
+
+                </div>
+
+                <p class="achievement-description">
+                    Tus reportes ayudaron a 234 usuarios a evitar zonas peligrosas.
+                </p>
+
+                <div class="achievement-progress">
+                    <div class="achievement-progress-fill"></div>
+                </div>
+
+                <div class="achievement-footer">
+                    <span>Próximo nivel: Guardián</span>
+                    <strong>55%</strong>
+                </div>
+
+            </section>
+
+        </section>
+
+
+    <nav class="bottom-navigation">
+
+        <a class="nav-item" href="../home/home.html">
+            <img src="../../assets/images/reports/home icon nav.png">
+            <span>Inicio</span>
+        </a>
+
+        <a class="nav-item" href="../routes/routes.html">
+            <img src="../../assets/images/reports/routes icon nav.png">
+            <span>Rutas</span>
+        </a>
+
+        <a class="nav-item" href="../alerts/alerts.html">
+            <img src="../../assets/images/reports/alerts icon nav.png">
+            <span>Alertas</span>
+        </a>
+
+        <a class="nav-item active" href="#">
+            <div class="nav-active-icon">
+                <img src="../../assets/images/reports/reports icon nav.png">
+                <span>Reportes</span>
+            </div>
+        </a>
+
+        <a class="nav-item" href="../configuration/profile.html">
+            <img src="../../assets/images/reports/profile icon nav.png">
+            <span>Perfil</span>
+        </a>
+
+    </nav>
+
+</main>
+
+<script src="../../assets/scripts/reports/reports.js"></script>
+
+</body>
+</html>

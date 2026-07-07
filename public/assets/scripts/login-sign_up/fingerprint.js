@@ -34,7 +34,7 @@ useFingerprintButton.addEventListener("click", function () {
 
     setTimeout(function () {
 
-        window.location.href = "home.html";
+        window.location.href = "../home/home.html";
 
     }, 2000);
 

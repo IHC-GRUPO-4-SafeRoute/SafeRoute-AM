@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/notifications/notifications.css">
+</head>
+
+<body>
+
+<main class="notifications-page">
+
+
+    <header class="notifications-header">
+
+        <button class="back-button">
+            <img src="../../assets/images/notifications/back.png" alt="Volver">
+        </button>
+
+        <h1>Notificaciones</h1>
+
+        <div class="notification-bell">
+            <img src="../../assets/images/notifications/bell.png" alt="Notificaciones">
+        </div>
+
+    </header>
+
+
+    <!-- 
+    HU: US22 - Notificación de incidentes cercanos
+
+    Criterio de aceptación:
+    - El sistema debe mostrar alertas de incidentes cercanos
+      ordenadas cronológicamente.
+
+    Implementación:
+    - Se presentan las notificaciones agrupadas por fecha
+      mediante las secciones "Hoy" y "Ayer".
+    -->
+
+    <section class="notifications-content">
+
+
+        <h2 class="section-title">Hoy</h2>
+
+
+        <article class="notification-card">
+
+            <img
+                src="../../assets/images/notifications/calendar.png"
+                class="notification-icon"
+                alt="Calendario">
+
+            <div class="notification-body">
+
+                <h3>¿Te Desviaste De Tu Ruta?</h3>
+
+                <p>Detectamos un cambio en tu trayecto.</p>
+
+                <p>¿Te encuentras bien o deseas recalcular una ruta segura?</p>
+
+                <span class="notification-date">
+                    17:00 - Mayo 24
+                </span>
+
+            </div>
+
+            <button class="notification-status" type="button">
+
+                <img
+                src="../../assets/images/notifications/circle.png"
+                alt="Estado">
+
+            </button>
+
+        </article>
+
+
+
+        <article class="notification-card">
+
+            <img
+                src="../../assets/images/notifications/shelter.png"
+                class="notification-icon"
+                alt="Refugio">
+
+            <div class="notification-body">
+
+                <h3>Tienes Un "Punto De Refugio" Cerca</h3>
+
+                <p>Estás a 50 metros de Inkafarma.</p>
+
+                <p>Cuenta con cámaras activas y personal listo para apoyarte si lo necesitas.</p>
+
+                <span class="notification-date">
+                    17:00 - Mayo 24
+                </span>
+
+            </div>
+
+            <button class="notification-status" type="button">
+
+                <img
+                src="../../assets/images/notifications/circle.png"
+                alt="Estado">
+
+            </button>
+
+        </article>
+
+
+
+        <h2 class="section-title yesterday">Ayer</h2>
+
+
+
+        <article class="notification-card">
+
+            <img
+                src="../../assets/images/notifications/arrival.png"
+                class="notification-icon"
+                alt="Llegada">
+
+            <div class="notification-body">
+
+                <h3>¡Llegada Segura!</h3>
+
+                <p>Lucía, ha llegado a su destino. Gracias por acompañarlo en el último tramo de su ruta.</p>
+
+                <span class="notification-date">
+                    17:00 - Mayo 23
+                </span>
+
+            </div>
+
+            <button class="notification-status" type="button">
+
+                <img
+                src="../../assets/images/notifications/circle.png"
+                alt="Estado">
+
+            </button>
+
+        </article>
+
+
+
+
+        <article class="notification-card">
+
+            <img
+                src="../../assets/images/notifications/search.png"
+                class="notification-icon"
+                alt="Buscar">
+
+            <div class="notification-body">
+
+                <h3>Ayuda A Verificar Tu Zona</h3>
+
+                <p>Un usuario reportó un incidente a pocos metros de tu negocio. ¿Puedes confirmar si la situación ya está controlada?</p>
+
+                <span class="notification-date">
+                    17:00 - Mayo 23
+                </span>
+
+            </div>
+
+            <button class="notification-status" type="button">
+
+                <img
+                src="../../assets/images/notifications/circle.png"
+                alt="Estado">
+
+            </button>
+
+        </article>
+
+
+
+        <!-- 
+        HU: US22 - Notificación de incidentes cercanos
+
+        Criterio de aceptación:
+        - El usuario puede marcar las notificaciones como leídas.
+        - El sistema debe actualizar visualmente el estado
+          de las notificaciones.
+        -->
+
+        <button
+            class="read-all-button"
+            id="read-all-button">
+
+            Marcar Todo Como Leído
+
+        </button>
+
+
+    </section>
+
+
+
+    <nav class="bottom-navigation">
+
+        <a class="nav-item" href="#">
+            <img src="../../assets/images/configuration/home.png" alt="">
+            <span>Inicio</span>
+        </a>
+
+        <a class="nav-item" href="#">
+            <img src="../../assets/images/configuration/route.png" alt="">
+            <span>Rutas</span>
+        </a>
+
+        <a class="nav-item" href="#">
+            <img src="../../assets/images/configuration/alert.png" alt="">
+            <span>Alertas</span>
+        </a>
+
+        <a class="nav-item" href="#">
+            <img src="../../assets/images/configuration/report.png" alt="">
+            <span>Reportes</span>
+        </a>
+
+        <a class="nav-item" href="#">
+            <img src="../../assets/images/home/configuration_icon.png" alt="">
+            <span>Perfil</span>
+        </a>
+
+    </nav>
+
+
+</main>
+
+
+<script src="../../assets/scripts/notifications/notifications.js"></script>
+
+
+</body>
+
+</html>

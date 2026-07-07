@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Location</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/onboarding/location.css">
+
+</head>
+
+<body>
+
+    <main class="onboarding-page">
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe permitir avanzar o saltar el onboarding.
+
+        Implementación:
+        - El botón "Omitir" permite al usuario salir del proceso
+          introductorio y continuar hacia la aplicación.
+        -->
+        <a href="#" class="skip-button">Omitir</a>
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe mostrar pantallas introductorias
+          sobre las funciones principales.
+
+        Implementación:
+        - Se presenta la activación de ubicación como una función
+          necesaria para brindar rutas seguras y alertas relevantes
+          según la zona del usuario.
+        -->
+        <section class="onboarding-content">
+
+            <img
+                src="../../assets/images/onboarding/location.png"
+                class="location-image"
+                alt="Location"
+            >
+
+            <h1 class="onboarding-title">
+                Activa tu ubicación
+            </h1>
+
+            <p class="onboarding-description">
+                Se necesita acceso a tu ubicación
+                para darte rutas seguras y alertas
+                relevantes a tu zona
+            </p>
+
+        </section>
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe permitir al usuario continuar con
+          la configuración inicial de la aplicación.
+
+        Implementación:
+        - Los botones permiten aceptar el acceso a la ubicación
+          o continuar sin habilitar esta función.
+        -->
+        <div class="buttons">
+
+            <button
+                class="primary-button"
+                id="allow-location-button"
+            >
+                Permitir Ubicación
+            </button>
+
+            <button
+                class="secondary-button"
+                id="later-button"
+            >
+                Ahora No
+            </button>
+
+        </div>
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El usuario debe visualizar las pantallas introductorias
+          del onboarding.
+
+        Implementación:
+        - Los indicadores muestran la posición actual del usuario
+          dentro del recorrido de introducción.
+        -->
+        <section class="progress-indicator">
+
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot active"></span>
+
+        </section>
+
+
+        <script src="../../assets/scripts/onboarding/location.js"></script>
+
+    </main>
+
+</body>
+
+</html>

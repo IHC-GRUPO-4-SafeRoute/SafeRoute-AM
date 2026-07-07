@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/onboarding/saferoutes.css">
+</head>
+
+<body>
+
+    <main class="onboarding-page">
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe permitir avanzar o saltar el onboarding.
+
+        Implementación:
+        - El botón "Omitir" permite al usuario salir del proceso
+          introductorio y acceder a la aplicación sin completar
+          todas las pantallas.
+        -->
+        <a href="#" class="skip-button" id="skip-button">Omitir</a>
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe mostrar pantallas introductorias
+          sobre las funciones principales.
+
+        Implementación:
+        - Se presenta la funcionalidad de alertas en tiempo real,
+          permitiendo al usuario conocer una de las funciones
+          principales de SafeRoute.
+        -->
+        <section class="onboarding-content">
+
+            <img
+                src="../../assets/images/onboarding/alerts.png"
+                alt="Recibe alertas en tiempo real"
+                class="onboarding-image"
+            >
+
+            <h1 class="onboarding-title">
+                Recibe alertas en tiempo real
+            </h1>
+
+            <p class="onboarding-description">
+                Mantente informado sobre incidentes
+                cercanos y zonas de riesgo en tu
+                trayecto
+            </p>
+
+        </section>
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El usuario debe visualizar las pantallas introductorias
+          del onboarding.
+
+        Implementación:
+        - Los indicadores muestran la posición actual del usuario
+          dentro del recorrido de introducción.
+        -->
+        <section class="progress-indicator">
+
+            <span class="dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </section>
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe permitir avanzar entre las pantallas
+          introductorias.
+
+        Implementación:
+        - El botón "Siguiente" permite continuar con las
+          pantallas del onboarding.
+        -->
+        <button
+            class="primary-button"
+            id="next-button"
+            type="button">
+            Siguiente
+        </button>
+
+    </main>
+
+    <script src="../../assets/scripts/onboarding/alerts.js"></script>
+
+</body>
+</html>

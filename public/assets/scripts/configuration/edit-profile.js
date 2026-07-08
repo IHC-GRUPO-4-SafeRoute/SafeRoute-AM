@@ -4,18 +4,18 @@
     HU-US35: Edición de perfil de usuario
 
     Criterios de aceptación cubiertos:
-    - Escenario 1: Actualización exitosa del perfil.
-      Al guardar cambios, se almacenan nombre, correo, teléfono y avatar en localStorage.
-      Luego profile.html puede leer esos datos y reflejarlos.
-    - Escenario 2: Información inválida.
-      Si los campos obligatorios están vacíos, se muestra un mensaje de validación.
+    - El usuario puede editar nombre, correo, teléfono y avatar.
+    - Los cambios se guardan en safeRouteUserProfile.
+    - También se actualiza saferouteCurrentUser y saferouteUsers.
 */
 
 const STORAGE_KEY = "safeRouteUserProfile";
+const USERS_KEY = "saferouteUsers";
+const CURRENT_USER_KEY = "saferouteCurrentUser";
 
 const defaultProfile = {
-    name: "Lucía Martínez",
-    email: "lucia@gmail.com",
+    name: "Usuario SafeRoute",
+    email: "usuario@saferoute.com",
     phone: "+1 555-0100",
     avatar: "../../assets/images/configuration/profile1.png"
 };
@@ -33,21 +33,63 @@ const formMessage = document.getElementById("form-message");
 
 let selectedAvatar = defaultProfile.avatar;
 
-function getSavedProfile() {
-    const savedProfile = localStorage.getItem(STORAGE_KEY);
-
-    if (!savedProfile) {
-        return defaultProfile;
-    }
-
+function getCurrentUser() {
     try {
-        return {
-            ...defaultProfile,
-            ...JSON.parse(savedProfile)
-        };
+        return JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
     } catch (error) {
-        return defaultProfile;
+        return null;
     }
+}
+
+function saveCurrentUser(user) {
+    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+}
+
+function getUsers() {
+    try {
+        return JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function saveUsers(users) {
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+}
+
+function getSavedEditedProfile() {
+    try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY));
+    } catch (error) {
+        return null;
+    }
+}
+
+function getSavedProfile() {
+    const currentUser = getCurrentUser();
+    const editedProfile = getSavedEditedProfile();
+
+    const sessionProfile = {
+        ...defaultProfile,
+        name: currentUser?.name || defaultProfile.name,
+        email: currentUser?.email || defaultProfile.email,
+        phone: currentUser?.phone || defaultProfile.phone,
+        avatar: currentUser?.avatar || defaultProfile.avatar
+    };
+
+    const profileBelongsToCurrentUser =
+        editedProfile &&
+        currentUser &&
+        editedProfile.email === currentUser.email;
+
+    if (!profileBelongsToCurrentUser) {
+        return sessionProfile;
+    }
+
+    return {
+        ...sessionProfile,
+        ...editedProfile
+    };
 }
 
 function saveProfile(profile) {
@@ -79,12 +121,55 @@ function validateForm() {
     const phone = phoneInput.value.trim();
 
     if (!name || !email || !phone) {
+        formMessage.style.color = "#C15A2E";
         formMessage.textContent = "La información es obligatoria.";
+        return false;
+    }
+
+    if (!email.includes("@")) {
+        formMessage.style.color = "#C15A2E";
+        formMessage.textContent = "Ingresa un correo válido.";
         return false;
     }
 
     formMessage.textContent = "";
     return true;
+}
+
+function updateUserSessionAndList(updatedProfile) {
+    const currentUser = getCurrentUser();
+
+    if (!currentUser) {
+        return;
+    }
+
+    const users = getUsers();
+
+    const updatedCurrentUser = {
+        ...currentUser,
+        name: updatedProfile.name,
+        email: updatedProfile.email,
+        phone: updatedProfile.phone,
+        avatar: updatedProfile.avatar
+    };
+
+    const userIndex = users.findIndex((user) => {
+        return user.email === currentUser.email;
+    });
+
+    if (userIndex !== -1) {
+        users[userIndex] = {
+            ...users[userIndex],
+            name: updatedProfile.name,
+            email: updatedProfile.email,
+            phone: updatedProfile.phone,
+            avatar: updatedProfile.avatar
+        };
+
+        saveUsers(users);
+    }
+
+    saveCurrentUser(updatedCurrentUser);
 }
 
 avatarOptions.forEach((option) => {
@@ -123,12 +208,13 @@ form.addEventListener("submit", (event) => {
 
     const updatedProfile = {
         name: nameInput.value.trim(),
-        email: emailInput.value.trim(),
+        email: emailInput.value.trim().toLowerCase(),
         phone: phoneInput.value.trim(),
         avatar: selectedAvatar
     };
 
     saveProfile(updatedProfile);
+    updateUserSessionAndList(updatedProfile);
 
     formMessage.style.color = "#023686";
     formMessage.textContent = "Perfil actualizado correctamente.";

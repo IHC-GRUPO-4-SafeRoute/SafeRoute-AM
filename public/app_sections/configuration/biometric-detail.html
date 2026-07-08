@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+    HU-US43: Activación y gestión de acceso biométrico
+
+    Criterios cubiertos:
+    - Se muestra la huella dactilar registrada del usuario.
+    - Se permite eliminar la huella registrada.
+    - Al eliminar, se actualiza localStorage y se muestra una pantalla de confirmación.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huella dactilar | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/biometric-fingerprint.css">
+</head>
+<body>
+    <main class="fingerprint-page">
+        <header class="fingerprint-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver a acceso biométrico">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1 id="fingerprint-title">Huella dactilar</h1>
+            </div>
+
+            <button class="notification-button" type="button" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </button>
+        </header>
+
+        <section class="fingerprint-content detail-content">
+            <div class="fingerprint-circle">
+                <img src="../../assets/images/configuration/finger-print_gigant.png" alt="Huella dactilar">
+            </div>
+
+            <div class="fingerprint-label-edit">
+                <input
+                    type="text"
+                    id="fingerprint-label-input"
+                    value="Huella dactilar del usuario"
+                    aria-label="Nombre de la huella dactilar"
+                >
+            
+                <button class="save-fingerprint-name-button" type="button" id="save-fingerprint-name-button">
+                    Guardar
+                </button>
+            </div>
+            
+            <p class="fingerprint-message" id="fingerprint-message" aria-live="polite"></p>
+
+            <button class="delete-fingerprint-button" type="button" id="delete-fingerprint-button">
+                Eliminar
+            </button>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../route/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/configuration/biometric-detail.js"></script>
+</body>
+</html>

@@ -1,11 +1,16 @@
 /*
     Pantalla: Confirmación de cambio de clave
 
-    HU-US38: Inicio de sesión seguro
+    HU relacionada:
+    Pantalla complementaria
 
     Implementación:
-    - Reproduce la animación de cambio de clave una sola vez.
-    - Luego redirige a Configuración de Seguridad.
+    - Reproduce animación de éxito una sola vez.
+    - Muestra mensaje de clave cambiada exitosamente.
+    - Redirige a Configuración de Seguridad.
+
+    Criterios de aceptación cubiertos:
+    - Confirmación visual del cambio exitoso dentro del flujo complementario de cambio de clave.
 */
 
 const successAnimation = document.getElementById("success-animation");

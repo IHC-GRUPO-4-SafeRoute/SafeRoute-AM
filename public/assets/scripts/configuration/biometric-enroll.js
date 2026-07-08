@@ -1,13 +1,18 @@
 /*
     Pantalla: Registro de huella dactilar
 
-    HU-US43: Activación de acceso biométrico
+    HU relacionada:
+    US43 - Activar acceso biométrico
 
     Implementación:
     - Permite nombrar una nueva huella.
-    - Primero el usuario toca la huella.
-    - Luego se habilita el botón de identificación táctil.
-    - Guarda más de una huella por usuario.
+    - Requiere tocar la huella antes de guardar.
+    - Activa "Usar Identificación Táctil" solo después del escaneo.
+    - Guarda la huella en localStorage.
+    - Redirige a confirmación animada de éxito.
+
+    Criterios de aceptación cubiertos:
+    - Escenario 1: activación mediante huella digital.
 */
 
 const BIOMETRIC_KEY = "safeRouteBiometricAccess";

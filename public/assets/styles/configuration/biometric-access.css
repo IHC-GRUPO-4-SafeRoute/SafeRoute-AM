@@ -1,11 +1,13 @@
 /*
-    HU-US43: Activación de acceso biométrico
+    Pantalla: Acceso Biométrico
 
-    Criterios cubiertos desde estilos:
-    - Se muestra una lista clara de accesos biométricos.
-    - Se mantiene consistencia visual con Configuración de Seguridad.
-    - Se mantiene navbar inferior fijo.
-    - Se adapta a vista mobile.
+    HU relacionada:
+    US43 - Activar acceso biométrico
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
 */
 
 :root {

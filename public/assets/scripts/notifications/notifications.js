@@ -1,9 +1,31 @@
 const notificationStatus = document.querySelectorAll(".notification-status");
 const readButton = document.getElementById("read-all-button");
+const backButton = document.querySelector(".back-button");
 
 
 const unreadImage = "../../assets/images/notifications/circle.png";
 const readImage = "../../assets/images/notifications/check.png";
+const fallbackReturnPath = "../home/home.html";
+const params = new URLSearchParams(window.location.search);
+const returnTo = params.get("returnTo");
+
+
+if (backButton) {
+
+    backButton.addEventListener("click", () => {
+
+        if (returnTo) {
+
+            window.location.href = returnTo;
+            return;
+
+        }
+
+        window.location.href = fallbackReturnPath;
+
+    });
+
+}
 
 
 notificationStatus.forEach(button => {

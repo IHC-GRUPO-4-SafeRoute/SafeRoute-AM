@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <!--
-    Pantalla: Términos y Condiciones
+    Pantalla informativa: Términos y Condiciones
 
-    HU relacionada:
-    Pantalla informativa
-
-    Criterios de aceptación cubiertos:
-    - Permite leer secciones informativas.
-    - Permite expandir y contraer contenido con "Leer más" y "Leer menos".
-    - Permite abrir enlace externo a política de privacidad.
+    Esta pantalla permite consultar los términos, responsabilidades,
+    privacidad y política completa desde Configuración de Seguridad.
 
     Nota:
-    - La aceptación de términos se realiza en otro flujo posterior al inicio de sesión.
+    - No se asigna una HU específica en esta pantalla porque su propósito
+      dentro de configuración es únicamente informativo.
+    - La aceptación de términos se realiza en el flujo posterior al inicio de sesión.
 -->
 <html lang="es">
 <head>
@@ -33,9 +30,9 @@
                 <h1>Términos y Condiciones</h1>
             </div>
 
-            <button class="notification-button" type="button" aria-label="Ver notificaciones">
+            <a class="notification-button" href="../notifications/notifications.html?returnTo=../configuration/terms-conditions.html" aria-label="Ver notificaciones">
                 <img src="../../assets/images/configuration/notification_main.png" alt="">
-            </button>
+            </a>
         </header>
 
         <section class="terms-content">

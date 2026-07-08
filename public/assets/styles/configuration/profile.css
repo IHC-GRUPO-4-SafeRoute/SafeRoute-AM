@@ -16,6 +16,8 @@ body {
     overflow-x: hidden;
 }
 
+/* Header */
+
 .profile-header {
     height: 76px;
     padding: 24px 31px 0 35px;
@@ -46,9 +48,13 @@ body {
     object-fit: contain;
 }
 
+/* Content */
+
 .profile-content {
     padding: 14px 31px calc(var(--bottom-nav-height) + 22px);
 }
+
+/* User card */
 
 .user-card {
     min-height: 88px;
@@ -112,6 +118,8 @@ body {
     font-weight: 700;
 }
 
+/* Achievements preview */
+
 .achievements {
     margin-top: 9px;
 }
@@ -150,6 +158,8 @@ body {
     object-fit: contain;
 }
 
+/* Stats */
+
 .profile-stats {
     margin-top: 22px;
     display: grid;
@@ -166,7 +176,21 @@ body {
     justify-content: center;
     border-radius: 15px;
     background: var(--color-white);
+    color: var(--color-black);
     text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.stat-card:visited,
+.stat-card:hover,
+.stat-card:focus,
+.stat-card:active {
+    background: var(--color-white);
+    color: var(--color-black);
+    text-decoration: none;
+    outline: none;
 }
 
 .stat-card strong {
@@ -180,6 +204,8 @@ body {
     font-size: 12px;
     font-weight: 700;
 }
+
+/* Settings list */
 
 .settings-list {
     margin-top: 10px;
@@ -218,7 +244,7 @@ body {
     object-fit: contain;
 }
 
-/* Logout */
+/* Logout button */
 
 .logout-button {
     width: 100%;
@@ -244,6 +270,8 @@ body {
     height: 19px;
     object-fit: contain;
 }
+
+/* Bottom navigation */
 
 .bottom-navigation {
     position: fixed;

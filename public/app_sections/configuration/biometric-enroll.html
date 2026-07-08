@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso Biométrico | SafeRoute</title>
+    <title>Registrar huella | SafeRoute</title>
 
     <link rel="stylesheet" href="../../assets/styles/global.css">
-    <link rel="stylesheet" href="../../assets/styles/configuration/biometric-access.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/biometric-fingerprint.css">
 </head>
 <body>
-    <main class="biometric-page">
-        <header class="biometric-header">
+    <main class="fingerprint-page">
+        <header class="fingerprint-header">
             <div class="header-title-group">
-                <button class="back-button" type="button" id="back-button" aria-label="Volver a configuración de seguridad">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver a acceso biométrico">
                     <img src="../../assets/images/configuration/left-arrow.png" alt="">
                 </button>
 
-                <h1>Acceso Biométrico</h1>
+                <h1 id="fingerprint-title">Nueva huella dactilar</h1>
             </div>
 
             <button class="notification-button" type="button" aria-label="Ver notificaciones">
@@ -24,24 +24,32 @@
             </button>
         </header>
 
-        <section class="biometric-content">
-            <!-- AC US43 - Lista dinámica de huellas registradas. -->
-            <div class="biometric-list" id="biometric-list"></div>
-
-            <!-- AC US43 - Permite agregar más de una huella biométrica. -->
-            <button class="biometric-option" type="button" id="add-biometric-button">
-                <span class="biometric-icon add-icon">
-                    <img src="../../assets/images/configuration/plus_white.png" alt="">
-                </span>
-
-                <span class="biometric-text">
-                    Agregar acceso biométrico
-                </span>
-
-                <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+        <section class="fingerprint-content enroll-content">
+            <button class="fingerprint-circle fingerprint-scan-button" type="button" id="fingerprint-scan-button" aria-label="Escanear huella dactilar">
+                <img src="../../assets/images/configuration/finger-print_gigant.png" alt="Huella dactilar">
             </button>
 
-            <p class="biometric-message" id="biometric-message" aria-live="polite"></p>
+            <h2>Usa Tu Huella Para Acceder</h2>
+
+            <p>
+                Ingresa de manera más rápida con un solo toque registrando tu huella digital
+            </p>
+
+            <!-- AC US43 - Nombre personalizado para la nueva huella. -->
+            <label class="fingerprint-name-group" for="fingerprint-name-input">
+                <span>Nombre de la huella</span>
+                <input
+                    type="text"
+                    id="fingerprint-name-input"
+                    placeholder="Ej. Huella principal"
+                >
+            </label>
+
+            <p class="fingerprint-message" id="fingerprint-message" aria-live="polite"></p>
+
+            <button class="use-fingerprint-button" type="button" id="use-fingerprint-button" disabled>
+                Usar Identificación Táctil
+            </button>
         </section>
 
         <nav class="bottom-navigation">
@@ -72,6 +80,6 @@
         </nav>
     </main>
 
-    <script src="../../assets/scripts/configuration/biometric-access.js"></script>
+    <script src="../../assets/scripts/configuration/biometric-enroll.js"></script>
 </body>
 </html>

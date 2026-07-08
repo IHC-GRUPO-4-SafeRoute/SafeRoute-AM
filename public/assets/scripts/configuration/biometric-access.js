@@ -1,23 +1,22 @@
 /*
     Pantalla: Acceso Biométrico
 
-    HU-US43: Activación de acceso biométrico
+    HU-US43: Activación y gestión de acceso biométrico
 
     Implementación funcional:
-    - Toma el nombre del usuario actual desde saferouteCurrentUser.
-    - Muestra la huella dactilar del usuario actual.
-    - Al agregar acceso biométrico, guarda el estado en localStorage.
-    - Redirige a una pantalla de confirmación con animación.
+    - Muestra varias huellas registradas por usuario.
+    - Cada huella se guarda con id, nombre y fecha.
+    - Permite abrir el detalle de una huella específica.
+    - Permite agregar nuevas huellas.
 */
 
 const BIOMETRIC_KEY = "safeRouteBiometricAccess";
-const SECURITY_KEY = "safeRouteSecuritySettings";
 const CURRENT_USER_KEY = "saferouteCurrentUser";
+const PROFILE_KEY = "safeRouteUserProfile";
 
 const backButton = document.getElementById("back-button");
 const addBiometricButton = document.getElementById("add-biometric-button");
-const registeredBiometricButton = document.getElementById("registered-biometric-button");
-const registeredBiometricLabel = document.getElementById("registered-biometric-label");
+const biometricList = document.getElementById("biometric-list");
 const biometricMessage = document.getElementById("biometric-message");
 
 function getCurrentUser() {
@@ -28,36 +27,32 @@ function getCurrentUser() {
     }
 }
 
+function getEditedProfile() {
+    try {
+        return JSON.parse(localStorage.getItem(PROFILE_KEY));
+    } catch (error) {
+        return null;
+    }
+}
+
+function getUserName() {
+    const currentUser = getCurrentUser();
+    const editedProfile = getEditedProfile();
+
+    const profileBelongsToCurrentUser =
+        editedProfile &&
+        currentUser &&
+        editedProfile.email === currentUser.email;
+
+    if (profileBelongsToCurrentUser) {
+        return editedProfile.name;
+    }
+
+    return currentUser?.name || "Usuario";
+}
+
 function getFirstName(fullName) {
-    if (!fullName) {
-        return "usuario";
-    }
-
     return fullName.trim().split(" ")[0];
-}
-
-function getBiometricAccess() {
-    try {
-        return JSON.parse(localStorage.getItem(BIOMETRIC_KEY)) || {};
-    } catch (error) {
-        return {};
-    }
-}
-
-function saveBiometricAccess(data) {
-    localStorage.setItem(BIOMETRIC_KEY, JSON.stringify(data));
-}
-
-function getSecuritySettings() {
-    try {
-        return JSON.parse(localStorage.getItem(SECURITY_KEY)) || {};
-    } catch (error) {
-        return {};
-    }
-}
-
-function saveSecuritySettings(settings) {
-    localStorage.setItem(SECURITY_KEY, JSON.stringify(settings));
 }
 
 function getCurrentUserKey() {
@@ -65,45 +60,115 @@ function getCurrentUserKey() {
     return currentUser?.email || "demo-user";
 }
 
-function renderBiometricUser() {
-    const currentUser = getCurrentUser();
-    const firstName = getFirstName(currentUser?.name);
-
-    registeredBiometricLabel.textContent = `Huella dactilar de ${firstName}`;
+function getBiometricData() {
+    try {
+        return JSON.parse(localStorage.getItem(BIOMETRIC_KEY)) || {};
+    } catch (error) {
+        return {};
+    }
 }
 
-function updateSecurityBiometricState() {
-    const settings = getSecuritySettings();
+function saveBiometricData(data) {
+    localStorage.setItem(BIOMETRIC_KEY, JSON.stringify(data));
+}
 
-    saveSecuritySettings({
-        ...settings,
-        biometricAccess: true
+function getDefaultFingerprintLabel() {
+    return `Huella dactilar de ${getFirstName(getUserName())}`;
+}
+
+function normalizeUserBiometricData() {
+    const data = getBiometricData();
+    const userKey = getCurrentUserKey();
+    const userData = data[userKey];
+
+    if (!userData) {
+        data[userKey] = {
+            records: []
+        };
+
+        saveBiometricData(data);
+        return data[userKey];
+    }
+
+    /*
+        Compatibilidad con la versión anterior:
+        antes se guardaba una sola huella como:
+        { enabled: true, label: "Huella dactilar de Luna" }
+    */
+    if (!Array.isArray(userData.records)) {
+        data[userKey] = {
+            records: userData.enabled
+                ? [
+                    {
+                        id: crypto.randomUUID(),
+                        label: userData.label || getDefaultFingerprintLabel(),
+                        enabled: true,
+                        registeredAt: userData.registeredAt || new Date().toISOString()
+                    }
+                ]
+                : []
+        };
+
+        saveBiometricData(data);
+    }
+
+    return data[userKey];
+}
+
+function getEnabledFingerprints() {
+    const userData = normalizeUserBiometricData();
+
+    return userData.records.filter((record) => {
+        return record.enabled;
     });
 }
 
-function registerBiometricAccess() {
-    const biometricAccess = getBiometricAccess();
-    const currentUserKey = getCurrentUserKey();
+function createFingerprintItem(record) {
+    const button = document.createElement("button");
+    button.className = "biometric-option";
+    button.type = "button";
 
-    biometricAccess[currentUserKey] = {
-        enabled: true,
-        registeredAt: new Date().toISOString()
-    };
+    button.innerHTML = `
+        <span class="biometric-icon fingerprint-icon">
+            <img src="../../assets/images/configuration/finger-print.png" alt="">
+        </span>
 
-    saveBiometricAccess(biometricAccess);
-    updateSecurityBiometricState();
+        <span class="biometric-text">
+            ${record.label}
+        </span>
 
-    window.location.href = "./biometric-success.html";
+        <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+    `;
+
+    button.addEventListener("click", () => {
+        window.location.href = `./biometric-detail.html?id=${record.id}`;
+    });
+
+    return button;
 }
 
-registeredBiometricButton.addEventListener("click", () => {
-    biometricMessage.textContent = "Acceso biométrico principal activo.";
-});
+function renderBiometricAccess() {
+    const records = getEnabledFingerprints();
 
-addBiometricButton.addEventListener("click", registerBiometricAccess);
+    biometricList.innerHTML = "";
+
+    if (records.length === 0) {
+        biometricMessage.textContent = "Aún no tienes una huella dactilar registrada.";
+    } else {
+        biometricMessage.textContent = "";
+    }
+
+    records.forEach((record) => {
+        biometricList.appendChild(createFingerprintItem(record));
+    });
+}
+
+addBiometricButton.addEventListener("click", () => {
+    window.location.href = "./biometric-enroll.html";
+});
 
 backButton.addEventListener("click", () => {
     window.location.href = "./security-settings.html";
 });
 
-renderBiometricUser();
+renderBiometricAccess();

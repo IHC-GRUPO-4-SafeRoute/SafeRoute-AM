@@ -247,7 +247,7 @@ biometricButton.addEventListener("click", () => {
 });
 
 termsButton.addEventListener("click", () => {
-    showStatus("Términos y condiciones disponibles próximamente.");
+    window.location.href = "./terms-conditions.html";
 });
 
 testSosButton.addEventListener("click", () => {

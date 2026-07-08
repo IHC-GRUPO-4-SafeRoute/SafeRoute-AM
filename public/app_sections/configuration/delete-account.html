@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+    Pantalla complementaria: Eliminación de cuenta
+
+    Criterios funcionales implementados:
+    - Solicita contraseña antes de eliminar la cuenta.
+    - Valida la contraseña del usuario actual.
+    - Muestra modal de confirmación antes de eliminar.
+    - Elimina al usuario de localStorage.
+    - Limpia la sesión activa y redirige al login.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar cuenta | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/delete-account.css">
+</head>
+<body>
+    <main class="delete-account-page">
+        <header class="delete-account-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver a ajustes">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1>Eliminar cuenta</h1>
+            </div>
+
+            <button class="notification-button" type="button" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </button>
+        </header>
+
+        <section class="delete-account-content">
+            <h2>Estas seguro de borrar la cuenta?</h2>
+
+            <div class="warning-card">
+                <p>
+                    Esta acción eliminará permanentemente todos tus datos y no podrás recuperarlos.
+                    Ten en cuenta lo siguiente antes de continuar:
+                </p>
+
+                <ul>
+                    <li>Se eliminarán todos tus gastos, ingresos y transacciones asociadas.</li>
+                    <li>No podrás acceder a tu cuenta ni a ninguna información relacionada.</li>
+                </ul>
+
+                <strong>Esta acción es irreversible.</strong>
+            </div>
+
+            <p class="password-instruction">
+                Por favor ingresa tu contraseña para la eliminación de tu cuenta
+            </p>
+
+            <div class="password-input-wrapper">
+                <input
+                    type="password"
+                    id="delete-password-input"
+                    autocomplete="current-password"
+                    aria-label="Contraseña actual"
+                >
+
+                <button class="show-password-button" type="button" id="show-password-button" aria-label="Mostrar contraseña">
+                    <img src="../../assets/images/configuration/close_eye.png" alt="">
+                </button>
+            </div>
+
+            <p class="delete-message" id="delete-message" aria-live="polite"></p>
+
+            <div class="delete-actions">
+                <button class="delete-account-button" type="button" id="open-delete-modal">
+                    Si, Eliminar cuenta
+                </button>
+
+                <button class="cancel-button" type="button" id="cancel-button">
+                    Cancelar
+                </button>
+            </div>
+        </section>
+
+        <div class="delete-modal" id="delete-modal" aria-hidden="true">
+            <section class="delete-modal-card" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+                <h2 id="delete-modal-title">Eliminar Cuenta</h2>
+
+                <p>¿Estás seguro de que quieres eliminar la cuenta?</p>
+
+                <p>
+                    Al eliminar su cuenta, usted acepta que comprende las consecuencias de esta acción
+                    y que acepta eliminar permanentemente su cuenta y todos los datos asociados.
+                </p>
+
+                <button class="confirm-delete-button" type="button" id="confirm-delete-button">
+                    Si, Eliminar cuenta
+                </button>
+
+                <button class="modal-cancel-button" type="button" id="modal-cancel-button">
+                    Cancelar
+                </button>
+            </section>
+        </div>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/configuration/delete-account.js"></script>
+</body>
+</html>

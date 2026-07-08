@@ -1,0 +1,393 @@
+/*
+    Pantalla complementaria: Eliminación de cuenta
+
+    Criterios visuales cubiertos:
+    - Muestra advertencia antes de eliminar cuenta.
+    - Solicita contraseña.
+    - Muestra modal de confirmación.
+    - Mantiene diseño responsive mobile.
+*/
+
+:root {
+    --bottom-nav-height: 78px;
+}
+
+body {
+    background: #969696;
+}
+
+.delete-account-page {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--color-screen-bg);
+    overflow-x: hidden;
+}
+
+/* Header */
+
+.delete-account-header {
+    height: 76px;
+    padding: 24px 31px 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-button {
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+}
+
+.back-button img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.delete-account-header h1 {
+    font-size: 18px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.notification-button {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-white);
+    flex-shrink: 0;
+}
+
+.notification-button img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* Content */
+
+.delete-account-content {
+    padding: 34px 51px calc(var(--bottom-nav-height) + 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-account-content h2 {
+    width: 100%;
+    color: var(--color-black);
+    font-size: 13px;
+    font-weight: 900;
+    text-align: left;
+}
+
+.warning-card {
+    width: 100%;
+    margin-top: 20px;
+    padding: 18px 17px 17px;
+    border-radius: 14px;
+    background: #FFFCF9;
+    color: var(--color-black);
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.warning-card ul {
+    margin: 13px 0 13px;
+    padding-left: 18px;
+}
+
+.password-instruction {
+    max-width: 250px;
+    margin-top: 28px;
+    color: var(--color-black);
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.password-input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 28px;
+}
+
+.password-input-wrapper input {
+    width: 100%;
+    height: 34px;
+    padding: 0 44px 0 18px;
+    border: none;
+    border-radius: 18px;
+    background: var(--color-white);
+    color: var(--color-black);
+    font-size: 13px;
+    font-weight: 800;
+    outline: none;
+}
+
+.password-input-wrapper input:focus {
+    box-shadow: 0 0 0 2px rgba(2, 54, 134, 0.22);
+}
+
+.show-password-button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    transform: translateY(-50%);
+    background: transparent;
+}
+
+.show-password-button img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.delete-message {
+    min-height: 17px;
+    margin-top: 10px;
+    color: #C15A2E;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.delete-actions {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+}
+
+.delete-account-button,
+.cancel-button {
+    width: 197px;
+    min-height: 39px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.delete-account-button {
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.cancel-button {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+/* Modal */
+
+.delete-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: none;
+    place-items: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.38);
+}
+
+.delete-modal.show {
+    display: grid;
+}
+
+.delete-modal-card {
+    width: min(100%, 312px);
+    min-height: 358px;
+    padding: 39px 45px 29px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background: #244B88;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.delete-modal-card h2 {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.delete-modal-card p {
+    margin-top: 25px;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.confirm-delete-button,
+.modal-cancel-button {
+    width: 178px;
+    min-height: 38px;
+    border-radius: 19px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.confirm-delete-button {
+    margin-top: 34px;
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.modal-cancel-button {
+    margin-top: 11px;
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+/* Bottom navigation */
+
+.bottom-navigation {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index: 10;
+    width: min(100%, 430px);
+    height: var(--bottom-nav-height);
+    padding: 12px 24px 14px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    transform: translateX(-50%);
+    border-radius: 26px 26px 0 0;
+    background: var(--color-primary);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 18px;
+    color: var(--color-white);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.nav-item img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.nav-item.active {
+    background: var(--color-white);
+    color: var(--color-navy);
+}
+
+.nav-item.active img {
+    width: 23px;
+    height: 23px;
+}
+
+/* Responsive */
+
+@media (min-width: 431px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background: #969696;
+    }
+
+    .delete-account-page {
+        width: 430px;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        background: var(--color-screen-bg);
+    }
+
+    .delete-account-page,
+    .bottom-navigation {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .delete-account-header {
+        height: 72px;
+        padding: 22px 25px 0 31px;
+    }
+
+    .delete-account-content {
+        padding-inline: 47px;
+    }
+
+    .bottom-navigation {
+        padding: 12px 20px 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --bottom-nav-height: 72px;
+    }
+
+    .delete-account-header {
+        height: 68px;
+        padding: 20px 18px 0;
+    }
+
+    .delete-account-header h1 {
+        font-size: 16px;
+    }
+
+    .delete-account-content {
+        padding: 30px 36px calc(var(--bottom-nav-height) + 22px);
+    }
+
+    .delete-modal-card {
+        padding-inline: 34px;
+    }
+
+    .bottom-navigation {
+        height: var(--bottom-nav-height);
+        padding: 10px 14px 12px;
+        gap: 4px;
+        border-radius: 22px 22px 0 0;
+    }
+
+    .nav-item {
+        font-size: 9px;
+    }
+
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+}

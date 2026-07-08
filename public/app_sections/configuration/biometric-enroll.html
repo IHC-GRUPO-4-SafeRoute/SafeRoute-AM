@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar huella | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/biometric-fingerprint.css">
+</head>
+<body>
+    <main class="fingerprint-page">
+        <header class="fingerprint-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver a acceso biométrico">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1 id="fingerprint-title">Nueva huella dactilar</h1>
+            </div>
+
+            <button class="notification-button" type="button" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </button>
+        </header>
+
+        <section class="fingerprint-content enroll-content">
+            <button class="fingerprint-circle fingerprint-scan-button" type="button" id="fingerprint-scan-button" aria-label="Escanear huella dactilar">
+                <img src="../../assets/images/configuration/finger-print_gigant.png" alt="Huella dactilar">
+            </button>
+
+            <h2>Usa Tu Huella Para Acceder</h2>
+
+            <p>
+                Ingresa de manera más rápida con un solo toque registrando tu huella digital
+            </p>
+
+            <!-- AC US43 - Nombre personalizado para la nueva huella. -->
+            <label class="fingerprint-name-group" for="fingerprint-name-input">
+                <span>Nombre de la huella</span>
+                <input
+                    type="text"
+                    id="fingerprint-name-input"
+                    placeholder="Ej. Huella principal"
+                >
+            </label>
+
+            <p class="fingerprint-message" id="fingerprint-message" aria-live="polite"></p>
+
+            <button class="use-fingerprint-button" type="button" id="use-fingerprint-button" disabled>
+                Usar Identificación Táctil
+            </button>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../route/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/configuration/biometric-enroll.js"></script>
+</body>
+</html>

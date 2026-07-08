@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+    HU-US43: Activación y gestión de acceso biométrico
+
+    Pantalla de confirmación:
+    - Se reutiliza para guardar o eliminar la huella dactilar.
+    - El texto cambia según la acción recibida por query param.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación biométrica | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/biometric-success.css">
+</head>
+<body>
+    <main class="biometric-success-page">
+        <section class="success-content">
+            <img
+                class="success-animation"
+                id="success-animation"
+                src="../../assets/images/configuration/password_success_1.png"
+                alt="Animación de confirmación"
+            >
+
+            <h1 id="success-message">
+                La huella dactilar ha sido actualizada exitosamente
+            </h1>
+        </section>
+    </main>
+
+    <script src="../../assets/scripts/configuration/biometric-success.js"></script>
+</body>
+</html>

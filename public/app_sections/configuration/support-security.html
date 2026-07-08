@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--
+    Pantalla complementaria: Soporte y Seguridad
+
+    Esta pantalla permite al usuario consultar preguntas frecuentes
+    y acceder a canales de contacto o soporte online.
+
+    Criterios funcionales implementados:
+    - Permite cambiar entre FAQ y Contáctanos.
+    - Permite filtrar contenido por categorías: General, Cuenta y Servicios.
+    - Permite buscar preguntas o canales de soporte.
+    - Permite expandir preguntas frecuentes.
+    - Permite acceder al flujo de Soporte Online.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte y Seguridad | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/support-security.css">
+</head>
+<body>
+    <main class="support-page">
+        <header class="support-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver al perfil">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1>Soporte y Seguridad</h1>
+            </div>
+
+            <a
+                class="notification-button"
+                href="../notifications/notifications.html?returnTo=../configuration/support-security.html"
+                aria-label="Ver notificaciones"
+            >
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <section class="support-content">
+            <h2>En que puedo ayudarte?</h2>
+
+            <div class="support-tabs" role="tablist" aria-label="Tipo de ayuda">
+                <button class="support-tab is-active" type="button" data-view="faq">
+                    FAQ
+                </button>
+
+                <button class="support-tab" type="button" data-view="contacts">
+                    Contactanos
+                </button>
+            </div>
+
+            <div class="category-tabs" id="category-tabs" aria-label="Categorías de ayuda">
+                <button class="category-tab is-active" type="button" data-category="general">
+                    General
+                </button>
+
+                <button class="category-tab" type="button" data-category="account">
+                    Cuenta
+                </button>
+
+                <button class="category-tab" type="button" data-category="services">
+                    Servicios
+                </button>
+            </div>
+
+            <label class="search-box" id="search-box" for="support-search">
+                <img src="../../assets/images/configuration/search.png" alt="">
+                <input
+                    type="search"
+                    id="support-search"
+                    placeholder="Search"
+                    autocomplete="off"
+                >
+            </label>
+
+            <section class="faq-panel" id="faq-panel">
+                <article class="faq-item" data-category="general">
+                    <button class="faq-question" type="button">
+                        <span>¿Qué es SafeRoute?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        SafeRoute es una aplicación orientada a mejorar la seguridad durante tus desplazamientos mediante rutas, reportes, alertas y funciones de acompañamiento.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="services">
+                    <button class="faq-question" type="button">
+                        <span>¿Cómo funciona el acompañamiento digital?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        El acompañamiento digital permite que el usuario mantenga un seguimiento activo durante su trayecto y pueda recibir apoyo mediante alertas o contactos de emergencia.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="account">
+                    <button class="faq-question" type="button">
+                        <span>¿Cómo cambio el idioma de la aplicación?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Puedes cambiar el idioma desde la sección de preferencias dentro del módulo de configuración.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="account">
+                    <button class="faq-question" type="button">
+                        <span>¿Cómo actualizo mis datos personales?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Ingresa a Perfil, selecciona Editar Perfil y guarda los cambios en tu nombre, correo, teléfono o foto.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="services">
+                    <button class="faq-question" type="button">
+                        <span>¿Cómo puedo compartir mi ubicación en tiempo real?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Puedes compartir tu ubicación desde las funciones de seguridad o durante un trayecto activo, siempre que tengas permisos de ubicación habilitados.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="general">
+                    <button class="faq-question" type="button">
+                        <span>¿Qué debo hacer si me siento en peligro durante un trayecto?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Usa las opciones de emergencia como SOS, alertas o contactos de emergencia para solicitar ayuda rápidamente.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="services">
+                    <button class="faq-question" type="button">
+                        <span>¿Cómo funcionan las alertas de emergencia?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Las alertas permiten reportar situaciones de riesgo y notificar eventos relevantes dentro de la comunidad.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="services">
+                    <button class="faq-question" type="button">
+                        <span>¿Quién puede ver mi ubicación compartida?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Solo los contactos o funciones autorizadas por el usuario podrán acceder a la ubicación compartida.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="services">
+                    <button class="faq-question" type="button">
+                        <span>¿Cómo encuentro una ruta más segura?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Desde la sección Rutas puedes consultar rutas sugeridas considerando reportes, zonas seguras y condiciones del entorno.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="services">
+                    <button class="faq-question" type="button">
+                        <span>¿Cómo reporto una zona de riesgo?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Ingresa a Reportes y registra el tipo de incidente, ubicación, descripción y evidencia si corresponde.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="services">
+                    <button class="faq-question" type="button">
+                        <span>¿Cómo acceder a un nodo seguro cercano?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Puedes visualizar nodos seguros cercanos desde el mapa o desde las funciones de rutas seguras.
+                    </p>
+                </article>
+
+                <article class="faq-item" data-category="services">
+                    <button class="faq-question" type="button">
+                        <span>¿Cómo iniciar una navegación segura?</span>
+                        <img src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                    </button>
+
+                    <p class="faq-answer">
+                        Selecciona una ruta, revisa la información de seguridad y presiona iniciar navegación para comenzar el trayecto.
+                    </p>
+                </article>
+            </section>
+
+            <section class="contacts-panel hidden" id="contacts-panel">
+                <a class="contact-row" href="./support-online.html">
+                    <img src="../../assets/images/configuration/service_phone.png" alt="">
+                    <span>Servicio al cliente</span>
+                    <img class="contact-arrow" src="../../assets/images/configuration/right_arrow.png" alt="">
+                </a>
+            
+                <button class="contact-row" type="button" data-contact="instagram">
+                    <img src="../../assets/images/configuration/instagram.png" alt="">
+                    <span>Instagram</span>
+                    <img class="contact-arrow" src="../../assets/images/configuration/right_arrow.png" alt="">
+                </button>
+            
+                <button class="contact-row" type="button" data-contact="whatsapp">
+                    <img src="../../assets/images/configuration/whatsapp.png" alt="">
+                    <span>Whatsapp</span>
+                    <img class="contact-arrow" src="../../assets/images/configuration/right_arrow.png" alt="">
+                </button>
+            
+                <p class="support-message" id="support-message" aria-live="polite"></p>
+            </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/configuration/support-security.js"></script>
+</body>
+</html>

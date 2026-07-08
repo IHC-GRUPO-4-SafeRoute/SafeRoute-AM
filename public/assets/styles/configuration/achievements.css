@@ -1,3 +1,15 @@
+/*
+    HU-US40: Visualización de logros y progreso
+    Criterios de aceptación cubiertos desde estilos:
+    - Se diferencian visualmente los logros obtenidos y pendientes.
+    - Se muestra el avance mediante barras de progreso.
+    - La pantalla se adapta a mobile y mantiene el navbar inferior fijo.
+
+    HU-US36: Obtención de logros por contribución comunitaria
+    Criterio relacionado desde estilos:
+    - Se representan visualmente logros asociados a reportes, rutas y contribución del usuario.
+*/
+
 :root {
     --bottom-nav-height: 78px;
 }
@@ -15,6 +27,8 @@ body {
     background: var(--color-screen-bg);
     overflow-x: hidden;
 }
+
+/* Header */
 
 .achievements-header {
     height: 76px;
@@ -65,9 +79,13 @@ body {
     object-fit: contain;
 }
 
+/* Content */
+
 .achievements-content {
     padding: 28px 50px calc(var(--bottom-nav-height) + 24px);
 }
+
+/* AC US40 - Distribución de logros obtenidos y pendientes. */
 
 .achievement-grid {
     display: grid;
@@ -121,6 +139,8 @@ body {
     line-height: 1.25;
 }
 
+/* AC US40 - Barra de progreso para mostrar avance de logros. */
+
 .progress-bar {
     width: 100%;
     height: 7px;
@@ -142,6 +162,8 @@ body {
     font-size: 10px;
     font-weight: 800;
 }
+
+/* Bottom navigation */
 
 .bottom-navigation {
     position: fixed;

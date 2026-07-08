@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+<!--
+    HU-US40: Visualización de logros y progreso
+    COMO usuario de SafeRoute QUIERO visualizar mis logros obtenidos y pendientes
+    PARA conocer mi avance y participación dentro de la aplicación.
+
+    Criterios de aceptación cubiertos:
+    - Escenario 1: Visualización exitosa de logros.
+      Se muestran logros obtenidos y logros pendientes con su respectivo avance.
+    - Escenario 2: Usuario sin logros registrados.
+      La pantalla mantiene visibles los objetivos disponibles para que el usuario conozca qué puede desbloquear.
+
+    HU-US36: Obtención de logros por contribución comunitaria
+    COMO usuario de SafeRoute QUIERO obtener logros al realizar reportes de seguridad
+    PARA recibir reconocimiento por mi participación dentro de la aplicación.
+
+    Criterio relacionado:
+    - Se muestra el progreso de logros asociados a reportes, rutas y contribución comunitaria.
+-->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +43,9 @@
         </header>
 
         <section class="achievements-content">
+            <!-- AC US40 - Escenario 1: Se muestran logros obtenidos y pendientes. -->
             <section class="achievement-grid">
+                <!-- AC US36 - Logro obtenido por contribución mediante reportes. -->
                 <article class="achievement-card completed">
                     <div class="achievement-card-header">
                         <img src="../../assets/images/configuration/shield.png" alt="">
@@ -41,6 +61,7 @@
                     <strong>5/5</strong>
                 </article>
 
+                <!-- AC US40 - Logro obtenido con progreso completo. -->
                 <article class="achievement-card completed">
                     <div class="achievement-card-header">
                         <img src="../../assets/images/configuration/ray.png" alt="">
@@ -56,6 +77,7 @@
                     <strong>10/10</strong>
                 </article>
 
+                <!-- AC US40 - Logro obtenido relacionado con verificación comunitaria. -->
                 <article class="achievement-card completed">
                     <div class="achievement-card-header">
                         <img src="../../assets/images/configuration/eye.png" alt="">
@@ -71,6 +93,7 @@
                     <strong>20/20</strong>
                 </article>
 
+                <!-- AC US40 - Escenario 1: Se muestra avance de logro pendiente. -->
                 <article class="achievement-card pending">
                     <div class="achievement-card-header">
                         <img src="../../assets/images/configuration/trophy.png" alt="">
@@ -86,6 +109,7 @@
                     <strong>2/6</strong>
                 </article>
 
+                <!-- AC US40 - Escenario 2: Se muestra objetivo disponible para seguir progresando. -->
                 <article class="achievement-card pending">
                     <div class="achievement-card-header">
                         <img src="../../assets/images/configuration/star.png" alt="">
@@ -109,7 +133,7 @@
                 <span>Inicio</span>
             </a>
 
-            <a class="nav-item" href="#">
+            <a class="nav-item" href="../routes/routes.html">
                 <img src="../../assets/images/configuration/route.png" alt="">
                 <span>Rutas</span>
             </a>

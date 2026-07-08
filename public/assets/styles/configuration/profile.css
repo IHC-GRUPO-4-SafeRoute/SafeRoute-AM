@@ -1,3 +1,18 @@
+/*
+    HU-US37: Visualización de resumen de actividad
+    Criterios de aceptación cubiertos desde estilos:
+    - Se organiza visualmente el resumen de actividad mediante tarjetas de rutas, reportes y logros.
+    - Se mantiene una estructura adaptable para dispositivos móviles.
+
+    HU-US35: Edición de perfil de usuario
+    Criterio relacionado desde estilos:
+    - Se estiliza el acceso visual a "Editar Perfil" como opción de configuración.
+
+    HU-US40: Visualización de logros y progreso
+    Criterio relacionado desde estilos:
+    - Se permite que la tarjeta "Logros" se vea como tarjeta de resumen aunque sea un enlace.
+*/
+
 :root {
     --bottom-nav-height: 78px;
 }
@@ -55,6 +70,7 @@ body {
 }
 
 /* User card */
+/* AC US37 - Muestra información general del usuario dentro del perfil. */
 
 .user-card {
     min-height: 88px;
@@ -119,6 +135,7 @@ body {
 }
 
 /* Achievements preview */
+/* AC US40 - Vista previa de logros obtenidos y pendientes. */
 
 .achievements {
     margin-top: 9px;
@@ -159,6 +176,7 @@ body {
 }
 
 /* Stats */
+/* AC US37 - Resumen visible de rutas realizadas, reportes registrados y logros obtenidos. */
 
 .profile-stats {
     margin-top: 22px;
@@ -206,6 +224,7 @@ body {
 }
 
 /* Settings list */
+/* AC US35 - Se muestra el acceso a Editar Perfil como opción principal de configuración. */
 
 .settings-list {
     margin-top: 10px;

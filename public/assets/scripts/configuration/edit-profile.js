@@ -1,12 +1,17 @@
 /*
     Pantalla: Editar Perfil
 
-    HU-US35: Edición de perfil de usuario
+    HU relacionada:
+    US35 - Edición de perfil de usuario
+
+    Implementación:
+    - Permite editar nombre, correo, teléfono y avatar.
+    - Guarda cambios en safeRouteUserProfile, saferouteCurrentUser y saferouteUsers.
+    - Muestra mensajes de validación y confirmación al guardar.
 
     Criterios de aceptación cubiertos:
-    - El usuario puede editar nombre, correo, teléfono y avatar.
-    - Los cambios se guardan en safeRouteUserProfile.
-    - También se actualiza saferouteCurrentUser y saferouteUsers.
+    - Escenario 1: actualización exitosa de perfil con persistencia de datos.
+    - Escenario 2: validación cuando faltan campos obligatorios.
 */
 
 const STORAGE_KEY = "safeRouteUserProfile";

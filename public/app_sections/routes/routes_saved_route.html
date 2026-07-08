@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruta guardada | SafeRoute</title>
+
+  <link rel="stylesheet" href="../../assets/styles/global.css" />
+  <link rel="stylesheet" href="../../assets/styles/routes/routes_saved_route.css" />
+</head>
+
+<body>
+  <main class="saved-route-page">
+    <header class="saved-route-header">
+      <button class="back-button" type="button" aria-label="Volver">&lt;</button>
+
+      <div class="header-title">
+        <h1>Rutas frecuentes</h1>
+      </div>
+
+      <button class="ring-button" type="button" aria-label="Notificaciones">
+        <img src="../../assets/images/routes/Ring_icon.png" alt="" />
+      </button>
+    </header>
+
+    <section class="saved-route-card">
+      <div class="frequent-tabs">
+        <button class="tab-button" type="button">Favoritas</button>
+        <button class="tab-button active" type="button">Guardadas</button>
+      </div>
+
+      <article class="saved-route-item">
+        <img class="favorite-icon" src="../../assets/images/routes/No_Favorite.png" alt="" />
+
+        <div>
+          <h2>Casa → Av. Primavera 517</h2>
+          <p>20 min - 3.5 km - 78% seguro</p>
+        </div>
+
+        <button class="delete-route-button" type="button" aria-label="Eliminar ruta">
+          <img src="../../assets/images/routes/Black_shield.png" alt="" />
+        </button>
+      </article>
+    </section>
+
+    <button class="save-route-button" type="button">
+      <span>+</span>
+      Guardar nueva ruta
+    </button>
+
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <a class="nav-item" href="../home/home.html">
+        <img src="../../assets/images/routes/Home_icon.png" alt="" />
+        <span>Inicio</span>
+      </a>
+
+      <a class="nav-item active" href="./routes_safe_routes.html">
+        <img src="../../assets/images/routes/Routes_icon.png" alt="" />
+        <span>Rutas</span>
+      </a>
+
+      <a class="nav-item" href="#">
+        <img src="../../assets/images/routes/alert_icon.png" alt="" />
+        <span>Alertas</span>
+      </a>
+
+      <a class="nav-item" href="#">
+        <img src="../../assets/images/routes/report_icon.png" alt="" />
+        <span>Reportes</span>
+      </a>
+
+      <a class="nav-item" href="../configuration/profile.html">
+        <img src="../../assets/images/routes/configuration_icon.png" alt="" />
+        <span>Perfil</span>
+      </a>
+    </nav>
+
+    <div class="delete-route-modal" id="deleteRouteModal">
+      <div class="delete-route-card">
+        <div class="delete-route-handle"></div>
+
+        <h2>¿Quieres eliminar esta ruta?</h2>
+
+        <button class="delete-confirm-button" type="button">Eliminar</button>
+        <button class="delete-cancel-button" type="button">Cancelar</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/scripts/routes/routes_saved_route.js"></script>
+</body>
+</html>

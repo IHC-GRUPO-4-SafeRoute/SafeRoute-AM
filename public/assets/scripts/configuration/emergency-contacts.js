@@ -1,18 +1,17 @@
 /*
     Pantalla: Contactos de Emergencia
 
-    HU-US25: Registro de contactos de emergencia
-
-    Criterios de aceptación cubiertos:
-    - Escenario 1: Registro exitoso de contacto.
-      Al completar nombre, relación y teléfono, el contacto se agrega dinámicamente y se almacena en localStorage.
-    - Escenario 2: Información inválida del contacto.
-      Si algún campo obligatorio está vacío, se muestra un mensaje de validación.
+    HU relacionada:
+    US25 - Registro de contactos de emergencia
 
     Implementación:
-    - Los contactos no son estáticos.
-    - Se renderizan desde localStorage.
-    - Se pueden agregar y eliminar contactos.
+    - Renderiza contactos desde localStorage.
+    - Permite agregar y eliminar contactos de emergencia.
+    - Valida campos obligatorios antes de guardar.
+
+    Criterios de aceptación cubiertos:
+    - Escenario 1: registro exitoso de contacto válido.
+    - Escenario 2: error de validación con datos incompletos o incorrectos.
 */
 
 const STORAGE_KEY = "safeRouteEmergencyContacts";

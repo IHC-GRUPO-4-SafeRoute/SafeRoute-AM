@@ -1,13 +1,13 @@
 /*
-    HU-US40: Visualización de logros y progreso
-    Criterios de aceptación cubiertos desde estilos:
-    - Se diferencian visualmente los logros obtenidos y pendientes.
-    - Se muestra el avance mediante barras de progreso.
-    - La pantalla se adapta a mobile y mantiene el navbar inferior fijo.
+    Pantalla: Logros
 
-    HU-US36: Obtención de logros por contribución comunitaria
-    Criterio relacionado desde estilos:
-    - Se representan visualmente logros asociados a reportes, rutas y contribución del usuario.
+    HU relacionada:
+    US40 - Visualización de logros y progreso
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
 */
 
 :root {

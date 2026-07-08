@@ -47,16 +47,17 @@ body {
 }
 
 .back-button {
-    width: 15px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
     background: transparent;
-    color: var(--color-white);
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 1;
+}
+
+.back-button img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
 }
 
 .achievements-header h1 {

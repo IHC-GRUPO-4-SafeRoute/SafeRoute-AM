@@ -14,15 +14,17 @@
     COMO usuario registrado QUIERO editar mi información de perfil
     PARA mantener mis datos actualizados dentro de la aplicación.
 
-    Criterio relacionado:
-    - Se incluye el acceso visual a la opción "Editar Perfil" desde la pantalla de perfil.
+    Criterios relacionados:
+    - Desde la opción "Editar Perfil" se redirige a edit-profile.html.
+    - Desde el ícono de lápiz de la foto se redirige a edit-profile.html#profile-photo.
+    - Los datos actualizados en edit-profile.html se reflejan en esta pantalla mediante profile.js.
 
     HU-US40: Visualización de logros y progreso
     COMO usuario de SafeRoute QUIERO visualizar mis logros obtenidos y pendientes
     PARA conocer mi avance y participación dentro de la aplicación.
 
     Criterio relacionado:
-    - Desde la tarjeta "2/6 Logros" se redirige a la pantalla de logros.
+    - Desde la tarjeta "2/6 Logros" se redirige a achievements.html.
 -->
 <html lang="es">
 <head>
@@ -45,18 +47,25 @@
 
         <section class="profile-content">
             <!-- AC US37 - Escenario 1: Se muestra información principal del usuario registrado. -->
+            <!-- Integración US35: profile.js actualiza foto, nombre y correo desde localStorage. -->
             <article class="user-card">
                 <div class="avatar-wrapper">
-                    <img class="avatar" src="../../assets/images/configuration/profile1.png" alt="Foto de perfil">
+                    <img
+                        class="avatar"
+                        id="profile-avatar"
+                        src="../../assets/images/configuration/profile1.png"
+                        alt="Foto de perfil"
+                    >
 
-                    <button class="avatar-edit-button" type="button" aria-label="Cambiar foto de perfil">
+                    <!-- AC US35 - Permite acceder a la edición de foto de perfil desde el ícono de lápiz. -->
+                    <a class="avatar-edit-button" href="./edit-profile.html#profile-photo" aria-label="Editar foto de perfil">
                         <img src="../../assets/images/configuration/edit_icon.png" alt="">
-                    </button>
+                    </a>
                 </div>
 
                 <div class="user-info">
-                    <h2>Lucía Martínez</h2>
-                    <p>lucia@gmail.com</p>
+                    <h2 id="profile-name">Lucía Martínez</h2>
+                    <p id="profile-email">lucia@gmail.com</p>
                     <strong>ID: 3503245</strong>
                 </div>
             </article>
@@ -114,7 +123,7 @@
 
             <section class="settings-list">
                 <!-- AC US35 - Acceso a la funcionalidad de edición de perfil. -->
-                <a class="settings-item" href="#">
+                <a class="settings-item" href="./edit-profile.html">
                     <img class="settings-icon" src="../../assets/images/configuration/edit_icon_2.png" alt="">
                     <span>Editar Perfil</span>
                     <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">

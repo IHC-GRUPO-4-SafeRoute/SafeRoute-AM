@@ -1,0 +1,457 @@
+/*
+    HU-US35: Edición de perfil de usuario
+
+    Criterios de aceptación cubiertos desde estilos:
+    - Se organiza la edición de foto e información personal en tarjetas claras.
+    - Se mantiene consistencia visual con el módulo de configuración.
+    - Se adapta la pantalla a mobile y mantiene el navbar inferior fijo.
+*/
+
+:root {
+    --bottom-nav-height: 78px;
+}
+
+body {
+    background: #969696;
+}
+
+.edit-profile-page {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--color-screen-bg);
+    overflow-x: hidden;
+}
+
+/* Header */
+
+.edit-profile-header {
+    height: 76px;
+    padding: 24px 31px 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-button {
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+}
+
+.back-button img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.edit-profile-header h1 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.notification-button {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-white);
+}
+
+.notification-button img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* Content */
+
+.edit-profile-content {
+    padding: 24px 38px calc(var(--bottom-nav-height) + 22px);
+}
+
+/* Cards */
+
+.edit-card {
+    width: 100%;
+    border-radius: 18px;
+    background: var(--color-white);
+}
+
+.edit-card h2 {
+    color: var(--color-black);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+/* Photo card */
+
+.photo-card {
+    min-height: 292px;
+    padding: 24px 29px 24px;
+    scroll-margin-top: 90px;
+}
+
+.photo-upload-row {
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.main-avatar-wrapper {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.main-avatar {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.camera-badge {
+    position: absolute;
+    right: -3px;
+    bottom: 1px;
+    width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+}
+
+.camera-badge img {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+.upload-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.upload-label {
+    color: var(--color-navy);
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.avatar-upload-input {
+    display: none;
+}
+
+.delete-photo-button {
+    width: fit-content;
+    background: transparent;
+    color: var(--color-gray);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.photo-helper {
+    margin-top: 25px;
+    color: var(--color-black);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.avatar-options {
+    margin-top: 17px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 16px;
+    row-gap: 12px;
+}
+
+.avatar-option {
+    width: 49px;
+    height: 49px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.avatar-option img {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-option.selected {
+    border-color: var(--color-navy);
+}
+
+/* Personal card */
+
+.personal-card {
+    min-height: 242px;
+    margin-top: 22px;
+    padding: 27px 29px 22px;
+}
+
+.input-group {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.input-group span {
+    color: var(--color-black);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.input-group input {
+    width: 100%;
+    height: 32px;
+    padding: 0 14px;
+    border: 1px solid #B9B9B9;
+    border-radius: 10px;
+    background: var(--color-soft-white);
+    color: var(--color-black);
+    font-size: 11px;
+    font-weight: 500;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: var(--color-navy);
+}
+
+.form-message {
+    min-height: 16px;
+    margin-top: 10px;
+    color: #C15A2E;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Save button */
+
+.save-button {
+    width: 100%;
+    min-height: 51px;
+    margin-top: 16px;
+    border-radius: 10px;
+    background: var(--color-navy);
+    color: var(--color-white);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+/* Bottom navigation */
+
+.bottom-navigation {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index: 10;
+    width: min(100%, 430px);
+    height: var(--bottom-nav-height);
+    padding: 12px 24px 14px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    transform: translateX(-50%);
+    border-radius: 26px 26px 0 0;
+    background: var(--color-primary);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 18px;
+    color: var(--color-white);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.nav-item img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.nav-item.active {
+    background: var(--color-white);
+    color: var(--color-navy);
+}
+
+.nav-item.active img {
+    width: 23px;
+    height: 23px;
+}
+
+/* Responsive */
+
+@media (min-width: 431px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background: #969696;
+    }
+
+    .edit-profile-page {
+        width: 430px;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        background: var(--color-screen-bg);
+    }
+
+    .edit-profile-page {
+        width: 100%;
+        max-width: none;
+    }
+
+    .bottom-navigation {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .edit-profile-header {
+        height: 72px;
+        padding: 22px 25px 0 31px;
+    }
+
+    .edit-profile-content {
+        padding: 22px 35px calc(var(--bottom-nav-height) + 22px);
+    }
+
+    .photo-card {
+        padding-inline: 28px;
+    }
+
+    .avatar-options {
+        column-gap: 14px;
+    }
+
+    .bottom-navigation {
+        padding: 12px 20px 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --bottom-nav-height: 72px;
+    }
+
+    .edit-profile-header {
+        height: 68px;
+        padding: 20px 20px 0;
+    }
+
+    .edit-profile-header h1 {
+        font-size: 18px;
+    }
+
+    .edit-profile-content {
+        padding: 20px 22px calc(var(--bottom-nav-height) + 20px);
+    }
+
+    .photo-card,
+    .personal-card {
+        padding-inline: 24px;
+    }
+
+    .photo-upload-row {
+        gap: 20px;
+    }
+
+    .avatar-options {
+        column-gap: 10px;
+    }
+
+    .avatar-option,
+    .avatar-option img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .save-button {
+        min-height: 48px;
+        font-size: 15px;
+    }
+
+    .bottom-navigation {
+        height: var(--bottom-nav-height);
+        padding: 10px 14px 12px;
+        gap: 4px;
+        border-radius: 22px 22px 0 0;
+    }
+
+    .nav-item {
+        font-size: 9px;
+        gap: 3px;
+    }
+
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-item.active img {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media (max-width: 320px) {
+    .edit-profile-content {
+        padding-inline: 16px;
+    }
+
+    .photo-card,
+    .personal-card {
+        padding-inline: 20px;
+    }
+
+    .avatar-options {
+        column-gap: 7px;
+    }
+
+    .avatar-option,
+    .avatar-option img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .bottom-navigation {
+        padding-inline: 10px;
+    }
+}

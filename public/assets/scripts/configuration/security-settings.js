@@ -239,7 +239,7 @@ pushToggle.addEventListener("change", async () => {
 });
 
 changePasswordButton.addEventListener("click", () => {
-    showStatus("La pantalla para cambiar clave se implementará en el siguiente flujo.");
+    window.location.href = "./change-password.html";
 });
 
 biometricButton.addEventListener("click", enableBiometricAccess);

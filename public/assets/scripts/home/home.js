@@ -1,3 +1,56 @@
+/*
+    Integración de sesión:
+    - Muestra el nombre del usuario que inició sesión.
+    - Solo usa el perfil editado si pertenece al mismo usuario actual.
+*/
+
+const homeUserGreeting = document.getElementById("home-user-greeting");
+
+function getCurrentSessionUser() {
+    try {
+        return JSON.parse(localStorage.getItem("saferouteCurrentUser"));
+    } catch (error) {
+        return null;
+    }
+}
+
+function getEditedProfile() {
+    try {
+        return JSON.parse(localStorage.getItem("safeRouteUserProfile"));
+    } catch (error) {
+        return null;
+    }
+}
+
+function getFirstName(fullName) {
+    if (!fullName) {
+        return "usuario";
+    }
+
+    return fullName.trim().split(" ")[0];
+}
+
+function renderHomeUserName() {
+    const currentUser = getCurrentSessionUser();
+    const editedProfile = getEditedProfile();
+
+    const profileBelongsToCurrentUser =
+        editedProfile &&
+        currentUser &&
+        editedProfile.email === currentUser.email;
+
+    const userName =
+        profileBelongsToCurrentUser
+            ? editedProfile.name
+            : currentUser?.name || "usuario";
+
+    if (homeUserGreeting) {
+        homeUserGreeting.textContent = `Buenos días ${getFirstName(userName)}`;
+    }
+}
+
+renderHomeUserName();
+
 document.addEventListener('DOMContentLoaded', () => {
     function openModal(modal) {
         if (!modal) return;

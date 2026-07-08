@@ -5,15 +5,15 @@
     - La pantalla muestra datos del usuario, rutas, reportes y logros.
 
     Integración con HU-US35:
-    - Lee desde localStorage los cambios realizados en edit-profile.html.
-    - Refleja nombre, correo y foto actualizada en la pantalla de perfil.
+    - Toma como base el usuario que inició sesión.
+    - Solo usa el perfil editado si pertenece al mismo correo del usuario actual.
 */
 
 const STORAGE_KEY = "safeRouteUserProfile";
 
 const defaultProfile = {
-    name: "Lucía Martínez",
-    email: "lucia@gmail.com",
+    name: "Usuario SafeRoute",
+    email: "usuario@saferoute.com",
     phone: "+1 555-0100",
     avatar: "../../assets/images/configuration/profile1.png"
 };
@@ -27,21 +27,47 @@ const logoutModal = document.getElementById("logout-modal");
 const cancelLogoutButton = document.getElementById("cancel-logout");
 const confirmLogoutButton = document.getElementById("confirm-logout");
 
-function getSavedProfile() {
-    const savedProfile = localStorage.getItem(STORAGE_KEY);
-
-    if (!savedProfile) {
-        return defaultProfile;
-    }
-
+function getCurrentSessionUser() {
     try {
-        return {
-            ...defaultProfile,
-            ...JSON.parse(savedProfile)
-        };
+        return JSON.parse(localStorage.getItem("saferouteCurrentUser"));
     } catch (error) {
-        return defaultProfile;
+        return null;
     }
+}
+
+function getSavedEditedProfile() {
+    try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY));
+    } catch (error) {
+        return null;
+    }
+}
+
+function getSavedProfile() {
+    const currentUser = getCurrentSessionUser();
+    const editedProfile = getSavedEditedProfile();
+
+    const sessionProfile = {
+        ...defaultProfile,
+        name: currentUser?.name || defaultProfile.name,
+        email: currentUser?.email || defaultProfile.email,
+        phone: currentUser?.phone || defaultProfile.phone,
+        avatar: currentUser?.avatar || defaultProfile.avatar
+    };
+
+    const profileBelongsToCurrentUser =
+        editedProfile &&
+        currentUser &&
+        editedProfile.email === currentUser.email;
+
+    if (!profileBelongsToCurrentUser) {
+        return sessionProfile;
+    }
+
+    return {
+        ...sessionProfile,
+        ...editedProfile
+    };
 }
 
 function renderProfileData() {
@@ -84,6 +110,10 @@ document.addEventListener("keydown", (event) => {
 });
 
 confirmLogoutButton.addEventListener("click", () => {
+    localStorage.removeItem("saferouteCurrentUser");
+    localStorage.removeItem("saferoutePendingUser");
+    localStorage.removeItem("saferoutePinOrigin");
+
     window.location.href = "../login-sign_up/login.html";
 });
 

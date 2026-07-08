@@ -1,13 +1,17 @@
 /*
     Pantalla: Acceso Biométrico
 
-    HU-US43: Activación y gestión de acceso biométrico
+    HU relacionada:
+    US43 - Activar acceso biométrico
 
-    Implementación funcional:
-    - Muestra varias huellas registradas por usuario.
-    - Cada huella se guarda con id, nombre y fecha.
+    Implementación:
+    - Lista huellas biométricas registradas por usuario.
+    - Permite agregar más de una huella.
     - Permite abrir el detalle de una huella específica.
-    - Permite agregar nuevas huellas.
+    - Persiste información biométrica en localStorage.
+
+    Criterios de aceptación cubiertos:
+    - Escenario 1 y 2: soporte de activación biométrica mediante gestión de registros disponibles.
 */
 
 const BIOMETRIC_KEY = "safeRouteBiometricAccess";

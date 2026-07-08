@@ -1,14 +1,25 @@
 /*
     Pantalla: Cambiar clave
 
-    HU-US38: Inicio de sesión seguro
+    HU relacionada:
+    Pantalla complementaria
+    Relación indirecta: US38 - Inicio de sesión seguro
 
-    Implementación funcional:
+    Implementación:
     - Valida la clave actual del usuario autenticado.
-    - Valida reglas mínimas de seguridad para la nueva clave.
+    - Valida la nueva clave y su confirmación.
     - Actualiza la contraseña en "saferouteUsers".
     - Actualiza también "saferouteCurrentUser".
-    - Luego redirige a la pantalla de confirmación animada.
+    - Redirige a la pantalla de confirmación animada.
+
+    Criterios de aceptación cubiertos:
+    - Validación de clave actual.
+    - Validación de nueva clave.
+    - Confirmación de coincidencia entre nueva clave y confirmación.
+    - Actualización de contraseña en localStorage.
+
+    Nota:
+    - No existe HU oficial exacta para "Cambiar clave"; esta pantalla complementa la seguridad de la cuenta.
 */
 
 const USERS_KEY = "saferouteUsers";

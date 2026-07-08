@@ -1,10 +1,13 @@
 /*
-    HU-US35: Edición de perfil de usuario
+    Pantalla: Editar Perfil
 
-    Criterios de aceptación cubiertos desde estilos:
-    - Se organiza la edición de foto e información personal en tarjetas claras.
-    - Se mantiene consistencia visual con el módulo de configuración.
-    - Se adapta la pantalla a mobile y mantiene el navbar inferior fijo.
+    HU relacionada:
+    US35 - Edición de perfil de usuario
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
 */
 
 :root {

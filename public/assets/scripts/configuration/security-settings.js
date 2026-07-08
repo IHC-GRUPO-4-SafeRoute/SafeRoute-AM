@@ -1,19 +1,22 @@
 /*
     Pantalla: Configuración de Seguridad
 
-    HU-US24: Activación de botón SOS
-    - El botón "Probar SOS" simula una alerta de emergencia.
-    - El usuario puede cancelar la alerta de prueba.
+    HU relacionada:
+    Pantalla complementaria (agrupadora)
+    Opciones vinculadas: US25, US41, US42 y US43
 
-    HU-US26: Temporizador de seguridad
-    - El switch activa/desactiva el temporizador y guarda el estado.
+    Implementación:
+    - Permite activar/desactivar opciones de seguridad mediante switches y persistir estado.
+    - Permite navegar a cambio de clave, acceso biométrico y términos.
+    - Centraliza acciones de acceso a funcionalidades de seguridad.
 
-    HU-US27 / HU-US42: Compartir ubicación y privacidad
-    - El switch solicita permiso de ubicación cuando se activa.
-    - El estado se almacena en localStorage.
+    Criterios de aceptación cubiertos:
+    - Permite acceder a opciones de seguridad desde configuración.
+    - Permite activar/desactivar opciones de seguridad mediante switches.
+    - Permite navegar hacia pantallas específicas como cambio de clave, acceso biométrico y términos.
 
-    HU-US43: Acceso biométrico
-    - Se intenta validar disponibilidad de autenticación biométrica mediante WebAuthn.
+    Nota:
+    - Esta pantalla no representa el cumplimiento total de una sola HU.
 */
 
 const STORAGE_KEY = "safeRouteSecuritySettings";

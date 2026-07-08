@@ -1,11 +1,13 @@
 /*
-    HU-US25: Registro de contactos de emergencia
+    Pantalla: Contactos de Emergencia
 
-    Criterios de aceptación cubiertos desde estilos:
-    - Se muestra una lista clara de contactos de emergencia.
-    - Se presenta un formulario para agregar nuevos contactos.
-    - Se mantiene consistencia visual con el módulo de configuración.
-    - Se adapta la pantalla a mobile y mantiene el navbar inferior fijo.
+    HU relacionada:
+    US25 - Registro de contactos de emergencia
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
 */
 
 :root {

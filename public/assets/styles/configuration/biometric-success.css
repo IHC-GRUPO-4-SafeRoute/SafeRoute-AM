@@ -1,8 +1,14 @@
 /*
-    HU-US43: Confirmación de acceso biométrico
+    Pantalla: Confirmación biométrica
 
-    Criterio visual:
-    - Se muestra una animación después de guardar o eliminar la huella.
+    HU relacionada:
+    Pantalla complementaria
+    Relación: US43 - Activar acceso biométrico
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual del estado de éxito.
 */
 
 * {

@@ -1,11 +1,14 @@
 /*
-    HU-US24, HU-US26, HU-US27, HU-US42, HU-US43
+    Pantalla: Configuración de Seguridad
 
-    Criterios de aceptación cubiertos desde estilos:
-    - Se presentan opciones de seguridad con switches funcionales.
-    - Se mantiene consistencia visual con Perfil, Logros y Contactos de Emergencia.
-    - Se mantiene navbar inferior fijo.
-    - Se adapta a mobile y escritorio centrado.
+    HU relacionada:
+    Pantalla complementaria (agrupadora)
+    Opciones vinculadas: US25, US41, US42 y US43
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
 */
 
 :root {

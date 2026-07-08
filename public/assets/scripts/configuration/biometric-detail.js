@@ -1,12 +1,20 @@
 /*
     Pantalla: Detalle de huella dactilar
 
-    HU-US43: Gestión de acceso biométrico
+    HU relacionada:
+    US43 - Activar acceso biométrico
 
     Implementación:
     - Abre una huella específica mediante query param ?id=...
     - Permite editar su nombre.
     - Permite eliminar solo esa huella.
+    - Actualiza localStorage y muestra confirmación al eliminar.
+
+    Criterios de aceptación cubiertos:
+    - Extensión funcional de la gestión biométrica asociada a US43.
+
+    Nota:
+    - Edición y eliminación son extensiones funcionales, no escenarios oficiales separados.
 */
 
 const BIOMETRIC_KEY = "safeRouteBiometricAccess";

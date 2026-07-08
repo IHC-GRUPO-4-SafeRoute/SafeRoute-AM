@@ -1,12 +1,17 @@
 /*
     Pantalla: Confirmación biométrica
 
-    HU-US43: Activación y gestión de acceso biométrico
+    HU relacionada:
+    Pantalla complementaria
+    Relación: US43 - Activar acceso biométrico
 
     Implementación:
-    - Reproduce la animación completa una sola vez.
-    - Cambia el texto según la acción: guardar o eliminar.
+    - Muestra animación de éxito.
+    - Cambia el texto según la acción: huella guardada o huella eliminada.
     - Redirige a Acceso Biométrico.
+
+    Criterios de aceptación cubiertos:
+    - Confirmación visual del flujo complementario de registro/gestión biométrica.
 */
 
 const successAnimation = document.getElementById("success-animation");

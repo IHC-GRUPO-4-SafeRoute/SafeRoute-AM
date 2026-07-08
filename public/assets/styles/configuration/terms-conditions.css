@@ -1,12 +1,13 @@
 /*
-    HU: Aceptación de términos y condiciones
+    Pantalla: Términos y Condiciones
 
-    Criterios cubiertos desde estilos:
-    - Cards expandibles para leer términos.
-    - Checkbox de aceptación.
-    - Botón Aceptar deshabilitado en gris.
-    - Botón Aceptar activo en azul solo cuando el usuario acepta.
-    - Diseño responsive mobile.
+    HU relacionada:
+    Pantalla informativa
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
 */
 
 :root {

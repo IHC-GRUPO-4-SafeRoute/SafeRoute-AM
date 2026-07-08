@@ -1,11 +1,16 @@
 /*
-    HU-US43: Gestión de acceso biométrico
+    Pantalla: Registro y detalle de huella biométrica
 
-    Criterios cubiertos desde estilos:
-    - Se muestra una huella registrada.
-    - Se permite registrar o eliminar una huella.
-    - Se mantiene navbar inferior fijo.
-    - Se adapta a vista mobile.
+    HU relacionada:
+    US43 - Activar acceso biométrico
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
+
+    Nota:
+    - Hoja compartida por biometric-enroll.html y biometric-detail.html.
 */
 
 :root {

@@ -37,8 +37,6 @@ showPasswordButton.addEventListener("click", function () {
 });
 
 
-/* Validar inicio de sesión */
-
 loginForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
@@ -58,21 +56,12 @@ loginForm.addEventListener("submit", function (event) {
 
     if (validUser) {
 
-        /*
-            Se guarda temporalmente al usuario mientras
-            completa la verificación del PIN.
-        */
 
         localStorage.setItem(
             "saferoutePendingUser",
             JSON.stringify(validUser)
         );
 
-
-        /*
-            Indica que el usuario llegó al PIN
-            desde el inicio de sesión.
-        */
 
         localStorage.setItem(
             "saferoutePinOrigin",

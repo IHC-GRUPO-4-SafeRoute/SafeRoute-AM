@@ -133,10 +133,10 @@ registerForm.addEventListener("submit", function (event) {
     }
 
 
-    if (password.length < 8) {
+    if (password.length !== 13) {
 
         registerMessage.textContent =
-            "La contraseña debe tener al menos 8 caracteres.";
+            "La contraseña debe tener exactamente 13 caracteres.";
 
         return;
     }
@@ -172,15 +172,6 @@ registerForm.addEventListener("submit", function (event) {
 
         registerMessage.textContent =
             "La contraseña debe incluir al menos un carácter especial.";
-
-        return;
-    }
-
-
-    if (password !== passwordConfirmation) {
-
-        registerMessage.textContent =
-            "Las contraseñas no coinciden.";
 
         return;
     }

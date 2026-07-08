@@ -103,10 +103,10 @@ newPasswordForm.addEventListener("submit", function (event) {
     }
 
 
-    if (newPassword.length < 8) {
+    if (newPassword.length !== 13) {
 
         newPasswordMessage.textContent =
-            "La contraseña debe tener al menos 8 caracteres.";
+            "La contraseña debe tener exactamente 13 caracteres.";
 
         newPasswordInput.focus();
 

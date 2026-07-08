@@ -73,9 +73,6 @@ acceptPinButton.addEventListener("click", function () {
         localStorage.getItem("saferoutePinOrigin");
 
 
-    /*
-        Flujo de inicio de sesión
-    */
 
     if (pinOrigin === "login") {
 
@@ -91,11 +88,6 @@ acceptPinButton.addEventListener("click", function () {
             return;
         }
 
-
-        /*
-            Después de aceptar el PIN, el usuario
-            ya queda registrado como usuario actual.
-        */
 
         localStorage.setItem(
             "saferouteCurrentUser",
@@ -118,10 +110,6 @@ acceptPinButton.addEventListener("click", function () {
         return;
     }
 
-
-    /*
-        Flujo de recuperación de contraseña
-    */
 
     if (pinOrigin === "forgot-password") {
 

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <!--
-    HU: Aceptación de términos y condiciones
+    Pantalla: Términos y Condiciones
 
-    COMO usuario de SafeRoute
-    QUIERO revisar y aceptar los términos y condiciones
-    PARA autorizar el uso del servicio, monitoreo de ubicación y tratamiento de datos.
+    HU relacionada:
+    Pantalla informativa
 
     Criterios de aceptación cubiertos:
-    - El usuario puede expandir y contraer secciones de términos.
-    - El botón Aceptar permanece deshabilitado hasta marcar el checkbox.
-    - Al aceptar, se guarda la aceptación en localStorage.
-    - La aceptación puede ser consultada luego desde configuración.
+    - Permite leer secciones informativas.
+    - Permite expandir y contraer contenido con "Leer más" y "Leer menos".
+    - Permite abrir enlace externo a política de privacidad.
+
+    Nota:
+    - La aceptación de términos se realiza en otro flujo posterior al inicio de sesión.
 -->
 <html lang="es">
 <head>
@@ -139,25 +140,6 @@
                     </a>
                 </div>
             </article>
-
-            <section class="accept-card">
-                <label class="terms-checkbox">
-                    <input type="checkbox" id="accept-terms-checkbox">
-
-                    <span class="custom-checkbox">
-                        <img src="../../assets/images/configuration/check.png" alt="">
-                    </span>
-
-                    <span>Aceptar todos los términos y condiciones</span>
-                </label>
-
-                <button class="accept-button" type="button" id="accept-terms-button" disabled>
-                    Aceptar
-                </button>
-
-                <p class="terms-message" id="terms-message" aria-live="polite"></p>
-            </section>
-        </section>
 
         <nav class="bottom-navigation">
             <a class="nav-item" href="../home/home.html">

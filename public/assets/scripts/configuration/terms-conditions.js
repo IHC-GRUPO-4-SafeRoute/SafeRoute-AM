@@ -1,20 +1,27 @@
 /*
     Pantalla: Términos y Condiciones
 
-    Implementación funcional:
-    - Expande/contrae secciones.
-    - Cambia texto Leer más / Leer menos.
-    - Activa el botón Aceptar solo cuando el checkbox está marcado.
-    - Guarda aceptación en localStorage.
-*/
+    HU relacionada:
+    Pantalla informativa
 
-const TERMS_KEY = "safeRouteTermsAccepted";
+    Implementación:
+    - Permite expandir y contraer secciones.
+    - Cambia el texto Leer más / Leer menos.
+    - Permite abrir enlace externo a política de privacidad desde la vista.
+
+    Criterios de aceptación cubiertos:
+    - Lectura de secciones informativas con interacción "Leer más" / "Leer menos".
+
+    Nota:
+    - No incluye aceptación de términos porque esa acción pertenece a otro flujo posterior al inicio de sesión.
+*/
 
 const backButton = document.getElementById("back-button");
 const termsCards = document.querySelectorAll(".terms-card");
 const acceptTermsCheckbox = document.getElementById("accept-terms-checkbox");
 const acceptTermsButton = document.getElementById("accept-terms-button");
 const termsMessage = document.getElementById("terms-message");
+const TERMS_KEY = "safeRouteTermsAccepted";
 
 function updateAcceptButtonState() {
     if (acceptTermsCheckbox.checked) {

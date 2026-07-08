@@ -1,12 +1,18 @@
 /*
     Pantalla: Perfil
 
-    HU-US37: Visualización de resumen de actividad
-    - La pantalla muestra datos del usuario, rutas, reportes y logros.
+    HU relacionada:
+    US37 - Visualización de resumen de actividad
+    Relación secundaria: US35 - Edición de perfil de usuario (acceso a edición)
 
-    Integración con HU-US35:
-    - Toma como base el usuario que inició sesión.
-    - Solo usa el perfil editado si pertenece al mismo correo del usuario actual.
+    Implementación:
+    - Carga los datos del usuario autenticado y del perfil editado asociado.
+    - Mantiene la información de perfil para visualización consistente.
+    - Gestiona acciones de salida de sesión desde la pantalla de perfil.
+
+    Criterios de aceptación cubiertos:
+    - Escenario 1: visualización de resumen con datos persistidos del usuario.
+    - Escenario 2: soporte de valores iniciales cuando no hay datos previos.
 */
 
 const STORAGE_KEY = "safeRouteUserProfile";

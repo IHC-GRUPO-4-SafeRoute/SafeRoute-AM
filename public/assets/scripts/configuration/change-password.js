@@ -8,7 +8,7 @@
     - Valida reglas mínimas de seguridad para la nueva clave.
     - Actualiza la contraseña en "saferouteUsers".
     - Actualiza también "saferouteCurrentUser".
-    - Esto permite que el login use la nueva contraseña después de cerrar sesión.
+    - Luego redirige a la pantalla de confirmación animada.
 */
 
 const USERS_KEY = "saferouteUsers";
@@ -185,8 +185,8 @@ changePasswordForm.addEventListener("submit", (event) => {
     changePasswordForm.reset();
 
     setTimeout(() => {
-        window.location.href = "./security-settings.html";
-    }, 900);
+        window.location.href = "./change-password-success.html";
+    }, 500);
 });
 
 backButton.addEventListener("click", () => {

@@ -1,15 +1,16 @@
-const loginButton = document.getElementById("login-button");
-const registerButton = document.getElementById("register-button");
-const forgotPasswordButton = document.getElementById("forgot-password-button");
+const startButton = document.getElementById("start-button");
+const accountButton = document.getElementById("account-button");
 
-loginButton.addEventListener("click", () => {
-    console.log("Login");
+
+startButton.addEventListener("click", () => {
+
+    window.location.href = "../onboarding/saferoutes.html";
+
 });
 
-registerButton.addEventListener("click", () => {
-    console.log("Register");
-});
 
-forgotPasswordButton.addEventListener("click", () => {
-    console.log("Forgot Password");
+accountButton.addEventListener("click", () => {
+
+    window.location.href = "../login-sign_up/login.html";
+
 });

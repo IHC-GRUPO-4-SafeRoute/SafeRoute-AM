@@ -1,16 +1,20 @@
 /*
-    HU-US38: Inicio de sesión seguro
+    HU-US43: Confirmación de acceso biométrico
 
     Criterio visual:
-    - Se muestra confirmación después de cambiar la clave correctamente.
-    - La animación usa imágenes por secuencia.
+    - Se muestra una animación después de guardar o eliminar la huella.
 */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     background: #969696;
+    overflow-x: hidden;
 }
 
-.password-success-page {
+.biometric-success-page {
     width: 100%;
     max-width: 430px;
     min-height: 100vh;
@@ -23,7 +27,8 @@ body {
 
 .success-content {
     width: 100%;
-    padding: 0 58px;
+    max-width: 430px;
+    padding: 0 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,15 +44,15 @@ body {
 }
 
 .success-content h1 {
-    max-width: 300px;
+    width: 100%;
+    max-width: 310px;
+    margin: 0 auto;
     color: var(--color-black);
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 900;
     line-height: 1.15;
     text-align: center;
 }
-
-/* Responsive */
 
 @media (min-width: 431px) {
     body {
@@ -57,7 +62,7 @@ body {
         background: #969696;
     }
 
-    .password-success-page {
+    .biometric-success-page {
         width: 430px;
         min-height: 100vh;
     }
@@ -68,26 +73,30 @@ body {
         background: var(--color-screen-bg);
     }
 
-    .password-success-page {
+    .biometric-success-page {
         width: 100%;
         max-width: none;
     }
 }
 
 @media (max-width: 390px) {
+    .success-content {
+        padding: 0 42px;
+    }
+
     .success-animation {
         width: 118px;
         height: 118px;
     }
 
     .success-content h1 {
-        font-size: 22px;
+        font-size: 21px;
     }
 }
 
 @media (max-width: 360px) {
     .success-content {
-        padding: 0 46px;
+        padding: 0 36px;
         transform: translateY(-38px);
     }
 
@@ -99,13 +108,13 @@ body {
 
     .success-content h1 {
         max-width: 270px;
-        font-size: 21px;
+        font-size: 20px;
     }
 }
 
 @media (max-width: 320px) {
     .success-content {
-        padding: 0 36px;
+        padding: 0 28px;
     }
 
     .success-animation {
@@ -114,6 +123,6 @@ body {
     }
 
     .success-content h1 {
-        font-size: 19px;
+        font-size: 18px;
     }
 }

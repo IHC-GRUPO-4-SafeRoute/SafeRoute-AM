@@ -4,8 +4,7 @@
     HU-US38: Inicio de sesión seguro
 
     Implementación:
-    - Reproduce la animación una sola vez usando imágenes por secuencia.
-    - Mantiene el último frame unos segundos.
+    - Reproduce la animación de cambio de clave una sola vez.
     - Luego redirige a Configuración de Seguridad.
 */
 

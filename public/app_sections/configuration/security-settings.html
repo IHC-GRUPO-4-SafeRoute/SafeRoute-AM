@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--
+    HU-US24: Activación de botón SOS
+    COMO usuario en una situación de peligro
+    QUIERO activar rápidamente un botón SOS
+    PARA solicitar ayuda inmediata y compartir mi ubicación.
+
+    Criterios cubiertos:
+    - Escenario 1: Activación exitosa del SOS.
+      El botón "Probar SOS" simula el envío de una alerta de emergencia.
+    - Escenario 2: Cancelación del SOS.
+      El modal permite cancelar la alerta de prueba.
+
+    HU-US26: Temporizador de seguridad para trayectos
+    COMO usuario que se desplaza solo por zonas inseguras
+    QUIERO configurar un temporizador de seguridad
+    PARA confirmar periódicamente que me encuentro bien durante el trayecto.
+
+    Criterios cubiertos:
+    - Activar o desactivar el temporizador mediante switch.
+    - El estado se guarda en localStorage.
+
+    HU-US27 / HU-US42: Compartir ubicación y privacidad
+    COMO usuario QUIERO controlar cuándo comparto mi ubicación
+    PARA decidir quién puede visualizar mis desplazamientos.
+
+    Criterios cubiertos:
+    - El usuario puede activar/desactivar compartir ubicación.
+    - Si el navegador requiere permisos, se solicita autorización.
+
+    HU-US43: Activar acceso biométrico
+    COMO usuario de SafeRoute QUIERO habilitar el acceso biométrico
+    PARA ingresar más rápido y proteger mi cuenta.
+
+    Criterio relacionado:
+    - Se verifica disponibilidad de autenticación biométrica/plataforma mediante WebAuthn cuando es posible.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Seguridad | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/security-settings.css">
+</head>
+<body>
+    <main class="security-page">
+        <header class="security-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver al perfil">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1>Configuración de Seguridad</h1>
+            </div>
+
+            <button class="notification-button" type="button" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </button>
+        </header>
+
+        <section class="security-content">
+            <h2 class="section-title">Seguridad</h2>
+
+            <section class="security-links">
+                <button class="security-link" type="button" id="change-password-button">
+                    <span>Cambiar de clave</span>
+                    <img src="../../assets/images/configuration/right_arrow.png" alt="">
+                </button>
+
+                <button class="security-link" type="button" id="biometric-button">
+                    <span>Acceso Biométrico</span>
+                    <img src="../../assets/images/configuration/right_arrow.png" alt="">
+                </button>
+
+                <button class="security-link" type="button" id="terms-button">
+                    <span>Terminos y Condiciones</span>
+                    <img src="../../assets/images/configuration/right_arrow.png" alt="">
+                </button>
+            </section>
+
+            <p class="status-message" id="status-message" aria-live="polite"></p>
+
+            <!-- AC US26 - Switch funcional para activar/desactivar temporizador. -->
+            <section class="security-card">
+                <img class="security-card-icon" src="../../assets/images/configuration/time.png" alt="">
+
+                <div class="security-card-info">
+                    <h3>Temporizador de seguridad</h3>
+                    <p>Alerta automática si no confirmas</p>
+                </div>
+
+                <label class="switch" aria-label="Activar temporizador de seguridad">
+                    <input type="checkbox" id="timer-toggle">
+                    <span class="slider"></span>
+                </label>
+            </section>
+
+            <!-- AC US27 / US42 - Switch funcional para compartir ubicación. -->
+            <section class="security-card">
+                <img class="security-card-icon" src="../../assets/images/configuration/share.png" alt="">
+
+                <div class="security-card-info">
+                    <h3>Compartir Ubicación</h3>
+                    <p>Con contactos de emergencia</p>
+                </div>
+
+                <label class="switch" aria-label="Activar compartir ubicación">
+                    <input type="checkbox" id="location-toggle">
+                    <span class="slider"></span>
+                </label>
+            </section>
+
+            <!-- Permiso funcional de micrófono para funciones de alerta. -->
+            <section class="security-card">
+                <img class="security-card-icon" src="../../assets/images/configuration/microfone.png" alt="">
+
+                <div class="security-card-info">
+                    <h3>Habilitar micrófono</h3>
+                    <p>Para detectar palabras de alerta</p>
+                </div>
+
+                <label class="switch" aria-label="Activar micrófono">
+                    <input type="checkbox" id="microphone-toggle">
+                    <span class="slider"></span>
+                </label>
+            </section>
+
+            <!-- AC US22 - Switch funcional para notificaciones push. -->
+            <section class="security-card">
+                <img class="security-card-icon" src="../../assets/images/configuration/push.png" alt="">
+
+                <div class="security-card-info">
+                    <h3>Notificaciones push</h3>
+                </div>
+
+                <label class="switch" aria-label="Activar notificaciones push">
+                    <input type="checkbox" id="push-toggle">
+                    <span class="slider"></span>
+                </label>
+            </section>
+
+            <!-- AC US24 - Botón funcional de prueba SOS. -->
+            <section class="sos-card">
+                <div class="sos-header">
+                    <img class="security-card-icon" src="../../assets/images/configuration/sos.png" alt="">
+
+                    <div class="security-card-info">
+                        <h3>Botón SOS</h3>
+                        <p>Configura el botón de emergencia</p>
+                    </div>
+                </div>
+
+                <button class="sos-button" type="button" id="test-sos-button">
+                    Probar SOS
+                </button>
+            </section>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <div class="sos-modal-overlay" id="sos-modal">
+        <section class="sos-modal">
+            <h2>SOS de prueba activado</h2>
+            <p id="sos-modal-message">
+                Se simuló el envío de una alerta a tus contactos de emergencia.
+            </p>
+
+            <button class="sos-modal-cancel" type="button" id="cancel-sos-button">
+                Cancelar SOS
+            </button>
+
+            <button class="sos-modal-confirm" type="button" id="close-sos-button">
+                Entendido
+            </button>
+        </section>
+    </div>
+
+    <script src="../../assets/scripts/configuration/security-settings.js"></script>
+</body>
+</html>

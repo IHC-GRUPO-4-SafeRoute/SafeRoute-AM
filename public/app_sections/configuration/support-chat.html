@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+    Pantalla complementaria: Chat de Soporte Online
+
+    Esta pantalla permite al usuario conversar con un asistente virtual
+    para resolver dudas o recibir orientación sobre reportes y soporte.
+
+    Criterios funcionales implementados:
+    - Muestra conversación de soporte.
+    - Permite escribir y enviar mensajes.
+    - Permite seleccionar y enviar archivos.
+    - Permite seleccionar y enviar imágenes.
+    - Permite simular envío de audio.
+    - Guarda mensajes mediante localStorage.
+    - Permite iniciar un nuevo chat desde Soporte Online.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Online | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/support-chat.css">
+</head>
+<body>
+    <main class="support-chat-page">
+        <header class="support-chat-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver a soporte online">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1>Soporte Online</h1>
+            </div>
+
+            <a
+                class="notification-button"
+                id="notification-link"
+                href="../notifications/notifications.html?returnTo=../configuration/support-chat.html"
+                aria-label="Ver notificaciones"
+            >
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <section class="support-chat-content">
+            <div class="chat-tabs">
+                <button class="chat-tab is-active" type="button">Asistente de Soporte</button>
+                <button class="chat-tab" type="button">Centro de Ayuda</button>
+            </div>
+
+            <section class="chat-messages" id="chat-messages" aria-live="polite"></section>
+
+            <form class="chat-composer" id="chat-form">
+                <input
+                    type="text"
+                    id="chat-input"
+                    aria-label="Escribir mensaje"
+                    autocomplete="off"
+                >
+
+                <input
+                    type="file"
+                    id="file-input"
+                    class="hidden-file-input"
+                >
+
+                <input
+                    type="file"
+                    id="image-input"
+                    class="hidden-file-input"
+                    accept="image/*"
+                >
+
+                <button class="composer-icon-button" type="button" id="clip-button" aria-label="Adjuntar archivo">
+                    <img src="../../assets/images/configuration/clip.png" alt="">
+                </button>
+
+                <button class="composer-icon-button" type="button" id="photo-button" aria-label="Enviar imagen">
+                    <img src="../../assets/images/configuration/photo_message.png" alt="">
+                </button>
+
+                <button class="audio-button" type="button" id="audio-button" aria-label="Enviar audio">
+                    <img src="../../assets/images/configuration/microfone_audio.png" alt="">
+                </button>
+            </form>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/configuration/support-chat.js"></script>
+</body>
+</html>

@@ -1,4 +1,29 @@
 <!DOCTYPE html>
+<!--
+    HU-US37: Visualización de resumen de actividad
+    COMO usuario de SafeRoute QUIERO visualizar un resumen de mi actividad
+    PARA conocer rápidamente mi uso dentro de la aplicación.
+
+    Criterios de aceptación cubiertos:
+    - Escenario 1: Resumen disponible.
+      Se muestran las tarjetas de Rutas, Reportes y Logros dentro del perfil.
+    - Escenario 2: Usuario sin actividad.
+      La estructura permite mostrar valores iniciales en caso el usuario no tenga registros.
+
+    HU-US35: Edición de perfil de usuario
+    COMO usuario registrado QUIERO editar mi información de perfil
+    PARA mantener mis datos actualizados dentro de la aplicación.
+
+    Criterio relacionado:
+    - Se incluye el acceso visual a la opción "Editar Perfil" desde la pantalla de perfil.
+
+    HU-US40: Visualización de logros y progreso
+    COMO usuario de SafeRoute QUIERO visualizar mis logros obtenidos y pendientes
+    PARA conocer mi avance y participación dentro de la aplicación.
+
+    Criterio relacionado:
+    - Desde la tarjeta "2/6 Logros" se redirige a la pantalla de logros.
+-->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -19,10 +44,12 @@
         </header>
 
         <section class="profile-content">
+            <!-- AC US37 - Escenario 1: Se muestra información principal del usuario registrado. -->
             <article class="user-card">
                 <div class="avatar-wrapper">
                     <img class="avatar" src="../../assets/images/configuration/profile1.png" alt="Foto de perfil">
-                    <button class="avatar-edit-button" type="button" aria-label="Cambiar foto">
+
+                    <button class="avatar-edit-button" type="button" aria-label="Cambiar foto de perfil">
                         <img src="../../assets/images/configuration/edit_icon.png" alt="">
                     </button>
                 </div>
@@ -34,6 +61,7 @@
                 </div>
             </article>
 
+            <!-- AC US40 - Se muestra una vista previa de logros obtenidos y pendientes. -->
             <section class="achievements">
                 <h2>Logros</h2>
 
@@ -65,6 +93,7 @@
                 </div>
             </section>
 
+            <!-- AC US37 - Escenario 1: Se muestra resumen de rutas, reportes y logros del usuario. -->
             <section class="profile-stats">
                 <article class="stat-card">
                     <strong>24</strong>
@@ -76,13 +105,15 @@
                     <span>Reportes</span>
                 </article>
 
-                <article class="stat-card">
+                <!-- AC US40 - Permite acceder a la pantalla completa de logros y progreso. -->
+                <a class="stat-card" href="./achievements.html">
                     <strong>2/6</strong>
                     <span>Logros</span>
-                </article>
+                </a>
             </section>
 
             <section class="settings-list">
+                <!-- AC US35 - Acceso a la funcionalidad de edición de perfil. -->
                 <a class="settings-item" href="#">
                     <img class="settings-icon" src="../../assets/images/configuration/edit_icon_2.png" alt="">
                     <span>Editar Perfil</span>
@@ -127,27 +158,27 @@
         </section>
 
         <nav class="bottom-navigation">
-            <a class="nav-item" href="#">
+            <a class="nav-item" href="../home/home.html">
                 <img src="../../assets/images/configuration/home.png" alt="">
                 <span>Inicio</span>
             </a>
 
-            <a class="nav-item" href="#">
+            <a class="nav-item" href="../routes/routes.html">
                 <img src="../../assets/images/configuration/route.png" alt="">
                 <span>Rutas</span>
             </a>
 
-            <a class="nav-item" href="#">
+            <a class="nav-item" href="../alerts/alerts.html">
                 <img src="../../assets/images/configuration/alert.png" alt="">
                 <span>Alertas</span>
             </a>
 
-            <a class="nav-item" href="#">
+            <a class="nav-item" href="../reports/reports.html">
                 <img src="../../assets/images/configuration/report.png" alt="">
                 <span>Reportes</span>
             </a>
 
-            <a class="nav-item active" href="#">
+            <a class="nav-item active" href="./profile.html">
                 <img src="../../assets/images/configuration/profile.png" alt="">
                 <span>Perfil</span>
             </a>

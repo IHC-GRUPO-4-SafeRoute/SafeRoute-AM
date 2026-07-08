@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--
+    HU-US40: Visualización de logros y progreso
+    COMO usuario de SafeRoute QUIERO visualizar mis logros obtenidos y pendientes
+    PARA conocer mi avance y participación dentro de la aplicación.
+
+    Criterios de aceptación cubiertos:
+    - Escenario 1: Visualización exitosa de logros.
+      Se muestran logros obtenidos y logros pendientes con su respectivo avance.
+    - Escenario 2: Usuario sin logros registrados.
+      La pantalla mantiene visibles los objetivos disponibles para que el usuario conozca qué puede desbloquear.
+
+    HU-US36: Obtención de logros por contribución comunitaria
+    COMO usuario de SafeRoute QUIERO obtener logros al realizar reportes de seguridad
+    PARA recibir reconocimiento por mi participación dentro de la aplicación.
+
+    Criterio relacionado:
+    - Se muestra el progreso de logros asociados a reportes, rutas y contribución comunitaria.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logros | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/achievements.css">
+</head>
+<body>
+    <main class="achievements-page">
+        <header class="achievements-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver al perfil">
+                    ‹
+                </button>
+
+                <h1>Logros</h1>
+            </div>
+
+            <button class="notification-button" type="button" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </button>
+        </header>
+
+        <section class="achievements-content">
+            <!-- AC US40 - Escenario 1: Se muestran logros obtenidos y pendientes. -->
+            <section class="achievement-grid">
+                <!-- AC US36 - Logro obtenido por contribución mediante reportes. -->
+                <article class="achievement-card completed">
+                    <div class="achievement-card-header">
+                        <img src="../../assets/images/configuration/shield.png" alt="">
+                        <h2>Protector</h2>
+                    </div>
+
+                    <p>Reportaste 5+ incidentes</p>
+
+                    <div class="progress-bar">
+                        <span style="width: 100%;"></span>
+                    </div>
+
+                    <strong>5/5</strong>
+                </article>
+
+                <!-- AC US40 - Logro obtenido con progreso completo. -->
+                <article class="achievement-card completed">
+                    <div class="achievement-card-header">
+                        <img src="../../assets/images/configuration/ray.png" alt="">
+                        <h2>Veloz</h2>
+                    </div>
+
+                    <p>Completaste 10 rutas</p>
+
+                    <div class="progress-bar">
+                        <span style="width: 100%;"></span>
+                    </div>
+
+                    <strong>10/10</strong>
+                </article>
+
+                <!-- AC US40 - Logro obtenido relacionado con verificación comunitaria. -->
+                <article class="achievement-card completed">
+                    <div class="achievement-card-header">
+                        <img src="../../assets/images/configuration/eye.png" alt="">
+                        <h2>Observador</h2>
+                    </div>
+
+                    <p>Verificaste 20 nodos</p>
+
+                    <div class="progress-bar">
+                        <span style="width: 100%;"></span>
+                    </div>
+
+                    <strong>20/20</strong>
+                </article>
+
+                <!-- AC US40 - Escenario 1: Se muestra avance de logro pendiente. -->
+                <article class="achievement-card pending">
+                    <div class="achievement-card-header">
+                        <img src="../../assets/images/configuration/trophy.png" alt="">
+                        <h2>Protector</h2>
+                    </div>
+
+                    <p>Ayudaste a 2 personas</p>
+
+                    <div class="progress-bar">
+                        <span style="width: 33%;"></span>
+                    </div>
+
+                    <strong>2/6</strong>
+                </article>
+
+                <!-- AC US40 - Escenario 2: Se muestra objetivo disponible para seguir progresando. -->
+                <article class="achievement-card pending">
+                    <div class="achievement-card-header">
+                        <img src="../../assets/images/configuration/star.png" alt="">
+                        <h2>Maestro</h2>
+                    </div>
+
+                    <p>Completa todos los logros</p>
+
+                    <div class="progress-bar">
+                        <span style="width: 33%;"></span>
+                    </div>
+
+                    <strong>2/6</strong>
+                </article>
+            </section>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/configuration/achievements.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+    HU-US43: Activación de acceso biométrico
+
+    Pantalla de confirmación:
+    - Se muestra después de agregar correctamente el acceso biométrico.
+    - Usa una animación visual similar a la confirmación de cambio de clave.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso biométrico agregado | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/biometric-success.css">
+</head>
+<body>
+    <main class="biometric-success-page">
+        <section class="success-content">
+            <div class="success-loader" aria-hidden="true">
+                <span></span>
+            </div>
+
+            <h1>El acceso biométrico ha sido agregado exitosamente</h1>
+        </section>
+    </main>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "./biometric-access.html";
+        }, 1800);
+    </script>
+</body>
+</html>

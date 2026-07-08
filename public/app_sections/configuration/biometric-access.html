@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+    HU-US43: Activación de acceso biométrico
+
+    COMO usuario de SafeRoute
+    QUIERO habilitar el acceso biométrico
+    PARA ingresar más rápido y proteger mi cuenta.
+
+    Criterios de aceptación cubiertos:
+    - Se muestra el acceso biométrico asociado al usuario actual.
+    - Se permite agregar un nuevo acceso biométrico.
+    - La acción se guarda en localStorage.
+    - Después de agregar el acceso, se muestra una pantalla de confirmación.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Biométrico | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/biometric-access.css">
+</head>
+<body>
+    <main class="biometric-page">
+        <header class="biometric-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver a configuración de seguridad">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1>Acceso Biométrico</h1>
+            </div>
+
+            <button class="notification-button" type="button" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </button>
+        </header>
+
+        <section class="biometric-content">
+            <!-- AC US43 - Acceso biométrico asociado al usuario actual. -->
+            <button class="biometric-option" type="button" id="registered-biometric-button">
+                <span class="biometric-icon fingerprint-icon">
+                    <img src="../../assets/images/configuration/finger-print.png" alt="">
+                </span>
+
+                <span class="biometric-text" id="registered-biometric-label">
+                    Huella dactilar del usuario
+                </span>
+
+                <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+            </button>
+
+            <!-- AC US43 - Permite agregar un nuevo acceso biométrico. -->
+            <button class="biometric-option" type="button" id="add-biometric-button">
+                <span class="biometric-icon add-icon">
+                    <img src="../../assets/images/configuration/plus_white.png" alt="">
+                </span>
+
+                <span class="biometric-text">
+                    Agregar acceso biométrico
+                </span>
+
+                <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
+            </button>
+
+            <p class="biometric-message" id="biometric-message" aria-live="polite"></p>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../route/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/configuration/biometric-access.js"></script>
+</body>
+</html>

@@ -242,7 +242,9 @@ changePasswordButton.addEventListener("click", () => {
     window.location.href = "./change-password.html";
 });
 
-biometricButton.addEventListener("click", enableBiometricAccess);
+biometricButton.addEventListener("click", () => {
+    window.location.href = "./biometric-access.html";
+});
 
 termsButton.addEventListener("click", () => {
     showStatus("Términos y condiciones disponibles próximamente.");

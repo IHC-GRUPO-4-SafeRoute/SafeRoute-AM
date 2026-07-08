@@ -104,8 +104,7 @@ acceptPinButton.addEventListener("click", function () {
         );
 
 
-        window.location.href =
-            "../home/home.html";
+        window.location.href = "terms-conditions-login.html";
 
         return;
     }

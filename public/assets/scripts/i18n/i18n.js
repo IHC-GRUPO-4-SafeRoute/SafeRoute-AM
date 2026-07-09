@@ -110,3 +110,8 @@ window.applySafeRouteTranslations = applySafeRouteTranslations;
 document.addEventListener("DOMContentLoaded", () => {
     applySafeRouteTranslations();
 });
+window.getTranslation = async function (key) {
+    const language = getCurrentLanguage();
+    const translations = await loadTranslations(language);
+    return getNestedTranslation(translations, key);
+};

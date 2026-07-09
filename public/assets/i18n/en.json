@@ -121,9 +121,36 @@
     "title": "Home"
   },
   "notifications": {
-    "title": "Notifications"
+    "title": "Notifications",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "markAllRead": "Mark All as Read",
+    "markAllUnread": "Mark as Unread",
+    "items": {
+      "routeDeviation": {
+        "title": "Did You Go Off Your Route?",
+        "line1": "We detected a change in your path.",
+        "line2": "Are you okay, or would you like to recalculate a safe route?"
+      },
+      "nearbyRefuge": {
+        "title": "There's a \"Refuge Point\" Nearby",
+        "line1": "You are 50 meters from Inkafarma.",
+        "line2": "It has active cameras and staff ready to help you if needed."
+      },
+      "safeArrival": {
+        "title": "Safe Arrival!",
+        "line1": "Lucía has arrived at her destination. Thank you for accompanying her on the last stretch of her route."
+      },
+      "zoneVerification": {
+        "title": "Help Verify Your Zone",
+        "line1": "A user reported an incident a few meters from your business. Can you confirm if the situation is under control?"
+      }
+    }
   },
   "termsConditions": {
     "title": "Terms and Conditions"
-  }
+  },
+  "months": {
+  "may": "May"
+}
 }

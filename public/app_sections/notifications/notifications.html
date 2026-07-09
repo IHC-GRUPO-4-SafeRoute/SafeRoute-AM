@@ -45,7 +45,7 @@
     <section class="notifications-content">
 
 
-        <h2 class="section-title">Hoy</h2>
+        <h2 class="section-title" data-i18n="notifications.today">Hoy</h2>
 
 
         <article class="notification-card">
@@ -57,14 +57,14 @@
 
             <div class="notification-body">
 
-                <h3>¿Te Desviaste De Tu Ruta?</h3>
+                <h3 data-i18n="notifications.items.routeDeviation.title">¿Te Desviaste De Tu Ruta?</h3>
 
-                <p>Detectamos un cambio en tu trayecto.</p>
+                <p data-i18n="notifications.items.routeDeviation.line1">Detectamos un cambio en tu trayecto.</p>
 
-                <p>¿Te encuentras bien o deseas recalcular una ruta segura?</p>
+                <p data-i18n="notifications.items.routeDeviation.line2">¿Te encuentras bien o deseas recalcular una ruta segura?</p>
 
                 <span class="notification-date">
-                    17:00 - Mayo 24
+                17:00 - <span data-i18n="months.may">Mayo</span> 24
                 </span>
 
             </div>
@@ -90,14 +90,14 @@
 
             <div class="notification-body">
 
-                <h3>Tienes Un "Punto De Refugio" Cerca</h3>
+                <h3 data-i18n="notifications.items.nearbyRefuge.title">Tienes Un "Punto De Refugio" Cerca</h3>
 
-                <p>Estás a 50 metros de Inkafarma.</p>
+                <p data-i18n="notifications.items.nearbyRefuge.line1">Estás a 50 metros de Inkafarma.</p>
 
-                <p>Cuenta con cámaras activas y personal listo para apoyarte si lo necesitas.</p>
+                <p data-i18n="notifications.items.nearbyRefuge.line2">Cuenta con cámaras activas y personal listo para apoyarte si lo necesitas.</p>
 
                 <span class="notification-date">
-                    17:00 - Mayo 24
+                17:00 - <span data-i18n="months.may">Mayo</span> 24
                 </span>
 
             </div>
@@ -114,7 +114,7 @@
 
 
 
-        <h2 class="section-title yesterday">Ayer</h2>
+        <h2 class="section-title yesterday" data-i18n="notifications.yesterday">Ayer</h2>
 
 
 
@@ -127,12 +127,12 @@
 
             <div class="notification-body">
 
-                <h3>¡Llegada Segura!</h3>
+                <h3 data-i18n="notifications.items.safeArrival.title">¡Llegada Segura!</h3>
 
-                <p>Lucía, ha llegado a su destino. Gracias por acompañarlo en el último tramo de su ruta.</p>
+                <p data-i18n="notifications.items.safeArrival.line1">Lucía, ha llegado a su destino. Gracias por acompañarlo en el último tramo de su ruta.</p>
 
                 <span class="notification-date">
-                    17:00 - Mayo 23
+                    17:00 - <span data-i18n="months.may">Mayo</span> 23
                 </span>
 
             </div>
@@ -159,12 +159,12 @@
 
             <div class="notification-body">
 
-                <h3>Ayuda A Verificar Tu Zona</h3>
+                <h3 data-i18n="notifications.items.zoneVerification.title">Ayuda A Verificar Tu Zona</h3>
 
-                <p>Un usuario reportó un incidente a pocos metros de tu negocio. ¿Puedes confirmar si la situación ya está controlada?</p>
+                <p data-i18n="notifications.items.zoneVerification.line1">Un usuario reportó un incidente a pocos metros de tu negocio. ¿Puedes confirmar si la situación ya está controlada?</p>
 
                 <span class="notification-date">
-                    17:00 - Mayo 23
+                    17:00 - <span data-i18n="months.may">Mayo</span> 23
                 </span>
 
             </div>
@@ -192,7 +192,8 @@
 
         <button
             class="read-all-button"
-            id="read-all-button">
+            id="read-all-button"
+            data-i18n="notifications.markAllRead">
 
             Marcar Todo Como Leído
 
@@ -205,27 +206,27 @@
 
     <nav class="bottom-navigation">
 
-        <a class="nav-item" href="#">
+        <a class="nav-item" href="../home/home.html">
             <img src="../../assets/images/configuration/home.png" alt="">
             <span data-i18n="nav.home">Inicio</span>
         </a>
 
-        <a class="nav-item" href="#">
+        <a class="nav-item" href="../routes/routes_safe_routes.html">
             <img src="../../assets/images/configuration/route.png" alt="">
             <span data-i18n="nav.routes">Rutas</span>
         </a>
 
-        <a class="nav-item" href="#">
+        <a class="nav-item" href="../alerts/alerts.html">
             <img src="../../assets/images/configuration/alert.png" alt="">
             <span data-i18n="nav.alerts">Alertas</span>
         </a>
 
-        <a class="nav-item" href="#">
+        <a class="nav-item" href="../reports/reports.html">
             <img src="../../assets/images/configuration/report.png" alt="">
             <span data-i18n="nav.reports">Reportes</span>
         </a>
 
-        <a class="nav-item" href="#">
+        <a class="nav-item" href="../configuration/profile.html">
             <img src="../../assets/images/home/configuration_icon.png" alt="">
             <span data-i18n="nav.profile">Perfil</span>
         </a>

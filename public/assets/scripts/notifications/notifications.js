@@ -90,7 +90,7 @@ readButton.addEventListener("click", () => {
 
 
 
-function updateButton(){
+async function updateButton(){
 
 
     const allRead = [...notificationStatus].every(button => {
@@ -101,14 +101,9 @@ function updateButton(){
 
 
 
-    if(allRead){
+    const key = allRead ? "notifications.markAllUnread" : "notifications.markAllRead";
 
-        readButton.textContent = "Marcar Como No Leído";
+    readButton.textContent = await getTranslation(key);
 
-    }else{
-
-        readButton.textContent = "Marcar Todo Como Leído";
-
-    }
 
 }

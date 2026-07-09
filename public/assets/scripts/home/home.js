@@ -1,9 +1,3 @@
-/*
-    Integración de sesión:
-    - Muestra el nombre del usuario que inició sesión.
-    - Solo usa el perfil editado si pertenece al mismo usuario actual.
-*/
-
 const homeUserGreeting = document.getElementById("home-user-greeting");
 
 function getCurrentSessionUser() {
@@ -44,8 +38,23 @@ function renderHomeUserName() {
             ? editedProfile.name
             : currentUser?.name || "usuario";
 
+    // El saludo se arma con un span traducible ("Buenos días" / "Good morning")
+    // más el nombre del usuario, que no se traduce.
     if (homeUserGreeting) {
-        homeUserGreeting.textContent = `Buenos días ${getFirstName(userName)}`;
+        homeUserGreeting.innerHTML = '';
+
+        const greetingWordSpan = document.createElement('span');
+        greetingWordSpan.setAttribute('data-i18n', 'home.goodMorning');
+        greetingWordSpan.textContent = 'Buenos días';
+
+        homeUserGreeting.appendChild(greetingWordSpan);
+        homeUserGreeting.appendChild(document.createTextNode(` ${getFirstName(userName)}`));
+
+        // Como el span se crea después de que corrió la traducción inicial,
+        // se traduce de una vez si el motor de i18n ya está disponible.
+        if (typeof window.applySafeRouteTranslations === 'function') {
+            window.applySafeRouteTranslations();
+        }
     }
 }
 
@@ -157,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         openModal(shareModal);
     });
 
-    document.getElementById('share-location')?.addEventListener('click', () => {
+    document.getElementById('share-location')?.addEventListener('click', async () => {
         const selectedContacts = Array.from(shareContactCheckboxes).filter(cb => cb.checked);
 
         if (selectedContacts.length === 0) {
@@ -168,17 +177,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const selectedDuration = document.querySelector('input[name="share-duration"]:checked')?.value || 'arrival';
-        const durationLabels = { '30': '30 minutos', '60': '1 hora', 'arrival': 'hasta llegar a tu destino' };
+
+        // Los nombres de los contactos no se traducen (son datos), pero el
+        // texto de duración y el conector "y"/"and" sí, según el idioma activo.
+        const durationLabel = (typeof window.getTranslation === 'function')
+            ? await window.getTranslation(`home.shareDurationLabels.${selectedDuration}`)
+            : selectedDuration;
+        const connector = (typeof window.getTranslation === 'function')
+            ? await window.getTranslation('home.andConnector')
+            : 'y';
 
         const names = selectedContacts.map(cb =>
             cb.closest('.share-contact').querySelector('strong').textContent
         );
         const namesText = names.length === 1
             ? names[0]
-            : names.slice(0, -1).join(', ') + ' y ' + names[names.length - 1];
+            : names.slice(0, -1).join(', ') + ` ${connector} ` + names[names.length - 1];
 
         if (shareToastMessage) {
-            shareToastMessage.textContent = `Compartiendo con ${namesText} · ${durationLabels[selectedDuration]}`;
+            shareToastMessage.removeAttribute('data-i18n');
+            shareToastMessage.textContent = `Compartiendo con ${namesText} · ${durationLabel}`;
         }
 
         closeModal(shareModal);
@@ -316,19 +334,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         btn.addEventListener('click', () => {
             isOpen = !isOpen;
-            
+
             if (isOpen) {
                 targetPanel.classList.remove('hidden');
-                textSpan.textContent = 'Ocultar información';
+                textSpan.setAttribute('data-i18n', 'home.nodeShowLess');
                 iconImg.src = '../../assets/images/home/dropup.png';
             } else {
                 targetPanel.classList.add('hidden');
                 if (btn.getAttribute('data-target') === 'inactive-info-panel') {
-                    textSpan.textContent = 'Ver más información del nodo';
+                    textSpan.setAttribute('data-i18n', 'home.nodeShowMoreInactive');
                 } else {
-                    textSpan.textContent = 'Ver más información';
+                    textSpan.setAttribute('data-i18n', 'home.nodeShowMore');
                 }
                 iconImg.src = '../../assets/images/home/dropdown.png';
+            }
+
+            // Vuelve a traducir para que el nuevo texto salga en el idioma activo
+            if (typeof window.applySafeRouteTranslations === 'function') {
+                window.applySafeRouteTranslations();
             }
         });
     });

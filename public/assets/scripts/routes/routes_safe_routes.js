@@ -11,12 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (seeAllRoutesButton) {
     seeAllRoutesButton.addEventListener("click", () => {
-      window.location.href = "./routes_frecuent_routes.html";
+      window.location.href = "./routes_frequent_routes.html";
     });
   }
 
-  routeOptionButtons.forEach((button) => {
+  routeOptionButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
+      if (index === 2) {
+        window.location.href = "./routes_results_training.html";
+        return;
+      }
+
       window.location.href = "./routes_results.html";
     });
   });

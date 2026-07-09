@@ -1,0 +1,129 @@
+﻿{
+  "nav": {
+    "home": "Inicio",
+    "routes": "Rutas",
+    "alerts": "Alertas",
+    "reports": "Reportes",
+    "profile": "Perfil"
+  },
+  "common": {
+    "back": "Volver",
+    "notifications": "Notificaciones",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "accept": "Aceptar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "search": "Buscar",
+    "yes": "Sí",
+    "no": "No"
+  },
+  "profile": {
+    "title": "Perfil",
+    "achievements": "Logros",
+    "routes": "Rutas",
+    "reports": "Reportes",
+    "editProfile": "Editar Perfil",
+    "emergencyContacts": "Contactos de emergencia",
+    "securitySettings": "Configuración de Seguridad",
+    "preferences": "Preferencias",
+    "settings": "Ajustes",
+    "help": "Ayuda",
+    "logout": "Cerrar Sesión",
+    "logoutQuestion": "¿Estás seguro de cerrar sesión?",
+    "confirmLogout": "Sí, cerrar sesión"
+  },
+  "preferences": {
+    "title": "Preferencias",
+    "languageTitle": "Idioma de la aplicacion",
+    "routeTitle": "Preferencia de ruta",
+    "routeSafe": "Segura",
+    "routeFast": "Rápida",
+    "routeBalanced": "Equilibrada",
+    "alertZonesTitle": "Zonas de alertas",
+    "alertZonesSubtitle": "Notificar al entrar a zonas de riesgo",
+    "publicProfileTitle": "Perfil público",
+    "publicProfileSubtitle": "Tu ubicación visible para contactos",
+    "notificationsTitle": "Notificaciones",
+    "notificationsSubtitle": "Alertas de seguridad en tiempo real",
+    "saved": "Preferencias guardadas correctamente."
+  },
+  "security": {
+    "title": "Configuración de Seguridad",
+    "changePassword": "Cambiar de clave",
+    "biometricAccess": "Acceso Biométrico",
+    "termsConditions": "Términos y Condiciones",
+    "securityTimer": "Temporizador de seguridad",
+    "securityTimerSubtitle": "Alerta automática si no confirmas",
+    "shareLocation": "Compartir Ubicación",
+    "shareLocationSubtitle": "Con contactos de emergencia",
+    "microphone": "Habilitar micrófono",
+    "microphoneSubtitle": "Para detectar palabras de alerta",
+    "pushNotifications": "Notificaciones push",
+    "sosButton": "Botón SOS",
+    "sosButtonSubtitle": "Configura el botón de emergencia",
+    "testSos": "Probar SOS"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "notificationSettings": "Ajustes de notificaciones",
+    "deleteAccount": "Eliminar cuenta"
+  },
+  "support": {
+    "title": "Soporte y Seguridad",
+    "question": "En que puedo ayudarte?",
+    "faq": "FAQ",
+    "contactUs": "Contactanos",
+    "general": "General",
+    "account": "Cuenta",
+    "services": "Servicios",
+    "customerService": "Servicio al cliente",
+    "instagram": "Instagram",
+    "whatsapp": "Whatsapp",
+    "onlineTitle": "Soporte Online",
+    "finishedChats": "Chats Terminados",
+    "startAnotherChat": "Empieza otro chat",
+    "supportAssistant": "Asistente de Soporte",
+    "helpCenter": "Centro de Ayuda"
+  },
+  "achievements": {
+    "title": "Logros"
+  },
+  "editProfile": {
+    "title": "Editar Perfil"
+  },
+  "emergencyContacts": {
+    "title": "Contactos de Emergencia"
+  },
+  "changePassword": {
+    "title": "Cambiar de clave"
+  },
+  "biometricAccess": {
+    "title": "Acceso Biométrico"
+  },
+  "deleteAccount": {
+    "title": "Eliminar cuenta"
+  },
+  "notificationSettings": {
+    "title": "Ajustes de notificaciones",
+    "vibration": "Vibración",
+    "sound": "Sonido",
+    "emergencyCallSound": "Sonido de llamada de Emergencia",
+    "reportNotifications": "Notificaciones de reporte"
+  },
+  "reports": {
+    "title": "Reportes"
+  },
+  "alerts": {
+    "title": "Alertas"
+  },
+  "home": {
+    "title": "Inicio"
+  },
+  "notifications": {
+    "title": "Notificaciones"
+  },
+  "termsConditions": {
+    "title": "Términos y Condiciones"
+  }
+}

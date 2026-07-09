@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const backButton = document.querySelector(".back-button");
   const resultCards = document.querySelectorAll(".result-card");
-  const switchRouteButton = document.querySelector(".switch-route-button");
 
   if (backButton) {
     backButton.addEventListener("click", () => {
@@ -11,20 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   resultCards.forEach((card) => {
     card.addEventListener("click", () => {
-      resultCards.forEach((item) => item.classList.remove("selected"));
-      card.classList.add("selected");
-
       const resultType = card.dataset.resultType;
 
-      if (resultType === "safest" || resultType === "fastest") {
-        window.location.href = "./routes_navigation.html";
+      if (resultType === "safest") {
+        window.location.href = "./routes_navigation_sure.html";
+        return;
+      }
+
+      if (resultType === "fastest") {
+        window.location.href = "./routes_navigation.html?route=fast";
+        return;
+      }
+
+      if (resultType === "alternative") {
+        window.location.href = "./routes_navigation.html?route=alternative";
       }
     });
   });
-
-  if (switchRouteButton) {
-    switchRouteButton.addEventListener("click", () => {
-      alert("Origen y destino intercambiados.");
-    });
-  }
 });

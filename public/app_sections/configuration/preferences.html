@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<!--
+    Pantalla complementaria: Preferencias
+
+    Esta pantalla permite configurar preferencias generales del usuario,
+    como idioma, preferencia de ruta, zonas de alerta, perfil público
+    y notificaciones.
+
+    Criterios funcionales implementados:
+    - Permite seleccionar idioma de la aplicación.
+    - Permite seleccionar preferencia de ruta.
+    - Permite activar o desactivar zonas de alerta.
+    - Permite activar o desactivar perfil público.
+    - Permite activar o desactivar notificaciones.
+    - Guarda las preferencias mediante localStorage.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencias | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/preferences.css">
+</head>
+<body>
+    <main class="preferences-page">
+        <header class="preferences-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver al perfil">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1 data-i18n="preferences.title">Preferencias</h1>
+            </div>
+
+            <a
+                class="notification-button"
+                href="../notifications/notifications.html?returnTo=../configuration/preferences.html"
+                aria-label="Ver notificaciones"
+            >
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <section class="preferences-content">
+            <article class="preference-card language-card">
+                <img class="preference-icon" src="../../assets/images/configuration/world.png" alt="">
+
+                <div class="language-content">
+                    <h2 data-i18n="preferences.languageTitle">Idioma de la aplicacion</h2>
+
+                    <div class="language-selector">
+                        <button class="language-button" type="button" id="language-button" aria-expanded="false">
+                            <span class="language-value">
+                                <img id="selected-language-flag" src="../../assets/images/configuration/español.png" alt="">
+                                <span id="selected-language-text">Español</span>
+                            </span>
+
+                            <img class="dropdown-icon" src="../../assets/images/configuration/down_arrow-black.png" alt="">
+                        </button>
+
+                        <div class="language-options hidden" id="language-options">
+                            <button class="language-option" type="button" data-language="es">
+                                <img src="../../assets/images/configuration/español.png" alt="">
+                                <span>Español</span>
+                            </button>
+
+                            <button class="language-option" type="button" data-language="en">
+                                <img src="../../assets/images/configuration/english.png" alt="">
+                                <span>English</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="preference-card route-card">
+                <div class="preference-card-header">
+                    <img class="preference-icon" src="../../assets/images/configuration/routes.png" alt="">
+                    <h2 data-i18n="preferences.routeTitle">Preferencia de ruta</h2>
+                </div>
+
+                <div class="route-options">
+                    <button class="route-option" type="button" data-route="safe" data-i18n="preferences.routeSafe">
+                        Segura
+                    </button>
+
+                    <button class="route-option" type="button" data-route="fast" data-i18n="preferences.routeFast">
+                        Rápida
+                    </button>
+
+                    <button class="route-option" type="button" data-route="balanced" data-i18n="preferences.routeBalanced">
+                        Equilibrada
+                    </button>
+                </div>
+            </article>
+
+            <label class="preference-card toggle-card">
+                <img class="preference-icon" src="../../assets/images/configuration/alert-pre.png" alt="">
+
+                <span class="toggle-info">
+                    <strong data-i18n="preferences.alertZonesTitle">Zonas de alertas</strong>
+                    <small data-i18n="preferences.alertZonesSubtitle">Notificar al entrar a zonas de riesgo</small>
+                </span>
+
+                <input type="checkbox" class="preference-toggle" data-setting="alertZones">
+                <span class="switch"></span>
+            </label>
+
+            <label class="preference-card toggle-card">
+                <img class="preference-icon" src="../../assets/images/configuration/code.png" alt="">
+
+                <span class="toggle-info">
+                    <strong data-i18n="preferences.publicProfileTitle">Perfil público</strong>
+                    <small data-i18n="preferences.publicProfileSubtitle">Tu ubicación visible para contactos</small>
+                </span>
+
+                <input type="checkbox" class="preference-toggle" data-setting="publicProfile">
+                <span class="switch"></span>
+            </label>
+
+            <label class="preference-card toggle-card">
+                <img class="preference-icon" src="../../assets/images/configuration/not.png" alt="">
+
+                <span class="toggle-info">
+                    <strong data-i18n="preferences.notificationsTitle">Notificaciones</strong>
+                    <small data-i18n="preferences.notificationsSubtitle">Alertas de seguridad en tiempo real</small>
+                </span>
+
+                <input type="checkbox" class="preference-toggle" data-setting="notifications">
+                <span class="switch"></span>
+            </label>
+
+            <p class="preferences-message" id="preferences-message" aria-live="polite"></p>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span data-i18n="nav.home">Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span data-i18n="nav.routes">Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span data-i18n="nav.alerts">Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span data-i18n="nav.reports">Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span data-i18n="nav.profile">Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+    <script src="../../assets/scripts/configuration/preferences.js"></script>
+</body>
+</html>

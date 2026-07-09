@@ -1,0 +1,129 @@
+﻿{
+  "nav": {
+    "home": "Home",
+    "routes": "Routes",
+    "alerts": "Alerts",
+    "reports": "Reports",
+    "profile": "Profile"
+  },
+  "common": {
+    "back": "Back",
+    "notifications": "Notifications",
+    "save": "Save",
+    "cancel": "Cancel",
+    "accept": "Accept",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "profile": {
+    "title": "Profile",
+    "achievements": "Achievements",
+    "routes": "Routes",
+    "reports": "Reports",
+    "editProfile": "Edit Profile",
+    "emergencyContacts": "Emergency Contacts",
+    "securitySettings": "Security Settings",
+    "preferences": "Preferences",
+    "settings": "Settings",
+    "help": "Help",
+    "logout": "Log Out",
+    "logoutQuestion": "Are you sure you want to log out?",
+    "confirmLogout": "Yes, log out"
+  },
+  "preferences": {
+    "title": "Preferences",
+    "languageTitle": "App language",
+    "routeTitle": "Route preference",
+    "routeSafe": "Safe",
+    "routeFast": "Fast",
+    "routeBalanced": "Balanced",
+    "alertZonesTitle": "Alert zones",
+    "alertZonesSubtitle": "Notify when entering risk zones",
+    "publicProfileTitle": "Public profile",
+    "publicProfileSubtitle": "Your location visible to contacts",
+    "notificationsTitle": "Notifications",
+    "notificationsSubtitle": "Real-time safety alerts",
+    "saved": "Preferences saved successfully."
+  },
+  "security": {
+    "title": "Security Settings",
+    "changePassword": "Change password",
+    "biometricAccess": "Biometric Access",
+    "termsConditions": "Terms and Conditions",
+    "securityTimer": "Security timer",
+    "securityTimerSubtitle": "Automatic alert if you do not confirm",
+    "shareLocation": "Share Location",
+    "shareLocationSubtitle": "With emergency contacts",
+    "microphone": "Enable microphone",
+    "microphoneSubtitle": "To detect alert words",
+    "pushNotifications": "Push notifications",
+    "sosButton": "SOS Button",
+    "sosButtonSubtitle": "Configure the emergency button",
+    "testSos": "Test SOS"
+  },
+  "settings": {
+    "title": "Settings",
+    "notificationSettings": "Notification settings",
+    "deleteAccount": "Delete account"
+  },
+  "support": {
+    "title": "Support and Security",
+    "question": "How can I help you?",
+    "faq": "FAQ",
+    "contactUs": "Contact us",
+    "general": "General",
+    "account": "Account",
+    "services": "Services",
+    "customerService": "Customer service",
+    "instagram": "Instagram",
+    "whatsapp": "Whatsapp",
+    "onlineTitle": "Online Support",
+    "finishedChats": "Finished Chats",
+    "startAnotherChat": "Start another chat",
+    "supportAssistant": "Support Assistant",
+    "helpCenter": "Help Center"
+  },
+  "achievements": {
+    "title": "Achievements"
+  },
+  "editProfile": {
+    "title": "Edit Profile"
+  },
+  "emergencyContacts": {
+    "title": "Emergency Contacts"
+  },
+  "changePassword": {
+    "title": "Change password"
+  },
+  "biometricAccess": {
+    "title": "Biometric Access"
+  },
+  "deleteAccount": {
+    "title": "Delete account"
+  },
+  "notificationSettings": {
+    "title": "Notification settings",
+    "vibration": "Vibration",
+    "sound": "Sound",
+    "emergencyCallSound": "Emergency call sound",
+    "reportNotifications": "Report notifications"
+  },
+  "reports": {
+    "title": "Reports"
+  },
+  "alerts": {
+    "title": "Alerts"
+  },
+  "home": {
+    "title": "Home"
+  },
+  "notifications": {
+    "title": "Notifications"
+  },
+  "termsConditions": {
+    "title": "Terms and Conditions"
+  }
+}

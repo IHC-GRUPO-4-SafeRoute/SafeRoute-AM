@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
                 <button class="back-button" type="button" id="back-button" aria-label="Volver a soporte y seguridad">
                     <img src="../../assets/images/configuration/left-arrow.png" alt="">
                 </button>
-                <h1>Soporte Online</h1>
+                <h1 data-i18n="support.onlineTitle">Soporte Online</h1>
             </div>
 
             <a
@@ -37,43 +37,44 @@
                 <span class="chat-time">2min</span>
             </button>
 
-            <h3>Chats Terminados</h3>
+            <h3 data-i18n="support.finishedChats">Chats Terminados</h3>
 
             <section class="finished-chats-list" id="finished-chats-list" aria-live="polite"></section>
 
             <button class="new-chat-button" type="button" id="new-chat-button">
-                Empieza otro chat
+                <span data-i18n="support.startAnotherChat">Empieza otro chat</span>
             </button>
         </section>
 
         <nav class="bottom-navigation">
             <a class="nav-item" href="../home/home.html">
                 <img src="../../assets/images/configuration/home.png" alt="">
-                <span>Inicio</span>
+                <span data-i18n="nav.home">Inicio</span>
             </a>
 
             <a class="nav-item" href="../routes/routes.html">
                 <img src="../../assets/images/configuration/route.png" alt="">
-                <span>Rutas</span>
+                <span data-i18n="nav.routes">Rutas</span>
             </a>
 
             <a class="nav-item" href="../alerts/alerts.html">
                 <img src="../../assets/images/configuration/alert.png" alt="">
-                <span>Alertas</span>
+                <span data-i18n="nav.alerts">Alertas</span>
             </a>
 
             <a class="nav-item" href="../reports/reports.html">
                 <img src="../../assets/images/configuration/report.png" alt="">
-                <span>Reportes</span>
+                <span data-i18n="nav.reports">Reportes</span>
             </a>
 
             <a class="nav-item active" href="./profile.html">
                 <img src="../../assets/images/configuration/profile.png" alt="">
-                <span>Perfil</span>
+                <span data-i18n="nav.profile">Perfil</span>
             </a>
         </nav>
     </main>
 
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
     <script src="../../assets/scripts/configuration/support-online.js"></script>
 </body>
 </html>

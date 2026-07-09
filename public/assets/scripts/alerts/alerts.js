@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("sos-modal");
     const showMore = document.getElementById("show-more");
     const backButton = document.getElementById("back-button");
+    const sosActivePanel = document.getElementById("sos-active-panel");
+    const cancelActiveSosButton = document.getElementById("cancel-active-sos");
+
+    if (sosActivePanel) {
+    sosActivePanel.classList.add("hidden");
+    }
 
     if (backButton) {
         backButton.addEventListener("click", () => {
@@ -35,14 +41,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (confirmSOS) {
         confirmSOS.addEventListener("click", () => {
-            window.location.href = "../home/home.html";
+
+            modal.classList.remove("active");
+
+            sosActivePanel.classList.remove("hidden");
+
         });
     }
-
+    
     if (showMore) {
         showMore.addEventListener("click", () => {
             window.location.href = "alerts-secondary.html";
         });
     }
 
+    if (cancelActiveSosButton) {
+        cancelActiveSosButton.addEventListener("click", () => {
+
+            sosActivePanel.classList.add("hidden");
+
+        });
+    }
+
 });
+
+    

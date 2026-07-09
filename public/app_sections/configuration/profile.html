@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
     Pantalla: Perfil
 
@@ -25,7 +25,7 @@
 <body>
     <main class="profile-page">
         <header class="profile-header">
-            <h1>Perfil</h1>
+            <h1 data-i18n="profile.title">Perfil</h1>
 
             <a class="notification-button" href="../notifications/notifications.html?returnTo=../configuration/profile.html" aria-label="Ver notificaciones">
                 <img src="../../assets/images/configuration/notification_main.png" alt="">
@@ -59,7 +59,7 @@
 
             <!-- AC US40 - Se muestra una vista previa de logros obtenidos y pendientes. -->
             <section class="achievements">
-                <h2>Logros</h2>
+                <h2 data-i18n="profile.achievements">Logros</h2>
 
                 <div class="achievement-list">
                     <div class="achievement active">
@@ -93,18 +93,18 @@
             <section class="profile-stats">
                 <article class="stat-card">
                     <strong>24</strong>
-                    <span>Rutas</span>
+                    <span data-i18n="nav.routes">Rutas</span>
                 </article>
 
                 <article class="stat-card">
                     <strong>24</strong>
-                    <span>Reportes</span>
+                    <span data-i18n="nav.reports">Reportes</span>
                 </article>
 
                 <!-- AC US40 - Permite acceder a la pantalla completa de logros y progreso. -->
                 <a class="stat-card" href="./achievements.html">
                     <strong>2/6</strong>
-                    <span>Logros</span>
+                    <span data-i18n="profile.achievements">Logros</span>
                 </a>
             </section>
 
@@ -112,90 +112,91 @@
                 <!-- AC US35 - Acceso a la funcionalidad de edición de perfil. -->
                 <a class="settings-item" href="./edit-profile.html">
                     <img class="settings-icon" src="../../assets/images/configuration/edit_icon_2.png" alt="">
-                    <span>Editar Perfil</span>
+                    <span data-i18n="profile.editProfile">Editar Perfil</span>
                     <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
                 </a>
 
                 <a class="settings-item" href="./emergency-contacts.html">
                     <img class="settings-icon" src="../../assets/images/configuration/call.png" alt="">
-                    <span>Contactos de emergencia</span>
+                    <span data-i18n="profile.emergencyContacts">Contactos de emergencia</span>
                     <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
                 </a>
 
                 <a class="settings-item" href="./security-settings.html">
                     <img class="settings-icon" src="../../assets/images/configuration/settings.png" alt="">
-                    <span>Configuración de Seguridad</span>
+                    <span data-i18n="profile.securitySettings">Configuración de Seguridad</span>
                     <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
                 </a>
 
                 <a class="settings-item" href="./preferences.html">
                     <img class="settings-icon" src="../../assets/images/configuration/notification.png" alt="">
-                    <span>Preferencias</span>
+                    <span data-i18n="profile.preferences">Preferencias</span>
                     <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
                 </a>
 
                 <a class="settings-item" href="./settings.html">
                     <img class="settings-icon" src="../../assets/images/configuration/configuration.png" alt="">
-                    <span>Ajustes</span>
+                    <span data-i18n="profile.settings">Ajustes</span>
                     <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
                 </a>
 
                 <a class="settings-item" href="./support-security.html">
                     <img class="settings-icon" src="../../assets/images/configuration/help.png" alt="">
-                    <span>Ayuda</span>
+                    <span data-i18n="profile.help">Ayuda</span>
                     <img class="arrow-icon" src="../../assets/images/configuration/right_arrow.png" alt="">
                 </a>
             </section>
 
             <button class="logout-button" type="button" id="open-logout-modal">
                 <img src="../../assets/images/configuration/go_out.png" alt="">
-                <span>Cerrar Sesión</span>
+                <span data-i18n="profile.logout">Cerrar Sesión</span>
             </button>
         </section>
 
         <nav class="bottom-navigation">
             <a class="nav-item" href="../home/home.html">
                 <img src="../../assets/images/configuration/home.png" alt="">
-                <span>Inicio</span>
+                <span data-i18n="nav.home">Inicio</span>
             </a>
 
             <a class="nav-item" href="../routes/routes.html">
                 <img src="../../assets/images/configuration/route.png" alt="">
-                <span>Rutas</span>
+                <span data-i18n="nav.routes">Rutas</span>
             </a>
 
             <a class="nav-item" href="../alerts/alerts.html">
                 <img src="../../assets/images/configuration/alert.png" alt="">
-                <span>Alertas</span>
+                <span data-i18n="nav.alerts">Alertas</span>
             </a>
 
             <a class="nav-item" href="../reports/reports.html">
                 <img src="../../assets/images/configuration/report.png" alt="">
-                <span>Reportes</span>
+                <span data-i18n="nav.reports">Reportes</span>
             </a>
 
             <a class="nav-item active" href="./profile.html">
                 <img src="../../assets/images/configuration/profile.png" alt="">
-                <span>Perfil</span>
+                <span data-i18n="nav.profile">Perfil</span>
             </a>
         </nav>
     </main>
 
     <div class="modal-overlay" id="logout-modal">
         <section class="logout-modal">
-            <h2>Cerrar Sesión</h2>
-            <p>¿Estás seguro de cerrar sesión?</p>
+            <h2 data-i18n="profile.logout">Cerrar Sesión</h2>
+            <p data-i18n="profile.logoutQuestion">¿Estás seguro de cerrar sesión?</p>
 
             <button class="modal-primary-button" type="button" id="confirm-logout">
-                Sí, cerrar sesión
+                <span data-i18n="profile.confirmLogout">Sí, cerrar sesión</span>
             </button>
 
             <button class="modal-secondary-button" type="button" id="cancel-logout">
-                Cancelar
+                <span data-i18n="common.cancel">Cancelar</span>
             </button>
         </section>
     </div>
 
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
     <script src="../../assets/scripts/configuration/profile.js"></script>
 </body>
 </html>

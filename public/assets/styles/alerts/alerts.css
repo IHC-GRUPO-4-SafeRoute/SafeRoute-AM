@@ -1,3 +1,9 @@
+body {
+    min-height: 100vh;
+    background: #969696;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .alerts-page{
     width:100%;
     max-width:430px;

@@ -1,15 +1,27 @@
-document.addEventListener("DOMContentLoaded",()=>{
+const allowLocationButton = document.getElementById("allow-location-button");
+const laterButton = document.getElementById("later-button");
+const skipButton = document.getElementById("skip-button");
 
-document.getElementById("allow-location-button").onclick=()=>{
+allowLocationButton.addEventListener("click", () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                console.log("Latitud:", position.coords.latitude);
+                console.log("Longitud:", position.coords.longitude);
+                window.location.href = "../home/home.html";
+            },
+            (error) => {
+                alert("No se pudo obtener la ubicación");
+                window.location.href = "../home/home.html";
+            }
+        );
+    } else {
+        
+        alert("Tu navegador no soporta geolocalización");
+        window.location.href = "../home/home.html";
+    }
+});
 
-console.log("Permitir ubicación");
-
-};
-
-document.getElementById("later-button").onclick=()=>{
-
-console.log("Ahora no");
-
-};
-
+laterButton.addEventListener("click", () => {
+    window.location.href = "../home/home.html";
 });

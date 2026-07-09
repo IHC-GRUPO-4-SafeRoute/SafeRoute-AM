@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "location.html";
     });
 
-    skipButton.addEventListener("click", (event) => {
-        event.preventDefault();
-    });
+    skipButton.addEventListener("click", () => {
+    window.location.href = "../home/home.html";
+});
 
 });

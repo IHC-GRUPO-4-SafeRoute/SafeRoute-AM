@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   routeOptionButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
+      if (index === 0) {
+        window.location.href = "./routes_results_sure.html";
+        return;
+      }
+
       if (index === 2) {
         window.location.href = "./routes_results_training.html";
         return;

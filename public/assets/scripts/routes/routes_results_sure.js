@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (safestRouteButton) {
     safestRouteButton.addEventListener("click", () => {
-      window.location.href = "./routes_navigation_error.html";
+      window.location.href = "./routes_navigation_sure.html";
     });
   }
 

@@ -112,7 +112,91 @@
     "reportNotifications": "Notificaciones de reportes"
   },
   "reports": {
-    "title": "Reportes"
+    "title": "Reportes",
+    "newReport": "Nuevo Reporte",
+    "status": {
+      "title": "¡Reporte enviado!",
+      "description": "Tu reporte ha sido enviado a la comunidad",
+      "back": "Volver a reportes"
+    },
+    "failure": {
+      "title": "Reporte fallido",
+      "description": "Tu reporte está incompleto, falta información obligatoria",
+      "retry": "Reintentar"
+    },
+    "error": {
+      "title": "Error de envío",
+      "description": "Ha ocurrido algo inesperado, intenta nuevamente",
+      "refresh": "Actualizar"
+    },
+    "form": {
+      "title": "Nuevo reporte",
+      "subtitle": "Ayuda a la comunidad",
+
+      "incidentTitle": "Tipo de incidente *",
+
+      "incidents": {
+        "assault": "Asalto",
+        "violence": "Violencia",
+        "lighting": "Iluminación",
+        "suspicious": "Sospechoso",
+        "accident": "Accidente",
+        "other": "Otro"
+      },
+
+      "riskTitle": "Nivel de riesgo",
+
+      "risk": {
+        "low": "Bajo",
+        "medium": "Medio",
+        "high": "Alto"
+      },
+
+      "locationTitle": "Ubicación",
+      "locationStatus": "Ubicación: Activa",
+      "changeLocation": "Cambiar",
+
+      "descriptionTitle": "Descripción",
+      "descriptionPlaceholder": "Describe lo que sucedió con el mayor detalle posible..",
+
+      "evidenceTitle": "Evidencia",
+      "uploadImage": "Subir imagen",
+
+      "anonymousTitle": "Reporte anónimo",
+      "anonymousDescription": "Tu identidad no será revelada en el reporte público",
+
+      "submit": "Enviar Reporte"
+    },
+    "tabs": {
+      "all": "Todos los reportes",
+      "mine": "Mis reportes"
+    },
+    "cards": {
+      "violence": {
+        "title": "Violencia",
+        "location": "Av. Primavera, Surco",
+        "time": "Hace 10 min",
+        "risk": "Riesgo alto"
+      },
+      "accident": {
+        "title": "Accidente",
+        "location": "Av. Velasco, Surco",
+        "time": "Hace 2 horas",
+        "risk": "Riesgo bajo"
+      },
+      "suspicious": {
+        "title": "Sospechoso",
+        "location": "Av. Caminos del Inca, Surco",
+        "time": "Hace 2 horas",
+        "risk": "Riesgo bajo"
+      }
+    },
+    "achievement": {
+      "title": "Impacto Comunitario",
+      "subtitle": "Colaborador Activo",
+      "description": "Tus reportes ayudaron a 234 usuarios a evitar zonas peligrosas.",
+      "nextLevel": "Próximo nivel: Guardián"
+    }
   },
   "alerts": {
     "title": "Alertas",

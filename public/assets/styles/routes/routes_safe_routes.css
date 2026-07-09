@@ -1,0 +1,348 @@
+:root {
+  --bottom-nav-height: 72px;
+  --routes-primary: var(--color-primary);
+  --routes-navy: var(--color-navy);
+  --routes-light-blue: var(--color-screen-bg);
+}
+
+body {
+  background: var(--color-disabled);
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--routes-light-blue);
+  padding-bottom: var(--bottom-nav-height);
+}
+
+.routes-header {
+  width: 100%;
+  height: 88px;
+  background-color: var(--routes-navy);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.back-button {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.back-button img {
+  width: 10px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.header-title {
+  position: absolute;
+  top: 29px;
+  left: 50%;
+  width: 190px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.header-title h1 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+
+.header-title p {
+  margin-top: 3px;
+  color: #9fc4ef;
+  font-size: 10px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.notification-button {
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  margin-right: 4px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.notification-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.routes-content {
+  padding: 20px 31px 0;
+}
+
+.search-card,
+.route-type-card,
+.frequent-routes-card {
+  background-color: var(--color-white);
+  border-radius: 22px;
+}
+
+.search-card {
+  padding: 20px 18px 18px;
+}
+
+.search-box {
+  height: 23px;
+  border: 1px solid #9a9a9a;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.search-box img {
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #555555;
+  font-size: 12px;
+  background: transparent;
+}
+
+.search-button {
+  width: 245px;
+  max-width: 100%;
+  height: 32px;
+  margin: 10px auto 0;
+  border-radius: 18px;
+  background-color: var(--routes-navy);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 600;
+  display: block;
+}
+
+.route-type-card {
+  margin-top: 41px;
+  padding: 18px 15px 14px;
+}
+
+.section-heading h2,
+.frequent-routes-header h2 {
+  color: var(--color-black);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.section-heading p {
+  margin-top: 4px;
+  color: #333333;
+  font-size: 10px;
+}
+
+.route-option {
+  min-height: 80px;
+  margin-top: 13px;
+  padding: 13px 14px 13px 18px;
+  border: 1px solid #b8b8b8;
+  border-radius: 19px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.route-option-icon {
+  width: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.route-option-icon img {
+  max-width: 18px;
+  max-height: 18px;
+}
+
+.route-option-info {
+  flex: 1;
+}
+
+.route-option-info h3 {
+  color: var(--color-black);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.route-option-info p {
+  margin-top: 5px;
+  color: #333333;
+  font-size: 9.5px;
+  line-height: 1.25;
+}
+
+.route-option-button {
+  width: 38px;
+  height: 38px;
+  background: transparent;
+}
+
+.route-option-button img {
+  width: 38px;
+  height: 38px;
+}
+
+.frequent-routes-card {
+  margin-top: 13px;
+  padding: 25px 17px 22px;
+}
+
+.frequent-routes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.frequent-routes-header button {
+  background: transparent;
+  color: var(--routes-navy);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.frequent-route-list {
+  margin-top: 22px;
+}
+
+.frequent-route-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.frequent-route-item:last-child {
+  margin-bottom: 0;
+}
+
+.route-activity-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.frequent-route-info {
+  flex: 1;
+}
+
+.frequent-route-info h3 {
+  color: #333333;
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.frequent-route-info p {
+  margin-top: 4px;
+  color: #777777;
+  font-size: 8.5px;
+}
+
+.favorite-button {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.favorite-button img {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 10;
+  width: min(100%, 430px);
+  height: var(--bottom-nav-height);
+  padding: 8px 14px 7px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  transform: translateX(-50%);
+  border-radius: 28px 28px 0 0;
+  background: var(--routes-primary);
+}
+
+.nav-item {
+  height: 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.nav-item img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.nav-item.active {
+  width: 76px;
+  height: 57px;
+  margin: 0 auto;
+  border-radius: 18px;
+  background: var(--color-white);
+  color: var(--routes-navy);
+}
+
+.nav-item.active img {
+  width: 23px;
+  height: 23px;
+}
+
+@media (min-width: 431px) {
+  .app-container {
+    width: 430px;
+  }
+}
+
+@media (max-width: 430px) {
+  body {
+    background: var(--routes-light-blue);
+  }
+
+  .app-container {
+    max-width: none;
+  }
+
+  .bottom-nav {
+    width: 100%;
+    max-width: none;
+  }
+}

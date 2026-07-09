@@ -1,0 +1,329 @@
+/*
+    Pantalla: Acceso Biométrico
+
+    HU relacionada:
+    US43 - Activar acceso biométrico
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
+*/
+
+:root {
+    --bottom-nav-height: 78px;
+}
+
+body {
+    background: #969696;
+}
+
+.biometric-page {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--color-screen-bg);
+    overflow-x: hidden;
+}
+
+/* Header */
+
+.biometric-header {
+    height: 76px;
+    padding: 24px 31px 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-button {
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+}
+
+.back-button img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.biometric-header h1 {
+    font-size: 20px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.notification-button {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-white);
+    flex-shrink: 0;
+}
+
+.notification-button img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* Content */
+
+.biometric-content {
+    padding: 27px 48px calc(var(--bottom-nav-height) + 24px);
+}
+
+.biometric-option {
+    width: 100%;
+    min-height: 58px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 54px 1fr 13px;
+    align-items: center;
+    column-gap: 18px;
+    background: transparent;
+    color: var(--color-black);
+    text-align: left;
+}
+
+.biometric-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+}
+
+.fingerprint-icon {
+    background: #96ABE9;
+}
+
+.add-icon {
+    background: #4A7FE0;
+}
+
+.fingerprint-icon img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.add-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.biometric-text {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.arrow-icon {
+    width: 10px;
+    height: 13px;
+    object-fit: contain;
+}
+
+.biometric-message {
+    min-height: 18px;
+    margin-top: 12px;
+    color: var(--color-navy);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Bottom navigation */
+
+.bottom-navigation {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index: 10;
+    width: min(100%, 430px);
+    height: var(--bottom-nav-height);
+    padding: 12px 24px 14px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    transform: translateX(-50%);
+    border-radius: 26px 26px 0 0;
+    background: var(--color-primary);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 18px;
+    color: var(--color-white);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.nav-item img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.nav-item.active {
+    background: var(--color-white);
+    color: var(--color-navy);
+}
+
+.nav-item.active img {
+    width: 23px;
+    height: 23px;
+}
+
+/* Responsive */
+
+@media (min-width: 431px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background: #969696;
+    }
+
+    .biometric-page {
+        width: 430px;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        background: var(--color-screen-bg);
+    }
+
+    .biometric-page {
+        width: 100%;
+        max-width: none;
+    }
+
+    .bottom-navigation {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .biometric-header {
+        height: 72px;
+        padding: 22px 25px 0 31px;
+    }
+
+    .biometric-header h1 {
+        font-size: 18px;
+    }
+
+    .biometric-content {
+        padding: 26px 42px calc(var(--bottom-nav-height) + 22px);
+    }
+
+    .bottom-navigation {
+        padding: 12px 20px 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --bottom-nav-height: 72px;
+    }
+
+    .biometric-header {
+        height: 68px;
+        padding: 20px 18px 0;
+    }
+
+    .header-title-group {
+        gap: 11px;
+    }
+
+    .biometric-header h1 {
+        font-size: 17px;
+    }
+
+    .biometric-content {
+        padding: 24px 34px calc(var(--bottom-nav-height) + 20px);
+    }
+
+    .biometric-option {
+        grid-template-columns: 49px 1fr 11px;
+        column-gap: 16px;
+    }
+
+    .biometric-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .fingerprint-icon img {
+        width: 31px;
+        height: 31px;
+    }
+
+    .add-icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .biometric-text {
+        font-size: 12px;
+    }
+
+    .bottom-navigation {
+        height: var(--bottom-nav-height);
+        padding: 10px 14px 12px;
+        gap: 4px;
+        border-radius: 22px 22px 0 0;
+    }
+
+    .nav-item {
+        font-size: 9px;
+        gap: 3px;
+    }
+
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-item.active img {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media (max-width: 320px) {
+    .biometric-content {
+        padding-inline: 26px;
+    }
+
+    .biometric-header h1 {
+        font-size: 16px;
+    }
+
+    .bottom-navigation {
+        padding-inline: 10px;
+    }
+}

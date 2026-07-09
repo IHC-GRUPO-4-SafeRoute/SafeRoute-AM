@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Routes | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/onboarding/saferoutes.css">
+</head>
+
+<body>
+
+    <main class="onboarding-page">
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe permitir avanzar o saltar el onboarding.
+
+        Implementación:
+        - El botón "Omitir" permite al usuario salir del proceso
+          de introducción inicial.
+        -->
+        <a href="../home/home.html" class="skip-button" id="skip-button">Omitir</a>
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe mostrar pantallas introductorias
+          sobre las funciones principales.
+
+        Implementación:
+        - Se presenta la funcionalidad de rutas seguras como
+          parte de la introducción inicial de SafeRoute.
+        -->
+        <section class="onboarding-content">
+
+            <img
+                src="../../assets/images/onboarding/saferoutes.png"
+                alt="Encuentra rutas más seguras"
+                class="onboarding-image"
+            >
+
+            <h1 class="onboarding-title">
+                Encuentra rutas más seguras
+            </h1>
+
+            <p class="onboarding-description">
+                Descubre caminos seguros basados
+                en iluminación, densidad social y
+                reportes en tiempo real
+            </p>
+
+        </section>
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El usuario debe visualizar las pantallas introductorias
+          del onboarding.
+        
+        Implementación:
+        - Los indicadores muestran el progreso del usuario
+          dentro de las pantallas de introducción.
+        -->
+        <section class="progress-indicator">
+
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </section>
+
+
+        <!--
+        HU: US34 - Onboarding interactivo de SafeRoute
+
+        Criterio de aceptación:
+        - El sistema debe permitir avanzar entre las pantallas
+          introductorias.
+
+        Implementación:
+        - El botón "Siguiente" permite continuar con el recorrido
+          del onboarding.
+        -->
+        <button
+            class="primary-button"
+            id="next-button"
+            type="button">
+            Siguiente
+        </button>
+
+    </main>
+
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+<script src="../../assets/scripts/onboarding/saferoutes.js"></script>
+
+</body>
+</html>

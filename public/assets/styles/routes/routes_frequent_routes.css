@@ -1,0 +1,243 @@
+:root {
+  --bottom-nav-height: 72px;
+  --routes-primary: var(--color-primary);
+  --routes-navy: var(--color-navy);
+  --routes-light-blue: var(--color-screen-bg);
+}
+
+body {
+  background: var(--color-disabled);
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--routes-light-blue);
+  padding-bottom: var(--bottom-nav-height);
+}
+
+.routes-header {
+  width: 100%;
+  height: 88px;
+  background-color: var(--routes-navy);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.back-button {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.back-button img {
+  width: 10px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.header-title {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  width: 210px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.header-title h1 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+
+.notification-button {
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  margin-right: 4px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.notification-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.frequent-content {
+  padding: 27px 41px 0;
+}
+
+.frequent-panel {
+  min-height: 389px;
+  padding: 28px 7px 34px;
+  border-radius: 18px;
+  background: var(--color-white);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 2px solid var(--color-black);
+}
+
+.tab-button {
+  height: 35px;
+  background: transparent;
+  color: var(--color-black);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.tab-button.active {
+  color: var(--routes-navy);
+  border-bottom: 2px solid #336aff;
+  margin-bottom: -2px;
+}
+
+.routes-list {
+  padding: 38px 14px 0;
+}
+
+.saved-route {
+  display: grid;
+  grid-template-columns: 22px 1fr 22px;
+  align-items: center;
+  gap: 17px;
+}
+
+.saved-route + .saved-route {
+  margin-top: 40px;
+}
+
+.favorite-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.shield-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.saved-route-info h2 {
+  color: var(--color-black);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.saved-route-info p {
+  margin-top: 2px;
+  color: #969696;
+  font-size: 9px;
+}
+
+.save-route-button {
+  width: 266px;
+  height: 64px;
+  margin: 22px auto 0;
+  border-radius: 20px;
+  background: var(--routes-navy);
+  color: #ffffff; 
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; 
+}
+
+.save-route-button span {
+  font-size: 38px; 
+  font-weight: 300;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(-3px); 
+}
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 10;
+  width: min(100%, 430px);
+  height: var(--bottom-nav-height);
+  padding: 8px 14px 7px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  transform: translateX(-50%);
+  border-radius: 28px 28px 0 0;
+  background: var(--routes-primary);
+}
+
+.nav-item {
+  height: 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.nav-item img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.nav-item.active {
+  width: 76px;
+  height: 57px;
+  margin: 0 auto;
+  border-radius: 18px;
+  background: var(--color-white);
+  color: var(--routes-navy);
+}
+
+.nav-item.active img {
+  width: 23px;
+  height: 23px;
+}
+
+@media (min-width: 431px) {
+  .app-container {
+    width: 430px;
+  }
+}
+
+@media (max-width: 430px) {
+  body {
+    background: var(--routes-light-blue);
+  }
+
+  .app-container {
+    max-width: none;
+  }
+
+  .bottom-nav {
+    width: 100%;
+    max-width: none;
+  }
+}

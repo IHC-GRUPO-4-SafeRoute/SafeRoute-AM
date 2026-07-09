@@ -1,0 +1,702 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | SafeRoute</title>
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/home/home.css">
+</head>
+<body>
+    <main class="home-page">
+
+        <header class="home-header">
+            <div class="welcome-message">
+                <h1 data-i18n="home.greeting">Hola, Bienvenido De Vuelta</h1>
+                <p id="home-user-greeting">Buenos días</p>
+            </div>
+            <div class="header-actions">
+                <button class="header-button" type="button" id="open-filter" aria-label="Filtrar puntos del mapa" data-i18n-aria-label="home.filterAria">
+                    <img src="../../assets/images/home/filter_nods.png" alt="Filtrar">
+                </button>
+                <button class="header-button" type="button" id="open-notifications" aria-label="Ver notificaciones" data-i18n-aria-label="home.notificationsAria">
+                    <img src="../../assets/images/home/notifications.png" alt="Notificaciones">
+                </button>
+            </div>
+        </header>
+
+        <section class="map-section">
+            <img class="map-background" src="../../assets/images/home/Captura de pantalla 2026-05-23 040443 2.png" alt="Mapa de SafeRoute">
+
+            <section class="route-search-card">
+                <div class="route-points">
+                    <span class="route-point origin-point"></span>
+                    <span class="route-line"></span>
+                    <span class="route-point destination-point"></span>
+                </div>
+                <div class="route-fields">
+                    <div class="route-field current-location">
+                        <span class="location-icon">●</span>
+                        <span data-i18n="home.currentLocation">Tu ubicación</span>
+                    </div>
+                    <div class="route-divider"></div>
+                    <button class="route-field destination-field" type="button" id="open-navigation">
+                        <small data-i18n="home.destinationLabel">Destino</small>
+                        <span data-i18n="home.destinationPlaceholder">A donde vas?</span>
+                    </button>
+                </div>
+                <button class="search-route-button" type="button" aria-label="Buscar ruta" data-i18n-aria-label="home.searchRouteAria">
+                    <img src="../../assets/images/home/search.png" alt="Buscar ruta">
+                </button>
+            </section>
+
+            <section class="security-indicators">
+                <article class="security-card security-card-safe">
+                    <span data-i18n="home.security">Seguridad</span>
+                    <strong>85%</strong>
+                </article>
+                <article class="security-card security-card-light">
+                    <span data-i18n="home.lighting">Iluminación</span>
+                    <strong>Alta</strong>
+                </article>
+                <article class="security-card security-card-activity">
+                    <span data-i18n="home.activity">Actividad</span>
+                    <strong>Media</strong>
+                </article>
+            </section>
+
+            <button class="map-marker marker-help-top map-icon-btn" type="button" id="open-zone-info-top" aria-label="Punto de ayuda" data-i18n-aria-label="home.helpPointAria">
+                <img src="../../assets/images/home/question-icon.png" alt="Info">
+            </button>
+            <button class="map-marker marker-help-bottom map-icon-btn" type="button" id="open-zone-info-bottom" aria-label="Punto de ayuda" data-i18n-aria-label="home.helpPointAria">
+                <img src="../../assets/images/home/question-icon.png" alt="Info">
+            </button>
+
+            <button class="map-marker marker-inactive-node map-icon-btn" type="button" id="open-inactive-node" aria-label="Nodo inactivo" data-i18n-aria-label="home.inactiveNodeAria">
+                <img src="../../assets/images/home/inactive-nodo.png" alt="Nodo Inactivo">
+            </button>
+
+            <button class="map-marker marker-active-node map-icon-btn" type="button" id="open-active-node" aria-label="Nodo seguro" data-i18n-aria-label="home.safeNodeAria">
+                <img src="../../assets/images/home/active-nodo.png" alt="Nodo Seguro">
+            </button>
+
+            <button class="map-marker marker-orange-alert map-icon-btn" type="button" id="open-medium-risk" aria-label="Ver riesgo medio" data-i18n-aria-label="home.mediumRiskAria">
+                <img src="../../assets/images/home/risk-orange.png" alt="Riesgo medio">
+            </button>
+
+            <button class="map-marker marker-red-alert map-icon-btn" type="button" id="open-risk-detail" aria-label="Ver riesgo alto" data-i18n-aria-label="home.highRiskAria">
+                <img src="../../assets/images/home/alert_red.png" alt="Riesgo alto">
+            </button>
+
+            <button class="map-marker marker-position map-icon-btn" type="button" aria-label="Centrar ubicación" data-i18n-aria-label="home.centerLocationAria">
+                <img src="../../assets/images/home/center_position.png" alt="Centrar ubicación">
+            </button>
+            <button class="map-marker marker-route map-icon-btn" type="button" id="open-zone-list" aria-label="Mostrar ruta" data-i18n-aria-label="home.showRouteAria">
+                <img src="../../assets/images/home/filter_nods.png" alt="Mostrar ruta">
+            </button>
+
+            <button class="map-marker marker-chat" type="button" id="home-chatbot-button" aria-label="Abrir asistente" data-i18n-aria-label="home.assistantAria">
+                <img src="../../assets/images/home/chatbot-icon.png" alt="Chatbot">
+            </button>
+
+            <div class="current-user-position" aria-label="Ubicación actual">
+                <span></span>
+            </div>
+        </section>
+
+        <section class="quick-actions-panel">
+            <div class="panel-handle"></div>
+            <div class="quick-actions-list">
+                <button class="quick-action-button" type="button" id="open-navigation-modal">
+                    <img src="../../assets/images/home/navegation_button.png" alt="Navegar">
+                </button>
+                <button class="quick-action-button" type="button" id="open-sos-modal">
+                    <img src="../../assets/images/home/sos_button.png" alt="SOS">
+                </button>
+                <button class="quick-action-button" type="button" id="open-share-modal">
+                    <img src="../../assets/images/home/share_button.png" alt="Compartir ubicación">
+                </button>
+                <button class="quick-action-button" type="button" id="open-timer-modal">
+                    <img src="../../assets/images/home/timer_button.png" alt="Temporizador">
+                </button>
+            </div>
+        </section>
+
+        <div class="sos-active-panel hidden" id="sos-active-panel">
+            <span class="sos-active-label">SOS</span>
+            <span class="sos-active-sublabel" data-i18n="home.sosInProgress">en curso</span>
+            <button class="sos-cancel-button" type="button" id="cancel-active-sos" aria-label="Cancelar alerta SOS">×</button>
+        </div>
+
+        <div class="top-notification-banner hidden" id="timer-notification-banner">
+            <div class="notification-icon">
+                <img src="../../assets/images/home/timer-icon.png" alt="Temporizador">
+            </div>
+            <div class="notification-content">
+                <strong class="notification-title" data-i18n="home.timerTitle">Temporizador de Seguridad</strong>
+                <span class="notification-subtitle" id="timer-notification-time">15:00</span>
+            </div>
+            <button class="notification-close-btn" type="button" id="close-timer-notification" aria-label="Eliminar notificación" data-i18n-aria-label="home.closeNotificationAria">×</button>
+            <div class="notification-progress-track">
+                <div class="notification-progress-bar" id="timer-progress-bar"></div>
+            </div>
+        </div>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item active" href="./home.html">
+                <img src="../../assets/images/home/home_icon.png" alt="Inicio"><span data-i18n="nav.home">Inicio</span>
+            </a>
+        
+            <a class="nav-item" href="../routes/routes_safe_routes.html">
+                <img src="../../assets/images/home/route_icon.png" alt="Rutas"><span data-i18n="nav.routes">Rutas</span>
+            </a>
+        
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/home/alert_icon.png" alt="Alertas"><span data-i18n="nav.alerts">Alertas</span>
+            </a>
+        
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/home/report_icon.png" alt="Reportes"><span data-i18n="nav.reports">Reportes</span>
+            </a>
+        
+            <a class="nav-item" href="../configuration/profile.html">
+                <img src="../../assets/images/home/configuration_icon.png" alt="Perfil"><span data-i18n="nav.profile">Perfil</span>
+            </a>
+        </nav>
+        
+    </main>
+
+    <div class="center-overlay-container hidden" id="inactive-toast-overlay">
+        <div class="toast-panel toast-inactive">
+            <h3 class="toast-title" data-i18n="home.inactiveNodeToastTitle">Nodo inactivo</h3>
+            <p class="toast-subtitle" data-i18n="home.inactiveNodeToastSubtitle">Nodo seguro inaccesible</p>
+            <button class="toast-close-btn" type="button" id="close-inactive-toast">×</button>
+        </div>
+    </div>
+
+    <div class="center-overlay-container hidden" id="active-toast-overlay">
+        <div class="toast-panel toast-active">
+            <h3 class="toast-title" data-i18n="home.activeNodeToastTitle">Nodo notificado</h3>
+            <p class="toast-subtitle" data-i18n="home.activeNodeToastSubtitle">Nodo seguro cercano accesible</p>
+            <button class="toast-close-btn" type="button" id="close-active-toast">×</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="zone-info-modal-top">
+        <section class="bottom-modal small-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-zone-info-top" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="modal-header">
+                <img src="../../assets/images/home/question-icon.png" alt="Info">
+                <h2 data-i18n="home.zoneInfoTitle">Información de la zona</h2>
+            </header>
+            <p class="modal-description" style="text-align: left; font-size: 12px; color: #555; margin-top: 10px;" data-i18n="home.zoneInfoDisclaimer">
+                Parte de la información mostrada puede estar desactualizada
+            </p>
+            <section class="security-indicators zone-info-indicators" style="position: relative; width: 100%; transform: none; top: 0; left: 0; margin-top: 15px;">
+                <article class="security-card security-card-safe">
+                    <span data-i18n="home.security">Seguridad</span><strong>75%</strong>
+                </article>
+                <article class="security-card security-card-activity">
+                    <span data-i18n="home.lighting">Iluminación</span><strong>Media</strong>
+                </article>
+                <article class="security-card security-card-activity">
+                    <span data-i18n="home.activity">Actividad</span><strong>Media</strong>
+                </article>
+            </section>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="zone-info-modal">
+        <section class="bottom-modal small-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-zone-info" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="modal-header">
+                <img src="../../assets/images/home/question-icon.png" alt="Info">
+                <h2 data-i18n="home.zoneInfoTitle">Información de la zona</h2>
+            </header>
+            <p class="modal-description" style="text-align: left; font-size: 12px; color: #555; margin-top: 10px;" data-i18n="home.zoneInfoDisclaimer">
+                Parte de la información mostrada puede estar desactualizada
+            </p>
+            <section class="security-indicators zone-info-indicators" style="position: relative; width: 100%; transform: none; top: 0; left: 0; margin-top: 15px;">
+                <article class="security-card" style="background: #f0f0f0; color: #888;">
+                    <span data-i18n="home.security">Seguridad</span><strong data-i18n="home.notAvailable">No disponible</strong>
+                </article>
+                <article class="security-card" style="background: #f0f0f0; color: #888;">
+                    <span data-i18n="home.lighting">Iluminación</span><strong data-i18n="home.notAvailable">No disponible</strong>
+                </article>
+                <article class="security-card" style="background: #f0f0f0; color: #888;">
+                    <span data-i18n="home.activity">Actividad</span><strong data-i18n="home.notAvailable">No disponible</strong>
+                </article>
+            </section>
+        </section>
+    </div>
+
+
+    <div class="modal-overlay" id="inactive-node-modal">
+        <section class="bottom-modal node-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-inactive-node" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="risk-header">
+                <p class="risk-level" style="color: #888;">
+                    <img src="../../assets/images/home/cirle-gray.png" alt="Punto gris" class="risk-dot-img">
+                    <span data-i18n="home.statusInactive">Inactivo</span>
+                </p>
+                <h2>Bazar Coquito</h2>
+                <p class="node-subtitle">Bazar · Punto de apoyo · Almt. Lord Nelson</p>
+                <div class="node-rating">
+                    <span class="stars">★★☆☆☆</span> <span class="reviews">2 estrellas (44 reseñas)</span>
+                </div>
+            </header>
+            <article class="distance-card">
+                <img src="../../assets/images/home/navegation-nodo.png" alt="Navegar" class="distance-icon-img">
+                <div>
+                    <p data-i18n="home.distanceEstimated">Distancia estimada</p>
+                    <strong>250 m · 2 min</strong>
+                </div>
+            </article>
+            <section class="risk-statistics">
+                <article>
+                    <img src="../../assets/images/home/last-navegation.png" alt="Reloj" class="stat-img">
+                    <small data-i18n="home.schedule">Horario</small><strong style="color: black;">4 horas</strong>
+                </article>
+                <article>
+                    <img src="../../assets/images/home/incidents.png" alt="Personal" class="stat-img">
+                    <small data-i18n="home.staff">Personal</small><strong style="color: black;">1</strong>
+                </article>
+                <article>
+                    <img src="../../assets/images/home/phone-icon.png" alt="Contacto" class="stat-img">
+                    <small data-i18n="home.contact">Contacto</small><strong style="color: black;" data-i18n="home.notAvailable">No disponible</strong>
+                </article>
+            </section>
+            <p class="risk-description" data-i18n="home.unverifiedEstablishment">Establecimiento sin verificación.</p>
+            
+            <button class="more-information-button toggle-btn" type="button" data-target="inactive-info-panel" data-icon="inactive-icon-img" data-text="inactive-text-span">
+                <img src="../../assets/images/home/dropdown.png" alt="Alternar" id="inactive-icon-img">
+                <span id="inactive-text-span" data-i18n="home.nodeShowMoreInactive">Ver más información del nodo</span>
+            </button>
+            
+            <section class="risk-recommendations hidden" id="inactive-info-panel" style="background: transparent; border: none; text-align: center; color: #888;">
+                <p>Información no disponible</p>
+            </section>
+
+            <div class="node-action-buttons">
+                <button class="node-btn-primary">
+                    <img src="../../assets/images/home/navegation-nodo.png" alt="Navegar"> <span data-i18n="home.goToNode">Ir a nodo</span>
+                </button>
+                <button class="node-btn-disabled" id="trigger-inactive-toast">
+                    <img src="../../assets/images/home/help-inactive-icon.png" alt="Ayuda"> <span data-i18n="home.requestHelp">Pedir Ayuda</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="active-node-modal">
+        <section class="bottom-modal node-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-active-node" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="risk-header">
+                <p class="risk-level" style="color: var(--safe-green);">
+                    <img src="../../assets/images/home/circle-green.png" alt="Punto verde" class="risk-dot-img">
+                    <span data-i18n="home.statusSafe">Seguro</span>
+                </p>
+                <h2>Farmacia Central</h2>
+                <p class="node-subtitle">Farmacia · Punto de apoyo · Plaza Mayor s/n</p>
+                <div class="node-rating">
+                    <span class="stars" style="color: #fbbc04;">★★★★★</span> <span class="reviews">5 estrellas (124 reseñas)</span>
+                </div>
+            </header>
+            <article class="distance-card">
+                <img src="../../assets/images/home/navegation-nodo.png" alt="Navegar" class="distance-icon-img">
+                <div>
+                    <p data-i18n="home.distanceEstimated">Distancia estimada</p>
+                    <strong>320 m · 4 min</strong>
+                </div>
+            </article>
+            <section class="risk-statistics">
+                <article>
+                    <img src="../../assets/images/home/last-navegation.png" alt="Reloj" class="stat-img">
+                    <small data-i18n="home.schedule">Horario</small><strong style="color: black;">20 horas</strong>
+                </article>
+                <article>
+                    <img src="../../assets/images/home/incidents.png" alt="Personal" class="stat-img">
+                    <small data-i18n="home.staff">Personal</small><strong style="color: black;">3</strong>
+                </article>
+                <article>
+                    <img src="../../assets/images/home/phone-icon.png" alt="Contacto" class="stat-img">
+                    <small data-i18n="home.contact">Contacto</small><strong style="color: black;">Disponible</strong>
+                </article>
+            </section>
+            <p class="risk-description" data-i18n="home.verifiedEstablishment">Establecimiento verificado por la comunidad.</p>
+            
+            <button class="more-information-button toggle-btn" type="button" data-target="active-info-panel" data-icon="active-icon-img" data-text="active-text-span" data-default-open="true">
+                <img src="../../assets/images/home/dropup.png" alt="Alternar" id="active-icon-img">
+                <span id="active-text-span" data-i18n="home.nodeShowLess">Ocultar información</span>
+            </button>
+            
+            <section class="node-pills-panel" id="active-info-panel">
+                <span class="node-pill" data-i18n="home.amenities.firstAid">Primeros Auxilios</span>
+                <span class="node-pill" data-i18n="home.amenities.freeWifi">Wifi gratuito</span>
+                <span class="node-pill" data-i18n="home.amenities.waterDrinks">Agua/bebidas</span>
+                <span class="node-pill" data-i18n="home.amenities.phoneAvailable">Teléfono disponible</span>
+                <span class="node-pill" data-i18n="home.amenities.surveillance24">Vigilancia 24h</span>
+                <span class="node-pill" data-i18n="home.amenities.trainedStaff">Personal Capacitado</span>
+            </section>
+
+            <div class="node-action-buttons">
+                <button class="node-btn-primary">
+                    <img src="../../assets/images/home/navegation-nodo.png" alt="Navegar"> <span data-i18n="home.goToNode">Ir a nodo</span>
+                </button>
+                <button class="node-btn-success" id="trigger-active-toast">
+                    <img src="../../assets/images/home/help-active-icon.png" alt="Ayuda"> <span data-i18n="home.requestHelp">Pedir Ayuda</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="medium-risk-modal">
+        <section class="bottom-modal risk-detail-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-medium-risk" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="risk-header">
+                <p class="risk-level" style="color: #da6115;">
+                    <img src="../../assets/images/home/cirle-orange.png" alt="Punto naranja" class="risk-dot-img">
+                    <span data-i18n="home.riskMedium">Riesgo Medio</span>
+                </p>
+                <h2>Calle Principal 235</h2>
+                <div class="risk-labels">
+                    <span class="risk-label" style="color: #da6115; background: #fff4ed;">
+                        <img src="../../assets/images/home/risk-orange.png" alt="Alerta" style="width: 12px;"> <span data-i18n="home.riskMedium">Riesgo Medio</span>
+                    </span>
+                    <span class="risk-growing" style="color: #da6115;" data-i18n="home.stableSituation">Situación Estable</span>
+                </div>
+            </header>
+            <article class="distance-card">
+                <img src="../../assets/images/home/navegation1.png" alt="Navegar" class="distance-icon-img">
+                <div>
+                    <p data-i18n="home.distanceEstimated">Distancia estimada</p>
+                    <strong>310 m · 4 min</strong>
+                </div>
+            </article>
+            <section class="risk-statistics">
+                <article>
+                    <img src="../../assets/images/home/last-navegation.png" alt="Reloj" class="stat-img">
+                    <small data-i18n="home.lastReport">Último reporte</small><strong style="color: black;">Hace 5 min</strong>
+                </article>
+                <article>
+                    <img src="../../assets/images/home/incidents.png" alt="Incidentes" class="stat-img">
+                    <small data-i18n="home.incidents">Incidentes</small><strong style="color: black;">8</strong>
+                </article>
+                <article>
+                    <img src="../../assets/images/home/trend.png" alt="Tendencia" class="stat-img">
+                    <small data-i18n="home.trend">Tendencia</small>
+                    <strong class="trend-up"><img src="../../assets/images/home/right-orange.png" alt="Estable"></strong>
+                </article>
+            </section>
+            <p class="risk-description" data-i18n="home.mediumRiskDescription">Zona con iluminación deficiente en horario nocturno.</p>
+            
+            <button class="more-information-button toggle-btn" type="button" data-target="medium-risk-panel" data-icon="medium-icon-img" data-text="medium-text-span" data-default-open="true">
+                <img src="../../assets/images/home/dropup.png" alt="Alternar" id="medium-icon-img">
+                <span id="medium-text-span" data-i18n="home.nodeShowLess">Ocultar información</span>
+            </button>
+            
+            <section class="risk-recommendations" id="medium-risk-panel" style="background: #fff8f3; border-color: #ffe0cc;">
+                <h3 style="color: #da6115;" data-i18n="home.securityRecommendations">Recomendaciones de Seguridad</h3>
+                <ul>
+                    <li data-i18n="home.mediumRiskTips.tip1">Comparte tu ubicación con un contacto de confianza.</li>
+                    <li data-i18n="home.mediumRiskTips.tip2">Prefiere el lado de la calle con más transeúntes.</li>
+                </ul>
+            </section>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="risk-detail-modal">
+        <section class="bottom-modal risk-detail-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-risk-detail" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="risk-header">
+                <p class="risk-level">
+                    <img src="../../assets/images/home/circle-red.png" alt="Punto rojo" class="risk-dot-img">
+                    <span data-i18n="home.riskHigh">Riesgo Alto</span>
+                </p>
+                <h2>Calle Principal 234</h2>
+                <div class="risk-labels">
+                    <span class="risk-label">
+                        <img src="../../assets/images/home/risk-red.png" alt="Alerta"> <span data-i18n="home.riskHigh">Riesgo Alto</span>
+                    </span>
+                    <span class="risk-growing" data-i18n="home.increasingRisk">Riesgo en aumento</span>
+                </div>
+            </header>
+            <article class="distance-card">
+                <img src="../../assets/images/home/navegation1.png" alt="Navegar" class="distance-icon-img">
+                <div>
+                    <p data-i18n="home.distanceEstimated">Distancia estimada</p>
+                    <strong>320 m · 4 min</strong>
+                </div>
+            </article>
+            <section class="risk-statistics">
+                <article>
+                    <img src="../../assets/images/home/last-navegation.png" alt="Reloj" class="stat-img">
+                    <small data-i18n="home.lastReport">Último reporte</small><strong style="color: black;">Hace 5 min</strong>
+                </article>
+                <article>
+                    <img src="../../assets/images/home/incidents.png" alt="Incidentes" class="stat-img">
+                    <small data-i18n="home.incidents">Incidentes</small><strong style="color: black;">12</strong>
+                </article>
+                <article>
+                    <img src="../../assets/images/home/trend.png" alt="Tendencia" class="stat-img">
+                    <small data-i18n="home.trend">Tendencia</small>
+                    <strong class="trend-up"><img src="../../assets/images/home/up-red.png" alt="Sube"></strong>
+                </article>
+            </section>
+            <p class="risk-description" data-i18n="home.highRiskDescription">Zona con alta incidencia de robos reportados.</p>
+            
+            <button class="more-information-button toggle-btn" type="button" data-target="high-risk-panel" data-icon="high-icon-img" data-text="high-text-span" data-default-open="true">
+                <img src="../../assets/images/home/dropup.png" alt="Alternar" id="high-icon-img">
+                <span id="high-text-span" data-i18n="home.nodeShowLess">Ocultar información</span>
+            </button>
+            
+            <section class="risk-recommendations" id="high-risk-panel">
+                <h3 data-i18n="home.securityRecommendations">Recomendaciones de Seguridad</h3>
+                <ul>
+                    <li data-i18n="home.highRiskTips.tip1">Evita transitar solo/a después de las 9 PM.</li>
+                    <li data-i18n="home.highRiskTips.tip2">Mantén tu teléfono guardado y fuera de vista.</li>
+                    <li data-i18n="home.highRiskTips.tip3">Prefiere rutas alternativas iluminadas.</li>
+                </ul>
+            </section>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="zone-list-modal">
+        <section class="bottom-modal list-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-zone-list" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="modal-header" style="margin-bottom: 15px;">
+                <h2 style="font-size: 16px;" data-i18n="home.zoneListTitle">Info en esta zona</h2>
+            </header>
+            
+            <div class="horizontal-scroll-container">
+                <article class="zone-card safe-card" id="card-farmacia">
+                    <header>
+                        <span class="card-title" style="color: var(--safe-green);">Farmacia Central</span>
+                        <img src="../../assets/images/home/circle-green.png" alt="Seguro" class="card-dot">
+                    </header>
+                    <p class="card-stats">Confianza 92% · 320m</p>
+                </article>
+
+                <article class="zone-card medium-risk-card" id="card-medium-risk">
+                    <header>
+                        <span class="card-title" style="color: #da6115;">Av. Central 89</span>
+                        <img src="../../assets/images/home/cirle-orange.png" alt="Medio" class="card-dot">
+                    </header>
+                    <p class="card-stats" style="color: #da6115;">5 incidentes · 180m</p>
+                </article>
+
+                <article class="zone-card high-risk-card" id="card-high-risk">
+                    <header>
+                        <span class="card-title" style="color: var(--risk-red);">Calle Principal</span>
+                        <img src="../../assets/images/home/circle-red.png" alt="Alto" class="card-dot">
+                    </header>
+                    <p class="card-stats" style="color: var(--risk-red);">12 reportes · 130m</p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="filter-modal">
+        <section class="bottom-modal filter-modal-panel">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-filter-modal" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="modal-header">
+                <img src="../../assets/images/home/filtrer-nodos.png" alt="Filtrar">
+                <h2 data-i18n="home.filterTitle">Filtrar nodos</h2>
+            </header>
+            <p class="modal-description" data-i18n="home.filterDescription">Selecciona que puntos ver en el mapa</p>
+
+            <div class="filter-options-list">
+                <button class="filter-option" type="button" data-type="all">
+                    <span class="filter-option-icon">
+                        <img src="../../assets/images/home/line-black.png" alt="Todos">
+                    </span>
+                    <span class="filter-option-text">
+                        <strong data-i18n="home.filterAll">Todos los nodos</strong>
+                        <small data-i18n="home.filterAllSubtitle">Mostrar todos los nodos en el mapa</small>
+                    </span>
+                </button>
+
+                <button class="filter-option" type="button" data-type="high">
+                    <span class="filter-option-icon">
+                        <img src="../../assets/images/home/risk-black.png" alt="Riesgo Alto">
+                    </span>
+                    <span class="filter-option-text">
+                        <strong data-i18n="home.riskHigh">Riesgo Alto</strong>
+                        <small data-i18n="home.filterHighSubtitle">Zonas con incidentes frecuentes</small>
+                    </span>
+                </button>
+
+                <button class="filter-option" type="button" data-type="medium">
+                    <span class="filter-option-icon">
+                        <img src="../../assets/images/home/risk-black.png" alt="Riesgo Medio">
+                    </span>
+                    <span class="filter-option-text">
+                        <strong data-i18n="home.riskMedium">Riesgo Medio</strong>
+                        <small data-i18n="home.filterMediumSubtitle">Zonas con precaución moderada</small>
+                    </span>
+                </button>
+
+                <button class="filter-option active" type="button" data-type="safe">
+                    <span class="filter-option-icon">
+                        <img src="../../assets/images/home/check.png" alt="Punto Seguro">
+                    </span>
+                    <span class="filter-option-text">
+                        <strong data-i18n="home.filterSafe">Punto Seguro</strong>
+                        <small data-i18n="home.filterSafeSubtitle">Zonas de alta seguridad</small>
+                    </span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="sos-modal">
+        <section class="bottom-modal sos-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-sos-modal" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="modal-header">
+                <img src="../../assets/images/home/sos_icon.png" alt="SOS">
+                <h2 data-i18n="home.activateSos">Activar SOS</h2>
+            </header>
+            <p class="modal-description" data-i18n="home.sosDescription">
+                Se notificará a tus contactos de emergencia con tu ubicación exacta en tiempo real.
+            </p>
+            <section class="emergency-contact-list">
+                <label class="emergency-contact">
+                    <span class="contact-avatar">☎</span>
+                    <span class="contact-information">Maria Perez (<span data-i18n="home.relationMom">Mamá</span>)</span>
+                    <input type="checkbox" name="sos-contact" value="maria" checked>
+                </label>
+                <label class="emergency-contact">
+                    <span class="contact-avatar">☎</span>
+                    <span class="contact-information">Carlos González (<span data-i18n="home.relationFriend">Amigo</span>)</span>
+                    <input type="checkbox" name="sos-contact" value="carlos">
+                </label>
+            </section>
+            <button class="modal-main-button sos-main-button" type="button" id="confirm-sos" data-i18n="home.confirmSos">Confirmar SOS</button>
+            <button class="modal-cancel-button" type="button" id="cancel-sos" data-i18n="common.cancel">Cancelar</button>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="navigation-modal">
+        <section class="bottom-modal navigation-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-navigation-modal" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="modal-header">
+                <img src="../../assets/images/home/navegation_button.png" alt="Navegación">
+                <div>
+                    <h2 data-i18n="home.startNavigation">Iniciar navegación</h2>
+                    <p data-i18n="home.selectDestination">Selecciona tu destino</p>
+                </div>
+            </header>
+            <form class="navigation-form">
+                <label for="navigation-origin" data-i18n="home.originLocation">Ubicación de origen</label>
+                <input type="text" id="navigation-origin" name="navigation-origin" value="Tu ubicación" readonly>
+                <label for="navigation-destination" data-i18n="home.destinationLabel">Destino</label>
+                <input type="text" id="navigation-destination" name="navigation-destination" placeholder="A donde vas?" data-i18n-placeholder="home.destinationPlaceholder">
+                <button class="modal-main-button navigation-main-button" type="submit" data-i18n="home.searchSafeRoute">Buscar ruta segura</button>
+            </form>
+            <button class="modal-cancel-button" type="button" id="cancel-navigation" data-i18n="common.cancel">Cancelar</button>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="timer-modal">
+        <section class="bottom-modal timer-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-timer-modal" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="modal-header">
+                <img src="../../assets/images/home/timer-icon.png" alt="Temporizador">
+                <div>
+                    <h2 data-i18n="home.timerTitle">Temporizador de Seguridad</h2>
+                    <p data-i18n="security.securityTimerSubtitle">Alerta automática si no confirmas</p>
+                </div>
+            </header>
+            <p class="modal-description timer-description" data-i18n="home.timerDescription">
+                Si no confirmas que estás bien en el tiempo elegido, se alertará automáticamente a tus contactos de emergencia.
+            </p>
+            <p class="timer-selected-time"><span data-i18n="home.timeLimit">Tiempo límite:</span> <strong id="selected-time">15 <span data-i18n="home.timerUnitMin">min</span></strong></p>
+            <div class="timer-range-container">
+                <input type="range" id="security-time" name="security-time" min="0" max="3" value="1" step="1">
+                <div class="timer-range-labels">
+                    <span class="range-tick" data-value="0">5 <span data-i18n="home.timerUnitMin">min</span></span>
+                    <span class="range-tick" data-value="1">15 <span data-i18n="home.timerUnitMin">min</span></span>
+                    <span class="range-tick" data-value="2">30 <span data-i18n="home.timerUnitMin">min</span></span>
+                    <span class="range-tick" data-value="3">60 <span data-i18n="home.timerUnitMin">min</span></span>
+                </div>
+            </div>
+            <button class="modal-main-button timer-main-button" type="button" id="start-timer" data-i18n="home.startTimer">Iniciar Temporizador</button>
+            <button class="modal-cancel-button" type="button" id="cancel-timer" data-i18n="common.cancel">Cancelar</button>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="share-modal">
+        <section class="bottom-modal share-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal-button" type="button" id="close-share-modal" aria-label="Cerrar" data-i18n-aria-label="common.close">×</button>
+            <header class="modal-header">
+                <img src="../../assets/images/home/share-icon.png" alt="Compartir ubicación">
+                <div>
+                    <h2 data-i18n="home.shareTitle">Compartir Ubicación</h2>
+                    <p data-i18n="home.shareSubtitle">Selecciona con quién compartir</p>
+                </div>
+            </header>
+            <section class="share-contact-list">
+                <label class="share-contact">
+                    <span class="share-avatar">M</span>
+                    <span class="share-contact-information">
+                        <strong>Maria Perez</strong><small data-i18n="home.relationMom">Mamá</small>
+                    </span>
+                    <input type="checkbox" name="share-contact" value="maria">
+                </label>
+                <label class="share-contact">
+                    <span class="share-avatar">C</span>
+                    <span class="share-contact-information">
+                        <strong>Carlos González</strong><small data-i18n="home.relationFriend">Amigo</small>
+                    </span>
+                    <input type="checkbox" name="share-contact" value="carlos">
+                </label>
+                <label class="share-contact">
+                    <span class="share-avatar">A</span>
+                    <span class="share-contact-information">
+                        <strong>Ana Torres</strong><small data-i18n="home.relationSister">Hermana</small>
+                    </span>
+                    <input type="checkbox" name="share-contact" value="ana">
+                </label>
+            </section>
+            <fieldset class="share-duration">
+                <legend data-i18n="home.duration">Duración</legend>
+                <label>
+                    <input type="radio" name="share-duration" value="30"><span data-i18n="home.duration30">30 min</span>
+                </label>
+                <label>
+                    <input type="radio" name="share-duration" value="60"><span data-i18n="home.duration60">1 hora</span>
+                </label>
+                <label>
+                    <input type="radio" name="share-duration" value="arrival" checked><span data-i18n="home.durationArrival">Hasta llegar</span>
+                </label>
+            </fieldset>
+            <button class="modal-main-button share-main-button" type="button" id="share-location" data-i18n="home.shareNow">Compartir ahora</button>
+        </section>
+    </div>
+
+    <div class="center-overlay-container hidden" id="share-toast-overlay">
+        <div class="toast-panel toast-share">
+            <img class="toast-share-icon" src="../../assets/images/home/share-icon.png" alt="Compartir ubicación">
+            <h3 class="toast-title" data-i18n="home.sharedTitle">¡Compartido!</h3>
+            <p class="toast-subtitle" id="share-toast-message" data-i18n="home.sharedDefaultMessage">Ubicación compartida correctamente</p>
+            <button class="toast-close-btn" type="button" id="close-share-toast">×</button>
+        </div>
+    </div>
+
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+<script src="../../assets/scripts/home/home.js"></script>
+
+</body>
+</html>

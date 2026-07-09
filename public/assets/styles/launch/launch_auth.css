@@ -1,0 +1,151 @@
+body {
+    background: #969696;
+}
+
+
+.launch-page {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--color-screen-bg);
+    overflow: hidden;
+}
+
+
+.launch-content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+.launch-brand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 170px;
+}
+
+
+.launch-logo {
+    width: 95px;
+    height: auto;
+    margin-bottom: 22px;
+}
+
+
+.launch-title {
+    color: #0F61D7;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+
+.launch-subtitle {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+}
+
+
+.launch-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 75px;
+}
+
+
+.primary-button,
+.secondary-button {
+    width: 160px;
+    height: 38px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.primary-button {
+    background: #063d88;
+    color: #ffffff;
+}
+
+
+.secondary-button {
+    background: #ffffff;
+    color: #173B35;
+}
+
+
+.terms-text {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.terms-text p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #000000;
+}
+
+
+.terms-text span {
+    margin-top: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #777777;
+}
+
+
+@media (max-width: 430px) {
+
+    body {
+        background: var(--color-screen-bg);
+    }
+
+    .launch-page {
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+
+@media (max-width: 390px) {
+
+    .launch-brand {
+        margin-top: 150px;
+    }
+
+    .launch-logo {
+        width: 90px;
+    }
+
+    .launch-title {
+        font-size: 30px;
+    }
+
+    .launch-actions {
+        margin-top: 65px;
+    }
+
+}

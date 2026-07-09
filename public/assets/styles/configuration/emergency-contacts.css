@@ -1,0 +1,452 @@
+/*
+    Pantalla: Contactos de Emergencia
+
+    HU relacionada:
+    US25 - Registro de contactos de emergencia
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
+*/
+
+:root {
+    --bottom-nav-height: 78px;
+}
+
+body {
+    background: #969696;
+}
+
+.emergency-page {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--color-screen-bg);
+    overflow-x: hidden;
+}
+
+/* Header */
+
+.emergency-header {
+    height: 76px;
+    padding: 24px 31px 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-button {
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+}
+
+.back-button img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.emergency-header h1 {
+    font-size: 20px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.notification-button {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-white);
+}
+
+.notification-button img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* Content */
+
+.emergency-content {
+    padding: 24px 38px calc(var(--bottom-nav-height) + 24px);
+}
+
+/* Contact list */
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* AC US25 - Cada contacto registrado se muestra como una tarjeta dinámica. */
+
+.contact-card {
+    min-height: 78px;
+    padding: 15px 16px 15px 22px;
+    display: grid;
+    grid-template-columns: 48px 1fr 28px;
+    align-items: center;
+    column-gap: 13px;
+    border-radius: 18px;
+    background: var(--color-white);
+}
+
+.contact-avatar {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-purple);
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contact-info h2 {
+    margin-bottom: 4px;
+    color: var(--color-black);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.contact-info p {
+    color: var(--color-gray);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.delete-contact-button {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+}
+
+.delete-contact-button img {
+    width: 21px;
+    height: 21px;
+    object-fit: contain;
+}
+
+/* Add contact */
+
+.add-contact-button {
+    width: 100%;
+    min-height: 70px;
+    margin-top: 12px;
+    padding: 0 26px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border: 2px dashed #B8BEC7;
+    border-radius: 12px;
+    background: var(--color-white);
+    color: var(--color-navy);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.add-icon-circle {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #B6C8F2;
+}
+
+.add-icon-circle img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* Form */
+
+.contact-form {
+    margin-top: 28px;
+    padding: 27px 28px 33px;
+    border-radius: 18px;
+    background: var(--color-white);
+}
+
+.contact-form.hidden,
+.add-contact-button.hidden {
+    display: none;
+}
+
+.contact-form h2 {
+    margin-bottom: 18px;
+    color: var(--color-black);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.input-group {
+    display: block;
+    margin-bottom: 9px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 30px;
+    padding: 0 13px;
+    border: 1px solid #B9B9B9;
+    border-radius: 10px;
+    background: var(--color-soft-white);
+    color: var(--color-black);
+    font-size: 11px;
+    font-weight: 500;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #B9B9B9;
+}
+
+.input-group input:focus {
+    border-color: var(--color-navy);
+}
+
+.form-message {
+    min-height: 16px;
+    margin-top: 6px;
+    color: #C15A2E;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.form-actions {
+    margin-top: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 19px;
+}
+
+.cancel-button,
+.submit-button {
+    min-height: 36px;
+    border-radius: 13px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.cancel-button {
+    background: #D9D9D9;
+    color: var(--color-gray);
+}
+
+.submit-button {
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+/* Bottom navigation */
+
+.bottom-navigation {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index: 10;
+    width: min(100%, 430px);
+    height: var(--bottom-nav-height);
+    padding: 12px 24px 14px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    transform: translateX(-50%);
+    border-radius: 26px 26px 0 0;
+    background: var(--color-primary);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 18px;
+    color: var(--color-white);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.nav-item img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.nav-item.active {
+    background: var(--color-white);
+    color: var(--color-navy);
+}
+
+.nav-item.active img {
+    width: 23px;
+    height: 23px;
+}
+
+/* Responsive */
+
+@media (min-width: 431px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background: #969696;
+    }
+
+    .emergency-page {
+        width: 430px;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        background: var(--color-screen-bg);
+    }
+
+    .emergency-page {
+        width: 100%;
+        max-width: none;
+    }
+
+    .bottom-navigation {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .emergency-header {
+        height: 72px;
+        padding: 22px 25px 0 31px;
+    }
+
+    .emergency-content {
+        padding: 24px 31px calc(var(--bottom-nav-height) + 22px);
+    }
+
+    .emergency-header h1 {
+        font-size: 18px;
+    }
+
+    .bottom-navigation {
+        padding: 12px 20px 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --bottom-nav-height: 72px;
+    }
+
+    .emergency-header {
+        height: 68px;
+        padding: 20px 18px 0;
+    }
+
+    .header-title-group {
+        gap: 11px;
+    }
+
+    .emergency-header h1 {
+        font-size: 16px;
+    }
+
+    .emergency-content {
+        padding: 22px 22px calc(var(--bottom-nav-height) + 20px);
+    }
+
+    .contact-card {
+        min-height: 72px;
+        grid-template-columns: 43px 1fr 25px;
+        column-gap: 11px;
+        padding: 13px 14px 13px 18px;
+    }
+
+    .contact-avatar {
+        width: 41px;
+        height: 41px;
+        font-size: 22px;
+    }
+
+    .contact-info h2 {
+        font-size: 12px;
+    }
+
+    .contact-info p {
+        font-size: 10px;
+    }
+
+    .add-contact-button {
+        min-height: 64px;
+        padding-inline: 22px;
+        font-size: 14px;
+    }
+
+    .contact-form {
+        padding: 24px 24px 30px;
+    }
+
+    .form-actions {
+        gap: 14px;
+    }
+
+    .bottom-navigation {
+        height: var(--bottom-nav-height);
+        padding: 10px 14px 12px;
+        gap: 4px;
+        border-radius: 22px 22px 0 0;
+    }
+
+    .nav-item {
+        font-size: 9px;
+        gap: 3px;
+    }
+
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-item.active img {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media (max-width: 320px) {
+    .emergency-content {
+        padding-inline: 16px;
+    }
+
+    .contact-form {
+        padding-inline: 20px;
+    }
+
+    .bottom-navigation {
+        padding-inline: 10px;
+    }
+}

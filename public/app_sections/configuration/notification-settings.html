@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<!--
+    Pantalla complementaria: Ajustes de notificaciones
+
+    Esta pantalla permite configurar preferencias de notificación del usuario.
+
+    Criterios funcionales implementados:
+    - Permite activar o desactivar vibración.
+    - Permite activar o desactivar sonido.
+    - Permite activar o desactivar sonido de llamada de emergencia.
+    - Permite activar o desactivar notificaciones de reporte.
+    - Guarda las preferencias mediante localStorage.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes de notificaciones | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/notification-settings.css">
+</head>
+<body>
+    <main class="notification-settings-page">
+        <header class="notification-settings-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver a ajustes">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1 data-i18n="notificationSettings.title">Ajustes de notificaciones</h1>
+            </div>
+
+            <a class="notification-button" href="../notifications/notifications.html?returnTo=../configuration/notification-settings.html" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <section class="notification-settings-content">
+            <label class="setting-toggle-card">
+                <span data-i18n="notificationSettings.vibration">Vibración</span>
+                <input type="checkbox" class="setting-toggle-input" data-setting="vibration">
+                <span class="switch"></span>
+            </label>
+
+            <label class="setting-toggle-card">
+                <span data-i18n="notificationSettings.sound">Sonido</span>
+                <input type="checkbox" class="setting-toggle-input" data-setting="sound">
+                <span class="switch"></span>
+            </label>
+
+            <label class="setting-toggle-card">
+                <span data-i18n="notificationSettings.emergencyCallSound">Sonido de llamada de Emergencia</span>
+                <input type="checkbox" class="setting-toggle-input" data-setting="emergencyCallSound">
+                <span class="switch"></span>
+            </label>
+
+            <label class="setting-toggle-card">
+                <span data-i18n="notificationSettings.reportNotifications">Notificaciones de reporte</span>
+                <input type="checkbox" class="setting-toggle-input" data-setting="reportNotifications">
+                <span class="switch"></span>
+            </label>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span data-i18n="nav.home">Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span data-i18n="nav.routes">Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span data-i18n="nav.alerts">Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span data-i18n="nav.reports">Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span data-i18n="nav.profile">Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+    <script src="../../assets/scripts/configuration/notification-settings.js"></script>
+</body>
+</html>

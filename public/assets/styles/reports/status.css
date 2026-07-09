@@ -1,0 +1,188 @@
+body{
+    margin:0;
+    min-height:100vh;
+    background:#969696;
+}
+
+.status-page{
+    width:100%;
+    max-width:430px;
+    min-height:100vh;
+
+    margin:0 auto;
+
+    display:flex;
+    flex-direction:column;
+
+    background:#D9ECFF;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.status-container{
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:24px;
+    padding-bottom:90px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+}
+
+.status-icon{
+    width:120px;
+    height:120px;
+    margin-bottom:16px;
+}
+
+.status-title{
+    font-size:20px;
+    font-weight:700;
+    margin:0;
+}
+
+.status-text{
+    font-size:14px;
+    color:#6B7280;
+    margin-top:8px;
+}
+
+.status-button{
+    margin-top:24px;
+
+    width:100%;
+    max-width:280px;
+    height:52px;
+
+    border:none;
+    border-radius:16px;
+
+    background:#0A4DA2;
+    color:#FFFFFF;
+
+    font-size:18px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.bottom-navigation{
+
+    position:fixed;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:100%;
+    max-width:430px;
+
+    height:74px;
+
+    background:#336ABF;
+
+    border-radius:22px 22px 0 0;
+
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+
+    padding:0 6px;
+
+    box-sizing:border-box;
+
+    z-index:9999;
+
+}
+
+.nav-item{
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#FFFFFF;
+
+    font-size:11px;
+
+    gap:2px;
+
+}
+
+.nav-item img{
+
+    width:21px;
+    height:21px;
+
+    object-fit:contain;
+
+    margin-bottom:2px;
+
+}
+
+.nav-item span{
+
+    line-height:1;
+
+}
+
+.nav-active-icon{
+
+    width:58px;
+    height:58px;
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:3px;
+
+}
+
+.nav-active-icon img{
+
+    width:22px;
+    height:22px;
+
+    margin:0;
+
+}
+
+.nav-active-icon span{
+
+    margin:0;
+
+    color:#336ABF;
+
+    font-size:10px;
+
+    font-weight:700;
+
+}
+
+@media(max-width:430px){
+
+    .status-page{
+        max-width:100%;
+    }
+
+}

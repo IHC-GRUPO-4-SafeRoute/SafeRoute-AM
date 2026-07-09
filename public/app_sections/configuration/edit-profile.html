@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<!--
+    Pantalla: Editar Perfil
+
+    HU relacionada:
+    US35 - Edición de perfil de usuario
+
+    Criterios de aceptación cubiertos:
+    - Escenario 1: Actualización exitosa de la información del perfil con confirmación al guardar.
+    - Escenario 2: Mensaje de validación cuando faltan campos obligatorios.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/edit-profile.css">
+</head>
+<body>
+    <main class="edit-profile-page">
+        <header class="edit-profile-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver al perfil">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1 data-i18n="editProfile.title">Editar Perfil</h1>
+            </div>
+
+            <a class="notification-button" href="../notifications/notifications.html?returnTo=../configuration/edit-profile.html" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <form class="edit-profile-content" id="edit-profile-form">
+            <!-- AC US35 - El usuario puede actualizar su foto de perfil. -->
+            <section class="edit-card photo-card" id="profile-photo">
+                <h2>Foto de perfil</h2>
+
+                <div class="photo-upload-row">
+                    <div class="main-avatar-wrapper">
+                        <img
+                            class="main-avatar"
+                            id="current-avatar"
+                            src="../../assets/images/configuration/profile1.png"
+                            alt="Foto actual de perfil"
+                        >
+
+                        <!-- AC US35 - Permite cambiar la foto al presionar el ícono de cámara. -->
+                        <label class="camera-badge" for="avatar-upload" aria-label="Cambiar foto de perfil">
+                            <img src="../../assets/images/configuration/camera.png" alt="">
+                        </label>
+                    </div>
+
+                    <div class="upload-actions">
+                        <label class="upload-label" for="avatar-upload">Subir imagen</label>
+                        <input class="avatar-upload-input" type="file" id="avatar-upload" accept="image/*">
+
+                        <button class="delete-photo-button" type="button" id="delete-photo-button">
+                            Eliminar foto
+                        </button>
+                    </div>
+                </div>
+
+                <p class="photo-helper">O selecciona una foto predeterminada</p>
+
+                <div class="avatar-options" id="avatar-options">
+                    <button class="avatar-option selected" type="button" data-avatar="../../assets/images/configuration/profile1.png">
+                        <img src="../../assets/images/configuration/profile1.png" alt="Avatar 1">
+                    </button>
+
+                    <button class="avatar-option" type="button" data-avatar="../../assets/images/configuration/profile2.png">
+                        <img src="../../assets/images/configuration/profile2.png" alt="Avatar 2">
+                    </button>
+
+                    <button class="avatar-option" type="button" data-avatar="../../assets/images/configuration/profile3.png">
+                        <img src="../../assets/images/configuration/profile3.png" alt="Avatar 3">
+                    </button>
+
+                    <button class="avatar-option" type="button" data-avatar="../../assets/images/configuration/profile4.png">
+                        <img src="../../assets/images/configuration/profile4.png" alt="Avatar 4">
+                    </button>
+
+                    <button class="avatar-option" type="button" data-avatar="../../assets/images/configuration/profile5.png">
+                        <img src="../../assets/images/configuration/profile5.png" alt="Avatar 5">
+                    </button>
+
+                    <button class="avatar-option" type="button" data-avatar="../../assets/images/configuration/profile6.png">
+                        <img src="../../assets/images/configuration/profile6.png" alt="Avatar 6">
+                    </button>
+
+                    <button class="avatar-option" type="button" data-avatar="../../assets/images/configuration/profile7.png">
+                        <img src="../../assets/images/configuration/profile7.png" alt="Avatar 7">
+                    </button>
+
+                    <button class="avatar-option" type="button" data-avatar="../../assets/images/configuration/profile8.png">
+                        <img src="../../assets/images/configuration/profile8.png" alt="Avatar 8">
+                    </button>
+                </div>
+            </section>
+
+            <!-- AC US35 - El usuario puede modificar su información personal. -->
+            <section class="edit-card personal-card">
+                <h2>Información personal</h2>
+
+                <label class="input-group" for="profile-name-input">
+                    <span>Nombre</span>
+                    <input type="text" id="profile-name-input" value="Lucía Martínez" required>
+                </label>
+
+                <label class="input-group" for="profile-email-input">
+                    <span>Correo</span>
+                    <input type="email" id="profile-email-input" value="lucia@gmail.com" required>
+                </label>
+
+                <label class="input-group" for="profile-phone-input">
+                    <span>Teléfono</span>
+                    <input type="tel" id="profile-phone-input" value="+1 555-0100" required>
+                </label>
+
+                <p class="form-message" id="form-message" aria-live="polite"></p>
+            </section>
+
+            <button class="save-button" type="submit">
+                Guardar cambios
+            </button>
+        </form>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span data-i18n="nav.home">Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span data-i18n="nav.routes">Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span data-i18n="nav.alerts">Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span data-i18n="nav.reports">Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span data-i18n="nav.profile">Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+    <script src="../../assets/scripts/configuration/edit-profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+:root {
+  --routes-navy: var(--color-navy);
+  --routes-light-blue: var(--color-screen-bg);
+  --routes-white: var(--color-white);
+  --routes-disabled: var(--color-disabled);
+}
+
+body {
+  background: var(--routes-disabled);
+}
+
+.navigation-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 36px 31px;
+  background: var(--routes-light-blue);
+  overflow: hidden;
+}
+
+.navigation-header {
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.back-button {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.back-button img {
+  width: 10px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.navigation-status {
+  width: 143px;
+  height: 24px;
+  margin: 19px auto 13px;
+  border-radius: 14px;
+  background: var(--routes-navy);
+  color: var(--routes-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.navigation-status img {
+  width: 13px;
+  height: 13px;
+  object-fit: contain;
+}
+
+.direction-card {
+  min-height: 127px;
+  padding: 15px 17px 13px;
+  border-radius: 16px;
+  background: var(--routes-white);
+}
+
+/* ==========================================================================
+   TARJETA DE DIRECCIÓN (REPOSICIONAMIENTO COMPLETO DEL INDICADOR)
+   ========================================================================== */
+
+.direction-top {
+  display: grid;
+  /* Columna 1 fija de 65px para la flecha y los metros. 
+     Columna 2 flexible para el texto de la calle. */
+  grid-template-columns: 65px 1fr;
+  align-items: center;
+  column-gap: 16px;
+  width: 100%;
+}
+
+/* Flecha azul en la columna 1, fila 1 */
+.turn-icon {
+  grid-column: 1;
+  grid-row: 1;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  justify-self: center; /* Centrado horizontal absoluto */
+}
+
+/* Metros en la columna 1, fila 2 (Justo debajo de la flecha) */
+.distance-label {
+  grid-column: 1;
+  grid-row: 2; /* Fuerza el salto de línea manteniéndose en la columna 1 */
+  margin-top: 6px;
+  color: #1f1f1f;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  justify-self: center; /* Centrado milimétrico con la flecha */
+  white-space: nowrap;
+}
+
+/* Texto de la calle a la derecha (Ocupa ambas filas en la columna 2) */
+.direction-text {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  text-align: left;
+}
+
+.direction-text h1 {
+  color: #1f1f1f;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Línea horizontal divisoria */
+.direction-divider {
+  height: 1px;
+  margin: 14px 0 12px;
+  background: #9f9f9f;
+}
+
+/* Grilla inferior para Tiempo, Distancia y Seguridad */
+.route-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+}
+
+.route-stats article {
+  min-height: 31px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: none;
+}
+
+.route-stats strong {
+  color: #252525;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.route-stats span {
+  margin-top: 2px;
+  color: #777777;
+  font-size: 9px;
+  font-weight: 400;
+}
+.map-card {
+  width: 352px;
+  height: 450px;
+  margin: 15px auto 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--routes-white);
+}
+
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.map-legend {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 150px;
+  height: 54px;
+  padding: 8px 9px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+.map-legend div {
+  display: grid;
+  grid-template-columns: 22px 1fr 26px;
+  align-items: center;
+  height: 19px;
+  gap: 5px;
+}
+
+.map-legend div + div {
+  margin-top: 3px;
+}
+
+.legend-line {
+  width: 18px;
+  height: 0;
+  border-top: 1.5px solid #25ae52;
+}
+
+.legend-line.alternative {
+  width: 18px;
+  border-top: 1.5px dashed #ff9d00;
+}
+
+.map-legend p,
+.map-legend strong {
+  margin: 0;
+  color: #111111;
+  font-size: 9px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.safe-node {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  position: absolute;
+  z-index: 4;
+}
+
+.danger-marker {
+  width: 29px;
+  height: 29px;
+  object-fit: contain;
+  position: absolute;
+  z-index: 4;
+}
+
+.node-one {
+  left: 31%;
+  bottom: 26%;
+}
+
+.node-two {
+  left: 58%;
+  bottom: 36%;
+}
+
+.node-three {
+  left: 66%;
+  top: 46%;
+}
+
+.node-four {
+  left: 58%;
+  top: 29%;
+}
+
+.node-five {
+  left: 69%;
+  top: 10%;
+}
+
+.danger-one {
+  right: 2%;
+  top: 38%;
+}
+
+.danger-two {
+  right: 0%;
+  bottom: 29%;
+}
+
+.danger-three {
+  left: 72%;
+  bottom: 13%;
+}
+
+.danger-four {
+  left: 42%;
+  bottom: 7%;
+}
+
+.finish-route-button {
+  width: 130px;
+  height: 28px;
+  margin: 18px auto 20px;
+  border-radius: 16px;
+  background: var(--routes-white);
+  color: #ff3131;
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* ==========================================================================
+   SECCIÓN: PANELES INFERIORES EN DOS COLUMNAS (DISEÑO FINAL EXACTO)
+   ========================================================================== */
+
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Estira las columnas para que la línea divisoria ocupe todo el alto */
+  width: 100%;
+}
+
+.info-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Pinta la línea divisoria vertical gris exactamente en el medio */
+.info-card.border-right {
+  border-right: 1px solid #c4dbe8;
+}
+
+/* Alinea el icono y el título horizontalmente en la misma línea */
+.info-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.info-title img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.info-title h2 {
+  color: #111111;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Ajuste del párrafo: Se despliega de forma natural ocupando su espacio */
+.info-card p {
+  color: #444444;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 6px 0 16px 34px; /* El margen izquierdo de 34px lo alinea exactamente debajo de las letras del título */
+  text-align: left;
+}
+
+/* Botón "Ver" estilo cápsula blanca centrado en la base */
+.info-card button {
+  margin: auto auto 0 auto; /* Empuja el botón al fondo de la tarjeta y lo centra */
+  width: 120px;
+  height: 28px;
+  border: none;
+  border-radius: 14px;
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.1s ease;
+}
+
+.info-card button:active {
+  transform: scale(0.96);
+}
+
+/* ========================================================================== */
+@media (min-width: 431px) {
+  .navigation-page {
+    width: 430px;
+  }
+}
+
+@media (max-width: 430px) {
+  body {
+    background: var(--routes-light-blue);
+  }
+
+  .navigation-page {
+    max-width: none;
+  }
+}

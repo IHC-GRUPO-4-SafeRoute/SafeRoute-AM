@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<!--
+    Pantalla: Configuración de Seguridad
+
+    HU relacionada:
+    Pantalla complementaria (agrupadora de configuración de seguridad)
+    Opciones vinculadas: US25, US41, US42 y US43
+
+    Criterios de aceptación cubiertos:
+    - Permite acceder a opciones de seguridad desde configuración.
+    - Permite activar/desactivar opciones de seguridad mediante switches.
+    - Permite navegar hacia pantallas específicas como cambio de clave, acceso biométrico y términos.
+
+    Nota:
+    - Esta pantalla no representa el cumplimiento total de una sola HU.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Seguridad | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/security-settings.css">
+</head>
+<body>
+    <main class="security-page">
+        <header class="security-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver al perfil">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1 data-i18n="security.title">Configuración de Seguridad</h1>
+            </div>
+
+            <a class="notification-button" href="../notifications/notifications.html?returnTo=../configuration/security-settings.html" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <section class="security-content">
+            <h2 class="section-title">Seguridad</h2>
+
+            <section class="security-links">
+                <button class="security-link" type="button" id="change-password-button">
+                    <span data-i18n="security.changePassword">Cambiar de clave</span>
+                    <img src="../../assets/images/configuration/right_arrow.png" alt="">
+                </button>
+
+                <button class="security-link" type="button" id="biometric-button">
+                    <span data-i18n="security.biometricAccess">Acceso Biométrico</span>
+                    <img src="../../assets/images/configuration/right_arrow.png" alt="">
+                </button>
+
+                <button class="security-link" type="button" id="terms-button">
+                    <span data-i18n="security.termsConditions">Términos y Condiciones</span>
+                    <img src="../../assets/images/configuration/right_arrow.png" alt="">
+                </button>
+            </section>
+
+            <p class="status-message" id="status-message" aria-live="polite"></p>
+
+            <!-- AC US26 - Switch funcional para activar/desactivar temporizador. -->
+            <section class="security-card">
+                <img class="security-card-icon" src="../../assets/images/configuration/time.png" alt="">
+
+                <div class="security-card-info">
+                    <h3 data-i18n="security.securityTimer">Temporizador de seguridad</h3>
+                    <p data-i18n="security.securityTimerSubtitle">Alerta automática si no confirmas</p>
+                </div>
+
+                <label class="switch" aria-label="Activar temporizador de seguridad">
+                    <input type="checkbox" id="timer-toggle">
+                    <span class="slider"></span>
+                </label>
+            </section>
+
+            <!-- AC US27 / US42 - Switch funcional para compartir ubicación. -->
+            <section class="security-card">
+                <img class="security-card-icon" src="../../assets/images/configuration/share.png" alt="">
+
+                <div class="security-card-info">
+                    <h3 data-i18n="security.shareLocation">Compartir Ubicación</h3>
+                    <p data-i18n="security.shareLocationSubtitle">Con contactos de emergencia</p>
+                </div>
+
+                <label class="switch" aria-label="Activar compartir ubicación">
+                    <input type="checkbox" id="location-toggle">
+                    <span class="slider"></span>
+                </label>
+            </section>
+
+            <!-- Permiso funcional de micrófono para funciones de alerta. -->
+            <section class="security-card">
+                <img class="security-card-icon" src="../../assets/images/configuration/microfone.png" alt="">
+
+                <div class="security-card-info">
+                    <h3 data-i18n="security.microphone">Habilitar micrófono</h3>
+                    <p data-i18n="security.microphoneSubtitle">Para detectar palabras de alerta</p>
+                </div>
+
+                <label class="switch" aria-label="Activar micrófono">
+                    <input type="checkbox" id="microphone-toggle">
+                    <span class="slider"></span>
+                </label>
+            </section>
+
+            <!-- AC US22 - Switch funcional para notificaciones push. -->
+            <section class="security-card">
+                <img class="security-card-icon" src="../../assets/images/configuration/push.png" alt="">
+
+                <div class="security-card-info">
+                    <h3 data-i18n="security.pushNotifications">Notificaciones push</h3>
+                </div>
+
+                <label class="switch" aria-label="Activar notificaciones push">
+                    <input type="checkbox" id="push-toggle">
+                    <span class="slider"></span>
+                </label>
+            </section>
+
+            <!-- AC US24 - Botón funcional de prueba SOS. -->
+            <section class="sos-card">
+                <div class="sos-header">
+                    <img class="security-card-icon" src="../../assets/images/configuration/sos.png" alt="">
+
+                    <div class="security-card-info">
+                        <h3 data-i18n="security.sosButton">Botón SOS</h3>
+                        <p data-i18n="security.sosButtonSubtitle">Configura el botón de emergencia</p>
+                    </div>
+                </div>
+
+                <button class="sos-button" type="button" id="test-sos-button">
+                    <span data-i18n="security.testSos">Probar SOS</span>
+                </button>
+            </section>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span data-i18n="nav.home">Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span data-i18n="nav.routes">Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span data-i18n="nav.alerts">Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span data-i18n="nav.reports">Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span data-i18n="nav.profile">Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <div class="sos-modal-overlay" id="sos-modal">
+        <section class="sos-modal">
+            <h2>SOS de prueba activado</h2>
+            <p id="sos-modal-message">
+                Se simuló el envío de una alerta a tus contactos de emergencia.
+            </p>
+
+            <button class="sos-modal-cancel" type="button" id="cancel-sos-button">
+                Cancelar SOS
+            </button>
+
+            <button class="sos-modal-confirm" type="button" id="close-sos-button">
+                Entendido
+            </button>
+        </section>
+    </div>
+
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+    <script src="../../assets/scripts/configuration/security-settings.js"></script>
+</body>
+</html>

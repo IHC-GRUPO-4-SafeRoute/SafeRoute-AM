@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/login-sign_up/register.css">
+</head>
+
+<!-- HU correspondientes: US33 -->
+<body>
+
+    <main class="register-page">
+
+        <header class="register-header">
+
+            <h1>Crear cuenta</h1>
+
+        </header>
+
+
+        <section class="register-content">
+
+            <form
+                id="register-form"
+                class="register-form"
+            >
+
+                <div class="register-group">
+
+                    <label for="name">
+                        Nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Tu nombre"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="register-group">
+
+                    <label for="register-email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="register-email"
+                        name="email"
+                        placeholder="example@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="register-group">
+
+                    <label for="phone">
+                        Número de teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+51 987 654 321"
+                        autocomplete="tel"
+                        maxlength="12"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="register-group">
+
+                    <label for="birth-date">
+                        Fecha de nacimiento
+                    </label>
+
+                    <input
+                        type="date"
+                        id="birth-date"
+                        name="birth-date"
+                        autocomplete="bday"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="register-group">
+
+                    <label for="register-password">
+                        Contraseña
+                    </label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="register-password"
+                            name="password"
+                            placeholder="Ingrese su contraseña"
+                            autocomplete="new-password"
+                            minlength="13"
+                            maxlength="13"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="show-register-password"
+                            class="show-password-button"
+                            aria-label="Mostrar contraseña"
+                        >
+                            <img
+                                id="register-eye-icon"
+                                src="../../assets/images/login-sign_up/close_eye.png"
+                                alt=""
+                            >
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="register-group">
+
+                    <label for="confirm-password">
+                        Confirmar contraseña
+                    </label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirm-password"
+                            placeholder="Confirme su contraseña"
+                            autocomplete="new-password"
+                            minlength="13"
+                            maxlength="13"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="show-confirm-password"
+                            class="show-password-button"
+                            aria-label="Mostrar confirmación de contraseña"
+                        >
+                            <img
+                                id="confirm-eye-icon"
+                                src="../../assets/images/login-sign_up/close_eye.png"
+                                alt=""
+                            >
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p class="terms-text">
+
+                    Para continuar, debes aceptar nuestros
+
+                    <a href="#">
+                        Términos y condiciones
+                    </a>
+
+                    y nuestra
+
+                    <a href="#">
+                        Política de privacidad
+                    </a>.
+
+                </p>
+
+
+                <p
+                    id="register-message"
+                    class="register-message"
+                    aria-live="polite"
+                ></p>
+
+
+                <button
+                    type="submit"
+                    class="register-submit-button"
+                >
+                    Registrarse
+                </button>
+
+            </form>
+
+
+            <footer class="register-footer">
+
+                <p>
+                    ¿Tienes una cuenta?
+
+                    <a href="login.html">
+                        Inicia sesión
+                    </a>
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+<script src="../../assets/scripts/login-sign_up/register.js"></script>
+</body>
+</html>
+
+
+
+<!-- CRITERIOS DE ACEPTACION
+        ESCENARIO1: Registro exitoso de usuario 
+        escenario2: Datos inválidos de registro -->

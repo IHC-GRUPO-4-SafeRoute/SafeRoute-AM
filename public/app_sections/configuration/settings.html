@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<!--
+    Pantalla complementaria: Ajustes
+
+    Esta pantalla permite acceder a configuraciones generales del usuario,
+    incluyendo ajustes de notificaciones y eliminación de cuenta.
+
+    Nota:
+    - No se asigna una HU específica porque funciona como pantalla agrupadora.
+    - Las acciones internas son funcionalidades complementarias del módulo de configuración.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/settings.css">
+</head>
+<body>
+    <main class="settings-page">
+        <header class="settings-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver al perfil">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1 data-i18n="settings.title">Ajustes</h1>
+            </div>
+
+            <a class="notification-button" href="../notifications/notifications.html?returnTo=../configuration/settings.html" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <section class="settings-content">
+            <a class="settings-row" href="./notification-settings.html">
+                <span data-i18n="settings.notificationSettings">Ajustes de notificaciones</span>
+                <img src="../../assets/images/configuration/right_arrow.png" alt="">
+            </a>
+
+            <a class="settings-row" href="./delete-account.html">
+                <span data-i18n="settings.deleteAccount">Eliminar cuenta</span>
+                <img src="../../assets/images/configuration/right_arrow.png" alt="">
+            </a>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span data-i18n="nav.home">Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span data-i18n="nav.routes">Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span data-i18n="nav.alerts">Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span data-i18n="nav.reports">Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span data-i18n="nav.profile">Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+    <script src="../../assets/scripts/configuration/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/alerts/alerts.css">
+</head>
+
+<body>
+
+<main class="alerts-page">
+
+    <header class="alerts-header">
+
+        <div class="header-left">
+
+            <button
+                class="back-button"
+                id="back-button"
+                aria-label="Back">
+
+                <img
+                    src="../../assets/images/reports/back button.png"
+                    alt="Back">
+
+            </button>
+
+            <h1 data-i18n="alerts.title">
+                Alertas
+            </h1>
+
+        </div>
+
+        <div class="header-right">
+
+            <div class="live-status">
+
+                <span class="live-circle"></span>
+
+                <span data-i18n="alerts.live">
+                    En vivo
+                </span>
+
+            </div>
+
+            <a
+                class="notification-button"
+                href="../notifications/notifications.html?returnTo=../alerts/alerts-secondary.html"
+                aria-label="Notificaciones">
+
+                <img
+                    src="../../assets/images/alerts/notification.png"
+                    alt="Notificaciones">
+
+            </a>
+
+        </div>
+
+    </header>
+
+    <section class="alerts-content">
+
+        <section class="alerts-container">
+
+            <article class="alert-card robbery">
+
+                <div class="alert-left">
+
+                    <img
+                        class="alert-type"
+                        src="../../assets/images/alerts/Iconalert.png"
+                        alt="Robo">
+
+                </div>
+
+                <div class="alert-body">
+
+                    <h3 data-i18n="alerts.secondary.cards.robbery.title">
+                        Robo reportado
+                    </h3>
+
+                    <p data-i18n="alerts.secondary.cards.robbery.location">
+                        Urb el Eucalipto
+                    </p>
+
+                    <div class="alert-footer">
+
+                        <span
+                            class="alert-time"
+                            data-i18n="alerts.secondary.cards.robbery.time">
+
+                            Hace 57 min
+
+                        </span>
+
+                        <span class="alert-location">
+
+                            <img
+                                src="../../assets/images/alerts/ubication.png"
+                                alt="">
+
+                            1.5 km
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="alert-card harassment">
+
+                <div class="alert-left">
+
+                    <img
+                        class="alert-type"
+                        src="../../assets/images/alerts/crash.png"
+                        alt="Acoso">
+
+                </div>
+
+                <div class="alert-body">
+
+                    <h3 data-i18n="alerts.secondary.cards.harassment.title">
+                        Acoso a un grupo de escolares
+                    </h3>
+
+                    <p data-i18n="alerts.secondary.cards.harassment.location">
+                        Jockey Plaza
+                    </p>
+
+                    <div class="alert-footer">
+
+                        <span
+                            class="alert-time"
+                            data-i18n="alerts.secondary.cards.harassment.time">
+
+                            Hace 2 horas
+
+                        </span>
+
+                        <span class="alert-location">
+
+                            <img
+                                src="../../assets/images/alerts/ubication.png"
+                                alt="">
+
+                            1.8 km
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </section>
+
+    <nav class="bottom-navigation">
+
+        <a class="nav-item" href="../home/home.html">
+
+            <img
+                src="../../assets/images/alerts/home.png"
+                alt="Inicio">
+
+            <span data-i18n="nav.home">
+                Inicio
+            </span>
+
+        </a>
+
+        <a class="nav-item" href="../routes/routes_safe_routes.html">
+
+            <img
+                src="../../assets/images/alerts/routes.png"
+                alt="Rutas">
+
+            <span data-i18n="nav.routes">
+                Rutas
+            </span>
+
+        </a>
+
+        <a class="nav-item active" href="alerts-secondary.html">
+
+            <div class="nav-active-icon">
+
+                <img
+                    src="../../assets/images/alerts/alerts.png"
+                    alt="Alertas">
+
+                <span data-i18n="nav.alerts">
+                    Alertas
+                </span>
+
+            </div>
+
+        </a>
+
+        <a class="nav-item" href="../reports/reports.html">
+
+            <img
+                src="../../assets/images/alerts/reports.png"
+                alt="Reportes">
+
+            <span data-i18n="nav.reports">
+                Reportes
+            </span>
+
+        </a>
+
+        <a class="nav-item" href="../configuration/profile.html">
+
+            <img
+                src="../../assets/images/alerts/profile.png"
+                alt="Perfil">
+
+            <span data-i18n="nav.profile">
+                Perfil
+            </span>
+
+        </a>
+
+    </nav>
+
+</main>
+
+<script src="../../assets/scripts/i18n/i18n.js"></script>
+<script src="../../assets/scripts/alerts/alerts.js"></script>
+
+</body>
+</html>

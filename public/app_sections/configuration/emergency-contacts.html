@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<!--
+    Pantalla: Contactos de Emergencia
+
+    HU relacionada:
+    US25 - Registro de contactos de emergencia
+
+    Criterios de aceptación cubiertos:
+    - Escenario 1: Registro exitoso de un contacto válido.
+    - Escenario 2: Mensaje de error de validación cuando los datos son incompletos o incorrectos.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos de Emergencia | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/emergency-contacts.css">
+</head>
+<body>
+    <main class="emergency-page">
+        <header class="emergency-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver al perfil">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1 data-i18n="emergencyContacts.title">Contactos de Emergencia</h1>
+            </div>
+
+            <a class="notification-button" href="../notifications/notifications.html?returnTo=../configuration/emergency-contacts.html" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <section class="emergency-content">
+            <!-- AC US25 - Lista dinámica de contactos almacenados. -->
+            <section class="contacts-list" id="contacts-list"></section>
+
+            <!-- AC US25 - Botón para mostrar el formulario de nuevo contacto. -->
+            <button class="add-contact-button" type="button" id="show-contact-form">
+                <span class="add-icon-circle">
+                    <img src="../../assets/images/configuration/plus.png" alt="">
+                </span>
+                <span>Agregar Contacto</span>
+            </button>
+
+            <!-- AC US25 - Formulario para registrar contacto válido. -->
+            <form class="contact-form hidden" id="contact-form">
+                <h2>Nuevo Contacto</h2>
+
+                <label class="input-group" for="contact-name">
+                    <input type="text" id="contact-name" placeholder="Ej. Ana Torres">
+                </label>
+
+                <label class="input-group" for="contact-relation">
+                    <input type="text" id="contact-relation" placeholder="Ej. Hermana">
+                </label>
+
+                <label class="input-group" for="contact-phone">
+                    <input type="tel" id="contact-phone" placeholder="+1 555-0000">
+                </label>
+
+                <p class="form-message" id="form-message" aria-live="polite"></p>
+
+                <div class="form-actions">
+                    <button class="cancel-button" type="button" id="cancel-contact">
+                        Cancelar
+                    </button>
+
+                    <button class="submit-button" type="submit">
+                        Agregar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span data-i18n="nav.home">Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span data-i18n="nav.routes">Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span data-i18n="nav.alerts">Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span data-i18n="nav.reports">Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span data-i18n="nav.profile">Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+    <script src="../../assets/scripts/configuration/emergency-contacts.js"></script>
+</body>
+</html>

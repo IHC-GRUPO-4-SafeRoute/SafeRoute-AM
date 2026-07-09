@@ -1,0 +1,142 @@
+:root {
+  --routes-navy: var(--color-navy);
+  --routes-light-blue: var(--color-screen-bg);
+  --routes-white: var(--color-white);
+  --routes-disabled: var(--color-disabled);
+}
+
+body {
+  background: var(--routes-disabled);
+}
+
+.incidents-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--routes-light-blue);
+  overflow: hidden;
+}
+
+.incidents-header {
+  width: 100%;
+  height: 88px;
+  padding: 0 28px;
+  background: var(--routes-navy);
+  color: var(--routes-white);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.back-button {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.back-button img {
+  width: 10px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.incidents-header h1 {
+  position: absolute;
+  left: 50%;
+  top: 37px;
+  transform: translateX(-50%);
+  color: var(--routes-white);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.incidents-content {
+  padding: 158px 51px 0;
+}
+
+.incidents-card {
+  min-height: 306px;
+  padding: 28px 18px 31px;
+  border-radius: 15px;
+  background: var(--routes-white);
+}
+
+.incidents-card h2 {
+  color: var(--color-black);
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.incidents-divider {
+  height: 1px;
+  margin: 18px 0 38px;
+  background: #9f9f9f;
+}
+
+.incidents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.incident-item {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.incident-item img {
+  width: 19px;
+  height: 19px;
+  justify-self: center;
+  object-fit: contain;
+}
+
+.incident-item h3 {
+  color: var(--color-black);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.incident-item p {
+  margin-top: 2px;
+  color: #777777;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.return-map-button {
+  width: 264px;
+  height: 54px;
+  margin: 86px auto 0;
+  border-radius: 17px;
+  background: var(--routes-white);
+  color: #ff3131;
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@media (min-width: 431px) {
+  .incidents-page {
+    width: 430px;
+  }
+}
+
+@media (max-width: 430px) {
+  body {
+    background: var(--routes-light-blue);
+  }
+
+  .incidents-page {
+    max-width: none;
+  }
+}

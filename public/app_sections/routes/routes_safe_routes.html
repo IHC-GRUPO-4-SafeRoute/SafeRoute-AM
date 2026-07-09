@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rutas seguras | SafeRoute</title>
+
+  <link rel="stylesheet" href="../../assets/styles/global.css" />
+  <link rel="stylesheet" href="../../assets/styles/routes/routes_safe_routes.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="routes-header">
+
+      <div class="header-title">
+        <h1>Rutas seguras</h1>
+        <p>Según tus preferencias</p>
+      </div>
+
+      <a class="notification-button" href="../notifications/notifications.html?returnTo=../routes/routes_safe_routes.html" aria-label="Notificaciones">
+        <img src="../../assets/images/routes/Notifications_icon.png" alt="" />
+      </a>
+    </header>
+
+    <main class="routes-content">
+      <section class="search-card">
+        <div class="search-box">
+          <img src="../../assets/images/routes/Search_icon.png" alt="" />
+          <input type="text" placeholder="¿A dónde vas?" />
+        </div>
+
+        <button class="search-button" type="button">Buscar ruta</button>
+      </section>
+
+      <section class="route-type-card">
+        <div class="section-heading">
+          <h2>Tipo de ruta</h2>
+          <p>¿Qué priorizamos hoy?</p>
+        </div>
+
+        <article class="route-option">
+          <div class="route-option-icon">
+            <img src="../../assets/images/routes/Shield.png" alt="" />
+          </div>
+
+          <div class="route-option-info">
+            <h3>Ruta más segura</h3>
+            <p>Prioriza tu seguridad con mayor iluminación y menos incidentes</p>
+          </div>
+
+          <button class="route-option-button" type="button" aria-label="Ver resultados de ruta más segura">
+            <img src="../../assets/images/routes/Right_Arrow.png" alt="" />
+          </button>
+        </article>
+
+        <article class="route-option">
+          <div class="route-option-icon">
+            <img src="../../assets/images/routes/Ray.png" alt="" />
+          </div>
+
+          <div class="route-option-info">
+            <h3>Ruta más rápida</h3>
+            <p>Priorizamos la ruta más corta en tiempo</p>
+          </div>
+
+          <button class="route-option-button" type="button" aria-label="Ver resultados de ruta más rápida">
+            <img src="../../assets/images/routes/Right_Arrow.png" alt="" />
+          </button>
+        </article>
+
+        <article class="route-option">
+          <div class="route-option-icon">
+            <img src="../../assets/images/routes/Weights.png" alt="" />
+          </div>
+
+          <div class="route-option-info">
+            <h3>Modo entrenamiento</h3>
+            <p>Te ayudamos a sacar tu mejor desempeño de manera segura</p>
+          </div>
+
+          <button class="route-option-button" type="button" aria-label="Ver resultados de modo entrenamiento">
+            <img src="../../assets/images/routes/Right_Arrow.png" alt="" />
+          </button>
+        </article>
+      </section>
+
+      <section class="frequent-routes-card">
+        <div class="frequent-routes-header">
+          <h2>Rutas frecuentes</h2>
+          <button class="see-all-routes-button" type="button">Ver todas</button>
+        </div>
+
+        <div class="frequent-route-list">
+          <article class="frequent-route-item">
+            <img class="route-activity-icon" src="../../assets/images/routes/Training_1.png" alt="" />
+
+            <div class="frequent-route-info">
+              <h3>Casa → Universidad</h3>
+              <p>15 min - 2.5 km - 78% seguro</p>
+            </div>
+
+            <button class="favorite-button active" type="button" aria-label="Quitar de favoritos">
+              <img src="../../assets/images/routes/Favorite.png" alt="" />
+            </button>
+          </article>
+
+          <article class="frequent-route-item">
+            <img class="route-activity-icon" src="../../assets/images/routes/Training_2.png" alt="" />
+
+            <div class="frequent-route-info">
+              <h3>Loma Amarilla → Casa</h3>
+              <p>30 minutos - 4.5 km - 81% seguro</p>
+            </div>
+
+            <button class="favorite-button" type="button" aria-label="Agregar a favoritos">
+              <img src="../../assets/images/routes/No_Favorite.png" alt="" />
+            </button>
+          </article>
+
+          <article class="frequent-route-item">
+            <img class="route-activity-icon" src="../../assets/images/routes/Training_3.png" alt="" />
+
+            <div class="frequent-route-info">
+              <h3>Parque de la amistad → Casa</h3>
+              <p>27 minutos - 4 km - 90% seguro</p>
+            </div>
+
+            <button class="favorite-button" type="button" aria-label="Agregar a favoritos">
+              <img src="../../assets/images/routes/No_Favorite.png" alt="" />
+            </button>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="../home/home.html" class="nav-item">
+        <img src="../../assets/images/routes/Home_icon.png" alt="" />
+        <span data-i18n="nav.home">Inicio</span>
+      </a>
+
+      <a href="./routes_safe_routes.html" class="nav-item active">
+        <img src="../../assets/images/routes/Routes_icon.png" alt="" />
+        <span data-i18n="nav.routes">Rutas</span>
+      </a>
+
+      <a href="../alerts/alerts.html" class="nav-item">
+        <img src="../../assets/images/routes/alert_icon.png" alt="" />
+        <span data-i18n="nav.alerts">Alertas</span>
+      </a>
+
+      <a href="../reports/reports.html" class="nav-item">
+        <img src="../../assets/images/routes/report_icon.png" alt="" />
+        <span data-i18n="nav.reports">Reportes</span>
+      </a>
+
+      <a href="../configuration/profile.html" class="nav-item">
+        <img src="../../assets/images/routes/configuration_icon.png" alt="" />
+        <span data-i18n="nav.profile">Perfil</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="../../assets/scripts/i18n/i18n.js"></script>
+  <script src="../../assets/scripts/routes/routes_safe_routes.js"></script>
+</body>
+</html>

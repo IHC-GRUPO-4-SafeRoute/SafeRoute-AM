@@ -1,0 +1,369 @@
+/*
+    Pantalla: Logros
+
+    HU relacionada:
+    US40 - Visualización de logros y progreso
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
+*/
+
+:root {
+    --bottom-nav-height: 78px;
+}
+
+body {
+    background: #969696;
+}
+
+.achievements-page {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--color-screen-bg);
+    overflow-x: hidden;
+}
+
+/* Header */
+
+.achievements-header {
+    height: 76px;
+    padding: 24px 31px 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.back-button {
+    width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+}
+
+.back-button img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.achievements-header h1 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.notification-button {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-white);
+}
+
+.notification-button img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* Content */
+
+.achievements-content {
+    padding: 28px 50px calc(var(--bottom-nav-height) + 24px);
+}
+
+/* AC US40 - Distribución de logros obtenidos y pendientes. */
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 21px;
+}
+
+.achievement-card {
+    min-height: 120px;
+    padding: 18px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 18px;
+    background: var(--color-white);
+}
+
+.achievement-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.achievement-card-header img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.achievement-card h2 {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.achievement-card.completed h2 {
+    color: var(--color-olive);
+}
+
+.achievement-card.pending h2 {
+    color: var(--color-gray);
+}
+
+.achievement-card p {
+    min-height: 31px;
+    margin-bottom: 8px;
+    color: var(--color-black);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+/* AC US40 - Barra de progreso para mostrar avance de logros. */
+
+.progress-bar {
+    width: 100%;
+    height: 7px;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #B8BEC7;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    border-radius: 99px;
+    background: var(--color-navy);
+}
+
+.achievement-card strong {
+    margin-top: 7px;
+    color: var(--color-navy);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* Bottom navigation */
+
+.bottom-navigation {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index: 10;
+    width: min(100%, 430px);
+    height: var(--bottom-nav-height);
+    padding: 12px 24px 14px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    transform: translateX(-50%);
+    border-radius: 26px 26px 0 0;
+    background: var(--color-primary);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 18px;
+    color: var(--color-white);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.nav-item img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.nav-item.active {
+    background: var(--color-white);
+    color: var(--color-navy);
+}
+
+.nav-item.active img {
+    width: 23px;
+    height: 23px;
+}
+
+/* Responsive */
+
+@media (min-width: 431px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background: #969696;
+    }
+
+    .achievements-page {
+        width: 430px;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        background: var(--color-screen-bg);
+    }
+
+    .achievements-page {
+        width: 100%;
+        max-width: none;
+    }
+
+    .bottom-navigation {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .achievements-header {
+        height: 72px;
+        padding: 22px 25px 0 31px;
+    }
+
+    .achievements-content {
+        padding: 28px 42px calc(var(--bottom-nav-height) + 22px);
+    }
+
+    .achievement-grid {
+        column-gap: 24px;
+        row-gap: 20px;
+    }
+
+    .achievement-card {
+        min-height: 118px;
+        padding: 17px 13px 15px;
+    }
+
+    .bottom-navigation {
+        padding: 12px 20px 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --bottom-nav-height: 72px;
+    }
+
+    .achievements-header {
+        height: 68px;
+        padding: 20px 20px 0;
+    }
+
+    .achievements-header h1 {
+        font-size: 18px;
+    }
+
+    .back-button {
+        font-size: 32px;
+    }
+
+    .achievements-content {
+        padding: 24px 30px calc(var(--bottom-nav-height) + 20px);
+    }
+
+    .achievement-grid {
+        column-gap: 18px;
+        row-gap: 18px;
+    }
+
+    .achievement-card {
+        min-height: 113px;
+        padding: 15px 12px 14px;
+        border-radius: 16px;
+    }
+
+    .achievement-card-header {
+        gap: 9px;
+        margin-bottom: 13px;
+    }
+
+    .achievement-card-header img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .achievement-card h2 {
+        font-size: 10px;
+    }
+
+    .achievement-card p {
+        font-size: 10px;
+    }
+
+    .progress-bar {
+        height: 6px;
+    }
+
+    .bottom-navigation {
+        height: var(--bottom-nav-height);
+        padding: 10px 14px 12px;
+        gap: 4px;
+        border-radius: 22px 22px 0 0;
+    }
+
+    .nav-item {
+        font-size: 9px;
+        gap: 3px;
+    }
+
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-item.active img {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media (max-width: 320px) {
+    .achievements-content {
+        padding-inline: 22px;
+    }
+
+    .achievement-grid {
+        column-gap: 12px;
+        row-gap: 16px;
+    }
+
+    .achievement-card {
+        padding: 14px 10px;
+    }
+
+    .achievement-card p {
+        font-size: 9.5px;
+    }
+
+    .bottom-navigation {
+        padding-inline: 10px;
+    }
+}

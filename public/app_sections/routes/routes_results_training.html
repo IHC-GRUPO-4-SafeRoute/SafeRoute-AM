@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultados entrenamiento | SafeRoute</title>
+
+  <link rel="stylesheet" href="../../assets/styles/global.css" />
+  <link rel="stylesheet" href="../../assets/styles/routes/routes_results_training.css" />
+</head>
+
+<body>
+  <main class="training-results-page">
+    <header class="training-results-header">
+      <button class="back-button" type="button" aria-label="Volver">&lt;</button>
+
+      <h1>Resultados de ruta</h1>
+
+      <button class="ring-button" type="button" aria-label="Notificaciones">
+        <img src="../../assets/images/routes/Ring_icon.png" alt="" />
+      </button>
+    </header>
+
+    <section class="route-search-card">
+      <div class="location-row">
+        <img src="../../assets/images/routes/Blue_location.png" alt="" />
+        <span>Mi ubicación</span>
+      </div>
+
+      <div class="route-line"></div>
+
+      <div class="location-row">
+        <img src="../../assets/images/routes/green_location.png" alt="" />
+        <span>Universidad</span>
+      </div>
+
+      <img class="action-icon" src="../../assets/images/routes/action_icon.png" alt="" />
+    </section>
+
+    <section class="selected-route">
+      <span>Tipo de ruta elegida:</span>
+
+      <div>
+        <img src="../../assets/images/routes/Weights.png" alt="" />
+        <strong>Modo entrenamiento</strong>
+      </div>
+
+      <button type="button" aria-label="Cambiar tipo de ruta"></button>
+    </section>
+
+    <section class="results-list">
+      <article class="result-card safest">
+        <div class="result-title">
+          <img src="../../assets/images/routes/Shield_green.png" alt="" />
+          <h2>Ruta más segura</h2>
+        </div>
+
+        <div class="result-stats">
+          <div>
+            <strong>12 minutos</strong>
+            <span>Tiempo</span>
+          </div>
+
+          <div>
+            <strong>2.1 km</strong>
+            <span>Distancia</span>
+          </div>
+
+          <div>
+            <strong>88%</strong>
+            <span>Seguridad</span>
+          </div>
+        </div>
+
+        <div class="result-note">
+          <img src="../../assets/images/routes/people_icon.png" alt="" />
+          <span>Mayor iluminación y menos incidentes</span>
+        </div>
+      </article>
+
+      <article class="result-card fast">
+        <div class="result-title">
+          <img src="../../assets/images/routes/Ray.png" alt="" />
+          <h2>Ruta más rápida</h2>
+        </div>
+
+        <div class="result-stats">
+          <div>
+            <strong>8 minutos</strong>
+            <span>Tiempo</span>
+          </div>
+
+          <div>
+            <strong>1.6 km</strong>
+            <span>Distancia</span>
+          </div>
+
+          <div>
+            <strong>77%</strong>
+            <span>Seguridad</span>
+          </div>
+        </div>
+
+        <div class="result-note">
+          <img src="../../assets/images/routes/people_icon.png" alt="" />
+          <span>Más corta en tiempo de llegada</span>
+        </div>
+      </article>
+    </section>
+
+    <button class="training-start-button" type="button">Iniciar entrenamiento</button>
+
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <a class="nav-item" href="../home/home.html">
+        <img src="../../assets/images/routes/Home_icon.png" alt="" />
+        <span data-i18n="nav.home">Inicio</span>
+      </a>
+
+      <a class="nav-item active" href="./routes_safe_routes.html">
+        <img src="../../assets/images/routes/Routes_icon.png" alt="" />
+        <span data-i18n="nav.routes">Rutas</span>
+      </a>
+
+      <a class="nav-item" href="#">
+        <img src="../../assets/images/routes/alert_icon.png" alt="" />
+        <span data-i18n="nav.alerts">Alertas</span>
+      </a>
+
+      <a class="nav-item" href="#">
+        <img src="../../assets/images/routes/report_icon.png" alt="" />
+        <span data-i18n="nav.reports">Reportes</span>
+      </a>
+
+      <a class="nav-item" href="../configuration/profile.html">
+        <img src="../../assets/images/routes/configuration_icon.png" alt="" />
+        <span data-i18n="nav.profile">Perfil</span>
+      </a>
+    </nav>
+  </main>
+
+  <script src="../../assets/scripts/i18n/i18n.js"></script>
+<script src="../../assets/scripts/routes/routes_results_training.js"></script>
+</body>
+</html>

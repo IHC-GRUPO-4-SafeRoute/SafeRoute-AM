@@ -1,0 +1,465 @@
+/*
+    Pantalla: Registro y detalle de huella biométrica
+
+    HU relacionada:
+    US43 - Activar acceso biométrico
+
+    Criterios visuales cubiertos:
+    - Mantiene diseño mobile responsive.
+    - Mantiene consistencia con la paleta SafeRoute.
+    - Mantiene jerarquía visual y navegación inferior.
+
+    Nota:
+    - Hoja compartida por biometric-enroll.html y biometric-detail.html.
+*/
+
+:root {
+    --bottom-nav-height: 78px;
+}
+
+body {
+    background: #969696;
+}
+
+.fingerprint-page {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--color-screen-bg);
+    overflow-x: hidden;
+}
+
+/* Header */
+
+.fingerprint-header {
+    height: 76px;
+    padding: 24px 31px 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-button {
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+}
+
+.back-button img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.fingerprint-header h1 {
+    font-size: 17px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.notification-button {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-white);
+    flex-shrink: 0;
+}
+
+.notification-button img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+/* Content */
+
+.fingerprint-content {
+    padding: 46px 21px calc(var(--bottom-nav-height) + 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-content {
+    padding-top: 48px;
+}
+
+.enroll-content {
+    padding-top: 48px;
+}
+
+.fingerprint-circle {
+    width: 150px;
+    height: 150px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-navy);
+}
+
+.fingerprint-circle img {
+    width: 104px;
+    height: 104px;
+    object-fit: contain;
+}
+
+.fingerprint-scan-button {
+    border: none;
+    cursor: pointer;
+}
+
+.fingerprint-scan-button:active {
+    transform: scale(0.97);
+}
+
+.use-fingerprint-button {
+    margin-top: 31px;
+    background: #6D97DA;
+    color: var(--color-white);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.use-fingerprint-button:disabled {
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.use-fingerprint-button.is-active {
+    background: #023686;
+    cursor: pointer;
+}
+
+.use-fingerprint-button.is-active:active {
+    transform: scale(0.98);
+}
+
+.fingerprint-label {
+    width: 100%;
+    min-height: 33px;
+    margin-top: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: #CFDDF9;
+    color: var(--color-black);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.delete-fingerprint-button,
+.use-fingerprint-button {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 15px;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.delete-fingerprint-button {
+    margin-top: 42px;
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.enroll-content h2 {
+    margin-top: 38px;
+    color: #174A4A;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.enroll-content p {
+    max-width: 300px;
+    margin-top: 18px;
+    color: #174A4A;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.use-fingerprint-button {
+    margin-top: 31px;
+    background: #6D97DA;
+    color: var(--color-white);
+}
+
+/* Bottom navigation */
+
+.bottom-navigation {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    z-index: 10;
+    width: min(100%, 430px);
+    height: var(--bottom-nav-height);
+    padding: 12px 24px 14px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    transform: translateX(-50%);
+    border-radius: 26px 26px 0 0;
+    background: var(--color-primary);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 18px;
+    color: var(--color-white);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.nav-item img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.nav-item.active {
+    background: var(--color-white);
+    color: var(--color-navy);
+}
+
+.nav-item.active img {
+    width: 23px;
+    height: 23px;
+}
+
+.fingerprint-label-edit {
+    width: 100%;
+    min-height: 33px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 76px;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.fingerprint-label-edit input {
+    width: 100%;
+    height: 33px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 16px;
+    background: #CFDDF9;
+    color: var(--color-black);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+}
+
+.fingerprint-label-edit input:focus {
+    box-shadow: 0 0 0 2px rgba(2, 54, 134, 0.22);
+}
+
+.save-fingerprint-name-button {
+    height: 33px;
+    border-radius: 16px;
+    background: var(--color-navy);
+    color: var(--color-white);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.fingerprint-message {
+    min-height: 17px;
+    margin-top: 8px;
+    color: var(--color-navy);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.fingerprint-name-group {
+    width: 100%;
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fingerprint-name-group span {
+    color: #174A4A;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.fingerprint-name-group input {
+    width: 100%;
+    height: 38px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 16px;
+    background: #CFDDF9;
+    color: var(--color-black);
+    font-size: 13px;
+    font-weight: 700;
+    outline: none;
+}
+
+.fingerprint-name-group input:focus {
+    box-shadow: 0 0 0 2px rgba(2, 54, 134, 0.22);
+}
+
+.fingerprint-scan-button.is-scanned {
+    box-shadow: 0 0 0 6px rgba(2, 54, 134, 0.18);
+}
+
+.use-fingerprint-button.is-active {
+    background: #023686;
+}
+/* Responsive */
+
+@media (min-width: 431px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background: #969696;
+    }
+
+    .fingerprint-page {
+        width: 430px;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        background: var(--color-screen-bg);
+    }
+
+    .fingerprint-page {
+        width: 100%;
+        max-width: none;
+    }
+
+    .bottom-navigation {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .fingerprint-header {
+        height: 72px;
+        padding: 22px 25px 0 31px;
+    }
+
+    .fingerprint-header h1 {
+        font-size: 16px;
+    }
+
+    .fingerprint-content {
+        padding-inline: 21px;
+    }
+
+    .bottom-navigation {
+        padding: 12px 20px 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --bottom-nav-height: 72px;
+    }
+
+    .fingerprint-header {
+        height: 68px;
+        padding: 20px 18px 0;
+    }
+
+    .header-title-group {
+        gap: 11px;
+    }
+
+    .fingerprint-header h1 {
+        font-size: 15px;
+    }
+
+    .fingerprint-circle {
+        width: 136px;
+        height: 136px;
+    }
+
+    .fingerprint-circle img {
+        width: 94px;
+        height: 94px;
+    }
+
+    .fingerprint-label {
+        margin-top: 28px;
+        font-size: 12px;
+    }
+
+    .delete-fingerprint-button,
+    .use-fingerprint-button {
+        min-height: 45px;
+        font-size: 15px;
+    }
+
+    .enroll-content h2 {
+        font-size: 16px;
+    }
+
+    .enroll-content p {
+        font-size: 13px;
+    }
+
+    .bottom-navigation {
+        height: var(--bottom-nav-height);
+        padding: 10px 14px 12px;
+        gap: 4px;
+        border-radius: 22px 22px 0 0;
+    }
+
+    .nav-item {
+        font-size: 9px;
+        gap: 3px;
+    }
+
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-item.active img {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media (max-width: 320px) {
+    .fingerprint-content {
+        padding-inline: 16px;
+    }
+
+    .fingerprint-header h1 {
+        font-size: 14px;
+    }
+
+    .bottom-navigation {
+        padding-inline: 10px;
+    }
+}

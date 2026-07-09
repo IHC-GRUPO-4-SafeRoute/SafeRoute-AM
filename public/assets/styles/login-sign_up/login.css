@@ -1,0 +1,435 @@
+body {
+    display: flex;
+    justify-content: center;
+
+    overflow-x: hidden;
+
+    background-color: var(--color-disabled);
+}
+
+
+.login-page {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-x: hidden;
+
+    background-color: var(--color-screen-bg);
+}
+
+
+.login-header {
+    width: 100%;
+    height: 135px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px 18px 15px;
+
+    text-align: center;
+
+    background-color: var(--color-screen-bg);
+}
+
+.login-header h1 {
+    margin-bottom: 7px;
+
+    font-size: clamp(25px, 7vw, 32px);
+    font-weight: 700;
+    line-height: 1.2;
+
+    color: var(--color-black);
+}
+
+.login-header p {
+    font-size: clamp(13px, 3.5vw, 15px);
+    line-height: 1.3;
+
+    color: var(--color-gray);
+}
+
+
+.login-content {
+    width: 100%;
+    flex: 1;
+
+    padding-top: 42px;
+    padding-right: clamp(20px, 8vw, 35px);
+    padding-bottom: 22px;
+    padding-left: clamp(20px, 8vw, 35px);
+
+    background-color: var(--color-white);
+
+    border-radius: 60px 60px 0 0;
+}
+
+
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-left: 13px;
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    color: var(--color-black);
+}
+
+.form-group input {
+    width: 100%;
+    height: 47px;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 15px;
+    outline: none;
+
+    background-color: var(--color-soft-white);
+
+    font-size: 15px;
+
+    color: var(--color-black);
+}
+
+.form-group input::placeholder {
+    color: var(--color-disabled);
+}
+
+.form-group input:focus {
+    outline: 2px solid var(--color-navy);
+
+    background-color: var(--color-white);
+}
+
+
+.password-container {
+    position: relative;
+
+    width: 100%;
+}
+
+.password-container input {
+    padding-right: 55px;
+}
+
+.show-password-button {
+    position: absolute;
+
+    top: 50%;
+    right: 12px;
+
+    transform: translateY(-50%);
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+    outline: none;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.show-password-button:hover {
+    background-color: var(--color-screen-bg);
+}
+
+.show-password-button:focus-visible {
+    outline: 2px solid var(--color-navy);
+}
+
+.show-password-button img {
+    display: block;
+
+    width: 21px;
+    height: 21px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+.login-message {
+    min-height: 12px;
+
+    margin-bottom: 4px;
+
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #C62828;
+}
+
+
+.login-button {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 11px;
+
+    background-color: var(--color-navy);
+    color: var(--color-white);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: var(--color-primary);
+}
+
+.login-button:active {
+    transform: scale(0.99);
+}
+
+.login-button:focus-visible {
+    outline: 3px solid rgba(2, 54, 134, 0.25);
+}
+
+
+
+
+.forgot-password-link {
+    display: block;
+
+    margin: 7px 0;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: var(--color-black);
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+
+
+.register-button {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 20px;
+
+    border-radius: 11px;
+
+    background-color:#F1F3F5;
+    color: var(--color-navy);
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.register-button:hover {
+    background-color: var(--color-screen-bg);
+}
+
+
+
+
+.fingerprint-section {
+    margin-top: 17px;
+
+    text-align: center;
+}
+
+.fingerprint-section p {
+    font-size: 13px;
+    font-weight: 700;
+
+    color: var(--color-black);
+}
+
+.fingerprint-link {
+    color: var(--color-navy);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.fingerprint-link:hover {
+    text-decoration: underline;
+}
+
+
+
+.social-login {
+    margin-top: 17px;
+
+    text-align: center;
+}
+
+.social-login-text {
+    margin-bottom: 12px;
+
+    font-size: 14px;
+
+    color: var(--color-disabled);
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(20px, 7vw, 30px);
+}
+
+.social-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background-color: transparent;
+}
+
+.social-button:hover {
+    background-color: var(--color-screen-bg);
+}
+
+.social-button:focus-visible {
+    outline: 2px solid var(--color-navy);
+}
+
+.social-button img {
+    width: 35px;
+    height: 35px;
+
+    object-fit: contain;
+}
+
+
+
+.login-footer {
+    margin-top: 16px;
+
+    text-align: center;
+}
+
+.login-footer p {
+    font-size: 13px;
+
+    color: var(--color-disabled);
+}
+
+.login-footer a {
+    color: var(--color-navy);
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 360px) {
+
+    .login-header {
+        height: 125px;
+
+        padding-top: 20px;
+    }
+
+    .login-header h1 {
+        font-size: 25px;
+    }
+
+    .login-header p {
+        font-size: 13px;
+    }
+
+    .login-content {
+        padding-top: 35px;
+        padding-right: 16px;
+        padding-left: 16px;
+
+        border-radius: 52px 52px 0 0;
+    }
+
+    .form-group {
+        margin-bottom: 14px;
+    }
+
+    .form-group input {
+        height: 45px;
+
+        font-size: 14px;
+    }
+
+    .login-button {
+        height: 46px;
+
+        font-size: 15px;
+    }
+
+    .register-button {
+        height: 44px;
+
+        font-size: 14px;
+    }
+
+    .fingerprint-section,
+    .social-login {
+        margin-top: 14px;
+    }
+
+    .login-footer {
+        margin-top: 13px;
+    }
+}

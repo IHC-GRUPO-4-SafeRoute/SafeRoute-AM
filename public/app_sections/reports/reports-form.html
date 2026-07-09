@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Reporte | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/reports/reports-form.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <header class="form-header">
+
+        <button id="back-button" class="back-button">
+            <img src="../../assets/images/reports/back button.png" alt="Back">
+        </button>
+
+        <div class="header-title">
+
+            <h2 data-i18n="reports.form.title">
+                Nuevo reporte
+            </h2>
+
+            <span data-i18n="reports.form.subtitle">
+                Ayuda a la comunidad
+            </span>
+
+        </div>
+
+        <button class="notif-button">
+            <img src="../../assets/images/reports/notification icon.png" alt="Notificaciones">
+        </button>
+
+    </header>
+
+    <main class="report-form-page">
+
+        <section class="form-section">
+
+            <h3 data-i18n="reports.form.incidentTitle">
+                Tipo de incidente *
+            </h3>
+
+            <div class="incident-grid">
+
+                <div class="incident-option asalto" data-type="asalto">
+
+                    <img
+                        src="../../assets/images/reports/report-assault-default.png"
+                        data-default="../../assets/images/reports/report-assault-default.png"
+                        data-selected="../../assets/images/reports/report-assault-selected.png">
+
+                    <span data-i18n="reports.form.incidents.assault">
+                        Asalto
+                    </span>
+
+                </div>
+
+                <div class="incident-option violencia" data-type="violencia">
+
+                    <img
+                        src="../../assets/images/reports/report-violence-default.png"
+                        data-default="../../assets/images/reports/report-violence-default.png"
+                        data-selected="../../assets/images/reports/report-violence-selected.png">
+
+                    <span data-i18n="reports.form.incidents.violence">
+                        Violencia
+                    </span>
+
+                </div>
+
+                <div class="incident-option iluminacion" data-type="iluminacion">
+
+                    <img
+                        src="../../assets/images/reports/report-lighting-default.png"
+                        data-default="../../assets/images/reports/report-lighting-default.png"
+                        data-selected="../../assets/images/reports/report-lighting-selected.png">
+
+                    <span data-i18n="reports.form.incidents.lighting">
+                        Iluminación
+                    </span>
+
+                </div>
+
+                <div class="incident-option sospechoso" data-type="sospechoso">
+
+                    <img
+                        src="../../assets/images/reports/report-suspicious-default.png"
+                        data-default="../../assets/images/reports/report-suspicious-default.png"
+                        data-selected="../../assets/images/reports/report-suspicious-selected.png">
+
+                    <span data-i18n="reports.form.incidents.suspicious">
+                        Sospechoso
+                    </span>
+
+                </div>
+
+                <div class="incident-option accidente" data-type="accidente">
+
+                    <img
+                        src="../../assets/images/reports/report-accident-default.png"
+                        data-default="../../assets/images/reports/report-accident-default.png"
+                        data-selected="../../assets/images/reports/report-accident-selected.png">
+
+                    <span data-i18n="reports.form.incidents.accident">
+                        Accidente
+                    </span>
+
+                </div>
+
+                <div class="incident-option otro" data-type="otro">
+
+                    <img
+                        src="../../assets/images/reports/report-other-default.png"
+                        data-default="../../assets/images/reports/report-other-default.png"
+                        data-selected="../../assets/images/reports/report-other-selected.png">
+
+                    <span data-i18n="reports.form.incidents.other">
+                        Otro
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="form-section">
+
+            <h3 data-i18n="reports.form.riskTitle">
+                Nivel de riesgo
+            </h3>
+
+            <div class="risk-grid">
+
+    <div class="risk-option low" data-level="bajo">
+        <span data-i18n="reports.form.risk.low">Bajo</span>
+    </div>
+
+    <div class="risk-option medium" data-level="medio">
+        <span data-i18n="reports.form.risk.medium">Medio</span>
+    </div>
+
+    <div class="risk-option high" data-level="alto">
+        <span data-i18n="reports.form.risk.high">Alto</span>
+    </div>
+
+</div>
+
+</section>
+
+<section class="form-section">
+
+    <h3 data-i18n="reports.form.locationTitle">
+        Ubicación
+    </h3>
+
+    <div class="location-card">
+
+        <div class="location-left">
+
+            <img
+                class="location-icon"
+                src="../../assets/images/reports/ubication icon.png"
+                alt="Ubicación">
+
+            <div class="location-text">
+
+                <p
+                    class="location-status"
+                    data-i18n="reports.form.locationStatus">
+
+                    Ubicación: Activa
+
+                </p>
+
+                <p class="location-address">
+                    Av. Caminos del Inca 1250, Surco
+                </p>
+
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="location-button">
+
+            <span data-i18n="reports.form.changeLocation">
+                Cambiar
+            </span>
+
+        </button>
+
+    </div>
+
+</section>
+
+<section class="form-section">
+
+    <div class="desc-header">
+
+        <h3 data-i18n="reports.form.descriptionTitle">
+            Descripción
+        </h3>
+
+        <button
+            type="button"
+            id="micButton"
+            class="mic-button-outside">
+
+            <img src="../../assets/images/reports/mic button.png">
+
+        </button>
+
+    </div>
+
+    <div class="description-card">
+
+        <textarea
+            id="description"
+            class="description-input"
+            data-i18n-placeholder="reports.form.descriptionPlaceholder"
+            placeholder="Describe lo que sucedió con el mayor detalle posible..">
+        </textarea>
+
+    </div>
+
+</section>
+
+<section class="form-section">
+
+    <h3 data-i18n="reports.form.evidenceTitle">
+        Evidencia
+    </h3>
+
+    <div class="upload-box" id="uploadBox">
+
+        <div class="upload-content">
+
+            <img
+                src="../../assets/images/reports/upload-image.png"
+                class="upload-icon">
+
+            <p
+                class="upload-text"
+                data-i18n="reports.form.uploadImage">
+
+                Subir imagen
+
+            </p>
+
+        </div>
+
+        <input
+            type="file"
+            id="evidenceInput"
+            accept="image/*"
+            hidden>
+
+    </div>
+
+</section>
+
+<div class="anonymous-card">
+
+    <label class="anonymous-content">
+
+        <input
+            type="checkbox"
+            id="anonymousCheck">
+
+        <div class="anonymous-text">
+
+            <strong data-i18n="reports.form.anonymousTitle">
+                Reporte anónimo
+            </strong>
+
+            <span data-i18n="reports.form.anonymousDescription">
+                Tu identidad no será revelada en el reporte público
+            </span>
+
+        </div>
+
+    </label>
+
+</div>
+
+<section class="form-section">
+
+    <button
+        type="button"
+        id="submitReport"
+        class="submit-button">
+
+        <span data-i18n="reports.form.submit">
+            Enviar Reporte
+        </span>
+
+    </button>
+
+</section>
+
+</main>
+
+</div>
+
+<nav class="bottom-navigation">
+
+    <a href="../home/home.html" class="nav-item">
+
+        <img
+            src="../../assets/images/reports/home icon nav.png"
+            alt="Inicio">
+
+        <span data-i18n="nav.home">
+            Inicio
+        </span>
+
+    </a>
+
+    <a href="../routes/routes_safe_routes.html" class="nav-item">
+
+        <img
+            src="../../assets/images/reports/routes icon nav.png"
+            alt="Rutas">
+
+        <span data-i18n="nav.routes">
+            Rutas
+        </span>
+
+    </a>
+
+    <a href="../alerts/alerts.html" class="nav-item">
+
+        <img
+            src="../../assets/images/reports/alerts icon nav.png"
+            alt="Alertas">
+
+        <span data-i18n="nav.alerts">
+            Alertas
+        </span>
+
+    </a>
+
+    <a href="#" class="nav-item active">
+
+        <div class="nav-active-icon">
+
+            <img
+                src="../../assets/images/reports/reports icon nav.png"
+                alt="Reportes">
+
+            <span data-i18n="nav.reports">
+                Reportes
+            </span>
+
+        </div>
+
+    </a>
+
+    <a href="../configuration/profile.html" class="nav-item">
+
+        <img
+            src="../../assets/images/reports/profile icon nav.png"
+            alt="Perfil">
+
+        <span data-i18n="nav.profile">
+            Perfil
+        </span>
+
+    </a>
+
+</nav>
+
+<script src="../../assets/scripts/i18n/i18n.js"></script>
+<script src="../../assets/scripts/reports/reports-form.js"></script>
+
+</body>
+
+</html>

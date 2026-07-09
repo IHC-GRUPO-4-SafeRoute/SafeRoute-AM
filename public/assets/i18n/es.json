@@ -1,0 +1,400 @@
+﻿{
+  "nav": {
+    "home": "Inicio",
+    "routes": "Rutas",
+    "alerts": "Alertas",
+    "reports": "Reportes",
+    "profile": "Perfil"
+  },
+  "common": {
+    "back": "Volver",
+    "notifications": "Notificaciones",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "accept": "Aceptar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "search": "Buscar",
+    "yes": "Sí",
+    "no": "No"
+  },
+  "profile": {
+    "title": "Perfil",
+    "achievements": "Logros",
+    "routes": "Rutas",
+    "reports": "Reportes",
+    "editProfile": "Editar Perfil",
+    "emergencyContacts": "Contactos de Emergencia",
+    "securitySettings": "Configuración de Seguridad",
+    "preferences": "Preferencias",
+    "settings": "Ajustes",
+    "help": "Ayuda",
+    "logout": "Cerrar Sesión",
+    "logoutQuestion": "¿Estás seguro que deseas cerrar sesión?",
+    "confirmLogout": "Sí, cerrar sesión"
+  },
+  "preferences": {
+    "title": "Preferencias",
+    "languageTitle": "Idioma de la app",
+    "routeTitle": "Preferencia de ruta",
+    "routeSafe": "Segura",
+    "routeFast": "Rápida",
+    "routeBalanced": "Equilibrada",
+    "alertZonesTitle": "Zonas de alerta",
+    "alertZonesSubtitle": "Notificar al ingresar a zonas de riesgo",
+    "publicProfileTitle": "Perfil público",
+    "publicProfileSubtitle": "Tu ubicación visible para tus contactos",
+    "notificationsTitle": "Notificaciones",
+    "notificationsSubtitle": "Alertas de seguridad en tiempo real",
+    "saved": "Preferencias guardadas correctamente."
+  },
+  "security": {
+    "title": "Configuración de Seguridad",
+    "changePassword": "Cambiar contraseña",
+    "biometricAccess": "Acceso Biométrico",
+    "termsConditions": "Términos y Condiciones",
+    "securityTimer": "Temporizador de seguridad",
+    "securityTimerSubtitle": "Alerta automática si no confirmas",
+    "shareLocation": "Compartir Ubicación",
+    "shareLocationSubtitle": "Con contactos de emergencia",
+    "microphone": "Activar micrófono",
+    "microphoneSubtitle": "Para detectar palabras de alerta",
+    "pushNotifications": "Notificaciones push",
+    "sosButton": "Botón SOS",
+    "sosButtonSubtitle": "Configura el botón de emergencia",
+    "testSos": "Probar SOS"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "notificationSettings": "Configuración de notificaciones",
+    "deleteAccount": "Eliminar cuenta"
+  },
+  "support": {
+    "title": "Soporte y Seguridad",
+    "question": "¿En qué podemos ayudarte?",
+    "faq": "Preguntas Frecuentes",
+    "contactUs": "Contáctanos",
+    "general": "General",
+    "account": "Cuenta",
+    "services": "Servicios",
+    "customerService": "Atención al cliente",
+    "instagram": "Instagram",
+    "whatsapp": "Whatsapp",
+    "onlineTitle": "Soporte en Línea",
+    "finishedChats": "Chats Finalizados",
+    "startAnotherChat": "Iniciar otro chat",
+    "supportAssistant": "Asistente de Soporte",
+    "helpCenter": "Centro de Ayuda"
+  },
+  "achievements": {
+    "title": "Logros"
+  },
+  "editProfile": {
+    "title": "Editar Perfil"
+  },
+  "emergencyContacts": {
+    "title": "Contactos de Emergencia"
+  },
+  "changePassword": {
+    "title": "Cambiar contraseña"
+  },
+  "biometricAccess": {
+    "title": "Acceso Biométrico"
+  },
+  "deleteAccount": {
+    "title": "Eliminar cuenta"
+  },
+  "notificationSettings": {
+    "title": "Configuración de notificaciones",
+    "vibration": "Vibración",
+    "sound": "Sonido",
+    "emergencyCallSound": "Sonido de llamada de emergencia",
+    "reportNotifications": "Notificaciones de reportes"
+  },
+  "reports": {
+    "title": "Reportes",
+    "newReport": "Nuevo Reporte",
+    "status": {
+      "title": "¡Reporte enviado!",
+      "description": "Tu reporte ha sido enviado a la comunidad",
+      "back": "Volver a reportes"
+    },
+    "failure": {
+      "title": "Reporte fallido",
+      "description": "Tu reporte está incompleto, falta información obligatoria",
+      "retry": "Reintentar"
+    },
+    "error": {
+      "title": "Error de envío",
+      "description": "Ha ocurrido algo inesperado, intenta nuevamente",
+      "refresh": "Actualizar"
+    },
+    "form": {
+      "title": "Nuevo reporte",
+      "subtitle": "Ayuda a la comunidad",
+
+      "incidentTitle": "Tipo de incidente *",
+
+      "incidents": {
+        "assault": "Asalto",
+        "violence": "Violencia",
+        "lighting": "Iluminación",
+        "suspicious": "Sospechoso",
+        "accident": "Accidente",
+        "other": "Otro"
+      },
+
+      "riskTitle": "Nivel de riesgo",
+
+      "risk": {
+        "low": "Bajo",
+        "medium": "Medio",
+        "high": "Alto"
+      },
+
+      "locationTitle": "Ubicación",
+      "locationStatus": "Ubicación: Activa",
+      "changeLocation": "Cambiar",
+
+      "descriptionTitle": "Descripción",
+      "descriptionPlaceholder": "Describe lo que sucedió con el mayor detalle posible..",
+
+      "evidenceTitle": "Evidencia",
+      "uploadImage": "Subir imagen",
+
+      "anonymousTitle": "Reporte anónimo",
+      "anonymousDescription": "Tu identidad no será revelada en el reporte público",
+
+      "submit": "Enviar Reporte"
+    },
+    "tabs": {
+      "all": "Todos los reportes",
+      "mine": "Mis reportes"
+    },
+    "cards": {
+      "violence": {
+        "title": "Violencia",
+        "location": "Av. Primavera, Surco",
+        "time": "Hace 10 min",
+        "risk": "Riesgo alto"
+      },
+      "accident": {
+        "title": "Accidente",
+        "location": "Av. Velasco, Surco",
+        "time": "Hace 2 horas",
+        "risk": "Riesgo bajo"
+      },
+      "suspicious": {
+        "title": "Sospechoso",
+        "location": "Av. Caminos del Inca, Surco",
+        "time": "Hace 2 horas",
+        "risk": "Riesgo bajo"
+      }
+    },
+    "achievement": {
+      "title": "Impacto Comunitario",
+      "subtitle": "Colaborador Activo",
+      "description": "Tus reportes ayudaron a 234 usuarios a evitar zonas peligrosas.",
+      "nextLevel": "Próximo nivel: Guardián"
+    }
+  },
+  "alerts": {
+    "title": "Alertas",
+    "live": "En vivo",
+    "question": "¿Te sientes inseguro?",
+    "sosDescription": "Activa el botón SOS de emergencia.",
+    "secondary": {
+      "cards": {
+        "robbery": {
+          "title": "Robo reportado",
+          "location": "Urb el Eucalipto",
+          "time": "Hace 57 min"
+        },
+        "harassment": {
+          "title": "Acoso a un grupo de escolares",
+          "location": "Jockey Plaza",
+          "time": "Hace 2 horas"
+        }
+      }
+    },
+    "filters": {
+      "all": "Todas",
+      "nearby": "Cercanas",
+      "verified": "Verificadas",
+      "filter": "Filtrar"
+    },
+    "cards": {
+      "robbery": {
+        "title": "Robo reportado",
+        "location": "Calle 5ta con Av. 12",
+        "time": "Hace 15 min"
+      },
+      "caution": {
+        "title": "Zona de precaución",
+        "location": "Parque Industrial",
+        "time": "Hace 1 hora"
+      },
+      "lighting": {
+        "title": "Iluminación deficiente",
+        "location": "Av. Norte",
+        "time": "Hace 3 horas"
+      },
+      "suspicious": {
+        "title": "Sospechoso ladrón",
+        "location": "Parque de la amistad",
+        "time": "Hace 4 horas"
+      },
+      "harassment": {
+        "title": "Acoso a una anciana",
+        "location": "Mall Plaza",
+        "time": "Hace 5 horas"
+      }
+    },
+    "showMore": "Mostrar más"
+
+  },
+  
+  "home": {
+    "title": "Inicio",
+     "greeting": "Hola, Bienvenido De Vuelta",
+    "goodMorning": "Buenos días",
+    "filterAria": "Filtrar puntos del mapa",
+    "notificationsAria": "Ver notificaciones",
+    "currentLocation": "Tu ubicación",
+    "destinationLabel": "Destino",
+    "destinationPlaceholder": "A donde vas?",
+    "searchRouteAria": "Buscar ruta",
+    "security": "Seguridad",
+    "lighting": "Iluminación",
+    "activity": "Actividad",
+    "helpPointAria": "Punto de ayuda",
+    "inactiveNodeAria": "Nodo inactivo",
+    "safeNodeAria": "Nodo seguro",
+    "mediumRiskAria": "Ver riesgo medio",
+    "highRiskAria": "Ver riesgo alto",
+    "centerLocationAria": "Centrar ubicación",
+    "showRouteAria": "Mostrar ruta",
+    "assistantAria": "Abrir asistente",
+    "zoneInfoTitle": "Información de la zona",
+    "zoneInfoDisclaimer": "Parte de la información mostrada puede estar desactualizada",
+    "notAvailable": "No disponible",
+    "distanceEstimated": "Distancia estimada",
+    "schedule": "Horario",
+    "staff": "Personal",
+    "contact": "Contacto",
+    "statusInactive": "Inactivo",
+    "statusSafe": "Seguro",
+    "unverifiedEstablishment": "Establecimiento sin verificación.",
+    "verifiedEstablishment": "Establecimiento verificado por la comunidad.",
+    "nodeShowMore": "Ver más información",
+    "nodeShowMoreInactive": "Ver más información del nodo",
+    "nodeShowLess": "Ocultar información",
+    "goToNode": "Ir a nodo",
+    "requestHelp": "Pedir Ayuda",
+    "amenities": {
+      "firstAid": "Primeros Auxilios",
+      "freeWifi": "Wifi gratuito",
+      "waterDrinks": "Agua/bebidas",
+      "phoneAvailable": "Teléfono disponible",
+      "surveillance24": "Vigilancia 24h",
+      "trainedStaff": "Personal Capacitado"
+    },
+    "riskMedium": "Riesgo Medio",
+    "riskHigh": "Riesgo Alto",
+    "stableSituation": "Situación Estable",
+    "increasingRisk": "Riesgo en aumento",
+    "lastReport": "Último reporte",
+    "incidents": "Incidentes",
+    "trend": "Tendencia",
+    "mediumRiskDescription": "Zona con iluminación deficiente en horario nocturno.",
+    "highRiskDescription": "Zona con alta incidencia de robos reportados.",
+    "securityRecommendations": "Recomendaciones de Seguridad",
+    "mediumRiskTips": {
+      "tip1": "Comparte tu ubicación con un contacto de confianza.",
+      "tip2": "Prefiere el lado de la calle con más transeúntes."
+    },
+    "highRiskTips": {
+      "tip1": "Evita transitar solo/a después de las 9 PM.",
+      "tip2": "Mantén tu teléfono guardado y fuera de vista.",
+      "tip3": "Prefiere rutas alternativas iluminadas."
+    },
+    "zoneListTitle": "Info en esta zona",
+    "filterTitle": "Filtrar nodos",
+    "filterDescription": "Selecciona que puntos ver en el mapa",
+    "filterAll": "Todos los nodos",
+    "filterAllSubtitle": "Mostrar todos los nodos en el mapa",
+    "filterHighSubtitle": "Zonas con incidentes frecuentes",
+    "filterMediumSubtitle": "Zonas con precaución moderada",
+    "filterSafe": "Punto Seguro",
+    "filterSafeSubtitle": "Zonas de alta seguridad",
+    "activateSos": "Activar SOS",
+    "sosDescription": "Se notificará a tus contactos de emergencia con tu ubicación exacta en tiempo real.",
+    "confirmSos": "Confirmar SOS",
+    "sosInProgress": "en curso",
+    "relationMom": "Mamá",
+    "relationFriend": "Amigo",
+    "relationSister": "Hermana",
+    "startNavigation": "Iniciar navegación",
+    "selectDestination": "Selecciona tu destino",
+    "originLocation": "Ubicación de origen",
+    "searchSafeRoute": "Buscar ruta segura",
+    "timerTitle": "Temporizador de Seguridad",
+    "timerDescription": "Si no confirmas que estás bien en el tiempo elegido, se alertará automáticamente a tus contactos de emergencia.",
+    "timeLimit": "Tiempo límite:",
+    "timerUnitMin": "min",
+    "startTimer": "Iniciar Temporizador",
+    "closeNotificationAria": "Eliminar notificación",
+    "shareTitle": "Compartir Ubicación",
+    "shareSubtitle": "Selecciona con quién compartir",
+    "duration": "Duración",
+    "duration30": "30 min",
+    "duration60": "1 hora",
+    "durationArrival": "Hasta llegar",
+    "shareNow": "Compartir ahora",
+    "sharedTitle": "¡Compartido!",
+    "sharedDefaultMessage": "Ubicación compartida correctamente",
+    "inactiveNodeToastTitle": "Nodo inactivo",
+    "inactiveNodeToastSubtitle": "Nodo seguro inaccesible",
+    "activeNodeToastTitle": "Nodo notificado",
+    "activeNodeToastSubtitle": "Nodo seguro cercano accesible",
+    "shareDurationLabels": {
+      "30": "30 minutos",
+      "60": "1 hora",
+      "arrival": "hasta llegar a tu destino"
+    },
+    "andConnector": "y"
+  },
+  "notifications": {
+    "title": "Notificaciones",
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "markAllRead": "Marcar Todo Como Leído",
+    "markAllUnread": "Marcar Como No Leído",
+    "items": {
+      "routeDeviation": {
+        "title": "¿Te Desviaste De Tu Ruta?",
+        "line1": "Detectamos un cambio en tu trayecto.",
+        "line2": "¿Te encuentras bien o deseas recalcular una ruta segura?"
+      },
+      "nearbyRefuge": {
+        "title": "Tienes Un \"Punto De Refugio\" Cerca",
+        "line1": "Estás a 50 metros de Inkafarma.",
+        "line2": "Cuenta con cámaras activas y personal listo para apoyarte si lo necesitas."
+      },
+      "safeArrival": {
+        "title": "¡Llegada Segura!",
+        "line1": "Lucía, ha llegado a su destino. Gracias por acompañarlo en el último tramo de su ruta."
+      },
+      "zoneVerification": {
+        "title": "Ayuda A Verificar Tu Zona",
+        "line1": "Un usuario reportó un incidente a pocos metros de tu negocio. ¿Puedes confirmar si la situación ya está controlada?"
+      }
+    }
+  },
+  "termsConditions": {
+    "title": "Términos y Condiciones"
+  },
+  "months": {
+  "may": "Mayo"
+}
+}

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<!--
+    Pantalla informativa: Términos y Condiciones
+
+    Esta pantalla permite consultar los términos, responsabilidades,
+    privacidad y política completa desde Configuración de Seguridad.
+
+    Nota:
+    - No se asigna una HU específica en esta pantalla porque su propósito
+      dentro de configuración es únicamente informativo.
+    - La aceptación de términos se realiza en el flujo posterior al inicio de sesión.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/terms-conditions.css">
+</head>
+<body>
+    <main class="terms-page">
+        <header class="terms-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver a configuración de seguridad">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+
+                <h1 data-i18n="termsConditions.title">Términos y Condiciones</h1>
+            </div>
+
+            <a class="notification-button" href="../notifications/notifications.html?returnTo=../configuration/terms-conditions.html" aria-label="Ver notificaciones">
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <section class="terms-content">
+            <article class="terms-card" data-expanded="false">
+                <button class="terms-card-header" type="button">
+                    <span class="terms-icon">
+                        <img src="../../assets/images/configuration/notes.png" alt="">
+                    </span>
+
+                    <span class="terms-title-group">
+                        <strong>Uso Del Servicio Y Monitoreo De Ubicación</strong>
+                        <small>Geolocalización en tiempo real para alertas de seguridad.</small>
+                    </span>
+
+                    <span class="read-toggle">
+                        <span>Leer más</span>
+                        <img src="../../assets/images/configuration/down_arrow.png" alt="">
+                    </span>
+                </button>
+
+                <div class="terms-card-body">
+                    <ul>
+                        <li>
+                            <strong>Geolocalización en Tiempo Real:</strong>
+                            Requerimos acceso continuo a tu ubicación en segundo plano mientras un viaje esté activo para que funcionen las alertas de desvíos, iluminación y asistencia comunitaria.
+                        </li>
+
+                        <li>
+                            <strong>Contactos de Confianza:</strong>
+                            Al registrarlos, nos autorizas a compartir tus coordenadas exactas, alertas de detención inusual o notificaciones de llegada con ellos.
+                        </li>
+
+                        <li>
+                            <strong>Nodos de Apoyo y Refugios:</strong>
+                            Los comercios aliados actúan como zonas de resguardo físico voluntario. SafeRoute facilita la conexión, pero no se responsabiliza por incidentes fuera del control técnico de la interfaz.
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="terms-card" data-expanded="false">
+                <button class="terms-card-header" type="button">
+                    <span class="terms-icon">
+                        <img src="../../assets/images/configuration/notes.png" alt="">
+                    </span>
+
+                    <span class="terms-title-group">
+                        <strong>Responsabilidades y Privacidad</strong>
+                        <small>Límites legales del servicio y protección de tus datos.</small>
+                    </span>
+
+                    <span class="read-toggle">
+                        <span>Leer más</span>
+                        <img src="../../assets/images/configuration/down_arrow.png" alt="">
+                    </span>
+                </button>
+
+                <div class="terms-card-body">
+                    <ul>
+                        <li>
+                            El uso de la app no reemplaza a los servicios de emergencia públicos ni a las autoridades policiales.
+                        </li>
+
+                        <li>
+                            Los reportes comunitarios sobre incidentes dependen exclusivamente de la veracidad de los propios usuarios.
+                        </li>
+
+                        <li>
+                            Tus datos sensibles de trayectos se almacenan bajo estrictas normativas locales de protección de datos personales.
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="terms-card" data-expanded="false">
+                <button class="terms-card-header" type="button">
+                    <span class="terms-icon">
+                        <img src="../../assets/images/configuration/notes.png" alt="">
+                    </span>
+
+                    <span class="terms-title-group">
+                        <strong>Política de Privacidad Completa</strong>
+                        <small>Consulta el detalle completo de nuestra política.</small>
+                    </span>
+
+                    <span class="read-toggle">
+                        <span>Leer más</span>
+                        <img src="../../assets/images/configuration/down_arrow.png" alt="">
+                    </span>
+                </button>
+
+                <div class="terms-card-body">
+                    <ul>
+                        <li>
+                            Para revisar el detalle completo de nuestra Política de Privacidad, visítanos en:
+                        </li>
+                    </ul>
+
+                    <a class="privacy-link" href="https://ihc-grupo-4-saferoute.github.io/SafeRoute--/" target="_blank" rel="noopener noreferrer">
+                        <img src="../../assets/images/configuration/redirect.png" alt="">
+                        <span>https://ihc-grupo-4-saferoute.github.io/SafeRoute--/</span>
+                    </a>
+                </div>
+            </article>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span data-i18n="nav.home">Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../route/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span data-i18n="nav.routes">Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span data-i18n="nav.alerts">Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span data-i18n="nav.reports">Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span data-i18n="nav.profile">Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
+    <script src="../../assets/scripts/configuration/terms-conditions.js"></script>
+</body>
+</html>

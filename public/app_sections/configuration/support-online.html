@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Online | SafeRoute</title>
+
+    <link rel="stylesheet" href="../../assets/styles/global.css">
+    <link rel="stylesheet" href="../../assets/styles/configuration/support-online.css">
+</head>
+<body>
+    <main class="support-online-page">
+        <header class="support-online-header">
+            <div class="header-title-group">
+                <button class="back-button" type="button" id="back-button" aria-label="Volver a soporte y seguridad">
+                    <img src="../../assets/images/configuration/left-arrow.png" alt="">
+                </button>
+                <h1>Soporte Online</h1>
+            </div>
+
+            <a
+                class="notification-button"
+                href="../notifications/notifications.html?returnTo=../configuration/support-online.html"
+                aria-label="Ver notificaciones"
+            >
+                <img src="../../assets/images/configuration/notification_main.png" alt="">
+            </a>
+        </header>
+
+        <section class="support-online-content">
+            <button class="active-chat-card" type="button" id="active-chat-card">
+                <img class="chat-icon" src="../../assets/images/configuration/chatbot_message.png" alt="">
+                <div class="chat-info">
+                    <h2>Asistente de Reporte</h2>
+                    <p>¡Hola! Estoy aquí para ayudarte.</p>
+                </div>
+                <span class="chat-time">2min</span>
+            </button>
+
+            <h3>Chats Terminados</h3>
+
+            <section class="finished-chats-list" id="finished-chats-list" aria-live="polite"></section>
+
+            <button class="new-chat-button" type="button" id="new-chat-button">
+                Empieza otro chat
+            </button>
+        </section>
+
+        <nav class="bottom-navigation">
+            <a class="nav-item" href="../home/home.html">
+                <img src="../../assets/images/configuration/home.png" alt="">
+                <span>Inicio</span>
+            </a>
+
+            <a class="nav-item" href="../routes/routes.html">
+                <img src="../../assets/images/configuration/route.png" alt="">
+                <span>Rutas</span>
+            </a>
+
+            <a class="nav-item" href="../alerts/alerts.html">
+                <img src="../../assets/images/configuration/alert.png" alt="">
+                <span>Alertas</span>
+            </a>
+
+            <a class="nav-item" href="../reports/reports.html">
+                <img src="../../assets/images/configuration/report.png" alt="">
+                <span>Reportes</span>
+            </a>
+
+            <a class="nav-item active" href="./profile.html">
+                <img src="../../assets/images/configuration/profile.png" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </main>
+
+    <script src="../../assets/scripts/configuration/support-online.js"></script>
+</body>
+</html>

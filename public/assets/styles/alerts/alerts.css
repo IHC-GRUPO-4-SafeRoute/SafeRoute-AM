@@ -17,7 +17,7 @@
 
 .alerts-header{
 
-    background:#0A4DA2;
+    background:#336ABF;
 
     height:82px;
 
@@ -421,7 +421,7 @@
 
     background:transparent;
 
-    color:#1E5CB3;
+    color:#336ABF;
 
     font-size:12px;
 
@@ -465,7 +465,7 @@
     max-width:430px;
     height:74px;
 
-    background:#0A4DA2;
+    background:#336ABF;
 
     border-radius:22px 22px 0 0;
 
@@ -531,7 +531,7 @@
 }
 
 .nav-active-icon span{
-    color:#0A4DA2;
+    color:#336ABF;
     font-size:10px;
     font-weight:700;
     margin:0;
@@ -628,8 +628,6 @@
     margin:0 auto 18px;
 
 }
-
-/* ========= MODAL SOS ========= */
 
 .bottom-modal{
     width:100%;

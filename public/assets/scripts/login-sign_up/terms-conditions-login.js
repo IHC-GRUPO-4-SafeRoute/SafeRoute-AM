@@ -92,7 +92,7 @@ acceptTermsButton.addEventListener(
         setTimeout(
             function() {
                 window.location.href =
-                    "../home/home.html";
+                    "../onboarding/saferoutes.html";
             },
             800
         );

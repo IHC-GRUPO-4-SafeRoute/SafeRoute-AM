@@ -4,7 +4,7 @@ const accountButton = document.getElementById("account-button");
 
 startButton.addEventListener("click", () => {
 
-    window.location.href = "../onboarding/saferoutes.html";
+    window.location.href = "../login-sign_up/register.html";
 
 });
 

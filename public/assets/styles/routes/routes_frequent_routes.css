@@ -156,21 +156,22 @@ body {
   margin: 22px auto 0;
   border-radius: 20px;
   background: var(--routes-navy);
-  color: var(--color-white);
+  color: #ffffff; 
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 13px;
+  gap: 12px; 
 }
 
 .save-route-button span {
-  font-size: 38px;
-  font-weight: 400;
+  font-size: 38px; 
+  font-weight: 300;
   line-height: 1;
+  display: inline-block;
+  transform: translateY(-3px); 
 }
-
 .bottom-nav {
   position: fixed;
   left: 50%;

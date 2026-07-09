@@ -112,7 +112,91 @@
     "reportNotifications": "Report notifications"
   },
   "reports": {
-    "title": "Reports"
+    "title": "Reports",
+    "newReport": "New Report",
+    "status": {
+      "title": "Report submitted!",
+      "description": "Your report has been sent to the community.",
+      "back": "Back to reports"
+    },
+    "failure": {
+      "title": "Report failed",
+      "description": "Your report is incomplete. Required information is missing.",
+      "retry": "Try Again"
+    },
+    "error": {
+      "title": "Sending Error",
+      "description": "An unexpected error occurred. Please try again.",
+      "refresh": "Refresh"
+    },
+    "form": {
+      "title": "New Report",
+      "subtitle": "Help the community",
+
+      "incidentTitle": "Incident Type *",
+
+      "incidents": {
+        "assault": "Assault",
+        "violence": "Violence",
+        "lighting": "Lighting",
+        "suspicious": "Suspicious Person",
+        "accident": "Accident",
+        "other": "Other"
+      },
+
+      "riskTitle": "Risk Level",
+
+      "risk": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+
+      "locationTitle": "Location",
+      "locationStatus": "Location: Active",
+      "changeLocation": "Change",
+
+      "descriptionTitle": "Description",
+      "descriptionPlaceholder": "Describe what happened in as much detail as possible...",
+
+      "evidenceTitle": "Evidence",
+      "uploadImage": "Upload image",
+
+      "anonymousTitle": "Anonymous report",
+      "anonymousDescription": "Your identity will not be revealed in the public report",
+
+      "submit": "Submit Report"
+    },
+    "tabs": {
+      "all": "All Reports",
+      "mine": "My Reports"
+    },
+    "cards": {
+      "violence": {
+        "title": "Violence",
+        "location": "Primavera Ave., Surco",
+        "time": "10 min ago",
+        "risk": "High Risk"
+      },
+      "accident": {
+        "title": "Accident",
+        "location": "Velasco Ave., Surco",
+        "time": "2 hours ago",
+        "risk": "Low Risk"
+      },
+      "suspicious": {
+        "title": "Suspicious Person",
+        "location": "Caminos del Inca Ave., Surco",
+        "time": "2 hours ago",
+        "risk": "Low Risk"
+      }
+    },
+    "achievement": {
+      "title": "Community Impact",
+      "subtitle": "Active Contributor",
+      "description": "Your reports helped 234 users avoid dangerous areas.",
+      "nextLevel": "Next level: Guardian"
+    }
   },
   "alerts": {
     "title": "Alerts",

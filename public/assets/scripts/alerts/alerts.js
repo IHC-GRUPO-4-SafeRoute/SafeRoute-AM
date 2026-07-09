@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const confirmSOS = document.getElementById("confirm-sos");
     const modal = document.getElementById("sos-modal");
     const showMore = document.getElementById("show-more");
+    const backButton = document.getElementById("back-button");
+
+    if (backButton) {
+        backButton.addEventListener("click", () => {
+            window.history.back();
+        });
+    }
 
     if (openSOS && modal) {
         openSOS.addEventListener("click", () => {

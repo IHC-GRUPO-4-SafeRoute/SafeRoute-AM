@@ -10,6 +10,7 @@
 */
 
 const PREFERENCES_KEY = "safeRouteUserPreferences";
+const LANGUAGE_KEY = "safeRouteLanguage";
 
 const backButton = document.getElementById("back-button");
 const languageButton = document.getElementById("language-button");
@@ -42,10 +43,12 @@ const defaultPreferences = {
 
 function getPreferences() {
     try {
-        return {
-            ...defaultPreferences,
-            ...JSON.parse(localStorage.getItem(PREFERENCES_KEY))
-        };
+        const stored = JSON.parse(localStorage.getItem(PREFERENCES_KEY)) || {};
+        const globalLang = localStorage.getItem(LANGUAGE_KEY);
+        if (globalLang) {
+            stored.language = globalLang;
+        }
+        return { ...defaultPreferences, ...stored };
     } catch (error) {
         return defaultPreferences;
     }
@@ -56,7 +59,12 @@ function savePreferences(preferences) {
 }
 
 function showSavedMessage() {
-    preferencesMessage.textContent = "Preferencias guardadas correctamente.";
+    const language = localStorage.getItem(LANGUAGE_KEY) || "es";
+    const messages = {
+        es: "Preferencias guardadas correctamente.",
+        en: "Preferences saved successfully."
+    };
+    preferencesMessage.textContent = messages[language] || messages.es;
 
     setTimeout(() => {
         preferencesMessage.textContent = "";
@@ -96,11 +104,16 @@ function setLanguage(language) {
 
     preferences.language = language;
     savePreferences(preferences);
+    localStorage.setItem(LANGUAGE_KEY, language);
     updateLanguageView(language);
 
     languageOptions.classList.add("hidden");
     languageButton.classList.remove("is-open");
     languageButton.setAttribute("aria-expanded", "false");
+
+    if (typeof window.setSafeRouteLanguage === "function") {
+        window.setSafeRouteLanguage(language);
+    }
 
     showSavedMessage();
 }

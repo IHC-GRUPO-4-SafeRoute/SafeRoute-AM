@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
     Pantalla complementaria: Preferencias
 
@@ -31,7 +31,7 @@
                     <img src="../../assets/images/configuration/left-arrow.png" alt="">
                 </button>
 
-                <h1>Preferencias</h1>
+                <h1 data-i18n="preferences.title">Preferencias</h1>
             </div>
 
             <a
@@ -48,7 +48,7 @@
                 <img class="preference-icon" src="../../assets/images/configuration/world.png" alt="">
 
                 <div class="language-content">
-                    <h2>Idioma de la aplicacion</h2>
+                    <h2 data-i18n="preferences.languageTitle">Idioma de la aplicacion</h2>
 
                     <div class="language-selector">
                         <button class="language-button" type="button" id="language-button" aria-expanded="false">
@@ -78,19 +78,19 @@
             <article class="preference-card route-card">
                 <div class="preference-card-header">
                     <img class="preference-icon" src="../../assets/images/configuration/routes.png" alt="">
-                    <h2>Preferencia de ruta</h2>
+                    <h2 data-i18n="preferences.routeTitle">Preferencia de ruta</h2>
                 </div>
 
                 <div class="route-options">
-                    <button class="route-option" type="button" data-route="safe">
+                    <button class="route-option" type="button" data-route="safe" data-i18n="preferences.routeSafe">
                         Segura
                     </button>
 
-                    <button class="route-option" type="button" data-route="fast">
+                    <button class="route-option" type="button" data-route="fast" data-i18n="preferences.routeFast">
                         Rápida
                     </button>
 
-                    <button class="route-option" type="button" data-route="balanced">
+                    <button class="route-option" type="button" data-route="balanced" data-i18n="preferences.routeBalanced">
                         Equilibrada
                     </button>
                 </div>
@@ -100,8 +100,8 @@
                 <img class="preference-icon" src="../../assets/images/configuration/alert-pre.png" alt="">
 
                 <span class="toggle-info">
-                    <strong>Zonas de alertas</strong>
-                    <small>Notificar al entrar a zonas de riesgo</small>
+                    <strong data-i18n="preferences.alertZonesTitle">Zonas de alertas</strong>
+                    <small data-i18n="preferences.alertZonesSubtitle">Notificar al entrar a zonas de riesgo</small>
                 </span>
 
                 <input type="checkbox" class="preference-toggle" data-setting="alertZones">
@@ -112,8 +112,8 @@
                 <img class="preference-icon" src="../../assets/images/configuration/code.png" alt="">
 
                 <span class="toggle-info">
-                    <strong>Perfil público</strong>
-                    <small>Tu ubicación visible para contactos</small>
+                    <strong data-i18n="preferences.publicProfileTitle">Perfil público</strong>
+                    <small data-i18n="preferences.publicProfileSubtitle">Tu ubicación visible para contactos</small>
                 </span>
 
                 <input type="checkbox" class="preference-toggle" data-setting="publicProfile">
@@ -124,8 +124,8 @@
                 <img class="preference-icon" src="../../assets/images/configuration/not.png" alt="">
 
                 <span class="toggle-info">
-                    <strong>Notificaciones</strong>
-                    <small>Alertas de seguridad en tiempo real</small>
+                    <strong data-i18n="preferences.notificationsTitle">Notificaciones</strong>
+                    <small data-i18n="preferences.notificationsSubtitle">Alertas de seguridad en tiempo real</small>
                 </span>
 
                 <input type="checkbox" class="preference-toggle" data-setting="notifications">
@@ -138,31 +138,32 @@
         <nav class="bottom-navigation">
             <a class="nav-item" href="../home/home.html">
                 <img src="../../assets/images/configuration/home.png" alt="">
-                <span>Inicio</span>
+                <span data-i18n="nav.home">Inicio</span>
             </a>
 
             <a class="nav-item" href="../routes/routes.html">
                 <img src="../../assets/images/configuration/route.png" alt="">
-                <span>Rutas</span>
+                <span data-i18n="nav.routes">Rutas</span>
             </a>
 
             <a class="nav-item" href="../alerts/alerts.html">
                 <img src="../../assets/images/configuration/alert.png" alt="">
-                <span>Alertas</span>
+                <span data-i18n="nav.alerts">Alertas</span>
             </a>
 
             <a class="nav-item" href="../reports/reports.html">
                 <img src="../../assets/images/configuration/report.png" alt="">
-                <span>Reportes</span>
+                <span data-i18n="nav.reports">Reportes</span>
             </a>
 
             <a class="nav-item active" href="./profile.html">
                 <img src="../../assets/images/configuration/profile.png" alt="">
-                <span>Perfil</span>
+                <span data-i18n="nav.profile">Perfil</span>
             </a>
         </nav>
     </main>
 
+    <script src="../../assets/scripts/i18n/i18n.js"></script>
     <script src="../../assets/scripts/configuration/preferences.js"></script>
 </body>
 </html>

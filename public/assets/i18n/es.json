@@ -24,40 +24,40 @@
     "routes": "Rutas",
     "reports": "Reportes",
     "editProfile": "Editar Perfil",
-    "emergencyContacts": "Contactos de emergencia",
+    "emergencyContacts": "Contactos de Emergencia",
     "securitySettings": "Configuración de Seguridad",
     "preferences": "Preferencias",
     "settings": "Ajustes",
     "help": "Ayuda",
     "logout": "Cerrar Sesión",
-    "logoutQuestion": "¿Estás seguro de cerrar sesión?",
+    "logoutQuestion": "¿Estás seguro que deseas cerrar sesión?",
     "confirmLogout": "Sí, cerrar sesión"
   },
   "preferences": {
     "title": "Preferencias",
-    "languageTitle": "Idioma de la aplicacion",
+    "languageTitle": "Idioma de la app",
     "routeTitle": "Preferencia de ruta",
     "routeSafe": "Segura",
     "routeFast": "Rápida",
     "routeBalanced": "Equilibrada",
-    "alertZonesTitle": "Zonas de alertas",
-    "alertZonesSubtitle": "Notificar al entrar a zonas de riesgo",
+    "alertZonesTitle": "Zonas de alerta",
+    "alertZonesSubtitle": "Notificar al ingresar a zonas de riesgo",
     "publicProfileTitle": "Perfil público",
-    "publicProfileSubtitle": "Tu ubicación visible para contactos",
+    "publicProfileSubtitle": "Tu ubicación visible para tus contactos",
     "notificationsTitle": "Notificaciones",
     "notificationsSubtitle": "Alertas de seguridad en tiempo real",
     "saved": "Preferencias guardadas correctamente."
   },
   "security": {
     "title": "Configuración de Seguridad",
-    "changePassword": "Cambiar de clave",
+    "changePassword": "Cambiar contraseña",
     "biometricAccess": "Acceso Biométrico",
     "termsConditions": "Términos y Condiciones",
     "securityTimer": "Temporizador de seguridad",
     "securityTimerSubtitle": "Alerta automática si no confirmas",
     "shareLocation": "Compartir Ubicación",
     "shareLocationSubtitle": "Con contactos de emergencia",
-    "microphone": "Habilitar micrófono",
+    "microphone": "Activar micrófono",
     "microphoneSubtitle": "Para detectar palabras de alerta",
     "pushNotifications": "Notificaciones push",
     "sosButton": "Botón SOS",
@@ -66,23 +66,23 @@
   },
   "settings": {
     "title": "Ajustes",
-    "notificationSettings": "Ajustes de notificaciones",
+    "notificationSettings": "Configuración de notificaciones",
     "deleteAccount": "Eliminar cuenta"
   },
   "support": {
     "title": "Soporte y Seguridad",
-    "question": "En que puedo ayudarte?",
-    "faq": "FAQ",
-    "contactUs": "Contactanos",
+    "question": "¿En qué podemos ayudarte?",
+    "faq": "Preguntas Frecuentes",
+    "contactUs": "Contáctanos",
     "general": "General",
     "account": "Cuenta",
     "services": "Servicios",
-    "customerService": "Servicio al cliente",
+    "customerService": "Atención al cliente",
     "instagram": "Instagram",
     "whatsapp": "Whatsapp",
-    "onlineTitle": "Soporte Online",
-    "finishedChats": "Chats Terminados",
-    "startAnotherChat": "Empieza otro chat",
+    "onlineTitle": "Soporte en Línea",
+    "finishedChats": "Chats Finalizados",
+    "startAnotherChat": "Iniciar otro chat",
     "supportAssistant": "Asistente de Soporte",
     "helpCenter": "Centro de Ayuda"
   },
@@ -96,7 +96,7 @@
     "title": "Contactos de Emergencia"
   },
   "changePassword": {
-    "title": "Cambiar de clave"
+    "title": "Cambiar contraseña"
   },
   "biometricAccess": {
     "title": "Acceso Biométrico"
@@ -105,11 +105,11 @@
     "title": "Eliminar cuenta"
   },
   "notificationSettings": {
-    "title": "Ajustes de notificaciones",
+    "title": "Configuración de notificaciones",
     "vibration": "Vibración",
     "sound": "Sonido",
-    "emergencyCallSound": "Sonido de llamada de Emergencia",
-    "reportNotifications": "Notificaciones de reporte"
+    "emergencyCallSound": "Sonido de llamada de emergencia",
+    "reportNotifications": "Notificaciones de reportes"
   },
   "reports": {
     "title": "Reportes"
@@ -121,9 +121,36 @@
     "title": "Inicio"
   },
   "notifications": {
-    "title": "Notificaciones"
+    "title": "Notificaciones",
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "markAllRead": "Marcar Todo Como Leído",
+    "markAllUnread": "Marcar Como No Leído",
+    "items": {
+      "routeDeviation": {
+        "title": "¿Te Desviaste De Tu Ruta?",
+        "line1": "Detectamos un cambio en tu trayecto.",
+        "line2": "¿Te encuentras bien o deseas recalcular una ruta segura?"
+      },
+      "nearbyRefuge": {
+        "title": "Tienes Un \"Punto De Refugio\" Cerca",
+        "line1": "Estás a 50 metros de Inkafarma.",
+        "line2": "Cuenta con cámaras activas y personal listo para apoyarte si lo necesitas."
+      },
+      "safeArrival": {
+        "title": "¡Llegada Segura!",
+        "line1": "Lucía, ha llegado a su destino. Gracias por acompañarlo en el último tramo de su ruta."
+      },
+      "zoneVerification": {
+        "title": "Ayuda A Verificar Tu Zona",
+        "line1": "Un usuario reportó un incidente a pocos metros de tu negocio. ¿Puedes confirmar si la situación ya está controlada?"
+      }
+    }
   },
   "termsConditions": {
     "title": "Términos y Condiciones"
-  }
+  },
+  "months": {
+  "may": "Mayo"
+}
 }

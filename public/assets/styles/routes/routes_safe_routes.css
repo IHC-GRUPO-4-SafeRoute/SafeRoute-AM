@@ -1,5 +1,5 @@
 :root {
-  --bottom-nav-height: 77px;
+  --bottom-nav-height: 72px;
   --routes-primary: var(--color-primary);
   --routes-navy: var(--color-navy);
   --routes-light-blue: var(--color-screen-bg);
@@ -27,21 +27,22 @@ body {
   color: var(--color-white);
   display: flex;
   align-items: center;
-  padding: 0 27px;
+  padding: 0 20px;
   position: relative;
 }
 
 .back-button {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
   background: transparent;
   display: grid;
   place-items: center;
 }
 
 .back-button img {
-  width: 14px;
-  height: 23px;
+  width: 10px;
+  height: 17px;
   object-fit: contain;
 }
 
@@ -70,9 +71,10 @@ body {
 }
 
 .notification-button {
-  width: 31px;
-  height: 31px;
+  width: 28px;
+  height: 28px;
   margin-left: auto;
+  margin-right: 4px;
   border-radius: 50%;
   background-color: var(--color-white);
   display: grid;

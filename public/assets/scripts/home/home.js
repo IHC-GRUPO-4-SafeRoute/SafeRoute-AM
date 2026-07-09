@@ -128,6 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('close-share-modal')?.addEventListener('click', () => closeModal(shareModal));
     document.getElementById('close-timer-modal')?.addEventListener('click', () => closeModal(timerModal));
     document.getElementById('cancel-timer')?.addEventListener('click', () => closeModal(timerModal));
+    const openNotificationsButton = document.getElementById('open-notifications');
+    openNotificationsButton?.addEventListener('click', () => {
+    window.location.href = '../notifications/notifications.html';
+    });
     openTimerBtn?.addEventListener('click', () => {
         resetTimerModal();
         openModal(timerModal);

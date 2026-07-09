@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     overflow-x: hidden;
-    background-color: var(--color-gray);
+    background-color: var(--color-disabled);
 }
 
 .terms-page {

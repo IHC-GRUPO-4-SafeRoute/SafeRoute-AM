@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnOpenZoneInfoBottom = document.getElementById('open-zone-info-bottom');
     const btnOpenZoneList = document.getElementById('open-zone-list'); 
     const btnOpenFilter = document.getElementById('open-filter');
+    const homeChatbotButton = document.getElementById('home-chatbot-button');
 
     const openNavigationBtn = document.getElementById('open-navigation-modal');
     const openShareBtn = document.getElementById('open-share-modal');
@@ -122,6 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnOpenZoneInfoTop?.addEventListener('click', () => openModal(zoneInfoModalTop));
     btnOpenZoneInfoBottom?.addEventListener('click', () => openModal(zoneInfoModal));
+    homeChatbotButton?.addEventListener('click', () => {
+        window.location.href = '../configuration/support-online.html?returnTo=../home/home.html';
+    });
 
     openNavigationBtn?.addEventListener('click', () => openModal(riskDetailModal));
     document.getElementById('close-risk-detail')?.addEventListener('click', () => closeModal(riskDetailModal));

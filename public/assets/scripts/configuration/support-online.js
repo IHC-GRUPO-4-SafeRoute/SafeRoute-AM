@@ -4,6 +4,8 @@ const backButton = document.getElementById("back-button");
 const activeChatCard = document.getElementById("active-chat-card");
 const finishedChatsList = document.getElementById("finished-chats-list");
 const newChatButton = document.getElementById("new-chat-button");
+const params = new URLSearchParams(window.location.search);
+const returnTo = params.get("returnTo");
 
 const initialFinishedChats = [
     {
@@ -111,6 +113,11 @@ function renderFinishedChats() {
 }
 
 backButton.addEventListener("click", () => {
+    if (returnTo) {
+        window.location.href = returnTo;
+        return;
+    }
+
     window.location.href = "./support-security.html";
 });
 

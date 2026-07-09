@@ -115,7 +115,58 @@
     "title": "Reports"
   },
   "alerts": {
-    "title": "Alerts"
+    "title": "Alerts",
+    "live": "Live",
+    "question": "Do you feel unsafe?",
+    "sosDescription": "Activate the emergency SOS button.",
+    "secondary": {
+      "cards": {
+        "robbery": {
+          "title": "Reported robbery",
+          "location": "Eucalyptus Neighborhood",
+          "time": "57 min ago"
+        },
+        "harassment": {
+          "title": "Harassment of a group of schoolchildren",
+          "location": "Jockey Plaza",
+          "time": "2 hours ago"
+        }
+      }
+    },
+    "filters": {
+      "all": "All",
+      "nearby": "Nearby",
+      "verified": "Verified",
+      "filter": "Filter"
+    },
+    "cards": {
+      "robbery": {
+        "title": "Reported robbery",
+        "location": "5th Street & 12th Avenue",
+        "time": "15 min ago"
+      },
+      "caution": {
+        "title": "Caution zone",
+        "location": "Industrial Park",
+        "time": "1 hour ago"
+      },
+      "lighting": {
+        "title": "Poor lighting",
+        "location": "North Avenue",
+        "time": "3 hours ago"
+      },
+      "suspicious": {
+        "title": "Suspicious thief",
+        "location": "Friendship Park",
+        "time": "4 hours ago"
+      },
+      "harassment": {
+        "title": "Harassment of an elderly woman",
+        "location": "Mall Plaza",
+        "time": "5 hours ago"
+      }
+    },
+    "showMore": "Show more"
   },
   "home": {
     "title": "Home",

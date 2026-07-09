@@ -24,7 +24,7 @@
 
                 <span class="live-circle"></span>
 
-                <span>En vivo</span>
+                <span data-i18n="alerts.live">En vivo</span>
 
             </div>
 
@@ -55,9 +55,13 @@
 
                 <div class="sos-text">
 
-                    <h2>¿Te sientes inseguro?</h2>
+                    <h2 data-i18n="alerts.question">
+                        ¿Te sientes inseguro?
+                    </h2>
 
-                    <p>Activa el botón SOS de emergencia.</p>
+                    <p data-i18n="alerts.sosDescription">
+                        Activa el botón SOS de emergencia.
+                    </p>
 
                 </div>
 
@@ -68,255 +72,292 @@
                 class="sos-button"
                 type="button">
 
-                Activar SOS
+                <span data-i18n="home.activateSos">
+                    Activar SOS
+                </span>
 
             </button>
 
         </section>
-
 
         <section class="filters">
 
             <div class="filter-group">
 
                 <button class="filter-chip active">
-                    Todas
+                    <span data-i18n="alerts.filters.all">
+                        Todas
+                    </span>
                 </button>
 
                 <button class="filter-chip">
-                    Cercanas
+                    <span data-i18n="alerts.filters.nearby">
+                        Cercanas
+                    </span>
                 </button>
 
                 <button class="filter-chip">
-                    Verificadas
+                    <span data-i18n="alerts.filters.verified">
+                        Verificadas
+                    </span>
                 </button>
 
             </div>
 
-            <button
-                class="filter-chip filter-action">
+            <button class="filter-chip filter-action">
 
                 <img
                     src="../../assets/images/alerts/filter.png"
                     alt="">
 
-                Filtrar
+                <span data-i18n="alerts.filters.filter">
+                    Filtrar
+                </span>
 
             </button>
 
         </section>
 
+    <section class="alerts-container">
+        <article class="alert-card robbery">
 
-        <section class="alerts-container">
-
-            <article class="alert-card robbery">
-
-                <div class="alert-left">
-
-                    <img
-                        class="alert-type"
-                        src="../../assets/images/alerts/Iconalert.png"
-                        alt="Robo">
-
-                </div>
-
-                <div class="alert-body">
-
-                    <h3>Robo reportado</h3>
-
-                    <p>Calle 5ta con Av. 12</p>
-
-                    <div class="alert-footer">
-
-                        <span class="alert-time">
-                            Hace 15 min
-                        </span>
-
-                        <span class="alert-location">
-
-                            <img
-                                src="../../assets/images/alerts/ubication.png"
-                                alt="">
-
-                            0.5 km
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="alert-card caution">
-
-                <div class="alert-left">
-
-                    <img
-                        class="alert-type"
-                        src="../../assets/images/alerts/car broken.png"
-                        alt="Zona">
-
-                </div>
-
-                <div class="alert-body">
-
-                    <h3>Zona de precaución</h3>
-
-                    <p>Parque Industrial</p>
-
-                    <div class="alert-footer">
-
-                        <span class="alert-time">
-                            Hace 1 hora
-                        </span>
-
-                        <span class="alert-location">
-
-                            <img
-                                src="../../assets/images/alerts/ubication.png"
-                                alt="">
-
-                            1.2 km
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="alert-card lighting">
-
-                <div class="alert-left">
-
-                    <img
-                        class="alert-type"
-                        src="../../assets/images/alerts/light.png"
-                        alt="Iluminación">
-
-                </div>
-
-                <div class="alert-body">
-
-                    <h3>Iluminación deficiente</h3>
-
-                    <p>Av. Norte</p>
-
-                    <div class="alert-footer">
-
-                        <span class="alert-time">
-                            Hace 3 horas
-                        </span>
-
-                        <span class="alert-location">
-
-                            <img
-                                src="../../assets/images/alerts/ubication.png"
-                                alt="">
-
-                            0.8 km
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="alert-card suspicious">
-
-                <div class="alert-left">
-
-                    <img
-                        class="alert-type"
-                        src="../../assets/images/alerts/eye.png"
-                        alt="Sospechoso">
-
-                </div>
-
-                <div class="alert-body">
-
-                    <h3>Sospechoso ladrón</h3>
-
-                    <p>Parque de la amistad</p>
-
-                    <div class="alert-footer">
-
-                        <span class="alert-time">
-                            Hace 4 horas
-                        </span>
-
-                        <span class="alert-location">
-
-                            <img
-                                src="../../assets/images/alerts/ubication.png"
-                                alt="">
-
-                            1.5 km
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="alert-card harassment">
-
-                <div class="alert-left">
-
-                    <img
-                        class="alert-type"
-                        src="../../assets/images/alerts/crash.png"
-                        alt="Incidente">
-
-                </div>
-
-                <div class="alert-body">
-
-                    <h3>Acoso a una anciana</h3>
-
-                    <p>Mall Plaza</p>
-
-                    <div class="alert-footer">
-
-                        <span class="alert-time">
-                            Hace 5 horas
-                        </span>
-
-                        <span class="alert-location">
-
-                            <img
-                                src="../../assets/images/alerts/ubication.png"
-                                alt="">
-
-                            2 km
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <button
-                id="show-more"
-                class="show-more-button"
-                type="button">
-
-                Mostrar más
+            <div class="alert-left">
 
                 <img
-                    src="../../assets/images/alerts/show more.png"
-                    alt="">
+                    class="alert-type"
+                    src="../../assets/images/alerts/Iconalert.png"
+                    alt="Robo">
 
-            </button>
+            </div>
+
+            <div class="alert-body">
+
+                <h3 data-i18n="alerts.cards.robbery.title">
+                    Robo reportado
+                </h3>
+
+                <p data-i18n="alerts.cards.robbery.location">
+                    Calle 5ta con Av. 12
+                </p>
+
+                <div class="alert-footer">
+
+                    <span
+                        class="alert-time"
+                        data-i18n="alerts.cards.robbery.time">
+                        Hace 15 min
+                    </span>
+
+                    <span class="alert-location">
+
+                        <img
+                            src="../../assets/images/alerts/ubication.png"
+                            alt="">
+
+                        0.5 km
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="alert-card caution">
+
+            <div class="alert-left">
+
+                <img
+                    class="alert-type"
+                    src="../../assets/images/alerts/car broken.png"
+                    alt="Zona">
+
+            </div>
+
+            <div class="alert-body">
+
+                <h3 data-i18n="alerts.cards.caution.title">
+                    Zona de precaución
+                </h3>
+
+                <p data-i18n="alerts.cards.caution.location">
+                    Parque Industrial
+                </p>
+
+                <div class="alert-footer">
+
+                    <span
+                        class="alert-time"
+                        data-i18n="alerts.cards.caution.time">
+                        Hace 1 hora
+                    </span>
+
+                    <span class="alert-location">
+
+                        <img
+                            src="../../assets/images/alerts/ubication.png"
+                            alt="">
+
+                        1.2 km
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="alert-card lighting">
+
+            <div class="alert-left">
+
+                <img
+                    class="alert-type"
+                    src="../../assets/images/alerts/light.png"
+                    alt="Iluminación">
+
+            </div>
+
+            <div class="alert-body">
+
+                <h3 data-i18n="alerts.cards.lighting.title">
+                    Iluminación deficiente
+                </h3>
+
+                <p data-i18n="alerts.cards.lighting.location">
+                    Av. Norte
+                </p>
+
+                <div class="alert-footer">
+
+                    <span
+                        class="alert-time"
+                        data-i18n="alerts.cards.lighting.time">
+                        Hace 3 horas
+                    </span>
+
+                    <span class="alert-location">
+
+                        <img
+                            src="../../assets/images/alerts/ubication.png"
+                            alt="">
+
+                        0.8 km
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="alert-card suspicious">
+
+            <div class="alert-left">
+
+                <img
+                    class="alert-type"
+                    src="../../assets/images/alerts/eye.png"
+                    alt="Sospechoso">
+
+            </div>
+
+            <div class="alert-body">
+
+                <h3 data-i18n="alerts.cards.suspicious.title">
+                    Sospechoso ladrón
+                </h3>
+
+                <p data-i18n="alerts.cards.suspicious.location">
+                    Parque de la amistad
+                </p>
+
+                <div class="alert-footer">
+
+                    <span
+                        class="alert-time"
+                        data-i18n="alerts.cards.suspicious.time">
+                        Hace 4 horas
+                    </span>
+
+                    <span class="alert-location">
+
+                        <img
+                            src="../../assets/images/alerts/ubication.png"
+                            alt="">
+
+                        1.5 km
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="alert-card harassment">
+
+            <div class="alert-left">
+
+                <img
+                    class="alert-type"
+                    src="../../assets/images/alerts/crash.png"
+                    alt="Incidente">
+
+            </div>
+
+            <div class="alert-body">
+
+                <h3 data-i18n="alerts.cards.harassment.title">
+                    Acoso a una anciana
+                </h3>
+
+                <p data-i18n="alerts.cards.harassment.location">
+                    Mall Plaza
+                </p>
+
+                <div class="alert-footer">
+
+                    <span
+                        class="alert-time"
+                        data-i18n="alerts.cards.harassment.time">
+                        Hace 5 horas
+                    </span>
+
+                    <span class="alert-location">
+
+                        <img
+                            src="../../assets/images/alerts/ubication.png"
+                            alt="">
+
+                        2 km
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <button
+            id="show-more"
+            class="show-more-button"
+            type="button">
+
+            <span data-i18n="alerts.showMore">
+                Mostrar más
+            </span>
+
+            <img
+                src="../../assets/images/alerts/show more.png"
+                alt="">
+
+        </button>
 
         </section>
 
@@ -324,61 +365,61 @@
 
     <nav class="bottom-navigation">
 
-        <a class="nav-item" href="../home/home.html">
+    <a class="nav-item" href="../home/home.html">
+
+        <img
+            src="../../assets/images/alerts/home.png"
+            alt="Inicio">
+
+        <span data-i18n="nav.home">Inicio</span>
+
+    </a>
+
+    <a class="nav-item" href="../routes/routes_safe_routes.html">
+
+        <img
+            src="../../assets/images/alerts/routes.png"
+            alt="Rutas">
+
+        <span data-i18n="nav.routes">Rutas</span>
+
+    </a>
+
+    <a class="nav-item active" href="#">
+
+        <div class="nav-active-icon">
 
             <img
-                src="../../assets/images/alerts/home.png"
-                alt="Inicio">
+                src="../../assets/images/alerts/alerts.png"
+                alt="Alertas">
 
-            <span data-i18n="nav.home">Inicio</span>
+            <span data-i18n="nav.alerts">Alertas</span>
 
-        </a>
+        </div>
 
-        <a class="nav-item" href="../routes/routes_safe_routes.html">
+    </a>
 
-            <img
-                src="../../assets/images/alerts/routes.png"
-                alt="Rutas">
+    <a class="nav-item" href="../reports/reports.html">
 
-            <span data-i18n="nav.routes">Rutas</span>
+        <img
+            src="../../assets/images/alerts/reports.png"
+            alt="Reportes">
 
-        </a>
+        <span data-i18n="nav.reports">Reportes</span>
 
-        <a class="nav-item active" href="#">
+    </a>
 
-            <div class="nav-active-icon">
+    <a class="nav-item" href="../configuration/profile.html">
 
-                <img
-                    src="../../assets/images/alerts/alerts.png"
-                    alt="Alertas">
+        <img
+            src="../../assets/images/alerts/profile.png"
+            alt="Perfil">
 
-                <span data-i18n="nav.alerts">Alertas</span>
+        <span data-i18n="nav.profile">Perfil</span>
 
-            </div>
+    </a>
 
-        </a>
-
-        <a class="nav-item" href="../reports/reports.html">
-
-            <img
-                src="../../assets/images/alerts/reports.png"
-                alt="Reportes">
-
-            <span data-i18n="nav.reports">Reportes</span>
-
-        </a>
-
-        <a class="nav-item" href="../configuration/profile.html">
-
-            <img
-                src="../../assets/images/alerts/profile.png"
-                alt="Perfil">
-
-            <span data-i18n="nav.profile">Perfil</span>
-
-        </a>
-
-    </nav>
+</nav>
 
 </main>
 
@@ -394,12 +435,18 @@
                 src="../../assets/images/alerts/sos.png"
                 alt="SOS">
 
-            <h2>Activar SOS</h2>
+            <h2 data-i18n="home.activateSos">
+                Activar SOS
+            </h2>
 
         </header>
 
-        <p class="modal-description">
+        <p
+            class="modal-description"
+            data-i18n="home.sosDescription">
+
             Se notificará a tus contactos de emergencia con tu ubicación exacta en tiempo real.
+
         </p>
 
         <section class="emergency-contact-list">
@@ -409,7 +456,7 @@
                 <span class="contact-avatar">☎</span>
 
                 <span class="contact-information">
-                    María Pérez (Mamá)
+                    María Pérez (<span data-i18n="home.relationMom">Mamá</span>)
                 </span>
 
                 <input
@@ -425,7 +472,7 @@
                 <span class="contact-avatar">☎</span>
 
                 <span class="contact-information">
-                    Carlos González (Amigo)
+                    Carlos González (<span data-i18n="home.relationFriend">Amigo</span>)
                 </span>
 
                 <input
@@ -442,7 +489,9 @@
             type="button"
             id="confirm-sos">
 
-            Confirmar SOS
+            <span data-i18n="home.confirmSos">
+                Confirmar SOS
+            </span>
 
         </button>
 
@@ -451,7 +500,9 @@
             type="button"
             id="cancel-sos">
 
-            Cancelar
+            <span data-i18n="common.cancel">
+                Cancelar
+            </span>
 
         </button>
 
@@ -461,9 +512,17 @@
 
 <div class="sos-active-panel hidden" id="sos-active-panel">
 
-    <span class="sos-active-label">SOS</span>
+    <span class="sos-active-label">
+        SOS
+    </span>
 
-    <span class="sos-active-sublabel">en curso</span>
+    <span
+        class="sos-active-sublabel"
+        data-i18n="home.sosInProgress">
+
+        en curso
+
+    </span>
 
     <button
         class="sos-cancel-button"
@@ -471,11 +530,12 @@
         id="cancel-active-sos"
         aria-label="Cancelar alerta SOS">
         ×
-    </button>   
+    </button>
 
 </div>
 
 <script src="../../assets/scripts/i18n/i18n.js"></script>
 <script src="../../assets/scripts/alerts/alerts.js"></script>
+
 </body>
 </html>

@@ -115,8 +115,61 @@
     "title": "Reportes"
   },
   "alerts": {
-    "title": "Alertas"
+    "title": "Alertas",
+    "live": "En vivo",
+    "question": "¿Te sientes inseguro?",
+    "sosDescription": "Activa el botón SOS de emergencia.",
+    "secondary": {
+      "cards": {
+        "robbery": {
+          "title": "Robo reportado",
+          "location": "Urb el Eucalipto",
+          "time": "Hace 57 min"
+        },
+        "harassment": {
+          "title": "Acoso a un grupo de escolares",
+          "location": "Jockey Plaza",
+          "time": "Hace 2 horas"
+        }
+      }
+    },
+    "filters": {
+      "all": "Todas",
+      "nearby": "Cercanas",
+      "verified": "Verificadas",
+      "filter": "Filtrar"
+    },
+    "cards": {
+      "robbery": {
+        "title": "Robo reportado",
+        "location": "Calle 5ta con Av. 12",
+        "time": "Hace 15 min"
+      },
+      "caution": {
+        "title": "Zona de precaución",
+        "location": "Parque Industrial",
+        "time": "Hace 1 hora"
+      },
+      "lighting": {
+        "title": "Iluminación deficiente",
+        "location": "Av. Norte",
+        "time": "Hace 3 horas"
+      },
+      "suspicious": {
+        "title": "Sospechoso ladrón",
+        "location": "Parque de la amistad",
+        "time": "Hace 4 horas"
+      },
+      "harassment": {
+        "title": "Acoso a una anciana",
+        "location": "Mall Plaza",
+        "time": "Hace 5 horas"
+      }
+    },
+    "showMore": "Mostrar más"
+
   },
+  
   "home": {
     "title": "Inicio",
      "greeting": "Hola, Bienvenido De Vuelta",

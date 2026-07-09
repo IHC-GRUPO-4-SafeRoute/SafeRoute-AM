@@ -67,44 +67,39 @@ body {
   background: var(--routes-white);
 }
 
-/* ==========================================================================
-   TARJETA DE DIRECCIÓN (REPOSICIONAMIENTO COMPLETO DEL INDICADOR)
-   ========================================================================== */
+
 
 .direction-top {
   display: grid;
-  /* Columna 1 fija de 65px para la flecha y los metros. 
-     Columna 2 flexible para el texto de la calle. */
   grid-template-columns: 65px 1fr;
   align-items: center;
   column-gap: 16px;
   width: 100%;
 }
 
-/* Flecha azul en la columna 1, fila 1 */
 .turn-icon {
   grid-column: 1;
   grid-row: 1;
   width: 24px;
   height: 24px;
   object-fit: contain;
-  justify-self: center; /* Centrado horizontal absoluto */
+  justify-self: center; 
 }
 
-/* Metros en la columna 1, fila 2 (Justo debajo de la flecha) */
+
 .distance-label {
   grid-column: 1;
-  grid-row: 2; /* Fuerza el salto de línea manteniéndose en la columna 1 */
+  grid-row: 2; 
   margin-top: 6px;
   color: #1f1f1f;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
-  justify-self: center; /* Centrado milimétrico con la flecha */
+  justify-self: center; 
   white-space: nowrap;
 }
 
-/* Texto de la calle a la derecha (Ocupa ambas filas en la columna 2) */
+
 .direction-text {
   grid-column: 2;
   grid-row: 1 / span 2;
@@ -119,14 +114,14 @@ body {
   margin: 0;
 }
 
-/* Línea horizontal divisoria */
+
 .direction-divider {
   height: 1px;
   margin: 14px 0 12px;
   background: #9f9f9f;
 }
 
-/* Grilla inferior para Tiempo, Distancia y Seguridad */
+
 .route-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -289,14 +284,11 @@ body {
 }
 
 
-/* ==========================================================================
-   SECCIÓN: PANELES INFERIORES EN DOS COLUMNAS (DISEÑO FINAL EXACTO)
-   ========================================================================== */
 
 .route-info {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* Estira las columnas para que la línea divisoria ocupe todo el alto */
+  align-items: stretch; 
   width: 100%;
 }
 
@@ -308,12 +300,11 @@ body {
   box-sizing: border-box;
 }
 
-/* Pinta la línea divisoria vertical gris exactamente en el medio */
 .info-card.border-right {
   border-right: 1px solid #c4dbe8;
 }
 
-/* Alinea el icono y el título horizontalmente en la misma línea */
+
 .info-title {
   display: flex;
   align-items: center;
@@ -337,19 +328,18 @@ body {
   white-space: nowrap;
 }
 
-/* Ajuste del párrafo: Se despliega de forma natural ocupando su espacio */
 .info-card p {
   color: #444444;
   font-size: 11px;
   font-weight: 400;
   line-height: 1.35;
-  margin: 6px 0 16px 34px; /* El margen izquierdo de 34px lo alinea exactamente debajo de las letras del título */
+  margin: 6px 0 16px 34px; 
   text-align: left;
 }
 
-/* Botón "Ver" estilo cápsula blanca centrado en la base */
+
 .info-card button {
-  margin: auto auto 0 auto; /* Empuja el botón al fondo de la tarjeta y lo centra */
+  margin: auto auto 0 auto; 
   width: 120px;
   height: 28px;
   border: none;
@@ -367,7 +357,6 @@ body {
   transform: scale(0.96);
 }
 
-/* ========================================================================== */
 @media (min-width: 431px) {
   .navigation-page {
     width: 430px;

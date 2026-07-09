@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (backButton) {
-    backButton.addEventListener("click", () => {
-      window.history.back();
-    });
+  backButton.addEventListener("click", () => {
+    window.location.href = "./routes_results_sure.html";
+  });
   }
 });

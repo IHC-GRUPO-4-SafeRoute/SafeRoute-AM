@@ -1,3 +1,8 @@
+body {
+    min-height: 100vh;
+    background: #969696;
+}
+
 .app-container {
     max-width: 430px;
     width: 100%;
@@ -23,7 +28,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 26px 16px;
-    background: #0b3d91;
+    background: #023686;
     color: white;;
 }
 
@@ -521,7 +526,7 @@ h3 {
 
     height:74px;
 
-    background:#0A4DA2;
+    background:#336ABF;
 
     border-radius:22px 22px 0 0;
 
@@ -604,7 +609,7 @@ h3 {
 
     margin:0;
 
-    color:#0A4DA2;
+    color:#336ABF;
 
     font-size:10px;
 

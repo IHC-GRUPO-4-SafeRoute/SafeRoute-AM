@@ -1,17 +1,28 @@
+body{
+    margin:0;
+    min-height:100vh;
+    background:#969696;
+}
+
 .status-page{
     width:100%;
+    max-width:430px;
     min-height:100vh;
-    background:#eaf4ff;
+
+    margin:0 auto;
 
     display:flex;
-    justify-content:center;
+    flex-direction:column;
+
+    background:#D9ECFF;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
 .status-container{
-    width:100%;
-    max-width:430px;
-
-    min-height:100vh;
+    flex:1;
 
     display:flex;
     flex-direction:column;
@@ -19,11 +30,11 @@
     align-items:center;
 
     padding:24px;
+    padding-bottom:90px;
+
     box-sizing:border-box;
 
     text-align:center;
-
-    padding-bottom:90px; 
 }
 
 .status-icon{
@@ -46,6 +57,7 @@
 
 .status-button{
     margin-top:24px;
+
     width:100%;
     max-width:280px;
     height:52px;
@@ -54,9 +66,12 @@
     border-radius:16px;
 
     background:#0A4DA2;
-    color:white;
+    color:#FFFFFF;
 
+    font-size:18px;
     font-weight:700;
+
+    cursor:pointer;
 }
 
 .bottom-navigation{
@@ -73,7 +88,7 @@
 
     height:74px;
 
-    background:#0A4DA2;
+    background:#336ABF;
 
     border-radius:22px 22px 0 0;
 
@@ -156,10 +171,18 @@
 
     margin:0;
 
-    color:#0A4DA2;
+    color:#336ABF;
 
     font-size:10px;
 
     font-weight:700;
+
+}
+
+@media(max-width:430px){
+
+    .status-page{
+        max-width:100%;
+    }
 
 }

@@ -6,6 +6,7 @@ const descriptionInput = document.getElementById("description");
 const micButton = document.getElementById("micButton");
 const cancelButton = document.getElementById("cancelMic");
 const allowButton = document.getElementById("allowMic");
+const backButton = document.getElementById("back-button");
 
 const uploadBox = document.getElementById("uploadBox");
 const evidenceInput = document.getElementById("evidenceInput");
@@ -50,6 +51,12 @@ riskOptions.forEach(option => {
         reportState.riskLevel = option.dataset.level;
     });
 });
+
+if (backButton) {
+     backButton.addEventListener("click", () => {
+        window.history.back();
+    });
+}
 
 if (locationButton) {
     locationButton.addEventListener("click", () => {

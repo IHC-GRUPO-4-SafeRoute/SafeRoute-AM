@@ -3,9 +3,7 @@ const riskOptions = document.querySelectorAll(".risk-option");
 
 const locationButton = document.querySelector(".location-button");
 const descriptionInput = document.getElementById("description");
-
 const micButton = document.getElementById("micButton");
-const micModal = document.getElementById("micModal");
 const cancelButton = document.getElementById("cancelMic");
 const allowButton = document.getElementById("allowMic");
 
@@ -65,6 +63,36 @@ if (descriptionInput) {
     });
 }
 
+if (micButton) {
+
+    micButton.addEventListener("click", async () => {
+
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            alert("Este navegador no soporta acceso al micrófono.");
+            return;
+        }
+
+        try {
+
+            const stream = await navigator.mediaDevices.getUserMedia({
+                audio: true
+            });
+
+            console.log("Micrófono permitido.");
+
+            // Detiene el micrófono inmediatamente
+            stream.getTracks().forEach(track => track.stop());
+
+        } catch (error) {
+
+            console.log("Permiso denegado.", error);
+
+        }
+
+    });
+
+}
+
 if (uploadBox && evidenceInput) {
     uploadBox.addEventListener("click", () => {
         evidenceInput.click();
@@ -76,17 +104,6 @@ if (uploadBox && evidenceInput) {
     });
 }
 
-if (micButton && micModal) {
-    micButton.addEventListener("click", () => {
-        micModal.classList.add("show");
-    });
-
-    micModal.addEventListener("click", (e) => {
-        if (e.target === micModal) {
-            micModal.classList.remove("show");
-        }
-    });
-}
 
 if (cancelButton) {
     cancelButton.addEventListener("click", () => {

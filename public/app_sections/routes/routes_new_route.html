@@ -10,89 +10,97 @@
 </head>
 
 <body>
-  <main class="new-route-page">
-    <header class="new-route-header">
-      <button class="back-button" type="button" aria-label="Volver">&lt;</button>
-      <h1>Nueva ruta</h1>
-      <span></span>
+  <main class="app-container">
+    <header class="routes-header">
+      <button class="back-button" type="button" aria-label="Volver">
+        <img src="../../assets/images/routes/Back_icon.png" alt="" />
+      </button>
+
+      <div class="header-title">
+        <h1>Nueva ruta</h1>
+      </div>
     </header>
 
-    <section class="route-location-card">
-      <div class="location-row">
-        <img src="../../assets/images/routes/Blue_location.png" alt="" />
-        <span>Mi ubicación</span>
-      </div>
+    <section class="new-route-content">
+      <article class="destination-card">
+        <div class="destination-row">
+          <img src="../../assets/images/routes/gray_location.png" alt="" />
+          <span>Mi ubicación</span>
+        </div>
 
-      <div class="location-divider"></div>
+        <div class="destination-line"></div>
 
-      <div class="location-row">
-        <img src="../../assets/images/routes/green_location.png" alt="" />
-        <span>Av. Primavera 517</span>
-      </div>
+        <div class="destination-row">
+          <img src="../../assets/images/routes/green_location.png" alt="" />
+          <span>Av. Primavera 517</span>
+        </div>
 
-      <img class="action-icon" src="../../assets/images/routes/action_icon.png" alt="" />
+        <img class="action-icon" src="../../assets/images/routes/action_icon.png" alt="" />
+      </article>
+
+      <article class="route-type-panel">
+        <h2>Tipo de ruta</h2>
+        <p>¿Qué prioriza tu ruta?</p>
+
+        <div class="route-options">
+          <button class="route-choice safe" type="button" data-route="safe">
+            <img src="../../assets/images/routes/Black_shield.png" alt="" />
+            <div>
+              <strong>Ruta segura</strong>
+              <span>Prioriza tu seguridad</span>
+            </div>
+          </button>
+
+          <button class="route-choice fast" type="button" data-route="fast">
+            <img src="../../assets/images/routes/Ray.png" alt="" />
+            <div>
+              <strong>Ruta rápida</strong>
+              <span>Prioriza la ruta más corta</span>
+            </div>
+          </button>
+
+          <button class="route-choice basic" type="button" data-route="basic">
+            <img src="../../assets/images/routes/Training_1.png" alt="" />
+            <div>
+              <strong>Ruta básica</strong>
+              <span>Balanceado</span>
+            </div>
+          </button>
+        </div>
+      </article>
+
+      <button class="add-route-button" type="button">Agregar nueva ruta</button>
     </section>
 
-    <section class="route-type-card">
-      <h2>Tipo de ruta</h2>
-      <p>¿Qué prioriza tu ruta?</p>
-
-      <button class="type-option safe" type="button" data-type="safe">
-        <img src="../../assets/images/routes/Black_shield.png" alt="" />
-        <div>
-          <strong>Ruta segura</strong>
-          <span>Prioriza tu seguridad</span>
-        </div>
-      </button>
-
-      <button class="type-option fast" type="button" data-type="fast">
-        <img src="../../assets/images/routes/Ray.png" alt="" />
-        <div>
-          <strong>Ruta rápida</strong>
-          <span>Prioriza la ruta más corta</span>
-        </div>
-      </button>
-
-      <button class="type-option basic" type="button" data-type="basic">
-        <img src="../../assets/images/routes/Training_1.png" alt="" />
-        <div>
-          <strong>Ruta básica</strong>
-          <span>Balanceado</span>
-        </div>
-      </button>
-    </section>
-
-    <button class="add-route-button" type="button">Agregar nueva ruta</button>
-
-    <nav class="bottom-nav" aria-label="Navegación principal">
+    <nav class="bottom-nav">
       <a class="nav-item" href="../home/home.html">
         <img src="../../assets/images/routes/Home_icon.png" alt="" />
-        <span data-i18n="nav.home">Inicio</span>
+        <span>Inicio</span>
       </a>
 
       <a class="nav-item active" href="./routes_safe_routes.html">
         <img src="../../assets/images/routes/Routes_icon.png" alt="" />
-        <span data-i18n="nav.routes">Rutas</span>
+        <span>Rutas</span>
       </a>
 
-      <a class="nav-item" href="#">
+      <a class="nav-item" href="../alerts/alerts.html">
         <img src="../../assets/images/routes/alert_icon.png" alt="" />
-        <span data-i18n="nav.alerts">Alertas</span>
+        <span>Alertas</span>
       </a>
 
-      <a class="nav-item" href="#">
+      <a class="nav-item" href="../reports/reports.html">
         <img src="../../assets/images/routes/report_icon.png" alt="" />
-        <span data-i18n="nav.reports">Reportes</span>
+        <span>Reportes</span>
       </a>
 
       <a class="nav-item" href="../configuration/profile.html">
         <img src="../../assets/images/routes/configuration_icon.png" alt="" />
-        <span data-i18n="nav.profile">Perfil</span>
+        <span>Perfil</span>
       </a>
     </nav>
   </main>
 
   <script src="../../assets/scripts/i18n/i18n.js"></script>
-<script src="../../assets/scripts/routes/routes_new_route.js"></script>
+  <script src="../../assets/scripts/routes/routes_new_route.js"></script>
 </body>
 </html>

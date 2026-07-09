@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const backButton = document.querySelector(".back-button");
-  const safeCard = document.querySelector('[data-route="safe"]');
-  const fastCard = document.querySelector('[data-route="fast"]');
+  const safestRouteButton = document.querySelector(".result-card.safest");
+  const fastRouteButton = document.querySelector(".result-card.fast");
+  const alternativeRouteButton = document.querySelector(".result-card.alternative");
 
   if (backButton) {
     backButton.addEventListener("click", () => {
@@ -9,15 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (safeCard) {
-    safeCard.addEventListener("click", () => {
-      window.location.href = "./routes_navigation.html?route=safe";
+  if (safestRouteButton) {
+    safestRouteButton.addEventListener("click", () => {
+      window.location.href = "./routes_navigation_error.html";
     });
   }
 
-  if (fastCard) {
-    fastCard.addEventListener("click", () => {
-      window.location.href = "./routes_navigation.html?route=fast";
+  if (fastRouteButton) {
+    fastRouteButton.addEventListener("click", () => {
+      window.location.href = "./routes_navigation.html";
+    });
+  }
+
+  if (alternativeRouteButton) {
+    alternativeRouteButton.addEventListener("click", () => {
+      window.location.href = "./routes_navigation.html";
     });
   }
 });

@@ -12,52 +12,63 @@
 <body>
   <main class="incidents-page">
     <header class="incidents-header">
-      <button class="back-button" type="button" aria-label="Volver">&lt;</button>
+      <button class="back-button" type="button" aria-label="Volver">
+        <img src="../../assets/images/routes/Back_icon.png" alt="" />
+      </button>
+
       <h1>Incidencias en ruta</h1>
-      <span></span>
     </header>
 
-    <section class="incidents-card">
-      <h2>Incidencias en tu ruta</h2>
-      <div class="incidents-divider"></div>
+    <section class="incidents-content">
+      <article class="incidents-card">
+        <h2>Incidencias en tu ruta</h2>
 
-      <article class="incident-item">
-        <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
-        <div>
-          <h3>Zona de baja iluminación</h3>
-          <p>Reportado hace 4 minutos</p>
+        <div class="incidents-divider"></div>
+
+        <div class="incidents-list">
+          <div class="incident-item">
+            <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+
+            <div>
+              <h3>Zona de baja iluminación</h3>
+              <p>Reportado hace 4 minutos</p>
+            </div>
+          </div>
+
+          <div class="incident-item">
+            <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+
+            <div>
+              <h3>Zona con baja densidad de tránsito</h3>
+              <p>Reportado hace 6 minutos</p>
+            </div>
+          </div>
+
+          <div class="incident-item">
+            <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+
+            <div>
+              <h3>Robo de motorizado</h3>
+              <p>Reportado hace 20 minutos</p>
+            </div>
+          </div>
+
+          <div class="incident-item">
+            <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+
+            <div>
+              <h3>Zona con baja iluminación</h3>
+              <p>Reportado hace 41 minutos</p>
+            </div>
+          </div>
         </div>
       </article>
 
-      <article class="incident-item">
-        <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
-        <div>
-          <h3>Zona con baja densidad de tránsito</h3>
-          <p>Reportado hace 6 minutos</p>
-        </div>
-      </article>
-
-      <article class="incident-item">
-        <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
-        <div>
-          <h3>Robo de motorizado</h3>
-          <p>Reportado hace 20 minutos</p>
-        </div>
-      </article>
-
-      <article class="incident-item">
-        <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
-        <div>
-          <h3>Zona con baja iluminación</h3>
-          <p>Reportado hace 41 minutos</p>
-        </div>
-      </article>
+      <button class="return-map-button" type="button">Regresar al mapa</button>
     </section>
-
-    <button class="return-map-button" type="button">Regresar al mapa</button>
   </main>
 
   <script src="../../assets/scripts/i18n/i18n.js"></script>
-<script src="../../assets/scripts/routes/routes_incidents.js"></script>
+  <script src="../../assets/scripts/routes/routes_incidents.js"></script>
 </body>
 </html>

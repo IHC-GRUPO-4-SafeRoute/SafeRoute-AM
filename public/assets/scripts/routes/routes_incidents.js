@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const backButton = document.querySelector(".back-button");
   const returnMapButton = document.querySelector(".return-map-button");
 
-  const goBackToMap = () => {
-    window.location.href = "./routes_navigation.html?route=safe";
-  };
-
   if (backButton) {
-    backButton.addEventListener("click", goBackToMap);
+    backButton.addEventListener("click", () => {
+      window.history.back();
+    });
   }
 
   if (returnMapButton) {
-    returnMapButton.addEventListener("click", goBackToMap);
+    returnMapButton.addEventListener("click", () => {
+      window.location.href = "./routes_navigation_sure.html";
+    });
   }
 });

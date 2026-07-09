@@ -1,12 +1,12 @@
 :root {
-  --bottom-nav-height: 78px;
-  --routes-primary: #3474c8;
-  --routes-navy: #063d88;
-  --routes-light-blue: #dff5ff;
+  --bottom-nav-height: 72px;
+  --routes-primary: var(--color-primary);
+  --routes-navy: var(--color-navy);
+  --routes-light-blue: var(--color-screen-bg);
 }
 
 body {
-  background: #969696;
+  background: var(--color-disabled);
 }
 
 .app-container {
@@ -27,51 +27,65 @@ body {
   color: var(--color-white);
   display: flex;
   align-items: center;
-  padding: 0 27px;
+  padding: 0 20px;
   position: relative;
 }
 
 .back-button {
-  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
   background: transparent;
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+
+.back-button img {
+  width: 10px;
+  height: 17px;
+  object-fit: contain;
 }
 
 .header-title {
   position: absolute;
   top: 29px;
   left: 50%;
-  width: 165px;
+  width: 190px;
   transform: translateX(-50%);
+  text-align: center;
 }
 
 .header-title h1 {
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1;
+  text-align: center;
 }
 
 .header-title p {
   margin-top: 3px;
   color: #9fc4ef;
   font-size: 10px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .notification-button {
-  width: 29px;
-  height: 29px;
+  width: 28px;
+  height: 28px;
   margin-left: auto;
+  margin-right: 4px;
   border-radius: 50%;
   background-color: var(--color-white);
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
 .notification-button img {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .routes-content {
@@ -110,6 +124,7 @@ body {
   outline: none;
   color: #555555;
   font-size: 12px;
+  background: transparent;
 }
 
 .search-button {
@@ -121,7 +136,7 @@ body {
   background-color: var(--routes-navy);
   color: var(--color-white);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   display: block;
 }
 
@@ -132,7 +147,7 @@ body {
 
 .section-heading h2,
 .frequent-routes-header h2 {
-  color: #111111;
+  color: var(--color-black);
   font-size: 16px;
   font-weight: 800;
 }
@@ -170,7 +185,7 @@ body {
 }
 
 .route-option-info h3 {
-  color: #111111;
+  color: var(--color-black);
   font-size: 12px;
   font-weight: 800;
 }
@@ -269,7 +284,7 @@ body {
   z-index: 10;
   width: min(100%, 430px);
   height: var(--bottom-nav-height);
-  padding: 11px 15px 12px;
+  padding: 8px 14px 7px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 5px;
@@ -279,32 +294,36 @@ body {
 }
 
 .nav-item {
+  height: 57px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 4px;
   background: transparent;
   color: var(--color-white);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
 }
 
 .nav-item img {
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
 }
 
 .nav-item.active {
-  border-radius: 20px;
+  width: 76px;
+  height: 57px;
+  margin: 0 auto;
+  border-radius: 18px;
   background: var(--color-white);
   color: var(--routes-navy);
 }
 
 .nav-item.active img {
-  width: 24px;
-  height: 24px;
+  width: 23px;
+  height: 23px;
 }
 
 @media (min-width: 431px) {

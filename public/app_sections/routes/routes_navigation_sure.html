@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error de navegación | SafeRoute</title>
+
+  <link rel="stylesheet" href="../../assets/styles/global.css" />
+  <link rel="stylesheet" href="../../assets/styles/routes/routes_navigation_error.css" />
+</head>
+
+<body>
+  <main class="navigation-page">
+    <header class="navigation-header">
+      <button class="back-button" type="button" aria-label="Volver">
+  <img src="../../assets/images/routes/Back_blue.png" alt="" />
+      </button>
+    </header>
+
+    <section class="navigation-status">
+      <img src="../../assets/images/routes/location_white.png" alt="" />
+      <span>En navegación</span>
+    </section>
+
+    <section class="direction-card">
+      <div class="direction-top">
+        <img class="turn-icon" src="../../assets/images/routes/right_arrow_blue.png" alt="" />
+
+        <div class="direction-text">
+          <h1>Gira a la derecha en<br />Av. Primavera</h1>
+        </div>
+      </div>
+
+      <strong class="distance-label">120 m</strong>
+
+      <div class="direction-divider"></div>
+
+      <div class="route-stats">
+        <article>
+          <strong>12 min</strong>
+          <span>Tiempo</span>
+        </article>
+
+        <article>
+          <strong>2.3 km</strong>
+          <span>Distancia</span>
+        </article>
+
+        <article>
+          <strong>83%</strong>
+          <span>Seguridad</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="map-card">
+      <img class="map-image" src="../../assets/images/routes/map_icon.png" alt="Mapa de navegación" />
+
+      <div class="map-legend">
+        <div>
+          <span class="legend-line fast"></span>
+          <p>Ruta Segura</p>
+          <strong>12 min</strong>
+        </div>
+
+        <div>
+          <span class="legend-line alternative"></span>
+          <p>Ruta Alternativa</p>
+          <strong>14 min</strong>
+        </div>
+      </div>
+
+      <img class="safe-node node-one" src="../../assets/images/routes/Shield_green.png" alt="" />
+      <img class="safe-node node-two" src="../../assets/images/routes/Shield_green.png" alt="" />
+      <img class="safe-node node-three" src="../../assets/images/routes/Shield_green.png" alt="" />
+      <img class="safe-node node-four" src="../../assets/images/routes/Shield_green.png" alt="" />
+      <img class="safe-node node-five" src="../../assets/images/routes/Shield_green.png" alt="" />
+
+      <img class="danger-marker danger-one" src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+      <img class="danger-marker danger-two" src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+      <img class="danger-marker danger-three" src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+      <img class="danger-marker danger-four" src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+    </section>
+
+    <button class="finish-route-button" type="button">FINALIZAR RUTA</button>
+
+    <section class="route-info">
+      <article class="info-card">
+        <div class="info-title">
+          <img src="../../assets/images/routes/Shield_green_yes.png" alt="" />
+          <h2>Nodos Seguros</h2>
+        </div>
+
+        <p>Establecimientos donde puedes refugiarte</p>
+        <button class="safe-nodes-button" type="button">Ver</button>
+      </article>
+
+      <div class="info-separator"></div>
+
+      <article class="info-card">
+        <div class="info-title">
+          <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+          <h2>Incidentes</h2>
+        </div>
+
+        <p>4 incidentes cercanos en tu ruta</p>
+        <button class="incidents-button" type="button">Ver</button>
+      </article>
+    </section>
+
+    <div class="map-error-alert" id="mapErrorAlert">
+      <div class="map-error-card">
+        <div class="map-error-icon">!</div>
+        <button class="map-error-view-button" type="button">Ver</button>
+      </div>
+    </div>
+
+    <div class="gps-error-overlay" id="gpsErrorOverlay">
+      <div class="gps-error-card">
+        <div class="gps-error-handle"></div>
+
+        <h2>Se ha perdido la señal GPS</h2>
+        <p>Ha ocurrido un error con su ubicación, vuelva a intentarlo</p>
+
+        <button class="gps-error-button" type="button">Actualizar</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/scripts/i18n/i18n.js"></script>
+<script src="../../assets/scripts/routes/routes_navigation_error.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navegación segura | SafeRoute</title>
+
+  <link rel="stylesheet" href="../../assets/styles/global.css" />
+  <link rel="stylesheet" href="../../assets/styles/routes/routes_navigation_sure.css" />
+</head>
+
+<body>
+  <main class="navigation-page">
+    <header class="navigation-header">
+      <button class="back-button" type="button" aria-label="Volver">
+        <img src="../../assets/images/routes/Back_blue.png" alt="" />
+      </button>
+    </header>
+
+    <section class="navigation-status">
+      <img src="../../assets/images/routes/location_white.png" alt="" />
+      <span>En navegación</span>
+    </section>
+
+    <section class="direction-card">
+      <div class="direction-top">
+        <img class="turn-icon" src="../../assets/images/routes/right_arrow_blue.png" alt="" />
+
+        <div class="direction-text">
+          <h1>Gira a la derecha en<br />Av. Primavera</h1>
+        </div>
+      </div>
+
+      <strong class="distance-label">120 m</strong>
+
+      <div class="direction-divider"></div>
+
+      <div class="route-stats">
+        <article>
+          <strong>12 min</strong>
+          <span>Tiempo</span>
+        </article>
+
+        <article>
+          <strong>2.3 km</strong>
+          <span>Distancia</span>
+        </article>
+
+        <article>
+          <strong>83%</strong>
+          <span>Seguridad</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="map-card">
+      <img class="map-image" src="../../assets/images/routes/map_icon.png" alt="Mapa de navegación" />
+
+      <div class="map-legend">
+        <div>
+          <span class="legend-line fast"></span>
+          <p>Ruta Segura</p>
+          <strong>12 min</strong>
+        </div>
+
+        <div>
+          <span class="legend-line alternative"></span>
+          <p>Ruta Alternativa</p>
+          <strong>14 min</strong>
+        </div>
+      </div>
+
+      <img class="safe-node node-one" src="../../assets/images/routes/Shield_green.png" alt="" />
+      <img class="safe-node node-two" src="../../assets/images/routes/Shield_green.png" alt="" />
+      <img class="safe-node node-three" src="../../assets/images/routes/Shield_green.png" alt="" />
+      <img class="safe-node node-four" src="../../assets/images/routes/Shield_green.png" alt="" />
+      <img class="safe-node node-five" src="../../assets/images/routes/Shield_green.png" alt="" />
+
+      <img class="danger-marker danger-one" src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+      <img class="danger-marker danger-two" src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+      <img class="danger-marker danger-three" src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+      <img class="danger-marker danger-four" src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+    </section>
+
+    <button class="finish-route-button" type="button">FINALIZAR RUTA</button>
+
+    <section class="route-info">
+      <article class="info-card">
+        <div class="info-title">
+          <img src="../../assets/images/routes/Shield_green_yes.png" alt="" />
+          <h2>Nodos Seguros</h2>
+        </div>
+
+        <p>Establecimientos donde puedes refugiarte</p>
+        <button class="safe-nodes-button" type="button">Ver</button>
+      </article>
+
+      <div class="info-separator"></div>
+
+      <article class="info-card">
+        <div class="info-title">
+          <img src="../../assets/images/routes/Dangerous_icon.png" alt="" />
+          <h2>Incidentes</h2>
+        </div>
+
+        <p>4 incidentes cercanos en tu ruta</p>
+        <button class="incidents-button" type="button">Ver</button>
+      </article>
+    </section>
+
+    <div class="map-error-alert" id="mapErrorAlert">
+      <div class="map-error-card">
+        <div class="map-error-icon">!</div>
+        <button class="map-error-view-button" type="button">Ver</button>
+      </div>
+    </div>
+
+    <div class="gps-error-overlay" id="gpsErrorOverlay">
+      <div class="gps-error-card">
+        <div class="gps-error-handle"></div>
+
+        <h2>Se ha perdido la señal GPS</h2>
+        <p>Ha ocurrido un error con su ubicación, vuelva a intentarlo</p>
+
+        <button class="gps-error-button" type="button">Actualizar</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/scripts/i18n/i18n.js"></script>
+  <script src="../../assets/scripts/routes/routes_navigation_sure.js"></script>
+</body>
+</html>

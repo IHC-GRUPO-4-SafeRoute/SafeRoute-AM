@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const backButton = document.querySelector(".back-button");
-  const typeOptions = document.querySelectorAll(".type-option");
+  const routeChoices = document.querySelectorAll(".route-choice");
   const addRouteButton = document.querySelector(".add-route-button");
 
-  let selectedType = "";
+  let selectedRoute = null;
 
   if (backButton) {
     backButton.addEventListener("click", () => {
@@ -11,20 +11,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  typeOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      selectedType = option.dataset.type;
-
-      typeOptions.forEach((item) => {
-        item.classList.remove("is-selected");
+  routeChoices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+      routeChoices.forEach((item) => {
+        item.classList.remove("selected");
       });
 
-      option.classList.add("is-selected");
+      choice.classList.add("selected");
+      selectedRoute = choice.dataset.route;
     });
   });
 
   if (addRouteButton) {
     addRouteButton.addEventListener("click", () => {
+      if (!selectedRoute) {
+        alert("Selecciona un tipo de ruta.");
+        return;
+      }
+
       window.location.href = "./routes_saved_route.html";
     });
   }

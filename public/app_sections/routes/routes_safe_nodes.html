@@ -10,62 +10,69 @@
 </head>
 
 <body>
-  <main class="safe-nodes-page">
-    <header class="safe-nodes-header">
-      <button class="back-button" type="button" aria-label="Volver">&lt;</button>
+  <main class="nodes-page">
+    <header class="nodes-header">
+      <button class="back-button" type="button" aria-label="Volver">
+        <img src="../../assets/images/routes/Back_icon.png" alt="" />
+      </button>
+
       <h1>Nodos Seguros</h1>
-      <span></span>
     </header>
 
-    <section class="safe-nodes-card">
-      <h2>Nodos Seguros en tu ruta</h2>
-      <div class="safe-nodes-divider"></div>
+    <section class="nodes-content">
+      <article class="nodes-card">
+        <h2>Nodos Seguros en tu ruta</h2>
 
-      <article class="safe-node-item">
-        <img src="../../assets/images/routes/Shield_green.png" alt="" />
-        <div>
-          <h3>Bodega “Lupita” → 500 m</h3>
-          <p>A 5 minutos de distancia</p>
+        <div class="nodes-divider"></div>
+
+        <div class="nodes-list">
+          <div class="node-item">
+            <img src="../../assets/images/routes/Shield_green.png" alt="" />
+            <div>
+              <h3>Bodega “Lupita” → 500 m</h3>
+              <p>A 5 minutos de distancia</p>
+            </div>
+          </div>
+
+          <div class="node-item">
+            <img src="../../assets/images/routes/Shield_green.png" alt="" />
+            <div>
+              <h3>Mercado “García” → 500 m</h3>
+              <p>A 15 minutos de distancia</p>
+            </div>
+          </div>
+
+          <div class="node-item">
+            <img src="../../assets/images/routes/Shield_green.png" alt="" />
+            <div>
+              <h3>Bodega “Javier” → 500 m</h3>
+              <p>A 21 minutos de distancia</p>
+            </div>
+          </div>
+
+          <div class="node-item">
+            <img src="../../assets/images/routes/Shield_green.png" alt="" />
+            <div>
+              <h3>Tambo Primavera → 500 m</h3>
+              <p>A 26 minutos de distancia</p>
+            </div>
+          </div>
+
+          <div class="node-item">
+            <img src="../../assets/images/routes/Shield_green.png" alt="" />
+            <div>
+              <h3>Mass Primavera → 500 m</h3>
+              <p>A 34 minutos de distancia</p>
+            </div>
+          </div>
         </div>
       </article>
 
-      <article class="safe-node-item">
-        <img src="../../assets/images/routes/Shield_green.png" alt="" />
-        <div>
-          <h3>Mercado “García” → 500 m</h3>
-          <p>A 15 minutos de distancia</p>
-        </div>
-      </article>
-
-      <article class="safe-node-item">
-        <img src="../../assets/images/routes/Shield_green.png" alt="" />
-        <div>
-          <h3>Bodega “Javier” → 500 m</h3>
-          <p>A 21 minutos de distancia</p>
-        </div>
-      </article>
-
-      <article class="safe-node-item">
-        <img src="../../assets/images/routes/Shield_green.png" alt="" />
-        <div>
-          <h3>Tambo Primavera → 500 m</h3>
-          <p>A 26 minutos de distancia</p>
-        </div>
-      </article>
-
-      <article class="safe-node-item">
-        <img src="../../assets/images/routes/Shield_green.png" alt="" />
-        <div>
-          <h3>Mass Primavera → 500 m</h3>
-          <p>A 34 minutos de distancia</p>
-        </div>
-      </article>
+      <button class="return-map-button" type="button">Regresar al mapa</button>
     </section>
-
-    <button class="return-map-button" type="button">Regresar al mapa</button>
   </main>
 
   <script src="../../assets/scripts/i18n/i18n.js"></script>
-<script src="../../assets/scripts/routes/routes_safe_nodes.js"></script>
+  <script src="../../assets/scripts/routes/routes_safe_nodes.js"></script>
 </body>
 </html>

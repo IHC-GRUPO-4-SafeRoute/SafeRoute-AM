@@ -346,6 +346,43 @@ h3 {
     text-align: center;
 }
 
+.file-preview {
+    display: none;
+
+    width: 100%;
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    align-items: center;
+    gap: 10px;
+
+    box-sizing: border-box;
+}
+
+
+.file-preview.active {
+    display: flex;
+}
+
+
+.file-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+#fileName {
+    font-size: 13px;
+    color: #333;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .anonymous-card {
     background: #cfe9ff;
     border-radius: 14px;

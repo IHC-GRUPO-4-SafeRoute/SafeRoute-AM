@@ -10,6 +10,10 @@ const backButton = document.getElementById("back-button");
 
 const uploadBox = document.getElementById("uploadBox");
 const evidenceInput = document.getElementById("evidenceInput");
+const uploadContent = document.getElementById("uploadContent");
+const filePreview = document.getElementById("filePreview");
+const fileName = document.getElementById("fileName");
+
 
 const anonymousCheck = document.getElementById("anonymousCheck");
 const submitBtn = document.getElementById("submitReport");
@@ -100,17 +104,37 @@ if (micButton) {
 
 }
 
+
 if (uploadBox && evidenceInput) {
+
     uploadBox.addEventListener("click", () => {
         evidenceInput.click();
     });
 
-    evidenceInput.addEventListener("change", (e) => {
-        const file = e.target.files[0];
-        if (file) reportState.evidence = file;
-    });
-}
 
+    evidenceInput.addEventListener("change", (e) => {
+
+        const file = e.target.files[0];
+
+
+        if (file) {
+
+            reportState.evidence = file;
+
+
+            fileName.textContent = file.name;
+
+
+            uploadContent.style.display = "none";
+
+
+            filePreview.classList.add("active");
+
+        }
+
+    });
+
+}
 
 if (cancelButton) {
     cancelButton.addEventListener("click", () => {

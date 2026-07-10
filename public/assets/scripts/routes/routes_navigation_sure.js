@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (gpsErrorButton) {
     gpsErrorButton.addEventListener("click", () => {
-      gpsErrorOverlay.classList.remove("is-visible");
+      location.reload();
     });
   }
 

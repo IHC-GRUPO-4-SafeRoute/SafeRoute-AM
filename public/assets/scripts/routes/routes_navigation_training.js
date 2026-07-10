@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const backButton = document.querySelector(".back-button");
   const finishButton = document.querySelector(".finish-route-button");
-  const modal = document.querySelector("#trainingModal");
-  const returnButton = document.querySelector(".training-return-button");
   const safeNodesButton = document.querySelector(".safe-nodes-button");
   const incidentsButton = document.querySelector(".incidents-button");
+  const trainingModal = document.querySelector("#trainingModal");
+  const trainingReturnButton = document.querySelector(".training-return-button");
 
   if (backButton) {
     backButton.addEventListener("click", () => {
@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (finishButton) {
+  if (finishButton && trainingModal) {
     finishButton.addEventListener("click", () => {
-      modal.classList.add("is-visible");
+      trainingModal.classList.add("is-visible");
     });
   }
 
-  if (returnButton) {
-    returnButton.addEventListener("click", () => {
+  if (trainingReturnButton) {
+    trainingReturnButton.addEventListener("click", () => {
       window.location.href = "./routes_safe_routes.html";
     });
   }

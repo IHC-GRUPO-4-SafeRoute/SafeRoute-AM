@@ -12,21 +12,23 @@
 <body>
   <main class="saved-route-page">
     <header class="saved-route-header">
-      <button class="back-button" type="button" aria-label="Volver">&lt;</button>
+      <button class="back-button" type="button" aria-label="Volver">
+        <img src="../../assets/images/routes/Back_icon.png" alt="" />
+      </button>
 
       <div class="header-title">
         <h1>Rutas frecuentes</h1>
       </div>
 
       <button class="ring-button" type="button" aria-label="Notificaciones">
-        <img src="../../assets/images/routes/Ring_icon.png" alt="" />
+        <img src="../../assets/images/routes/Notifications_icon.png" alt="" />
       </button>
     </header>
 
     <section class="saved-route-card">
       <div class="frequent-tabs">
-        <button class="tab-button" type="button">Favoritas</button>
-        <button class="tab-button active" type="button">Guardadas</button>
+        <button class="tab-button favorite-tab-button" type="button">Favoritas</button>
+        <button class="tab-button active saved-tab-button" type="button">Guardadas</button>
       </div>
 
       <article class="saved-route-item">
@@ -59,12 +61,12 @@
         <span data-i18n="nav.routes">Rutas</span>
       </a>
 
-      <a class="nav-item" href="#">
+      <a class="nav-item" href="../alerts/alerts.html">
         <img src="../../assets/images/routes/alert_icon.png" alt="" />
         <span data-i18n="nav.alerts">Alertas</span>
       </a>
 
-      <a class="nav-item" href="#">
+      <a class="nav-item" href="../reports/reports.html">
         <img src="../../assets/images/routes/report_icon.png" alt="" />
         <span data-i18n="nav.reports">Reportes</span>
       </a>
@@ -88,6 +90,6 @@
   </main>
 
   <script src="../../assets/scripts/i18n/i18n.js"></script>
-<script src="../../assets/scripts/routes/routes_saved_route.js"></script>
+  <script src="../../assets/scripts/routes/routes_saved_route.js"></script>
 </body>
 </html>

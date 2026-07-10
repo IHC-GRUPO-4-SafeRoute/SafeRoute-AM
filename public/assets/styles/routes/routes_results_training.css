@@ -1,56 +1,80 @@
+:root {
+  --bottom-nav-height: 72px;
+  --routes-primary: var(--color-primary);
+  --routes-navy: var(--color-navy);
+  --routes-light-blue: var(--color-screen-bg);
+}
+
 body {
-  min-height: 100vh;
-  background: #969696;
+  background: var(--color-disabled);
 }
 
 .training-results-page {
+  position: relative;
   width: 100%;
   max-width: 430px;
   min-height: 100vh;
   margin: 0 auto;
-  padding-bottom: 96px;
-  background: #e8f8ff;
-  position: relative;
   overflow: hidden;
+  background: var(--routes-light-blue);
+  padding-bottom: var(--bottom-nav-height);
 }
 
 .training-results-header {
-  height: 86px;
-  padding: 0 24px;
-  background: #064494;
-  color: #ffffff;
+  width: 100%;
+  height: 88px;
+  background: var(--routes-navy);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
 }
 
 .training-results-header h1 {
-  font-size: 19px;
-  font-weight: 800;
+  position: absolute;
+  left: 50%;
+  top: 35px;
+  transform: translateX(-50%);
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .back-button {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
   background: transparent;
-  color: #ffffff;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.ring-button {
-  width: 31px;
-  height: 31px;
-  border-radius: 50%;
-  background: #ffffff;
   display: grid;
   place-items: center;
 }
 
+.back-button img {
+  width: 10px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.ring-button {
+  width: 28px;
+  height: 28px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: var(--color-white);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
 .ring-button img {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .route-search-card {
@@ -58,7 +82,7 @@ body {
   margin: 18px auto 15px;
   padding: 17px 27px;
   border-radius: 17px;
-  background: #ffffff;
+  background: var(--color-white);
   position: relative;
 }
 
@@ -66,8 +90,9 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  color: var(--color-black);
   font-size: 11px;
-  color: #000000;
+  font-weight: 500;
 }
 
 .location-row img {
@@ -90,6 +115,7 @@ body {
   right: 28px;
   top: 50%;
   transform: translateY(-50%);
+  object-fit: contain;
 }
 
 .selected-route {
@@ -98,26 +124,31 @@ body {
   margin: 0 auto 15px;
   padding: 0 13px 0 52px;
   border-radius: 18px;
-  background: #ffffff;
+  background: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .selected-route span {
+  color: #333333;
   font-size: 10px;
+  font-weight: 500;
 }
 
 .selected-route div {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: #333333;
   font-size: 10px;
+  font-weight: 500;
 }
 
 .selected-route img {
   width: 20px;
   height: 20px;
+  object-fit: contain;
 }
 
 .selected-route button {
@@ -134,7 +165,7 @@ body {
   margin: 0 auto;
   padding: 14px 12px;
   border-radius: 20px;
-  background: #ffffff;
+  background: var(--color-white);
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -144,7 +175,7 @@ body {
   min-height: 143px;
   padding: 22px 22px 18px;
   border-radius: 18px;
-  background: #ffffff;
+  background: var(--color-white);
 }
 
 .result-card.safest {
@@ -152,7 +183,7 @@ body {
 }
 
 .result-card.fast {
-  border: 1.5px solid #064494;
+  border: 1.5px solid var(--routes-navy);
 }
 
 .result-title {
@@ -168,6 +199,7 @@ body {
 }
 
 .result-title h2 {
+  color: var(--color-black);
   font-size: 17px;
   font-weight: 800;
 }
@@ -191,14 +223,15 @@ body {
 }
 
 .result-stats strong {
+  color: var(--color-black);
   font-size: 10px;
   font-weight: 800;
 }
 
 .result-stats span {
   margin-top: 2px;
+  color: var(--color-gray);
   font-size: 9px;
-  color: #4a5565;
 }
 
 .result-note {
@@ -216,8 +249,9 @@ body {
 }
 
 .result-note span {
+  color: var(--color-gray);
   font-size: 10px;
-  color: #4a5565;
+  font-weight: 500;
 }
 
 .training-start-button {
@@ -225,52 +259,80 @@ body {
   height: 64px;
   margin: 24px auto 0;
   border-radius: 18px;
-  background: #064494;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 800;
+  background: var(--routes-navy);
+  color: var(--color-white);
   display: block;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .bottom-nav {
-  width: 100%;
-  max-width: 430px;
-  height: 88px;
-  padding: 10px 20px 9px;
-  border-radius: 38px 38px 0 0;
-  background: #336abf;
   position: fixed;
   left: 50%;
   bottom: 0;
-  transform: translateX(-50%);
+  z-index: 10;
+  width: min(100%, 430px);
+  height: var(--bottom-nav-height);
+  padding: 8px 14px 7px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  align-items: center;
+  gap: 5px;
+  transform: translateX(-50%);
+  border-radius: 28px 28px 0 0;
+  background: var(--routes-primary);
 }
 
 .nav-item {
-  height: 67px;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 600;
+  height: 57px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 4px;
+  background: transparent;
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 500;
 }
 
 .nav-item img {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
 }
 
 .nav-item.active {
-  width: 63px;
-  height: 67px;
+  width: 76px;
+  height: 57px;
   margin: 0 auto;
-  border-radius: 22px;
-  background: #ffffff;
-  color: #064494;
+  border-radius: 18px;
+  background: var(--color-white);
+  color: var(--routes-navy);
 }
+
+.nav-item.active img {
+  width: 23px;
+  height: 23px;
+}
+
+@media (min-width: 431px) {
+  .training-results-page {
+    width: 430px;
+  }
+}
+
+@media (max-width: 430px) {
+  body {
+    background: var(--routes-light-blue);
+  }
+
+  .training-results-page {
+    max-width: none;
+  }
+
+  .bottom-nav {
+    width: 100%;
+    max-width: none;
+  }
+}
+
